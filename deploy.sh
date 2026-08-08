@@ -13,8 +13,8 @@
 #
 set -uo pipefail
 
-REPO="https://github.com/projectknoxsolutions/Glen-Smoke-Shop.git"
-LIVE="https://projectknoxsolutions.github.io/Glen-Smoke-Shop/"
+REPO="https://github.com/jeffbilbrey1985/Glen-Smoke-Shop.git"
+LIVE="https://jeffbilbrey1985.github.io/Glen-Smoke-Shop/"
 
 say()  { printf '\n\033[1;33m==>\033[0m %s\n' "$1"; }
 warn() { printf '\n\033[1;35mWARN:\033[0m %s\n' "$1"; }
@@ -102,7 +102,7 @@ fi
 # .git/config, because that file is plain text and easy to forget about.
 TOKEN="${GITHUB_TOKEN:-${GH_TOKEN:-}}"
 AUTH_URL=""
-mk_url() { printf 'https://x-access-token:%s@github.com/projectknoxsolutions/Glen-Smoke-Shop.git' "$1"; }
+mk_url() { printf 'https://x-access-token:%s@github.com/jeffbilbrey1985/Glen-Smoke-Shop.git' "$1"; }
 [ -n "$TOKEN" ] && { AUTH_URL="$(mk_url "$TOKEN")"; say "Using the token from your environment."; }
 
 fetch_from() { if [ -n "$AUTH_URL" ]; then git fetch -q "$AUTH_URL" main:refs/remotes/origin/main 2>/dev/null;
@@ -170,7 +170,7 @@ cat <<EOF
   Pushed.
 
   The Pages workflow is running now:
-    https://github.com/projectknoxsolutions/Glen-Smoke-Shop/actions
+    https://github.com/jeffbilbrey1985/Glen-Smoke-Shop/actions
 
   The first run switches Pages from Jekyll over to Actions, so it can take 2-3
   minutes. After that the site is live at:

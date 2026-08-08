@@ -3,7 +3,7 @@
 Landing site for **Glen Smoke Shop**, 944 Roosevelt Rd, Glen Ellyn, IL 60137.
 Built by [Project Knox Solutions](https://github.com/projectknoxsolutions).
 
-Live: `https://projectknoxsolutions.github.io/Glen-Smoke-Shop/`
+Live: `https://jeffbilbrey1985.github.io/Glen-Smoke-Shop/`
 
 ---
 
