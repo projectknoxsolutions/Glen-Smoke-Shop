@@ -90,9 +90,28 @@ else
   git remote add origin "$REPO"
 fi
 
+# --- credentials -------------------------------------------------------------
+# GitHub has not accepted account passwords for git over HTTPS since 2021, and
+# with Google SSO there is no password to give anyway. A personal access token
+# is the answer. Order of preference:
+#   1. GITHUB_TOKEN / GH_TOKEN in the environment
+#   2. whatever credential helper is already configured (gh, Keychain, Desktop)
+#   3. a secure prompt, typed once, never echoed
+#
+# The token is used for this one push only. It is deliberately NOT written into
+# .git/config, because that file is plain text and easy to forget about.
+TOKEN="${GITHUB_TOKEN:-${GH_TOKEN:-}}"
+AUTH_URL=""
+mk_url() { printf 'https://x-access-token:%s@github.com/projectknoxsolutions/Glen-Smoke-Shop.git' "$1"; }
+[ -n "$TOKEN" ] && { AUTH_URL="$(mk_url "$TOKEN")"; say "Using the token from your environment."; }
+
+fetch_from() { if [ -n "$AUTH_URL" ]; then git fetch -q "$AUTH_URL" main:refs/remotes/origin/main 2>/dev/null;
+               else git fetch -q origin main 2>/dev/null; fi; }
+push_to()    { if [ -n "$AUTH_URL" ]; then git push "$AUTH_URL" main:main; else git push -u origin main; fi; }
+
 # The remote starts with one placeholder commit; merge it rather than clobber.
 say "Fetching the remote…"
-if git fetch -q origin main 2>/dev/null; then
+if fetch_from; then
   if ! git merge origin/main --allow-unrelated-histories -m "Merge the repo's initial commit" -q 2>/dev/null; then
     say "README conflicted with the placeholder — keeping ours."
     git checkout --ours README.md 2>/dev/null || true
@@ -102,9 +121,32 @@ if git fetch -q origin main 2>/dev/null; then
 fi
 
 say "Pushing to GitHub… (about 40MB — give it a minute)"
-git push -u origin main || die "push failed.
-     If it asked for a password, GitHub wants a personal access token, not your
-     account password. Easiest fix:  brew install gh && gh auth login"
+if ! push_to; then
+  warn "That push did not go through — GitHub needs a personal access token."
+  cat <<'HINT'
+
+     You sign in with Google, so you have no GitHub password to type. Create a
+     token instead (30 seconds, no install):
+
+       1. github.com/settings/personal-access-tokens  ->  Generate new token
+       2. Repository access: only  Glen-Smoke-Shop
+       3. Permissions -> Repository -> Contents: Read and write
+                                       Workflows: Read and write
+       4. Generate, then copy it
+
+     Paste it below. It is not echoed, not saved, and not written to .git.
+
+HINT
+  printf '  Token: '
+  read -rs TOKEN; echo
+  [ -n "$TOKEN" ] || die "no token entered."
+  AUTH_URL="$(mk_url "$TOKEN")"
+  push_to || die "still refused. Check the token has Contents: Read and write on
+     Glen-Smoke-Shop, and that it has not expired.
+     No-terminal alternative: GitHub Desktop is already in your dock —
+     File > Add Local Repository, point it here, then Publish."
+fi
+unset TOKEN AUTH_URL
 
 trap - EXIT
 cat <<EOF
