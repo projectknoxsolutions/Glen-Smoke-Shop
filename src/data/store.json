@@ -1,0 +1,36 @@
+{
+  "name": "Glen Smoke Shop",
+  "legalName": "Glen Smoke Shop",
+  "category": "Vaporizer store",
+  "street": "944 Roosevelt Rd",
+  "locality": "Glen Ellyn",
+  "region": "IL",
+  "postalCode": "60137",
+  "country": "US",
+  "center": "Baker Hill",
+  "lat": 41.8599993,
+  "lng": -88.0480804,
+  "plusCode": "VX52+XQ Glen Ellyn, Illinois",
+  "phone": "+13315510005",
+  "phoneDisplay": "(331) 551-0005",
+
+  "smsCapable": true,
+  "_smsNote": "Confirmed by Jeff 2026-08-08: the main line takes texts. If that turns out to be wrong, set this back to false and the text buttons silently fall back to calling rather than dead-ending.",
+
+  "rating": 4.2,
+  "ratingSource": "Google",
+  "googleUrl": "https://www.google.com/maps/place/Glen+Smoke+Shop/@41.8599993,-88.0480804,17z",
+
+  "hoursConfirmed": false,
+  "_hoursNote": "PLACEHOLDER. Google confirmed 'closes 11 PM' on Sat 2026-08-08 and two directories list an 8 AM open, so 8am-11pm daily is the best available estimate. MUST be confirmed with the owner before this is shown to him.",
+  "hours": [
+    { "day": "Sunday",    "open": "08:00", "close": "23:00" },
+    { "day": "Monday",    "open": "08:00", "close": "23:00" },
+    { "day": "Tuesday",   "open": "08:00", "close": "23:00" },
+    { "day": "Wednesday", "open": "08:00", "close": "23:00" },
+    { "day": "Thursday",  "open": "08:00", "close": "23:00" },
+    { "day": "Friday",    "open": "08:00", "close": "23:00" },
+    { "day": "Saturday",  "open": "08:00", "close": "23:00" }
+  ],
+  "timezone": "America/Chicago"
+}

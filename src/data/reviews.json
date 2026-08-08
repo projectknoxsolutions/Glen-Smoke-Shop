@@ -1,0 +1,7 @@
+{
+  "_README": "Real Google reviews only. Never invent a testimonial - fabricated reviews are an FTC violation and would be trivially disproved against the live Google profile. Add entries as: { name, initial, stars, text, date }. The marquee renders a graceful placeholder while this array is empty, so the site is shippable either way.",
+  "source": "Google",
+  "profileUrl": "https://www.google.com/maps/place/Glen+Smoke+Shop/@41.8599993,-88.0480804,17z",
+  "aggregate": { "rating": 4.2, "count": null },
+  "reviews": []
+}

@@ -1,0 +1,47 @@
+/* Self-hosted so the site never depends on the Google Fonts CDN and never
+   suffers a third-party round trip on first paint. Latin subset, woff2.
+
+   Inter and JetBrains Mono ship as variable fonts, so one file covers the whole
+   weight range instead of five near-identical downloads. Imported through the
+   bundler with relative paths, which keeps the build portable between a GitHub
+   Pages sub-path and a domain root. */
+
+@font-face {
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/bebas-neue-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('./fonts/inter-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url('./fonts/jetbrains-mono-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('./fonts/playfair-display-500i.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url('./fonts/playfair-display-700.woff2') format('woff2');
+}

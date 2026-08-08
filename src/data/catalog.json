@@ -1,0 +1,1189 @@
+{
+  "generated": "2026-08-08",
+  "policy": {
+    "no_prices": true,
+    "nitrous_excluded": true,
+    "hemp_unbranded": true,
+    "age_gate": 21
+  },
+  "vapes": [
+    {
+      "id": "geek-bar",
+      "brand": "Geek Bar",
+      "lines": [
+        "Pulse",
+        "Pulse 2",
+        "Pulse X",
+        "Pulse X2",
+        "Mate Kit / Mate Pod (5 pcs, 'Pod Only')",
+        "Geek Pod"
+      ],
+      "facings": "many (80+; occupies 3-4 full shelf rows of the back wall)",
+      "hero": true,
+      "confidence": "certain"
+    },
+    {
+      "id": "north",
+      "brand": "North",
+      "lines": [
+        "North Stellar (40000 puffs)",
+        "Stellar Dark Moon Edition",
+        "Stellar Sour Edition",
+        "Stellar Skyfall Edition",
+        "Stellar Slushy Edition",
+        "North 5000 (5000 puffs disposable)"
+      ],
+      "facings": "many (100+; the single largest block on the wall)",
+      "hero": true,
+      "confidence": "certain"
+    },
+    {
+      "id": "breeze-smoke",
+      "brand": "Breeze Smoke",
+      "lines": [
+        "Pro Edition (2000 puffs, 5.0% nic)",
+        "Prime Edition (6000 puffs, 5% nic)",
+        "Breeze Pro Edition Tobacco (4.3% nic)"
+      ],
+      "facings": "many (40+; one full shelf row plus header/shelf-talker cards)",
+      "hero": false,
+      "confidence": "certain"
+    },
+    {
+      "id": "crown-bar",
+      "brand": "Crown Bar",
+      "lines": [
+        "Crown Bar 15K",
+        "Crown Bar 12K"
+      ],
+      "facings": "3 (side shelf, left of the main wall)",
+      "hero": false,
+      "confidence": "certain"
+    },
+    {
+      "id": "foger",
+      "brand": "Foger",
+      "lines": [
+        "Foger 30K puffs",
+        "Foger 'Pod Only' refill pods",
+        "Foger Switch Pod Kit"
+      ],
+      "facings": "~15-20 (bottom shelf run)",
+      "hero": false,
+      "confidence": "certain"
+    },
+    {
+      "id": "lost-mary",
+      "brand": "Lost Mary",
+      "lines": [
+        "MT35000 Turbo (35K)"
+      ],
+      "facings": "~10-12, built into a small pyramid stack on the top shelf",
+      "hero": false,
+      "confidence": "certain"
+    },
+    {
+      "id": "mr-fog",
+      "brand": "Mr Fog",
+      "lines": [
+        "Switch Pod (45K)",
+        "Nova",
+        "Aura",
+        "Switch SW15000"
+      ],
+      "facings": "many (30+; a full lower shelf row plus a top-shelf run)",
+      "hero": false,
+      "confidence": "certain"
+    },
+    {
+      "id": "ploox",
+      "brand": "Ploox",
+      "lines": [
+        "Ploox XS (disposable pod device)"
+      ],
+      "facings": "4 (top shelf, right end)",
+      "hero": false,
+      "confidence": "certain"
+    },
+    {
+      "id": "posh",
+      "brand": "Posh",
+      "lines": [
+        "Posh Pro Max (5200 puffs)",
+        "Posh Max 2.0 (rechargeable, 'Chi Edition', '20% More Puffs')",
+        "Posh Plus (stick-style disposable)"
+      ],
+      "facings": "many (30+; right half of the front glass counter case, plus 2 lower shelves of Posh Plus sticks on the back wall)",
+      "hero": false,
+      "confidence": "certain"
+    },
+    {
+      "id": "raz",
+      "brand": "RAZ",
+      "lines": [
+        "RAZ LTX (25K / 15K, 'Mega HD Screen')"
+      ],
+      "facings": "~5-6 (top shelf, far left)",
+      "hero": false,
+      "confidence": "certain"
+    },
+    {
+      "id": "ut",
+      "brand": "UT",
+      "lines": [
+        "UT 50000 / 25000 puffs",
+        "'6 Multiple Choices' and '12 Multiple Choices' multi-flavor variants",
+        "50K with puff timer"
+      ],
+      "facings": "~20",
+      "hero": false,
+      "confidence": "certain"
+    },
+    {
+      "id": "vuse",
+      "brand": "Vuse",
+      "lines": [],
+      "facings": "3-4 (bottom of a side/end display, well away from the disposable wall)",
+      "hero": false,
+      "confidence": "certain"
+    },
+    {
+      "id": "ijoy",
+      "brand": "iJOY",
+      "lines": [
+        "XP 100K (100000 puffs)",
+        "10000-puff variant boxes"
+      ],
+      "facings": "~5 (top shelf)",
+      "hero": false,
+      "confidence": "certain"
+    }
+  ],
+  "hardware": [
+    {
+      "id": "smok",
+      "brand": "Smok"
+    },
+    {
+      "id": "uwell",
+      "brand": "Uwell"
+    },
+    {
+      "id": "vaporesso",
+      "brand": "Vaporesso"
+    },
+    {
+      "id": "geek-vape",
+      "brand": "Geek Vape"
+    },
+    {
+      "id": "suorin",
+      "brand": "Suorin"
+    },
+    {
+      "id": "olit",
+      "brand": "OLIT"
+    },
+    {
+      "id": "yocan",
+      "brand": "Yocan"
+    },
+    {
+      "id": "exseed",
+      "brand": "Exseed"
+    },
+    {
+      "id": "ooze",
+      "brand": "Ooze"
+    },
+    {
+      "id": "puffco",
+      "brand": "Puffco"
+    }
+  ],
+  "pouches": [
+    {
+      "id": "clew-citrus",
+      "brand": "CLEW",
+      "flavor": "Citrus",
+      "strengths": [],
+      "confidence": "likely"
+    },
+    {
+      "id": "velo-cappuccino",
+      "brand": "VELO",
+      "flavor": "Cappuccino",
+      "strengths": [
+        6
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "velo-dragon-fruit",
+      "brand": "VELO",
+      "flavor": "Dragon Fruit",
+      "strengths": [
+        6
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "velo-smooth",
+      "brand": "VELO",
+      "flavor": "Smooth",
+      "strengths": [
+        6
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "velo-spearmint",
+      "brand": "VELO",
+      "flavor": "Spearmint",
+      "strengths": [
+        6
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "zimo-wintergreen",
+      "brand": "ZIMO",
+      "flavor": "Wintergreen",
+      "strengths": [
+        3
+      ],
+      "confidence": "likely"
+    },
+    {
+      "id": "zyn-black-cherry",
+      "brand": "ZYN",
+      "flavor": "Black Cherry",
+      "strengths": [
+        6
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "zyn-chill",
+      "brand": "ZYN",
+      "flavor": "Chill",
+      "strengths": [
+        3,
+        6
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "zyn-cinnamon",
+      "brand": "ZYN",
+      "flavor": "Cinnamon",
+      "strengths": [
+        3
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "zyn-citrus",
+      "brand": "ZYN",
+      "flavor": "Citrus",
+      "strengths": [
+        3,
+        6
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "zyn-coffee",
+      "brand": "ZYN",
+      "flavor": "Coffee",
+      "strengths": [
+        3,
+        6
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "zyn-cool-mint",
+      "brand": "ZYN",
+      "flavor": "Cool Mint",
+      "strengths": [
+        3,
+        6
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "zyn-dragonberry",
+      "brand": "ZYN",
+      "flavor": "Dragonberry",
+      "strengths": [
+        6
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "zyn-espresso-martini",
+      "brand": "ZYN",
+      "flavor": "Espresso Martini",
+      "strengths": [
+        3,
+        6
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "zyn-menthol",
+      "brand": "ZYN",
+      "flavor": "Menthol",
+      "strengths": [
+        3,
+        6
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "zyn-mojito",
+      "brand": "ZYN",
+      "flavor": "Mojito",
+      "strengths": [
+        6
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "zyn-peach",
+      "brand": "ZYN",
+      "flavor": "Peach",
+      "strengths": [
+        6
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "zyn-peppermint",
+      "brand": "ZYN",
+      "flavor": "Peppermint",
+      "strengths": [
+        3,
+        6
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "zyn-smooth",
+      "brand": "ZYN",
+      "flavor": "Smooth",
+      "strengths": [
+        3,
+        6
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "zyn-spearmint",
+      "brand": "ZYN",
+      "flavor": "Spearmint",
+      "strengths": [
+        3
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "zyn-spiced-cider",
+      "brand": "ZYN",
+      "flavor": "Spiced Cider",
+      "strengths": [
+        6
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "zyn-wintergreen",
+      "brand": "ZYN",
+      "flavor": "Wintergreen",
+      "strengths": [
+        3,
+        6
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "zyn-ultra-arctic-mint",
+      "brand": "ZYN ULTRA",
+      "flavor": "Arctic Mint",
+      "strengths": [
+        9,
+        11
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "zyn-ultra-chill-mist",
+      "brand": "ZYN ULTRA",
+      "flavor": "Chill Mist",
+      "strengths": [
+        9,
+        11
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "zyn-ultra-citrus-zest",
+      "brand": "ZYN ULTRA",
+      "flavor": "Citrus Zest",
+      "strengths": [
+        9,
+        11
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "zyn-ultra-fresh-spearmint",
+      "brand": "ZYN ULTRA",
+      "flavor": "Fresh Spearmint",
+      "strengths": [
+        9,
+        11
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "zyn-ultra-menthol-ice",
+      "brand": "ZYN ULTRA",
+      "flavor": "Menthol Ice",
+      "strengths": [
+        9,
+        11
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "zyn-ultra-peppermint-frost",
+      "brand": "ZYN ULTRA",
+      "flavor": "Peppermint Frost",
+      "strengths": [
+        9,
+        11
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "zyn-ultra-signature-smooth",
+      "brand": "ZYN ULTRA",
+      "flavor": "Signature Smooth",
+      "strengths": [
+        9,
+        11
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "zyn-ultra-wintergreen-blast",
+      "brand": "ZYN ULTRA",
+      "flavor": "Wintergreen Blast",
+      "strengths": [
+        9,
+        11
+      ],
+      "confidence": "certain"
+    },
+    {
+      "id": "sesh-mint",
+      "brand": "sesh+",
+      "flavor": "Mint",
+      "strengths": [
+        6
+      ],
+      "confidence": "certain"
+    }
+  ],
+  "pouch_brands": [
+    "CLEW",
+    "VELO",
+    "ZIMO",
+    "ZYN",
+    "ZYN ULTRA",
+    "sesh+"
+  ],
+  "papers": [
+    {
+      "id": "4k-s",
+      "brand": "4K's",
+      "type": "other",
+      "confidence": "certain"
+    },
+    {
+      "id": "al-capone",
+      "brand": "Al Capone",
+      "type": "blunt wraps",
+      "confidence": "certain"
+    },
+    {
+      "id": "backwoods",
+      "brand": "Backwoods",
+      "type": "other",
+      "confidence": "certain"
+    },
+    {
+      "id": "billionaire-hemp-wraps",
+      "brand": "Billionaire Hemp Wraps",
+      "type": "blunt wraps",
+      "confidence": "certain"
+    },
+    {
+      "id": "black-mild",
+      "brand": "Black & Mild",
+      "type": "other",
+      "confidence": "certain"
+    },
+    {
+      "id": "blazy-susan",
+      "brand": "Blazy Susan",
+      "type": "cones",
+      "confidence": "certain"
+    },
+    {
+      "id": "bob-marley",
+      "brand": "Bob Marley",
+      "type": "blunt wraps",
+      "confidence": "certain"
+    },
+    {
+      "id": "brass-screens-stainless-steel-pipe-screens-unbranded-wallet-packs",
+      "brand": "Brass Screens / Stainless Steel Pipe Screens (unbranded wallet packs)",
+      "type": "filters",
+      "confidence": "certain"
+    },
+    {
+      "id": "city-life",
+      "brand": "City Life",
+      "type": "other",
+      "confidence": "certain"
+    },
+    {
+      "id": "da-boss-leaf",
+      "brand": "Da Boss Leaf",
+      "type": "blunt wraps",
+      "confidence": "certain"
+    },
+    {
+      "id": "dark-horse",
+      "brand": "Dark Horse",
+      "type": "blunt wraps",
+      "confidence": "certain"
+    },
+    {
+      "id": "dutch-dutch-masters",
+      "brand": "Dutch (Dutch Masters)",
+      "type": "other",
+      "confidence": "certain"
+    },
+    {
+      "id": "fujima",
+      "brand": "Fujima",
+      "type": "other",
+      "confidence": "certain"
+    },
+    {
+      "id": "futurola-x-tyson-tyson-2-0",
+      "brand": "Futurola x Tyson (Tyson 2.0)",
+      "type": "blunt wraps",
+      "confidence": "certain"
+    },
+    {
+      "id": "game-garcia-y-vega",
+      "brand": "Game (Garcia y Vega)",
+      "type": "other",
+      "confidence": "certain"
+    },
+    {
+      "id": "garcia-y-vega",
+      "brand": "Garcia y Vega",
+      "type": "other",
+      "confidence": "certain"
+    },
+    {
+      "id": "high-hemp",
+      "brand": "High Hemp",
+      "type": "cones",
+      "confidence": "certain"
+    },
+    {
+      "id": "job",
+      "brand": "JOB",
+      "type": "cones",
+      "confidence": "certain"
+    },
+    {
+      "id": "jumbo",
+      "brand": "Jumbo",
+      "type": "cones",
+      "confidence": "certain"
+    },
+    {
+      "id": "king-palm",
+      "brand": "King Palm",
+      "type": "cones",
+      "confidence": "certain"
+    },
+    {
+      "id": "loose-leaf",
+      "brand": "Loose Leaf",
+      "type": "blunt wraps",
+      "confidence": "certain"
+    },
+    {
+      "id": "ocb",
+      "brand": "OCB",
+      "type": "cones",
+      "confidence": "certain"
+    },
+    {
+      "id": "raw",
+      "brand": "RAW",
+      "type": "rolling papers",
+      "confidence": "certain"
+    },
+    {
+      "id": "rose-wraps",
+      "brand": "Rose Wraps",
+      "type": "blunt wraps",
+      "confidence": "certain"
+    },
+    {
+      "id": "sweet-woods-good-times-leaf",
+      "brand": "Sweet Woods (Good Times Leaf)",
+      "type": "blunt wraps",
+      "confidence": "certain"
+    },
+    {
+      "id": "swisher-sweets",
+      "brand": "Swisher Sweets",
+      "type": "blunt wraps",
+      "confidence": "certain"
+    },
+    {
+      "id": "white-owl",
+      "brand": "White Owl",
+      "type": "other",
+      "confidence": "certain"
+    },
+    {
+      "id": "zig-zag",
+      "brand": "Zig-Zag",
+      "type": "cones",
+      "confidence": "certain"
+    }
+  ],
+  "cigars": [
+    {
+      "id": "alec-bradley",
+      "brand": "Alec Bradley",
+      "line": "MAXX (The Freak)",
+      "format": "box",
+      "premium": true,
+      "confidence": "certain"
+    },
+    {
+      "id": "arturo-fuente",
+      "brand": "Arturo Fuente",
+      "line": "Imported",
+      "format": "box",
+      "premium": true,
+      "confidence": "certain"
+    },
+    {
+      "id": "cao",
+      "brand": "CAO",
+      "line": "Flathead 660 ('Go Full Throttle')",
+      "format": "singles",
+      "premium": true,
+      "confidence": "certain"
+    },
+    {
+      "id": "cohiba",
+      "brand": "Cohiba",
+      "line": "Rubicon; Blue (Robusto Tubo); Red Dot",
+      "format": "box",
+      "premium": true,
+      "confidence": "certain"
+    },
+    {
+      "id": "deadwood-tobacco-co",
+      "brand": "Deadwood Tobacco Co.",
+      "line": "Sweet Jane; Crazy Alice",
+      "format": "box",
+      "premium": true,
+      "confidence": "certain"
+    },
+    {
+      "id": "la-estrella-cubana",
+      "brand": "La Estrella Cubana",
+      "line": "Habano / Cameroon / Connecticut",
+      "format": "box",
+      "premium": true,
+      "confidence": "certain"
+    },
+    {
+      "id": "macanudo",
+      "brand": "Macanudo",
+      "line": "Inspirado; Maduro",
+      "format": "both",
+      "premium": true,
+      "confidence": "certain"
+    },
+    {
+      "id": "nica-rustica",
+      "brand": "Nica Rustica",
+      "line": "La Gran Fabrica Drew Estate",
+      "format": "box",
+      "premium": true,
+      "confidence": "certain"
+    },
+    {
+      "id": "oliva",
+      "brand": "Oliva",
+      "line": "Connecticut Reserve; Serie O; Serie V Aged Cameroon",
+      "format": "box",
+      "premium": true,
+      "confidence": "certain"
+    },
+    {
+      "id": "partagas",
+      "brand": "Partagas",
+      "line": "Flor de Tabacos 1845; Black Label",
+      "format": "box",
+      "premium": true,
+      "confidence": "certain"
+    },
+    {
+      "id": "perdomo",
+      "brand": "Perdomo",
+      "line": "Reserve Champagne 10th Anniversary (box); Perdomo Cigar bundle bags",
+      "format": "both",
+      "premium": true,
+      "confidence": "likely"
+    },
+    {
+      "id": "punch",
+      "brand": "Punch",
+      "line": "Clasico (since 1940); 'Smoke Like a Pro' pack; Serie R Esteli shelf card nearby",
+      "format": "both",
+      "premium": true,
+      "confidence": "certain"
+    },
+    {
+      "id": "quorum",
+      "brand": "Quorum",
+      "line": "Toro Sampler 6x50",
+      "format": "singles",
+      "premium": true,
+      "confidence": "certain"
+    },
+    {
+      "id": "rocky-patel",
+      "brand": "Rocky Patel",
+      "line": "Vintage Collection Aged 7 Years; The Edge (aged 5 years)",
+      "format": "both",
+      "premium": true,
+      "confidence": "certain"
+    },
+    {
+      "id": "romeo-y-julieta",
+      "brand": "Romeo y Julieta",
+      "line": "Reserve; 1875 Connecticut Nicaragua; Toro",
+      "format": "both",
+      "premium": true,
+      "confidence": "certain"
+    },
+    {
+      "id": "tabak-especial",
+      "brand": "Tabak Especial",
+      "line": "",
+      "format": "box",
+      "premium": true,
+      "confidence": "certain"
+    },
+    {
+      "id": "4k-s-good-times-tobacco",
+      "brand": "4K's (Good Times Tobacco)",
+      "line": "Green Sweet cigarillos",
+      "format": "box",
+      "premium": false,
+      "confidence": "certain"
+    },
+    {
+      "id": "708-cigar",
+      "brand": "708 Cigar",
+      "line": "Robusto Connecticut 52x5",
+      "format": "box",
+      "premium": false,
+      "confidence": "certain"
+    },
+    {
+      "id": "aj-fernandez-cigar-company",
+      "brand": "AJ Fernandez Cigar Company",
+      "line": "",
+      "format": "singles",
+      "premium": false,
+      "confidence": "certain"
+    },
+    {
+      "id": "acid-by-drew-estate",
+      "brand": "Acid (by Drew Estate)",
+      "line": "Kuba Deluxe; Kuba Grande; Blondie; Blondie Belicoso",
+      "format": "box",
+      "premium": false,
+      "confidence": "certain"
+    },
+    {
+      "id": "backwoods",
+      "brand": "Backwoods",
+      "line": "Honey Bourbon; Honey; Black Russian; Honey Berry",
+      "format": "singles",
+      "premium": false,
+      "confidence": "certain"
+    },
+    {
+      "id": "don-rafa",
+      "brand": "Don Rafa",
+      "line": "Don Rafa Sweets",
+      "format": "box",
+      "premium": false,
+      "confidence": "certain"
+    },
+    {
+      "id": "factory-smokes",
+      "brand": "Factory Smokes",
+      "line": "",
+      "format": "singles",
+      "premium": false,
+      "confidence": "likely"
+    },
+    {
+      "id": "garcia-y-vega",
+      "brand": "Garcia y Vega",
+      "line": "Natural Green; Natural Sweets; Brown Natural",
+      "format": "singles",
+      "premium": false,
+      "confidence": "certain"
+    },
+    {
+      "id": "gurkha-k-hansotia-co",
+      "brand": "Gurkha (K. Hansotia & Co.)",
+      "line": "Rare Limited Edition Cigars",
+      "format": "box",
+      "premium": false,
+      "confidence": "certain"
+    },
+    {
+      "id": "skyline",
+      "brand": "Skyline",
+      "line": "Ecuador Connecticut wrapper (shelf card)",
+      "format": "box",
+      "premium": false,
+      "confidence": "likely"
+    },
+    {
+      "id": "swisher-sweets",
+      "brand": "Swisher Sweets",
+      "line": "Classic; Gold; Honey Banana; Black",
+      "format": "singles",
+      "premium": false,
+      "confidence": "certain"
+    },
+    {
+      "id": "tasty-sticks",
+      "brand": "Tasty Sticks",
+      "line": "Mango Papaya; Honey Blueberry; Orange",
+      "format": "box",
+      "premium": false,
+      "confidence": "likely"
+    },
+    {
+      "id": "tatiana",
+      "brand": "Tatiana",
+      "line": "Groovy Blue; Honey; Cherry; Cognac; Vanilla; Rum; Night Cap; Harvest Moon; Waking Dream (Classic 6x44)",
+      "format": "box",
+      "premium": false,
+      "confidence": "certain"
+    },
+    {
+      "id": "white-owl",
+      "brand": "White Owl",
+      "line": "Pineapple; White Grape",
+      "format": "singles",
+      "premium": false,
+      "confidence": "certain"
+    }
+  ],
+  "kratom": [
+    {
+      "id": "7stax",
+      "brand": "7Stax"
+    },
+    {
+      "id": "bumble-bee",
+      "brand": "Bumble Bee"
+    },
+    {
+      "id": "dozo-perks-tablets",
+      "brand": "Dozo Perks (tablets)"
+    },
+    {
+      "id": "expert-botanicals",
+      "brand": "Expert Botanicals"
+    },
+    {
+      "id": "happy-hippo",
+      "brand": "Happy Hippo"
+    },
+    {
+      "id": "lemmons",
+      "brand": "Lemmons"
+    },
+    {
+      "id": "mit-45",
+      "brand": "MIT 45"
+    },
+    {
+      "id": "o-p-m-s",
+      "brand": "O.P.M.S."
+    },
+    {
+      "id": "zourz-chewable-tablets",
+      "brand": "Zourz (chewable tablets)"
+    }
+  ],
+  "hemp_forms": [
+    {
+      "id": "hemp-vapes",
+      "name": "Hemp-derived vapes",
+      "note": "Disposables and cartridges"
+    },
+    {
+      "id": "hemp-edibles",
+      "name": "Gummies & edibles",
+      "note": "A full wall of flavors"
+    },
+    {
+      "id": "hemp-prerolls",
+      "name": "Prerolls",
+      "note": "Singles and multipacks"
+    },
+    {
+      "id": "hemp-flower",
+      "name": "Flower & concentrates",
+      "note": "Behind the counter"
+    },
+    {
+      "id": "hemp-drinks",
+      "name": "Seltzers & drinks",
+      "note": "Chilled and shelf-stable"
+    }
+  ],
+  "accessories": [
+    {
+      "id": "bic",
+      "brand": "BIC",
+      "type": "lighter"
+    },
+    {
+      "id": "backwoods",
+      "brand": "Backwoods",
+      "type": "other"
+    },
+    {
+      "id": "blazy-susan",
+      "brand": "Blazy Susan",
+      "type": "other"
+    },
+    {
+      "id": "blink",
+      "brand": "Blink",
+      "type": "lighter"
+    },
+    {
+      "id": "candy-king",
+      "brand": "Candy King",
+      "type": "other"
+    },
+    {
+      "id": "city-life",
+      "brand": "City Life",
+      "type": "other"
+    },
+    {
+      "id": "easy-butter-maker",
+      "brand": "Easy Butter Maker",
+      "type": "other"
+    },
+    {
+      "id": "elements",
+      "brand": "Elements",
+      "type": "other"
+    },
+    {
+      "id": "fum",
+      "brand": "FUM",
+      "type": "other"
+    },
+    {
+      "id": "feel-free",
+      "brand": "Feel Free",
+      "type": "other"
+    },
+    {
+      "id": "high-hemp",
+      "brand": "High Hemp",
+      "type": "other"
+    },
+    {
+      "id": "job",
+      "brand": "JOB",
+      "type": "other"
+    },
+    {
+      "id": "juice-head",
+      "brand": "Juice Head",
+      "type": "other"
+    },
+    {
+      "id": "lookah-seahorse-max",
+      "brand": "Lookah Seahorse Max",
+      "type": "other"
+    },
+    {
+      "id": "mr-fog",
+      "brand": "Mr Fog",
+      "type": "other"
+    },
+    {
+      "id": "north-ft12000",
+      "brand": "North FT12000",
+      "type": "other"
+    },
+    {
+      "id": "ocb",
+      "brand": "OCB",
+      "type": "other"
+    },
+    {
+      "id": "pod-juice",
+      "brand": "Pod Juice",
+      "type": "other"
+    },
+    {
+      "id": "prolite",
+      "brand": "ProLite",
+      "type": "lighter"
+    },
+    {
+      "id": "quick-fix-plus",
+      "brand": "Quick Fix Plus",
+      "type": "other"
+    },
+    {
+      "id": "raw",
+      "brand": "RAW",
+      "type": "other"
+    },
+    {
+      "id": "sad-boy",
+      "brand": "Sad Boy",
+      "type": "other"
+    },
+    {
+      "id": "scorch-torch",
+      "brand": "Scorch Torch",
+      "type": "torch"
+    },
+    {
+      "id": "slugs",
+      "brand": "Slugs",
+      "type": "other"
+    },
+    {
+      "id": "top",
+      "brand": "TOP",
+      "type": "other"
+    },
+    {
+      "id": "trojan",
+      "brand": "Trojan",
+      "type": "other"
+    },
+    {
+      "id": "tyson",
+      "brand": "Tyson",
+      "type": "other"
+    },
+    {
+      "id": "vapetasia",
+      "brand": "Vapetasia",
+      "type": "other"
+    },
+    {
+      "id": "vivazen",
+      "brand": "Vivazen",
+      "type": "other"
+    },
+    {
+      "id": "woods-leaf",
+      "brand": "Woods Leaf",
+      "type": "other"
+    },
+    {
+      "id": "zig-zag",
+      "brand": "Zig-Zag",
+      "type": "other"
+    }
+  ],
+  "glass": {
+    "count": 68,
+    "styles": [
+      "beaker base water pipes",
+      "straight tube water pipes",
+      "recyclers",
+      "klein / incycler recyclers",
+      "stemless beakers",
+      "dab rigs (mini rigs)",
+      "bubblers",
+      "hand pipes / spoons",
+      "chillums and one-hitters",
+      "silicone-and-glass hybrid water pipes",
+      "nectar collectors",
+      "novelty / figural heady pieces (glass hands, skulls, characters, fruit, sneaker, cross)",
+      "showerhead perc",
+      "matrix perc",
+      "tree-arm perc",
+      "honeycomb / disc stack perc",
+      "coil / spiral condenser",
+      "inline perc",
+      "ice-pinch tubes"
+    ],
+    "colors": [
+      "clear borosilicate",
+      "cobalt blue",
+      "royal / electric blue",
+      "jade and mint green (frosted/satin finish)",
+      "kelly green",
+      "emerald green",
+      "amber and gold fume",
+      "iridescent / oil-slick rainbow fume",
+      "maroon and cranberry red",
+      "coral and peach",
+      "blush pink accents",
+      "lavender and purple",
+      "teal",
+      "yellow / chartreuse accents",
+      "black and white wrap-and-rake",
+      "rasta red-yellow-green",
+      "milky white",
+      "orange"
+    ]
+  },
+  "hookah": {
+    "count": 27
+  }
+}
