@@ -7,6 +7,8 @@ import './styles/fonts.css'
 import './styles/tokens.css'
 import './styles/base.css'
 import './styles/sections.css'
+import './styles/entrance.css'
+import './styles/pages.css'
 
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -15,6 +17,10 @@ import Lenis from 'lenis'
 import catalog from './data/catalog.json'
 import store from './data/store.json'
 import reviewData from './data/reviews.json'
+import pouchImages from './data/pouch-images.json'
+
+import { initEntrance } from './entrance'
+import { bind as bindDetail, describe, openFromHash } from './detail'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -43,136 +49,9 @@ function picture(id: string, alt: string, sizes = '100vw', eager = false): strin
 }
 
 /* ------------------------------------------------------------------ gate */
-const GATE_KEY = 'gss.age.v1'
 
-/** True once the visitor has confirmed 21+, so the hemp section need not re-ask. */
+/** True once the visitor has confirmed 21+, so the hemp shelf need not re-ask. */
 let ageConfirmed = false
-
-function initGate() {
-  const gate = $('#gate')!
-  const s1 = $('#gate-step-1')!, s2 = $('#gate-step-2')!
-  const shell = $('#main')!, nav = $('#nav')!, footer = $('.footer')!
-
-  const FOCUSABLE = 'a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])'
-
-  // Everything behind the gate is hidden from tab order and assistive tech while
-  // it is open. Without this the skip link (and every nav link, CTA and card
-  // underneath) is reachable by keyboard through an opaque overlay.
-  const setBackground = (inert: boolean) => {
-    for (const el of [shell, nav, footer]) {
-      if (inert) { el.setAttribute('inert', ''); el.setAttribute('aria-hidden', 'true') }
-      else { el.removeAttribute('inert'); el.removeAttribute('aria-hidden') }
-    }
-  }
-
-  const open = () => {
-    gate.removeAttribute('hidden')
-    document.body.classList.add('gate-locked')
-    setBackground(true)
-  }
-
-  const pass = () => {
-    ageConfirmed = true
-    gate.classList.add('dismiss')
-    document.body.classList.remove('gate-locked')
-    setBackground(false)
-    setTimeout(() => gate.setAttribute('hidden', ''), 950)
-    $('#portal')?.classList.add('unlocked')
-    // Return focus to the page rather than dropping it on <body>.
-    shell.setAttribute('tabindex', '-1')
-    shell.focus({ preventScroll: true })
-    ScrollTrigger.refresh()
-  }
-
-  let remembered = false
-  try { remembered = localStorage.getItem(GATE_KEY) === 'ok' } catch { /* private mode */ }
-  if (remembered) {
-    ageConfirmed = true
-    gate.setAttribute('hidden', '')
-    gate.classList.add('dismiss')
-    document.body.classList.remove('gate-locked')
-    setBackground(false)
-    return
-  }
-
-  open()
-
-  // --- the intro film --------------------------------------------------------
-  const film = $<HTMLVideoElement>('#gate-film')
-
-  // The `media` attribute only works on <source> inside <picture>, not <video> -
-  // a landscape cut object-fit:cover'd into a 9:19.5 phone screen shows about a
-  // quarter of the frame. So the orientation is chosen here instead, and the
-  // sources are attached only once we know we are going to play them.
-  //
-  // MP4 first: H.264 is both smaller than our VP9 encode and universally
-  // decodable. WebM is the fallback for the handful of builds without H.264.
-  if (film) {
-    const portrait = matchMedia('(max-aspect-ratio: 1/1)').matches
-    const stem = portrait ? 'intro-portrait' : 'intro'
-    film.poster = `video/${portrait ? 'intro-poster-portrait' : 'intro-poster'}.jpg`
-    for (const [ext, type] of [['mp4', 'video/mp4'], ['webm', 'video/webm']] as const) {
-      const s = document.createElement('source')
-      s.src = `video/${stem}.${ext}`
-      s.type = type
-      film.appendChild(s)
-    }
-    film.load()
-  }
-  // Seven seconds of film before the buttons arrive is a long time to hold
-  // someone who just wants the phone number. Any tap, click or key press skips
-  // straight to the answerable state - the film is a gift, not a toll.
-  const skip = () => {
-    if (gate.classList.contains('instant')) return
-    gate.classList.add('instant')
-    if (film) { try { film.currentTime = Math.max(0, film.duration - 0.4) } catch {} }
-  }
-  gate.addEventListener('pointerdown', skip)
-  gate.addEventListener('keydown', e => { if (e.key === 'Tab' || e.key === 'Enter' || e.key === ' ') skip() })
-
-  if (film && !reduced) {
-    film.play().catch(() => {
-      // Autoplay refused (low-power mode, data saver). The poster still carries
-      // the frame, so drop straight to the readable state instead of stalling.
-      gate.classList.add('instant')
-    })
-    // Hold the last frame rather than looping back into the ignition.
-    film.addEventListener('ended', () => { gate.classList.add('instant') })
-  } else {
-    gate.classList.add('instant')
-  }
-
-  $('#gate-yes')!.addEventListener('click', () => {
-    try { localStorage.setItem(GATE_KEY, 'ok') } catch {}
-    pass()
-  })
-  // Moving focus with each step change; hiding the step the focused button lives
-  // in would otherwise drop focus to <body> and strand the keyboard user.
-  $('#gate-no')!.addEventListener('click', () => {
-    s1.hidden = true; s2.hidden = false
-    ;($('#gate-back') as HTMLElement).focus()
-  })
-  $('#gate-back')!.addEventListener('click', () => {
-    s2.hidden = true; s1.hidden = false
-    ;($('#gate-yes') as HTMLElement).focus()
-  })
-
-  gate.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      // Escape must not grant entry. It steps back to the question.
-      if (!s2.hidden) { s2.hidden = true; s1.hidden = false; ($('#gate-yes') as HTMLElement).focus() }
-      e.preventDefault(); return
-    }
-    if (e.key !== 'Tab') return
-    const items = $$<HTMLElement>(FOCUSABLE, gate).filter(el => el.offsetParent !== null)
-    if (!items.length) return
-    const first = items[0], last = items[items.length - 1]
-    if (e.shiftKey && document.activeElement === first) { last.focus(); e.preventDefault() }
-    else if (!e.shiftKey && document.activeElement === last) { first.focus(); e.preventDefault() }
-  })
-
-  ;($('#gate-yes') as HTMLElement).focus()
-}
 
 /* ------------------------------------------------------------- contact */
 function initContact() {
@@ -303,6 +182,11 @@ function initHeroStats() {
 }
 
 /* ----------------------------------------------------------- categories */
+const PAGE_OF: Record<string, string> = {
+  vapes: 'vapes.html', pouches: 'pouches.html', glass: 'glass.html', cigars: 'cigars.html',
+  papers: 'papers.html', hookah: 'hookah.html', hemp: 'hemp.html',
+}
+
 const CATEGORIES = [
   { id: 'vapes',   img: 'IMG_6092', name: 'Disposable Vapes', count: () => `${catalog.vapes.length} brands`,        tint: 'rgba(255,138,30,.28)' },
   { id: 'pouches', img: 'IMG_6083', name: 'Nicotine Pouches', count: () => `${catalog.pouches.length} flavors`,     tint: 'rgba(46,107,255,.3)' },
@@ -310,21 +194,21 @@ const CATEGORIES = [
   { id: 'cigars',  img: 'IMG_6090', name: 'Cigars & Humidor', count: () => `${catalog.cigars.length} houses`,       tint: 'rgba(255,194,77,.28)' },
   { id: 'papers',  img: 'IMG_6084', name: 'Papers & Wraps',   count: () => `${catalog.papers.length} brands`,       tint: 'rgba(255,45,155,.24)' },
   { id: 'hookah',  img: 'IMG_6081', name: 'Hookah',           count: () => `${catalog.hookah.count} on the shelf`,  tint: 'rgba(46,107,255,.24)' },
-  { id: 'accessories', img: 'IMG_6087', name: 'Grinders & Torches', count: () => `${catalog.accessories.length} brands`, tint: 'rgba(255,138,30,.22)' },
+  { id: 'papers',  img: 'IMG_6087', name: 'Grinders & Torches', count: () => `${catalog.accessories.length} brands`, tint: 'rgba(255,138,30,.22)' },
   { id: 'hemp',    img: 'IMG_6094', name: 'Hemp Room · 21+',  count: () => 'Behind the counter',                    tint: 'rgba(53,255,122,.26)' },
 ]
 
 function initCategories() {
   const el = $('#cat-grid'); if (!el) return
-  el.innerHTML = CATEGORIES.map(c => `
-    <a class="cat reveal" href="#${c.id}" aria-label="${c.name}">
+  el.innerHTML = CATEGORIES.map(c0 => { const c = { ...c0, href: PAGE_OF[c0.id] || 'index.html' }; return `
+    <a class="cat reveal" href="${c.href}" aria-label="${c.name}" data-prefetch>
       ${picture(c.img, c.name, '(max-width:560px) 100vw, (max-width:1080px) 50vw, 25vw')}
       <span class="cat-glow" style="background:radial-gradient(90% 70% at 50% 100%, ${c.tint}, transparent 70%)"></span>
       <span class="cat-body">
         <span class="cat-name">${c.name}</span>
         <span class="cat-count">${c.count()}</span>
       </span>
-    </a>`).join('')
+    </a>` }).join('')
 }
 
 /* --------------------------------------------------------------- photos */
@@ -348,16 +232,19 @@ function initVapes() {
     </button>`).join('')
 
   const hw = $('#hardware-brands')
-  if (hw) hw.innerHTML = catalog.hardware.map(h => `<span class="brand-chip">${h.brand}</span>`).join('')
+  if (hw) hw.innerHTML = catalog.hardware.map(h =>
+    `<button class="brand-chip" type="button" data-detail="${h.id}">${h.brand}</button>`).join('')
 
   const show = (id: string) => {
     const v = catalog.vapes.find(x => x.id === id)!
+    const d = describe(id)
     detail.innerHTML = `
       <h3>${v.brand}</h3>
+      ${d?.blurb ? `<p class="brand-blurb">${d.blurb}</p>` : ''}
       ${v.lines.length
         ? `<div class="lines">${v.lines.map(l => `<span>${l}</span>`).join('')}</div>`
-        : `<p class="ask" style="border:0;padding:0;margin-top:10px">Multiple lines and flavors in stock.</p>`}
-      <p class="ask">Flavors rotate constantly and we don't publish prices online — call the shop or come in and we'll tell you exactly what's on the wall today.</p>`
+        : ''}
+      ${d ? `<button class="btn btn-more" type="button" data-detail="${id}">What it is &amp; who it suits</button>` : ''}`
     detail.classList.add('open')
   }
 
@@ -373,9 +260,19 @@ function initVapes() {
 }
 
 /* ------------------------------------------------------------------- 3D */
+// Order matters: whichever sits first is what the viewer opens on, and the blue
+// Caliburn renders dark enough on a phone at arm's length that it read as
+// broken rather than blue. Geek Bar leads — it is the anchor brand on the wall
+// and it is the brightest of the three.
+//
+// The Geek Bar mesh ships unlabelled on purpose. The image-to-3D pass baked a
+// smeared approximation of the wordmark into the texture, and illegible
+// pseudo-lettering on a real brand's product looks like a counterfeit. It was
+// painted out; the label below the viewer does the naming.
 const MODELS = [
-  { id: 'caliburn-blue', name: 'Uwell Caliburn G2', finish: 'Blue', hex: '#2C5FD6' },
+  { id: 'geekbar',       name: 'Geek Bar Pulse',    finish: 'Blue', hex: '#3B7BE8' },
   { id: 'caliburn-red',  name: 'Uwell Caliburn G2', finish: 'Red',  hex: '#C0272D' },
+  { id: 'caliburn-blue', name: 'Uwell Caliburn G2', finish: 'Blue', hex: '#2C5FD6' },
 ]
 
 function init3D() {
@@ -407,7 +304,7 @@ function init3D() {
         shadow-intensity="0.35" shadow-softness="1"
         camera-orbit="20deg 76deg 2.9m" field-of-view="30deg"
         min-camera-orbit="auto 25deg 2.9m" max-camera-orbit="auto 150deg 2.9m"
-        alt="A 3D model of a Uwell Caliburn G2 pod device sold at Glen Smoke Shop"
+        alt="A rotatable 3D model of a device sold at Glen Smoke Shop"
         src="models/${MODELS[0].id}.glb"></model-viewer>
       <span class="hw-hint">Drag to rotate</span>`
 
@@ -456,15 +353,35 @@ function initPouches() {
 
   const cnt = $('#pouch-count'); if (cnt) cnt.textContent = String(catalog.pouches.length)
 
+  // Every one of these is the real can, cut out of the shop's own 48MP photo of
+  // the wall. A tinted disc with the flavour name on it is a placeholder; a
+  // customer recognises the lid they are looking for from across the aisle.
+  // Anything we could not cut cleanly keeps the tinted disc rather than being
+  // filled in with a manufacturer render.
+  const imgs = pouchImages as Record<string, { src: string } | undefined>
+
   grid.innerHTML = catalog.pouches.map(p => {
     const c = tintFor(p.flavor)
-    const strengths = p.strengths.length ? p.strengths.map(s => `${s}mg`).join(' · ') : 'Ask in store'
-    return `<div class="puck" style="color:${c}"
+    const strengths = p.strengths.length ? p.strengths.map(s => `${s}mg`).join(' · ') : 'Strengths vary'
+    const shot = imgs[p.id]
+    const face = shot
+      ? `<span class="puck-shot">
+           <picture>
+             <source type="image/avif" srcset="${shot.src}-160.avif 160w, ${shot.src}-320.avif 320w" sizes="(max-width:560px) 27vw, 132px">
+             <img src="${shot.src}-320.jpg" srcset="${shot.src}-160.jpg 160w, ${shot.src}-320.jpg 320w" sizes="(max-width:560px) 27vw, 132px"
+                  alt="${p.brand} ${p.flavor} nicotine pouches" loading="lazy" decoding="async" width="320" height="320">
+           </picture>
+         </span>`
+      : ''
+    return `<button class="puck${shot ? ' has-shot' : ''}" style="color:${c}" type="button"
+                 data-detail="${p.id}" data-shot="${shot ? shot.src : ''}"
+                 data-title="${p.brand} ${p.flavor}" data-meta="${strengths}"
                  data-brand="${p.brand}" data-strengths="${p.strengths.join(',')}">
+      ${face}
       <span class="b">${p.brand}</span>
       <span class="f">${p.flavor}</span>
       <span class="s">${strengths}</span>
-    </div>`
+    </button>`
   }).join('')
 
   const brands = ['All', ...catalog.pouch_brands]
@@ -549,13 +466,18 @@ function initGlass() {
 /* ----------------------------------------------------- cigars & brands */
 function initLists() {
   // Cigars had their own render path and stayed fully expanded: 30 names inline.
-  const cigarList = (sel: string, arr: { brand: string }[], shown: number) => {
+  const cigarChip = (c: { brand: string; id?: string; line?: string }) =>
+    c.id && describe(c.id)
+      ? `<button class="cigar-name" type="button" data-detail="${c.id}" data-meta="${c.line || ''}">${c.brand}</button>`
+      : `<span class="cigar-name">${c.brand}</span>`
+
+  const cigarList = (sel: string, arr: { brand: string; id?: string; line?: string }[], shown: number) => {
     const el = $(sel); if (!el) return
     const head = arr.slice(0, shown), rest = arr.slice(shown)
     el.innerHTML =
-      head.map(c => `<span class="cigar-name">${c.brand}</span>`).join('') +
+      head.map(cigarChip).join('') +
       (rest.length
-        ? `<span class="brand-more" hidden>${rest.map(c => `<span class="cigar-name">${c.brand}</span>`).join('')}</span>
+        ? `<span class="brand-more" hidden>${rest.map(cigarChip).join('')}</span>
            <button class="cigar-name is-more" aria-expanded="false">+${rest.length} more</button>`
         : '')
     const btn = $('button.is-more', el)
@@ -574,13 +496,18 @@ function initLists() {
   // Six visible, the rest behind a disclosure. Rendering all 194 brand names
   // inline made the phone page roughly 6,000px of text nobody reads standing in
   // a parking lot - but the names still need to be in the DOM for search.
-  const chips = (sel: string, arr: { brand: string }[], shown = 6) => {
+  const chip = (a: { brand: string; id?: string }) =>
+    a.id && describe(a.id)
+      ? `<button class="brand-chip" type="button" data-detail="${a.id}">${a.brand}</button>`
+      : `<span class="brand-chip">${a.brand}</span>`
+
+  const chips = (sel: string, arr: { brand: string; id?: string }[], shown = 6) => {
     const el = $(sel); if (!el) return
     const head = arr.slice(0, shown), rest = arr.slice(shown)
     el.innerHTML =
-      head.map(a => `<span class="brand-chip">${a.brand}</span>`).join('') +
+      head.map(chip).join('') +
       (rest.length
-        ? `<span class="brand-more" hidden>${rest.map(a => `<span class="brand-chip">${a.brand}</span>`).join('')}</span>
+        ? `<span class="brand-more" hidden>${rest.map(chip).join('')}</span>
            <button class="brand-chip is-more" aria-expanded="false">+${rest.length} more</button>`
         : '')
     const btn = $('button.is-more', el)
@@ -745,22 +672,57 @@ function initMotion() {
     })
   }
 
-  // Nav active-section tracking.
-  const links = $$<HTMLAnchorElement>('.nav-links a')
-  links.forEach(a => {
-    const id = a.getAttribute('href')!
-    const sec = $(id)
-    if (!sec) return
-    ScrollTrigger.create({
-      trigger: sec, start: 'top 45%', end: 'bottom 45%',
-      onToggle: self => { if (self.isActive) links.forEach(l => l.classList.toggle('active', l === a)) },
-    })
-  })
+}
+
+/* --------------------------------------------------------------- details */
+
+/* One delegated listener for the whole document: every brand chip, cigar name,
+   hardware button and pouch face carries `data-detail`, and the grids re-render
+   on filter changes, so binding per element would mean rebinding constantly. */
+function initDetails() {
+  bindDetail(document, el => ({
+    shot: el.getAttribute('data-shot') || undefined,
+    title: el.getAttribute('data-title') || undefined,
+    meta: el.getAttribute('data-meta') || undefined,
+  }))
+  // A link like /pouches.html#zyn-chill opens straight onto that flavour.
+  openFromHash()
+}
+
+/* ------------------------------------------------------------- prefetch */
+
+/* Nine separate documents would normally mean nine navigations that feel like
+   navigations. They do not, because the shared CSS and JS bundle is already in
+   cache after the first view and the only new bytes are ~14kB of HTML — and
+   because we fetch that HTML the moment a finger lands on a link, roughly
+   100-200ms before the tap completes. */
+function initPrefetch() {
+  if (matchMedia('(prefers-reduced-data: reduce)').matches) return
+  const done = new Set<string>()
+  const warm = (href: string) => {
+    if (!href || done.has(href)) return
+    done.add(href)
+    const l = document.createElement('link')
+    l.rel = 'prefetch'; l.href = href; l.as = 'document'
+    document.head.appendChild(l)
+  }
+  const from = (e: Event) => {
+    const a = (e.target as Element)?.closest?.('a[data-prefetch]') as HTMLAnchorElement | null
+    if (a) warm(a.getAttribute('href') || '')
+  }
+  document.addEventListener('pointerenter', from, { capture: true, passive: true })
+  document.addEventListener('touchstart', from, { capture: true, passive: true })
+  document.addEventListener('focusin', from, { passive: true })
 }
 
 /* --------------------------------------------------------------- boot */
 function boot() {
-  initGate()
+  // The entrance returns true when it is not in the way — either the visitor
+  // confirmed 21+ on an earlier visit, or there is no gate on this page.
+  ageConfirmed = initEntrance({
+    onConfirm: () => { ageConfirmed = true; $('#portal')?.classList.add('unlocked') },
+    onPass: () => ScrollTrigger.refresh(),
+  })
   initContact()
   initHours()
   initTicker()
@@ -777,6 +739,8 @@ function boot() {
   initReviews()
   initMap()
   initMotion()
+  initPrefetch()
+  initDetails()
   setInterval(initHours, 60_000)   // keep open/closed honest without a reload
 }
 

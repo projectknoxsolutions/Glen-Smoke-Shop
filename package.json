@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "npm run pages && vite",
+    "build": "npm run pages && vite build",
     "preview": "vite preview --port 4173",
     "typecheck": "tsc --noEmit",
     "sync:images": "bash scripts/sync-images.sh",
-    "guard": "node scripts/guard.mjs"
+    "guard": "node scripts/guard.mjs",
+    "pages": "node scripts/build-pages.mjs"
   },
   "keywords": [],
   "author": "",

@@ -1,0 +1,157 @@
+{
+  "clew-citrus": {
+    "src": "img/pouch/clew-citrus",
+    "source": "IMG_6083",
+    "confidence": "likely"
+  },
+  "velo-cappuccino": {
+    "src": "img/pouch/velo-cappuccino",
+    "source": "IMG_6083",
+    "confidence": "certain"
+  },
+  "velo-dragon-fruit": {
+    "src": "img/pouch/velo-dragon-fruit",
+    "source": "IMG_6083",
+    "confidence": "certain"
+  },
+  "velo-smooth": {
+    "src": "img/pouch/velo-smooth",
+    "source": "IMG_6083",
+    "confidence": "certain"
+  },
+  "velo-spearmint": {
+    "src": "img/pouch/velo-spearmint",
+    "source": "IMG_6083",
+    "confidence": "certain"
+  },
+  "zimo-wintergreen": {
+    "src": "img/pouch/zimo-wintergreen",
+    "source": "IMG_6083",
+    "confidence": "likely"
+  },
+  "zyn-black-cherry": {
+    "src": "img/pouch/zyn-black-cherry",
+    "source": "IMG_6083",
+    "confidence": "certain"
+  },
+  "zyn-chill": {
+    "src": "img/pouch/zyn-chill",
+    "source": "IMG_6083",
+    "confidence": "likely"
+  },
+  "zyn-cinnamon": {
+    "src": "img/pouch/zyn-cinnamon",
+    "source": "IMG_6083",
+    "confidence": "certain"
+  },
+  "zyn-citrus": {
+    "src": "img/pouch/zyn-citrus",
+    "source": "IMG_6083",
+    "confidence": "certain"
+  },
+  "zyn-coffee": {
+    "src": "img/pouch/zyn-coffee",
+    "source": "IMG_6083",
+    "confidence": "certain"
+  },
+  "zyn-cool-mint": {
+    "src": "img/pouch/zyn-cool-mint",
+    "source": "IMG_6083",
+    "confidence": "certain"
+  },
+  "zyn-dragonberry": {
+    "src": "img/pouch/zyn-dragonberry",
+    "source": "IMG_6083",
+    "confidence": "certain"
+  },
+  "zyn-espresso-martini": {
+    "src": "img/pouch/zyn-espresso-martini",
+    "source": "IMG_6083",
+    "confidence": "certain"
+  },
+  "zyn-menthol": {
+    "src": "img/pouch/zyn-menthol",
+    "source": "IMG_6083",
+    "confidence": "certain"
+  },
+  "zyn-mojito": {
+    "src": "img/pouch/zyn-mojito",
+    "source": "IMG_6083",
+    "confidence": "certain"
+  },
+  "zyn-peach": {
+    "src": "img/pouch/zyn-peach",
+    "source": "IMG_6083",
+    "confidence": "certain"
+  },
+  "zyn-peppermint": {
+    "src": "img/pouch/zyn-peppermint",
+    "source": "IMG_6083",
+    "confidence": "certain"
+  },
+  "zyn-smooth": {
+    "src": "img/pouch/zyn-smooth",
+    "source": "IMG_6083",
+    "confidence": "certain"
+  },
+  "zyn-spearmint": {
+    "src": "img/pouch/zyn-spearmint",
+    "source": "IMG_6083",
+    "confidence": "likely"
+  },
+  "zyn-spiced-cider": {
+    "src": "img/pouch/zyn-spiced-cider",
+    "source": "IMG_6083",
+    "confidence": "certain"
+  },
+  "zyn-wintergreen": {
+    "src": "img/pouch/zyn-wintergreen",
+    "source": "IMG_6083",
+    "confidence": "certain"
+  },
+  "zyn-ultra-arctic-mint": {
+    "src": "img/pouch/zyn-ultra-arctic-mint",
+    "source": "IMG_6083",
+    "confidence": "certain"
+  },
+  "zyn-ultra-chill-mist": {
+    "src": "img/pouch/zyn-ultra-chill-mist",
+    "source": "IMG_6083",
+    "confidence": "certain"
+  },
+  "zyn-ultra-citrus-zest": {
+    "src": "img/pouch/zyn-ultra-citrus-zest",
+    "source": "IMG_6083",
+    "confidence": "certain"
+  },
+  "zyn-ultra-fresh-spearmint": {
+    "src": "img/pouch/zyn-ultra-fresh-spearmint",
+    "source": "IMG_6083",
+    "confidence": "certain"
+  },
+  "zyn-ultra-menthol-ice": {
+    "src": "img/pouch/zyn-ultra-menthol-ice",
+    "source": "IMG_6083",
+    "confidence": "certain"
+  },
+  "zyn-ultra-peppermint-frost": {
+    "src": "img/pouch/zyn-ultra-peppermint-frost",
+    "source": "IMG_6083",
+    "confidence": "certain"
+  },
+  "zyn-ultra-signature-smooth": {
+    "src": "img/pouch/zyn-ultra-signature-smooth",
+    "source": "IMG_6083",
+    "confidence": "certain"
+  },
+  "zyn-ultra-wintergreen-blast": {
+    "src": "img/pouch/zyn-ultra-wintergreen-blast",
+    "source": "IMG_6083",
+    "confidence": "certain"
+  },
+  "sesh-mint": {
+    "src": "img/pouch/sesh-mint",
+    "source": "IMG_6083",
+    "confidence": "certain"
+  }
+}

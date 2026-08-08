@@ -6,12 +6,12 @@
 <meta name="theme-color" content="#05060A">
 
 <title>Glen Smoke Shop — Vape, Nicotine Pouches, Glass &amp; Cigars in Glen Ellyn, IL</title>
-<meta name="description" content="Glen Ellyn's deepest selection of disposable vapes, ZYN and nicotine pouches, hand-blown glass, premium cigars, hookah and rolling papers. 944 Roosevelt Rd, open daily. Call or text (331) 551-0005.">
+<meta name="description" content="Glen Ellyn's deepest selection of disposable vapes, ZYN and nicotine pouches, hand-blown glass, premium cigars, hookah and rolling papers. 944 Roosevelt Rd. Call or text (331) 551-0005.">
 <link rel="canonical" href="https://projectknoxsolutions.github.io/Glen-Smoke-Shop/">
 
 <meta property="og:type" content="business.business">
-<meta property="og:title" content="Glen Smoke Shop — Glen Ellyn, IL">
-<meta property="og:description" content="Disposable vapes, ZYN and nicotine pouches, hand-blown glass, premium cigars, hookah and rolling papers. 944 Roosevelt Rd, Glen Ellyn.">
+<meta property="og:title" content="Glen Smoke Shop — Vape, Nicotine Pouches, Glass &amp; Cigars in Glen Ellyn, IL">
+<meta property="og:description" content="Glen Ellyn's deepest selection of disposable vapes, ZYN and nicotine pouches, hand-blown glass, premium cigars, hookah and rolling papers. 944 Roosevelt Rd. Call or text (331) 551-0005.">
 <meta property="og:image" content="https://projectknoxsolutions.github.io/Glen-Smoke-Shop/img/hero-wide-1600.jpg">
 <meta property="og:url" content="https://projectknoxsolutions.github.io/Glen-Smoke-Shop/">
 <meta property="og:site_name" content="Glen Smoke Shop">
@@ -53,7 +53,6 @@
   "url": "https://projectknoxsolutions.github.io/Glen-Smoke-Shop/",
   "image": "https://projectknoxsolutions.github.io/Glen-Smoke-Shop/img/hero-wide-1600.jpg",
   "telephone": "+1-331-551-0005",
-  "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "944 Roosevelt Rd",
@@ -72,7 +71,9 @@
   "sameAs": ["https://www.google.com/maps/place/Glen+Smoke+Shop/@41.8599993,-88.0480804,17z"]
 }
 </script>
+
 </head>
+
 <body class="gate-locked">
 
 <a href="#main" class="skip-link">Skip to content</a>
@@ -81,13 +82,48 @@
 
 <!-- ====================================================== AGE GATE ==== -->
 <div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-q">
-  <!-- The intro film. Rendered with Remotion from the store's own photographs:
-       the sign catches, the glow spills, you move through the room, and it
-       settles back on the storefront so this copy has somewhere quiet to land.
-       Muted and playsinline so mobile Safari will autoplay it; poster carries
-       the frame until it decodes, and reduced-motion visitors get only that. -->
-  <video class="gate-film" id="gate-film" muted playsinline preload="none"
-         poster="video/intro-poster.jpg" aria-hidden="true" tabindex="-1"></video>
+  <!-- The entrance. Two copies of the storefront plate, each clipped to one
+       side of where the real door leaves meet (--door-seam, measured off the
+       photograph — splitting at 50% would tear through the frame post). The
+       neon layer is the same plate masked down to just the lit signage and
+       blended with `screen`, so switching it on IS the neon switching on.
+       Confirming 21+ drives the two halves apart and you walk in.
+       This replaced a 4.4MB pre-rendered film that could not start until it
+       downloaded; these plates are the hero images the page already fetches. -->
+  <div class="ent-scene" aria-hidden="true">
+    <div class="ent-door ent-door-l">
+      <div class="ent-plate">
+        <picture>
+          <source media="(max-width:700px)" type="image/avif" srcset="img/hero-band-800.avif 800w, img/hero-band-1200.avif 1200w" sizes="100vw">
+          <source type="image/avif" srcset="img/hero-wide-1600.avif 1600w, img/hero-wide-2200.avif 2200w" sizes="100vw">
+          <img src="img/hero-wide-1600.jpg" alt="" decoding="async" fetchpriority="high">
+        </picture>
+      </div>
+      <div class="ent-neon">
+        <picture>
+          <source media="(max-width:700px)" type="image/avif" srcset="img/hero-band-800.avif 800w, img/hero-band-1200.avif 1200w" sizes="100vw">
+          <source type="image/avif" srcset="img/hero-wide-1600.avif 1600w, img/hero-wide-2200.avif 2200w" sizes="100vw">
+          <img src="img/hero-wide-1600.jpg" alt="" decoding="async">
+        </picture>
+      </div>
+    </div>
+    <div class="ent-door ent-door-r">
+      <div class="ent-plate">
+        <picture>
+          <source media="(max-width:700px)" type="image/avif" srcset="img/hero-band-800.avif 800w, img/hero-band-1200.avif 1200w" sizes="100vw">
+          <source type="image/avif" srcset="img/hero-wide-1600.avif 1600w, img/hero-wide-2200.avif 2200w" sizes="100vw">
+          <img src="img/hero-wide-1600.jpg" alt="" decoding="async" fetchpriority="high">
+        </picture>
+      </div>
+      <div class="ent-neon">
+        <picture>
+          <source media="(max-width:700px)" type="image/avif" srcset="img/hero-band-800.avif 800w, img/hero-band-1200.avif 1200w" sizes="100vw">
+          <source type="image/avif" srcset="img/hero-wide-1600.avif 1600w, img/hero-wide-2200.avif 2200w" sizes="100vw">
+          <img src="img/hero-wide-1600.jpg" alt="" decoding="async">
+        </picture>
+      </div>
+    </div>
+  </div>
   <div class="gate-scrim" aria-hidden="true"></div>
 
   <div class="gate-inner">
@@ -111,14 +147,16 @@
 
 <!-- =========================================================== NAV ==== -->
 <nav class="nav" id="nav" aria-label="Primary">
-  <a href="#main" class="nav-mark"><span class="thin">Glen</span> Smoke Shop</a>
+  <a href="index.html" class="nav-mark" data-prefetch><span class="thin">Glen</span> Smoke Shop</a>
   <div class="nav-links">
-    <a href="#vapes">Vapes</a>
-    <a href="#pouches">Pouches</a>
-    <a href="#glass">Glass</a>
-    <a href="#cigars">Cigars</a>
-    <a href="#papers">Papers</a>
-    <a href="#visit">Visit</a>
+    <a href="vapes.html" data-prefetch>Vapes</a>
+    <a href="pouches.html" data-prefetch>Pouches</a>
+    <a href="glass.html" data-prefetch>Glass</a>
+    <a href="cigars.html" data-prefetch>Cigars</a>
+    <a href="papers.html" data-prefetch>Papers</a>
+    <a href="hookah.html" data-prefetch>Hookah</a>
+    <a href="hemp.html" data-prefetch>Hemp room</a>
+    <a href="visit.html" data-prefetch>Visit</a>
   </div>
   <div class="nav-cta">
     <a class="btn btn-call" data-call href="tel:+13315510005"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>Call</a>
@@ -126,9 +164,8 @@
   </div>
 </nav>
 
-<main id="main" class="shell">
 
-<!-- ========================================================== HERO ==== -->
+<main id="main" class="shell">
 <header class="hero" id="top">
   <div class="hero-media">
     <picture>
@@ -182,194 +219,20 @@
 <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
 
 <!-- ==================================================== CATEGORIES ==== -->
+
 <section class="section" id="shop">
   <div class="wrap">
     <div class="sec-head reveal">
       <p class="sec-kicker">What's inside</p>
       <h2 class="sec-title">Everything, <span class="thin">actually</span> in stock</h2>
-      <p class="sec-lede">Eight sections, one room. Tap any of them to see the brands we carry. <strong>We don't post prices online</strong> — inventory moves fast and the counter is the honest place to talk numbers.</p>
+      <p class="sec-lede">Eight sections, one room. Tap any door to see exactly what we carry — every brand on the shelf, described.</p>
     </div>
     <div class="cat-grid" id="cat-grid"></div>
   </div>
 </section>
 
 <!-- ========================================================= VAPES ==== -->
-<section class="section" id="vapes">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="sec-kicker">01 — Disposables</p>
-      <h2 class="sec-title">Vape shop in Glen Ellyn — the <span class="thin">wall</span></h2>
-      <p class="sec-lede">Floor to ceiling, restocked constantly. <strong>North</strong> and <strong>Geek Bar</strong> anchor the wall with well over a hundred facings between them. Tap a brand to see the lines we stock.</p>
-    </div>
-    <div class="brand-layout">
-      <figure class="brand-photo reveal" data-img="IMG_6092" data-alt="The disposable vape wall at Glen Smoke Shop, stocked floor to ceiling">
-        <figcaption>The main disposable wall · shot at 48MP</figcaption>
-      </figure>
-      <div class="reveal">
-        <div class="brand-list" id="vape-brands"></div>
-        <div class="brand-detail" id="vape-detail" role="region" aria-live="polite"></div>
-        <div style="margin-top:28px">
-          <p class="sec-kicker" style="margin-bottom:12px">Hardware &amp; mods</p>
-          <div class="brand-list" id="hardware-brands"></div>
-        </div>
 
-        <div class="hw-3d" id="hw-3d">
-          <div class="hw-3d-head">
-            <span class="k">Spin it</span>
-            <span class="h">Two devices off our own counter, scanned in 3D. Drag to turn.</span>
-          </div>
-          <div class="hw-stage" id="hw-stage">
-            <div class="hw-fallback"><p>Loading the 3D view…</p></div>
-          </div>
-          <div class="hw-swatches" id="hw-swatches"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ======================================================= POUCHES ==== -->
-<section class="section" id="pouches">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="sec-kicker">02 — Nicotine pouches</p>
-      <h2 class="sec-title">ZYN &amp; pouches <span class="thin">in Glen Ellyn</span></h2>
-      <p class="sec-lede">Three full cabinets. <strong id="pouch-count">—</strong> flavors currently on the shelf across ZYN, ZYN Ultra, VELO and more — filter by brand or strength.</p>
-    </div>
-    <div class="reveal">
-      <div class="pouch-controls" id="pouch-filters" role="radiogroup" aria-label="Filter pouches by brand and strength"></div>
-      <div class="pouch-grid" id="pouch-grid"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ========================================================= GLASS ==== -->
-<section class="section" id="glass">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="sec-kicker">03 — Glass</p>
-      <h2 class="sec-title">Two lit towers, <span class="thin">sixty-eight</span> pieces</h2>
-      <p class="sec-lede">Beakers, straight tubes, recyclers, klein rigs, bubblers and heady figural work — clear borosilicate through cobalt, jade, amber fume and oil-slick iridescent. <strong>Come look at them in person.</strong> Photos never do glass justice.</p>
-    </div>
-    <div class="brand-layout">
-      <figure class="glass-hero reveal" data-img="IMG_6078" data-alt="Lit display towers holding dozens of hand-blown glass water pipes"></figure>
-      <div class="reveal">
-        <div class="glass-stats" id="glass-stats"></div>
-        <p class="sec-kicker" style="margin:26px 0 0">Colours on the shelf</p>
-        <div class="swatch-row" id="glass-colors"></div>
-        <p class="sec-lede" style="margin-top:22px;font-size:14.5px">Plus a counter case of <strong>150+ dry hand pipes and chillums</strong>, and a full accessories wall of grinders, trays, torches and screens.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ======================================================== CIGARS ==== -->
-<section class="section cigar-section" id="cigars">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="sec-kicker">04 — The humidor</p>
-      <h2 class="sec-title">Walk-in humidor, <span class="thin">thirty</span> houses</h2>
-      <p class="sec-lede">Not a rack of Backwoods pretending to be a humidor. <strong>Oliva, Perdomo, Macanudo, Rocky Patel, Arturo Fuente, Alec Bradley, Gurkha, Cohiba, Partagás</strong> — singles and boxes, kept at the right humidity.</p>
-    </div>
-    <div class="brand-layout" style="margin-bottom:36px">
-      <figure class="brand-photo reveal" data-img="IMG_6090" data-alt="Cedar-lined humidor shelves stocked with premium cigar boxes and singles">
-        <figcaption>The walk-up humidor wall</figcaption>
-      </figure>
-      <div class="reveal">
-        <div class="cigar-cols">
-          <div class="cigar-group">
-            <h3>Premium &amp; boutique</h3>
-            <div class="cigar-list" id="cigars-premium"></div>
-          </div>
-          <div class="cigar-group">
-            <h3>Everyday &amp; machine-made</h3>
-            <div class="cigar-list" id="cigars-value"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ======================================================== PAPERS ==== -->
-<section class="section" id="accessories-anchor" hidden></section>
-<section class="section" id="papers">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="sec-kicker">05 — Papers, wraps &amp; gear</p>
-      <h2 class="sec-title">RAW to <span class="thin">Backwoods</span></h2>
-      <p class="sec-lede">A full wall of papers, cones, wraps, filters and tips — plus torches, grinders, trays and everything else that goes with them.</p>
-    </div>
-    <div class="brand-layout">
-      <figure class="brand-photo reveal" data-img="IMG_6084" data-alt="Wall of rolling papers, blunt wraps, cones and filters">
-        <figcaption>The papers wall</figcaption>
-      </figure>
-      <div class="reveal">
-        <div class="brand-list" id="paper-brands"></div>
-        <p class="sec-kicker" style="margin:28px 0 12px">Accessories</p>
-        <div class="brand-list" id="accessory-brands"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ======================================================== HOOKAH ==== -->
-<section class="section" id="hookah">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="sec-kicker">06 — Hookah &amp; botanicals</p>
-      <h2 class="sec-title">Hookah, <span class="thin">kava &amp; kratom</span></h2>
-      <p class="sec-lede">Around <strong>27 hookahs</strong> on the shelf, from 36-inch chrome-and-glass down to travel size, plus a botanical shelf with the brands below.</p>
-    </div>
-    <div class="brand-layout">
-      <figure class="brand-photo reveal" data-img="IMG_6081" data-alt="Hookah alcoves and lit glass cases inside Glen Smoke Shop">
-        <figcaption>The hookah wall &amp; pipe cases</figcaption>
-      </figure>
-      <div class="reveal">
-        <p class="sec-kicker" style="margin-bottom:12px">Botanical shelf · 21+</p>
-        <div class="brand-list" id="kratom-brands"></div>
-        <p class="sec-lede" style="margin-top:20px;font-size:13.5px;color:var(--ink-3)">We list brands only. Ask a staff member in person for anything else — we don't give guidance about these products online.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ==================================================== HEMP PORTAL ==== -->
-<section class="section" id="hemp">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="sec-kicker">07 — Behind the counter</p>
-      <h2 class="sec-title">Hemp <span class="thin">room</span></h2>
-    </div>
-    <div class="portal reveal" id="portal">
-      <div class="portal-lock">
-        <h3>21+ only</h3>
-        <p>This section covers hemp-derived products. Confirm you're 21 or older to view what forms we carry. We list categories only — no potency figures, no product claims, no prices.</p>
-        <button class="btn btn-call" id="portal-unlock">I'm 21 or older — show me</button>
-      </div>
-      <div class="portal-content">
-        <div class="form-grid" id="hemp-forms"></div>
-        <p class="sec-lede" style="margin-top:26px;font-size:13.5px;color:var(--ink-3)">
-          Selection changes weekly and varies by what's in stock. For anything specific, call the shop or come in — staff can walk you through what's on the shelf that day.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========================================================= TOUR ==== -->
-<section class="section" id="tour">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="sec-kicker">The room itself</p>
-      <h2 class="sec-title">Come <span class="thin">see it</span></h2>
-      <p class="sec-lede">Shot on site at 48 megapixels. No stock photography, no other store's shelves — this is exactly what you walk into.</p>
-    </div>
-    <div class="gallery reveal" id="gallery"></div>
-  </div>
-</section>
-
-<!-- ====================================================== REVIEWS ==== -->
 <section class="section reviews" id="reviews">
   <div class="wrap">
     <h2 class="visually-hidden">Customer reviews</h2>
@@ -388,33 +251,6 @@
 </section>
 
 <!-- ======================================================== VISIT ==== -->
-<section class="section" id="visit">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="sec-kicker">Visit</p>
-      <h2 class="sec-title">944 Roosevelt Rd, <span class="thin">Glen Ellyn</span></h2>
-      <p class="sec-lede">In the Baker Hill center on Roosevelt Road. Easy parking right out front.</p>
-    </div>
-    <div class="visit-grid">
-      <div class="reveal">
-        <p class="sec-kicker" style="margin-bottom:14px">Hours</p>
-        <table class="hours-table" id="hours-table"><tbody></tbody></table>
-        <div class="contact-block">
-          <a class="contact-row" data-call href="tel:+13315510005">
-            <div><div class="k">Call</div><div class="v" data-phone-display>(331) 551-0005</div></div>
-          </a>
-          <a class="contact-row" data-sms href="tel:+13315510005">
-            <div><div class="k">Text</div><div class="v" data-sms-display>(331) 551-0005</div></div>
-          </a>
-          <a class="contact-row" id="directions" data-directions href="#">
-            <div><div class="k">Directions</div><div class="v">944 Roosevelt Rd, Glen Ellyn, IL 60137</div></div>
-          </a>
-        </div>
-      </div>
-      <div class="map-frame reveal" id="map-frame"></div>
-    </div>
-  </div>
-</section>
 
 </main>
 
@@ -440,7 +276,7 @@
     </div>
 
     <div class="warning-box">
-      <p>Warning: This product contains nicotine. Nicotine is an addictive chemical. · Products sold here are intended for adults 21 years of age or older. Valid government-issued photo ID is required for every purchase, no exceptions. · Prices are not published online; ask in store.</p>
+      <p>Warning: This product contains nicotine. Nicotine is an addictive chemical. · Products sold here are intended for adults 21 years of age or older. Valid government-issued photo ID is required for every purchase, no exceptions.</p>
     </div>
 
     <div class="footer-legal">
@@ -453,3 +289,4 @@
 <script type="module" src="./src/main.ts"></script>
 </body>
 </html>
+

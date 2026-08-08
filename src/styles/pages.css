@@ -1,0 +1,345 @@
+/* ==========================================================================
+   Page shells — the hub, the section pages, and the doors between them.
+   ========================================================================== */
+
+/* ------------------------------------------------------- section masthead */
+
+/* Not the full hero. A section page should get you to the shelf, not make you
+   scroll past a second landing page to reach what you tapped for. */
+.pagehead {
+  position: relative;
+  min-height: clamp(300px, 42vh, 420px);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.pagehead-media,
+.pagehead-sign { position: absolute; inset: 0; }
+
+.pagehead-media picture,
+.pagehead-sign picture { position: absolute; inset: 0; display: block; }
+
+.pagehead-media img,
+.pagehead-sign img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 42%;
+  display: block;
+}
+
+.pagehead-media img { filter: brightness(.42) saturate(.85); }
+
+/* Same masked-neon trick as the hero and the entrance: one lighting system
+   across the whole site, and no extra bytes to get it. */
+.pagehead-sign {
+  mix-blend-mode: screen;
+  opacity: .85;
+  -webkit-mask-image: url('./img/hero-wide-mask-1400.webp');
+          mask-image: url('./img/hero-wide-mask-1400.webp');
+  -webkit-mask-size: cover;  mask-size: cover;
+  -webkit-mask-position: 50% 42%; mask-position: 50% 42%;
+  animation: ent-cycle 16s var(--ease-in-out) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pagehead-sign { animation: none; }
+}
+
+.pagehead-scrim {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(5,6,10,.55) 0%, rgba(5,6,10,.18) 38%, rgba(5,6,10,.94) 100%);
+}
+
+.pagehead-body {
+  position: relative;
+  padding-top: clamp(96px, 14vh, 150px);
+  padding-bottom: clamp(26px, 4vh, 44px);
+}
+
+.pagehead-title {
+  font-family: var(--display);
+  font-size: clamp(38px, 8vw, 76px);
+  line-height: .94;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+  margin: 6px 0 10px;
+  color: var(--ink);
+}
+
+.pagehead-lede {
+  max-width: 46ch;
+  color: var(--ink-2);
+  font-size: clamp(15px, 1.6vw, 17px);
+  margin: 0;
+}
+
+/* --- back to the hub ---------------------------------------------------- */
+
+.backlink {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--mono);
+  font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--ink-3);
+  text-decoration: none;
+  padding: 10px 14px 10px 10px;
+  margin: 0 0 14px -10px;
+  border-radius: 999px;
+  min-height: 44px;                    /* tap target, not a decoration */
+  transition: color var(--dur-fast), background var(--dur-fast);
+}
+
+.backlink svg { width: 15px; height: 15px; }
+.backlink:hover,
+.backlink:focus-visible { color: var(--orange); background: var(--orange-dim); }
+
+/* --- the strip of other doors ------------------------------------------- */
+
+.more-doors { padding-block: clamp(40px, 6vh, 72px); border-top: 1px solid var(--line); }
+
+.door-strip {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px;
+}
+
+.door-chip {
+  display: inline-flex; align-items: center;
+  min-height: 44px; padding: 11px 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255,255,255,.02);
+  color: var(--ink-2);
+  font-size: 14px;
+  text-decoration: none;
+  transition: color var(--dur-fast), border-color var(--dur-fast), background var(--dur-fast), transform var(--dur-fast);
+}
+
+.door-chip:hover,
+.door-chip:focus-visible {
+  color: var(--ink);
+  border-color: var(--orange);
+  background: var(--orange-dim);
+  transform: translateY(-2px);
+}
+
+/* --- current page in the nav -------------------------------------------- */
+
+.nav-links a[aria-current="page"] {
+  color: var(--orange);
+}
+
+.nav-links a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+/* ==========================================================================
+   Pouch faces — the real can, not a coloured disc
+   ========================================================================== */
+
+.puck.has-shot {
+  padding: 0;
+  overflow: hidden;
+  cursor: pointer;
+  background: #0A0C12;
+  align-content: end;
+  border: 0;
+}
+
+.puck.has-shot::before { inset: 0; border-color: color-mix(in srgb, currentColor 40%, transparent); }
+
+.puck-shot {
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.puck-shot img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--dur) var(--ease-out);
+}
+
+.puck.has-shot:hover .puck-shot img { transform: scale(1.07); }
+
+/* The label sits in a gradient foot so it stays legible over whatever colour
+   the lid happens to be — the cans run from near-white to near-black. */
+.puck.has-shot .b,
+.puck.has-shot .f,
+.puck.has-shot .s { position: relative; z-index: 1; }
+
+.puck.has-shot .b { display: none; }
+
+.puck.has-shot .f {
+  margin: 0;
+  padding: 26px 8px 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,.9);
+  background: linear-gradient(180deg, transparent, rgba(4,5,9,.86) 62%);
+}
+
+.puck.has-shot .s {
+  margin: 0;
+  padding: 0 8px 16px;
+  color: rgba(255,255,255,.72);
+  background: rgba(4,5,9,.86);
+  text-shadow: 0 1px 2px rgba(0,0,0,.9);
+}
+
+.puck.has-shot:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 3px;
+}
+
+@media (max-width: 560px) {
+  .puck.has-shot .f { font-size: 10.5px; padding-top: 20px; }
+  .puck.has-shot .s { font-size: 8.5px; padding-bottom: 12px; }
+}
+
+/* ==========================================================================
+   Detail sheet
+   ========================================================================== */
+
+.sheet {
+  border: 0;
+  padding: 0;
+  width: min(560px, calc(100vw - 32px));
+  max-height: min(86vh, 760px);
+  border-radius: var(--radius);
+  background: var(--panel);
+  color: var(--ink);
+  box-shadow: 0 40px 120px -20px rgba(0,0,0,.9), 0 0 0 1px var(--line);
+  overflow: hidden;
+}
+
+.sheet::backdrop {
+  background: rgba(3,4,8,.78);
+  backdrop-filter: blur(6px);
+}
+
+.sheet[open] { animation: sheetIn .34s var(--ease-out); }
+
+@keyframes sheetIn {
+  from { opacity: 0; transform: translateY(18px) scale(.985); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sheet[open] { animation: none; }
+}
+
+.sheet-body {
+  overflow-y: auto;
+  max-height: min(86vh, 760px);
+  padding: 26px 26px 30px;
+  outline: none;
+  overscroll-behavior: contain;
+}
+
+.sheet-close {
+  position: absolute;
+  top: 10px; right: 10px;
+  width: 44px; height: 44px;              /* tap target, not a 24px x */
+  display: grid; place-items: center;
+  border: 0; border-radius: 50%;
+  background: rgba(8,10,17,.72);
+  color: var(--ink-2);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.sheet-close svg { width: 19px; height: 19px; }
+.sheet-close:hover, .sheet-close:focus-visible { color: var(--ink); background: var(--panel-2); }
+
+.sheet-shot {
+  width: 132px; height: 132px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 18px;
+  border: 1px solid var(--line-hot);
+}
+
+.sheet-shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.sheet-title {
+  font-family: var(--display);
+  font-size: clamp(28px, 5vw, 40px);
+  line-height: 1;
+  text-transform: uppercase;
+  margin: 0 0 6px;
+}
+
+.sheet-meta {
+  font-family: var(--mono);
+  font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 0 14px;
+}
+
+.sheet-blurb {
+  font-size: 16px;
+  color: var(--ink);
+  font-weight: 500;
+  margin: 0 0 12px;
+}
+
+.sheet-text {
+  font-size: 15px;
+  line-height: 1.62;
+  color: var(--ink-2);
+  margin: 0 0 18px;
+}
+
+.sheet-notes {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  list-style: none; padding: 0; margin: 0 0 20px;
+}
+
+.sheet-notes li {
+  font-family: var(--mono);
+  font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ink-2);
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+.sheet-hedge {
+  font-size: 13px;
+  color: var(--ink-3);
+  border-left: 2px solid var(--line-hot);
+  padding-left: 12px;
+  margin: 0 0 20px;
+}
+
+.sheet-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* Chips that open a sheet need to look pressable, since the ones that don't
+   are visually identical <span>s. */
+button.brand-chip,
+button.cigar-name {
+  cursor: pointer;
+  font: inherit;
+}
+
+button.brand-chip::after,
+button.cigar-name::after {
+  content: '';
+  display: inline-block;
+  width: 4px; height: 4px;
+  margin-left: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: .45;
+  vertical-align: middle;
+}
+
+.brand-blurb { color: var(--ink); font-size: 15px; margin: 4px 0 12px; }
+
+.btn-more { margin-top: 14px; font-size: 13px; }
+
+/* The two CTAs stack on a narrow phone because .btn carries a 168px floor from
+   the gate. Inside the sheet they should sit side by side and share the width. */
+.sheet-actions .btn { min-width: 0; flex: 1 1 auto; justify-content: center; }

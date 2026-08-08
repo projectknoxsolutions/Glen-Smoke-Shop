@@ -28,12 +28,13 @@ trap 'c=$?; [ $c -ne 0 ] && printf "\n\033[1;31mFAILED\033[0m (exit %s) — the 
 [ -f index.html ] || die "run this from the folder containing index.html"
 
 imgs=$(ls public/img/*.avif 2>/dev/null | wc -l | tr -d ' ')
-vids=$(ls public/video/*.mp4 2>/dev/null | wc -l | tr -d ' ')
+vids=$(ls public/video/*.mp4 2>/dev/null | wc -l | tr -d ' ')   # kept, no longer required
 mods=$(ls public/models/*.glb 2>/dev/null | wc -l | tr -d ' ')
 [ "$imgs" -ge 40 ] || die "public/img only has $imgs AVIFs — unzip the images archives here first."
-[ "$vids" -ge 2 ]  || die "public/video is missing the film — unzip the video archive here first."
-[ "$mods" -ge 2 ]  || die "public/models is missing the 3D meshes — unzip the code archive here first."
-say "Found $imgs images, $vids video files and $mods 3D models."
+# The intro film was replaced by the live neon entrance, so video is optional.
+[ "$vids" -ge 2 ]  || warn "no intro video present — that is expected now; the entrance is rendered live."
+[ "$mods" -ge 3 ]  || die "public/models has only $mods meshes; expected geekbar plus both caliburns."
+say "Found $imgs images and $mods 3D models."
 
 command -v git >/dev/null || die "git is not installed. Run: xcode-select --install"
 

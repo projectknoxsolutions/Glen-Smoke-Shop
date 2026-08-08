@@ -1,0 +1,2311 @@
+{
+ "_README": "Original selling copy, written from manufacturer spec sheets rather than copied from them. No prices, no health claims, no potency figures. `confidence: likely` means the writer could not fully verify the line against a current source, and the detail sheet says so to the customer.",
+ "entries": [
+  {
+   "id": "4k-s",
+   "name": "4K's",
+   "kind": "brand",
+   "blurb": "Good Times' natural leaf wrap — real tobacco leaf, resealable foil.",
+   "body": "On the wrap side, 4K's from Good Times is a natural leaf product: real tobacco leaf rather than a pressed paper sheet, so it burns slower and holds its shape better through a loose roll. Sold in small multi-packs in resealable foil so the leaf does not stiffen between uses. Natural and sweet versions. Simple, dependable, and worth keeping a couple of packs on hand.",
+   "notes": [
+    "Natural tobacco leaf",
+    "Slow burn",
+    "Resealable foil",
+    "Multi-packs"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "4k-s-good-times-tobacco",
+   "name": "4K's (Good Times Tobacco)",
+   "kind": "house",
+   "blurb": "Good Times' sweet cigarillo, foil-sealed so it is still soft when you open it.",
+   "body": "Good Times makes 4K's, and the Green Sweet is the one that moves here. Machine-made cigarillo, sweetened cap, foil-sealed pouch so it is still pliable when you open it. Not a humidor cigar and not pretending to be one: this is the quick smoke on the way somewhere. Sold in packs at the front counter, and we can get you the full box if you go through them faster than that.",
+   "notes": [
+    "Machine-made",
+    "Mild",
+    "Foil pouch",
+    "Sweet cap"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "708-cigar",
+   "name": "708 Cigar",
+   "kind": "house",
+   "blurb": "A Chicagoland brand named for the area code, handmade in the Dominican Republic.",
+   "body": "708 is local: Tobacco Plus out of Matteson, Illinois, named for the area code. Handmade in the Dominican Republic with Grade A long filler, Nicaraguan and Dominican leaf, and a naturally sweet tip. The Robusto is five inches by 52 in Connecticut wrapper, mellow and earthy and easy to finish. Habano and Maduro wrappers on the same blend if you want more. Real construction, and it lives in the humidor.",
+   "notes": [
+    "Illinois brand",
+    "Made in DR",
+    "Mild to medium",
+    "Long filler"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "acid-by-drew-estate",
+   "name": "Acid (by Drew Estate)",
+   "kind": "house",
+   "blurb": "Botanical-infused, not sprayed. Kuba is the fat one, Blondie the small one.",
+   "body": "ACID is Drew Estate's botanical line, steeped with herbs and oils rather than sprayed with flavoring, and it does not smell like anything else. Kuba Kuba is the fat 5 by 54 that built the brand and Kuba Deluxe puts a darker wrapper on it. Blondie is the small Connecticut-shade one, with a pointed Belicoso version. Mild to medium. We keep them apart in the humidor so nothing else picks up the aroma.",
+   "notes": [
+    "Nicaragua",
+    "Mild to medium",
+    "Botanical infused",
+    "Stored separately"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "aj-fernandez-cigar-company",
+   "name": "AJ Fernandez Cigar Company",
+   "kind": "house",
+   "blurb": "Esteli-grown, Esteli-rolled, and punching well above what the shelf tag suggests.",
+   "body": "AJ Fernandez rolls in Esteli and grows much of his own leaf, which is why these punch above what you expect from the shelf. New World, Enclave, and Bellas Artes cover mild-medium through full depending on the wrapper. Nicaraguan-forward, spicy, tightly built, and they burn straight. We stock singles so you can work through the blends before committing to a box. Pull them from the walk-in humidor.",
+   "notes": [
+    "Esteli, Nicaragua",
+    "Medium to full",
+    "Grower-owned leaf",
+    "Sold as singles"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "al-capone",
+   "name": "Al Capone",
+   "kind": "brand",
+   "blurb": "Filtered cigarillos, not wraps — sweet tip, real filter, German-made.",
+   "body": "Worth knowing before you buy: Al Capone is a German-made filtered cigarillo, not a wrap. Sweets Cognac is the signature, with a sweetened tip, a proper filter, and a cognac note that stays subtle instead of shouting. Blue Filter is the milder one. Packed ten to a tin. If you want something short, finished, and already put together, this is the shelf to look at rather than the wrap wall.",
+   "notes": [
+    "Filtered cigarillo",
+    "Mild",
+    "Sweet tip",
+    "Tins of ten"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "alec-bradley",
+   "name": "Alec Bradley",
+   "kind": "house",
+   "blurb": "Honduran-rolled and unapologetically big — The Freak is the 60-ring end of MAXX.",
+   "body": "Alec Bradley blends in Honduras, and MAXX is the big-ring end of the catalog. The Freak runs a 60 ring with a Trojes-grown Nicaraguan wrapper over filler pulled from several countries. Medium to full, cocoa and black pepper that holds through a long burn. If Rocky Patel Vintage or Camacho is your usual, this is the neighbor worth meeting. Boxes sit on the back wall of the walk-in cedar humidor.",
+   "notes": [
+    "Honduras",
+    "Medium-full",
+    "60 ring gauge",
+    "Multi-country filler"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "arturo-fuente",
+   "name": "Arturo Fuente",
+   "kind": "house",
+   "blurb": "Dominican, family-run since 1912, and the widest mild-to-medium range we stock.",
+   "body": "Fuente rolls in Santiago, Dominican Republic, and the family has been at it since 1912. The range covers ground: Chateau Fuente wears a mild Connecticut shade, the Hemingway series a richer Cameroon in classic perfecto shapes. Mild to medium across most of the line, and the construction is the reason people stay. If Macanudo is your everyday, Chateau is the natural next box. Kept in the walk-in cedar humidor.",
+   "notes": [
+    "Dominican Republic",
+    "Mild to medium",
+    "Connecticut & Cameroon",
+    "Perfecto shapes"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "backwoods",
+   "name": "Backwoods",
+   "kind": "brand",
+   "blurb": "Branded shop goods that turn up alongside the cigar shelf.",
+   "body": "Past the wraps themselves, Backwoods shows up as branded counter goods, trays and pouches that come and go depending on what the distributor ships. Availability moves around more than the cigars do. If you are after something specific with that logo on it, ask at the counter and we will tell you what actually came in on the last order rather than guess.",
+   "notes": [
+    "Branded shop goods",
+    "Stock rotates",
+    "Ask at the counter"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "beaker-base-water-pipes",
+   "name": "Beaker Base Water Pipes",
+   "kind": "piece",
+   "blurb": "Wide flared base, more water volume, hardest shape to knock over.",
+   "body": "A beaker holds more water and sits on a wide footprint, so it takes a bump on the table better than a straight tube. The extra volume means more diffusion coming off the downstem and a cooler draw. Most of ours run a 14mm or 18mm female joint with a matching slide. Look at the wall thickness where the base welds to the tube, not just the tube itself.",
+   "notes": [
+    "14mm or 18mm joint",
+    "5mm to 9mm walls",
+    "Removable downstem",
+    "Ice pinch on some"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "bic",
+   "name": "BIC",
+   "kind": "brand",
+   "blurb": "The pocket lighter that just works, in full size and slim.",
+   "body": "A BIC is a fixed-flame disposable with a steel hood and a child guard, and the reason it became the default is consistency. The flame is the same height on the first day and the two hundredth. We keep the full-size Maxi, the slim, and the printed series in the counter tray. Nothing to adjust and nothing to refill. Buy two, because you will hand one to somebody.",
+   "notes": [
+    "Maxi and slim",
+    "Fixed flame",
+    "Child guard",
+    "Counter tray"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "billionaire-hemp-wraps",
+   "name": "Billionaire Hemp Wraps",
+   "kind": "brand",
+   "blurb": "Tobacco-free hemp, two per pack, sits between paper and leaf on burn speed.",
+   "body": "Hemp wraps, tobacco free, two to a pack. The sheet is thicker than a rolling paper and thinner than a natural leaf, which puts the burn right in between: slower than paper, quicker than broadleaf. Self-sealing edge. The flavor list runs long, from plain Sugar Cane through Russian Cream and the OG Ron C series. Good pick if you want the body of a wrap without tobacco in it.",
+   "notes": [
+    "Hemp",
+    "Tobacco free",
+    "Two per pack",
+    "Self-sealing"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "black-mild",
+   "name": "Black & Mild",
+   "kind": "brand",
+   "blurb": "Pipe tobacco in a cigar body — and the tip you pick changes the draw.",
+   "body": "Black & Mild is pipe tobacco in a cigar body, made by John Middleton, which is exactly why it smells the way it does across a parking lot. Original, Wine, Jazz, Casino, and Sweets. Mild and aromatic. The tip matters more than people expect: the wood tip draws drier and a little cooler, the plastic tip is smoother on the lip. Singles and boxes both at the counter.",
+   "notes": [
+    "Pipe tobacco blend",
+    "Mild",
+    "Wood or plastic tip",
+    "Five profiles"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "blazy-susan",
+   "name": "Blazy Susan",
+   "kind": "brand",
+   "blurb": "The spinning rolling tray, plus pink papers, cones and tips.",
+   "body": "Blazy Susan is named for its rotating tray, a two-tier lazy-susan setup that spins so everything stays in reach instead of sliding off the edge of a table. The pink papers and cones are the other half of the line, along with wood packing sticks and pre-rolled filter tips. If you want the whole station to match, this is the brand that covers all of it.",
+   "notes": [
+    "Spinning rolling tray",
+    "Pink papers and cones",
+    "Packing sticks",
+    "Filter tips"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "blink",
+   "name": "Blink",
+   "kind": "brand",
+   "blurb": "Torch lighters and refill butane from the utility end of the wall.",
+   "body": "Blink covers the workhorse slot: single and multi-jet torches, pocket bodies, and butane refill on the same peg. Adjustable flame and a fuel window on most models, and those are the two features worth checking before you buy any torch. Nothing exotic in the line. It lights, it refills, and the controls are where you expect to find them.",
+   "notes": [
+    "Jet torches",
+    "Refill butane",
+    "Adjustable flame",
+    "Fuel window"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "bob-marley",
+   "name": "Bob Marley",
+   "kind": "brand",
+   "blurb": "Hemp king size, unbleached, natural gum — thin enough to taste past the paper.",
+   "body": "Hemp papers under the Marley licence, king size and unbleached with a natural gum line. Hemp burns a touch slower and cooler than wood pulp and leaves a grayer ash behind. Thin enough that you taste what you rolled instead of the paper around it. A clean king-size option if you want hemp without working through the entire RAW catalog at the counter first.",
+   "notes": [
+    "Hemp",
+    "King size",
+    "Unbleached",
+    "Natural gum"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "brass-screens-stainless-steel-pipe-screens-unbranded-wallet-packs",
+   "name": "Brass Screens / Stainless Steel Pipe Screens",
+   "kind": "brand",
+   "blurb": "Brass forms to the bowl, stainless outlasts it. Five to a wallet pack.",
+   "body": "The least glamorous thing on this wall and among the most asked for. Brass is softer, forms easily into the shape of a bowl, and handles heat without complaint. Stainless is stiffer, lasts considerably longer, and does not discolor. Standard three-quarter inch, five to a wallet pack, hanging on the pegboard by the register. Take two packs. Everyone comes back for these within the month.",
+   "notes": [
+    "Brass or stainless",
+    "3/4 inch standard",
+    "Five per pack",
+    "At the register"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "breeze-smoke",
+   "name": "Breeze Smoke",
+   "kind": "brand",
+   "blurb": "Plain draw-activated bars. Pro for a short run, Prime for a longer one.",
+   "body": "Breeze is the plain-English option on the wall. No screen, no modes, nothing to set. The Pro Edition is the small one, around 2,000 puffs on a 6mL fill. The Prime Edition roughly triples that on 10mL. There is also a tobacco version of the Pro at a lower nicotine strength for people who do not want anything sweet. Good pick if you want to take it out of the box and use it without learning a device first.",
+   "notes": [
+    "Pro: 6mL",
+    "Prime: 10mL",
+    "Draw-activated, no screen",
+    "Tobacco version at 4.3%"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "bubblers",
+   "name": "Bubblers",
+   "kind": "piece",
+   "blurb": "A hand pipe with a water chamber, filtration you can hold in one hand.",
+   "body": "A bubbler sits between a spoon and a full water pipe. Fixed bowl, small water chamber, usually a diffuser built into the bottom that you cannot remove. Hammer, sherlock and standing shapes are all in the case. Keep the water shallow. These have a short path from water to mouthpiece and it does not take much to pull some through.",
+   "notes": [
+    "Fixed bowl",
+    "Handheld",
+    "Hammer and sherlock shapes",
+    "Shallow water"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "candy-king",
+   "name": "Candy King",
+   "kind": "brand",
+   "blurb": "Large-format bottled e-liquid, sweet fruit blends, freebase and salt.",
+   "body": "Candy King is a bottled e-liquid line built for refillable hardware. Big bottles of freebase for tanks, smaller salt nicotine bottles for pod systems and low-wattage devices. Match the format to what you are actually running: freebase in a tank, salts in a pod. Sweet, fruit-driven blends throughout. Adults twenty-one and over, and we card for it the same as everything else.",
+   "notes": [
+    "100mL bottles",
+    "Freebase and salt",
+    "For refillable devices",
+    "21+"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "cao",
+   "name": "CAO",
+   "kind": "house",
+   "blurb": "Broadleaf maduro, flat-top box press, six inches by 60 — the Flathead is a long sit.",
+   "body": "CAO's Flathead is the hot-rod blend: Connecticut Broadleaf maduro over Nicaraguan tobacco, box-pressed with a flat top instead of a rounded cap. The 660 is six inches by 60 ring, so plan your afternoon around it. Medium to full, dark and sweet, coffee and scorched sugar. Good move for a Punch smoker who wants more maduro. Say the word and we will pull one from the humidor.",
+   "notes": [
+    "Nicaragua",
+    "Medium-full",
+    "Broadleaf maduro",
+    "Box-pressed 6x60"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "chillums-and-one-hitters",
+   "name": "Chillums and One-Hitters",
+   "kind": "piece",
+   "blurb": "One-piece straight tube, no carb, one load at a time.",
+   "body": "A chillum is the simplest thing in the case. Straight tube, load one end, draw the other. No carb, no moving parts, nothing sticking out to break off in a pocket. Cleans up with a pipe cleaner and alcohol in about a minute. We keep plain glass, worked color, and taster bats cut to length for a dugout.",
+   "notes": [
+    "No carb hole",
+    "Pocket size",
+    "Dugout-sized bats",
+    "One-minute cleanup"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "city-life",
+   "name": "City Life",
+   "kind": "brand",
+   "blurb": "Good Times cigarillos in resealable foil, on the everyday wrap shelf.",
+   "body": "City Life is one of the Good Times cigarillo lines, packed in resealable foil pouches that keep the leaf from drying out between uses. It sits with the everyday wraps rather than the premium cigar case. Straightforward tobacco, consistent pouch to pouch. We stock the varieties that actually move in this store instead of hanging a full wall of them.",
+   "notes": [
+    "Good Times line",
+    "Resealable pouch",
+    "Everyday wrap shelf"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "clew",
+   "name": "CLEW",
+   "kind": "brand",
+   "blurb": "Tobacco-free pouches, a short flavor list, moist feel under the lip.",
+   "body": "CLEW keeps its lineup tight: citrus, mint, wintergreen, blueberry and a plain original. The pouches run moist rather than dry, so flavor shows up early instead of creeping in. The format is slim and low profile, easy to sit with while you work. Which strengths are on the shelf moves around with what the distributor sends, so check the can before you commit to a flavor.",
+   "notes": [
+    "Tobacco-free",
+    "Moist pouch",
+    "Slim format"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "clew-citrus",
+   "name": "CLEW Citrus",
+   "kind": "flavor",
+   "blurb": "Orange-led citrus, tart at the front, dry rather than candied.",
+   "body": "Orange first, with lemon and lime behind it sharpening the edges. It reads tart and peel-like rather than sweet soda, and there is no cooling agent working underneath, so what you get is fruit plus a little bitterness. Strongest in the first ten minutes, then it settles. A decent morning pouch if mint has worn out its welcome. Strength depends on the can we have in, so check before you buy.",
+   "notes": [
+    "Tobacco-free",
+    "No cooling",
+    "Tart citrus"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "cohiba",
+   "name": "Cohiba",
+   "kind": "house",
+   "blurb": "The Dominican Cohiba from General Cigar — Red Dot mild, Blue darker, Rubicon the newest.",
+   "body": "This is the Dominican Cohiba from General Cigar, not the Cuban one. Red Dot is the old guard, Cameroon wrapped and mild to medium. Blue leans darker and richer. Rubicon is the newest: Ecuadorian Habano wrapper, broadleaf binder, filler from four countries, medium-bodied and even from light to nub. A Macanudo smoker looking for more spine usually lands on Rubicon first. All three live in the walk-in humidor.",
+   "notes": [
+    "Dominican Republic",
+    "Mild to medium",
+    "Ecuadorian Habano",
+    "Robusto tubos"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "coil-spiral-condenser",
+   "name": "Coil and Spiral Condenser",
+   "kind": "piece",
+   "blurb": "A spiral in the neck that pulls heat out without adding drag.",
+   "body": "A coil is a spiral tube set in the neck. Some are open condensers that simply add path length so the smoke has further to travel and more time to cool. Others are sealed glycerin coils you leave in the freezer for a few hours first. Either way the job is temperature, not filtration. Freezer coils usually come as a separate attachment, so match it to your joint size.",
+   "notes": [
+    "Adds path length",
+    "Glycerin versions freeze",
+    "Cooling, not diffusion"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "crown-bar",
+   "name": "Crown Bar",
+   "kind": "brand",
+   "blurb": "Al Fakher's disposable. Shisha flavor profiles instead of dessert ones.",
+   "body": "Crown Bar comes from Al Fakher, the shisha house, and it shows in the flavor list. Double apple, mint, grape — the territory their hookah tobacco has worked for decades, translated into a disposable. We keep the 15K and the 12K on the side shelf left of the main wall. Three facings, on purpose. This is for the customer who already knows the Al Fakher profile and wants it in something pocket-sized.",
+   "notes": [
+    "Made by Al Fakher",
+    "Shisha-style flavor profiles",
+    "15K and 12K",
+    "USB-C rechargeable"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "da-boss-leaf",
+   "name": "Da Boss Leaf",
+   "kind": "brand",
+   "blurb": "Natural leaf wraps in resealable foil, including the darkest leaf on the wall.",
+   "body": "Natural leaf tobacco wraps, four or five to a pack, in the resealable foil that keeps the flavor and the pliability where they belong. Real leaf means a slower burn and more forgiveness on a loose roll than any paper will give you. Natural, Sweet, Dark XO, White Chocolate, and Aromatic. The Dark XO is the darkest leaf we hang on this wall if that is what you came in for.",
+   "notes": [
+    "Natural tobacco leaf",
+    "Slow burn",
+    "Resealable foil",
+    "Four or five per pack"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "dab-rigs-mini-rigs",
+   "name": "Dab Rigs and Mini Rigs",
+   "kind": "piece",
+   "blurb": "Small chamber, low water, built around a banger for concentrates.",
+   "body": "A rig is short on purpose. Less airpath and less water means less flavor lost between the nail and you. Most of these take a 10mm or 14mm male banger, so check the joint before you buy quartz to go with it. Fill the water just above the perc slits. Over-filling a small rig is the most common mistake people bring back in here.",
+   "notes": [
+    "10mm or 14mm joint",
+    "Takes a quartz banger",
+    "Low water line",
+    "Under eight inches"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "dark-horse",
+   "name": "Dark Horse",
+   "kind": "brand",
+   "blurb": "Flavored hemp sheet, tobacco free — stock rotates, so ask what came in.",
+   "body": "Dark Horse sits in the wrap rotation with a flavored hemp sheet: tobacco free, medium thickness, and a self-sealing edge. It burns slower than a rolling paper and cleaner than a heavy broadleaf. The flavor lineup rotates with what the distributor sends, so ask what came in this week rather than planning around one specific flavor. Hanging with the rest of the hemp wraps.",
+   "notes": [
+    "Hemp",
+    "Tobacco free",
+    "Medium thickness",
+    "Rotating flavors"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "deadwood-tobacco-co",
+   "name": "Deadwood Tobacco Co.",
+   "kind": "house",
+   "blurb": "Blended by Drew Estate for a South Dakota shop — Sweet Jane mellow, Crazy Alice dark.",
+   "body": "Deadwood is blended by Drew Estate for the Deadwood, South Dakota shop, and it does not smoke like a souvenir. Sweet Jane is the small, mellow one with a sweetened cap. Crazy Alice is the opposite — a stubby maduro perfecto, medium to full, chocolate and dark roast coffee with dried fruit underneath. Buy one of each and find out which side you are on. Both boxes are in the cedar humidor.",
+   "notes": [
+    "Nicaragua",
+    "Mellow to full",
+    "Maduro perfecto",
+    "Made by Drew Estate"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "don-rafa",
+   "name": "Don Rafa",
+   "kind": "house",
+   "blurb": "A sweetened value cigarillo we carry because people keep asking for it by name.",
+   "body": "Don Rafa Sweets is a value cigarillo with a sweetened cap and a machine roll. Mild, quick, and built to be an everyday pick rather than an occasion. Boxed if you go through them steadily. We carry it because customers kept asking for it by name, which is honestly the only way a brand earns shelf space in a shop this size. Up front with the rest of the cigarillos.",
+   "notes": [
+    "Machine-made",
+    "Mild",
+    "Sweet cap",
+    "Boxed"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "dutch-dutch-masters",
+   "name": "Dutch (Dutch Masters)",
+   "kind": "brand",
+   "blurb": "The wrapper is uniform in thickness, which is the whole reason people reach for it.",
+   "body": "Dutch Masters is a machine-made cigar brand that ended up defining an entire category of wrap. Homogenized wrapper, foil pouch, mild and lightly sweet. Palma and Corona sizes plus the cigarillo formats. The wrapper is consistent in thickness end to end, which is exactly why people reach for it over a natural leaf that varies pack to pack. Front counter, boxes behind the register.",
+   "notes": [
+    "Machine-made",
+    "Mild",
+    "Uniform wrapper",
+    "Foil pouch"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "easy-butter-maker",
+   "name": "Easy Butter Maker",
+   "kind": "brand",
+   "blurb": "Countertop infusion canister: load it, submerge it, strain it.",
+   "body": "A hand-operated infusion canister. You load butter or oil along with your plant material, seal it, and set the canister down in simmering water for the cycle, then work the plunger to strain the solids out. No motor and no electronics, so there is nothing to burn out. It replaces the pot-on-the-stove method and keeps most of the smell inside the canister. Directions are in the box.",
+   "notes": [
+    "Hand operated",
+    "Water-bath method",
+    "Built-in strainer",
+    "No electronics"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "elements",
+   "name": "Elements",
+   "kind": "brand",
+   "blurb": "Rice papers that finish with almost no ash and a sugar gum seal.",
+   "body": "Elements are pressed from rice with a thin watermark line running through them, and they burn clean, very little ash and almost no paper taste. The gum is natural sugar rather than gum arabic. We keep the 1.25 and king slim booklets, the pre-rolled cones and the tips. If RAW reads too heavy to you, this is the other direction to go.",
+   "notes": [
+    "Rice paper",
+    "Sugar gum",
+    "1.25 and king slim",
+    "Cones and tips"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "exseed",
+   "name": "Exseed",
+   "kind": "brand",
+   "blurb": "Dabcool. Electric dab hardware, no torch required.",
+   "body": "Exseed makes the Dabcool line and the appeal is simple: no torch. The W2 is a compact electric rig with a glass attachment on top. The W3 is an electric nectar collector — a battery with a heated ceramic tip and a small glass bubbler, so you touch it straight to the concentrate instead of loading a bucket. Both charge over USB and hold their own temperature. A reasonable first e-rig if you have only ever run a torch.",
+   "notes": [
+    "Dabcool W2 e-rig",
+    "W3 electric nectar collector",
+    "Ceramic heating tip",
+    "Glass bubbler attachment"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "factory-smokes",
+   "name": "Factory Smokes",
+   "kind": "house",
+   "blurb": "Drew Estate's Esteli value bundle — same factory, big sizes, no ceremony.",
+   "body": "Factory Smokes is Drew Estate's value bundle, built in the same Esteli factory from leaf that does not go into the flagship boxes. Sun Grown, Shade, Maduro, and Sweets, in big sizes and bundle counts. Medium and honest, with none of the ceremony. If you like Nica Rustica but want something you can hand out at a cookout without thinking about it, this is that cigar. Bundles stored in the humidor.",
+   "notes": [
+    "Esteli, Nicaragua",
+    "Medium",
+    "Value bundles",
+    "Four wrapper options"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "feel-free",
+   "name": "Feel Free",
+   "kind": "brand",
+   "blurb": "Two-ounce botanical tonic shots, kept behind the counter.",
+   "body": "Feel Free is the small blue bottle from Botanic Tonics, made with kava and leaf. We keep it behind the counter with the other adult-only botanicals rather than out on an open shelf. Serving guidance is printed right on the bottle and it is worth reading before your first one. Shake it before you open it. It separates in the bottle.",
+   "notes": [
+    "2 oz bottle",
+    "Kava and leaf",
+    "Behind the counter",
+    "21+"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "foger",
+   "name": "Foger",
+   "kind": "brand",
+   "blurb": "A two-piece system: keep the battery dock, replace the prefilled pod.",
+   "body": "Foger's Switch is built like a pod mod that happens to come prefilled. You buy the kit once — battery dock plus pod — and after that you only replace the pod. Less hardware in the trash, and a faster flavor change when you want one. We carry the kit and the pod-only refills together on the bottom shelf run. Worth a look if you rotate flavors or you are tired of buying a whole new device every time.",
+   "notes": [
+    "Kit: dock plus pod",
+    "Pod-only refills stocked",
+    "About 30K per pod",
+    "USB-C rechargeable"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "fujima",
+   "name": "Fujima",
+   "kind": "brand",
+   "blurb": "The accessories house — papers and tips that are serviceable and always in stock.",
+   "body": "Fujima is the accessories house: ashtrays, cigarette cases, lighters, hand pipes, and the papers and tips that ride along on the same distribution. Serviceable, no-frills, and reliably in stock, which counts for more than it sounds like. Not a boutique paper. If you want a specific burn character, buy RAW or OCB. If you want something in your pocket before you leave, this does the job.",
+   "notes": [
+    "Papers and tips",
+    "Accessory line",
+    "Always stocked",
+    "Basic burn"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "fum",
+   "name": "FUM",
+   "kind": "brand",
+   "blurb": "Wooden draw device with swappable flavored cores. No battery, no coil.",
+   "body": "Fum is a wood mouthpiece with a hollow channel you load with a flavored insert. There is no heating element, no battery and nothing to charge. You are drawing air across the core. It sells as a kit with a case and a starter set of cores, and refill cores come in separate packs. We keep it up front because people ask what it is.",
+   "notes": [
+    "No battery or coil",
+    "Swappable cores",
+    "Wood body",
+    "Kit and refill cores"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "futurola-x-tyson-tyson-2-0",
+   "name": "Futurola x Tyson (Tyson 2.0)",
+   "kind": "brand",
+   "blurb": "Dutch brown paper, papers plus tips in every pack, and matching pre-rolled cones.",
+   "body": "Futurola is the Dutch outfit that has been making cones for decades, and the Tyson 2.0 collaboration puts their brown unbleached paper behind a name people recognize. Papers come with matching tips in the pack, in 1 1/4 and king size slim. There are pre-rolled cones and a cone roller on the same line. Even burn, thin paper, and the tips are stiff enough to actually hold a shape.",
+   "notes": [
+    "Unbleached brown paper",
+    "Papers plus tips",
+    "1 1/4 and king slim",
+    "Cones available"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "game-garcia-y-vega",
+   "name": "Game (Garcia y Vega)",
+   "kind": "brand",
+   "blurb": "Game Leaf is real tobacco leaf; the cigarillos are the faster-burning version.",
+   "body": "Game is the Garcia y Vega sibling built for the wrap side of the counter. Game Leaf is real natural tobacco leaf, thicker and slower burning than any cigarillo shell, and it holds flavor better than a paper wrap does. The Game cigarillos come foil-pouched with a sweet finish. Two per pack on the leaf, and it comes out of the foil pliable enough to roll without warming it first.",
+   "notes": [
+    "Natural tobacco leaf",
+    "Slow burn",
+    "Two per pack",
+    "Wide flavor range"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "garcia-y-vega",
+   "name": "Garcia y Vega",
+   "kind": "house",
+   "blurb": "One of the last places you will find a true green candela wrapper.",
+   "body": "Garcia y Vega has run the same idea for decades: a natural leaf wrapper on a machine-made cigar. The Natural Green is a genuine candela, actually green, grassy and mild, and one of the last places you will find that style on a shelf anywhere in DuPage County. Brown Natural is the standard version and Natural Sweets adds a sweetened cap. Mild throughout. Counter display, not the humidor.",
+   "notes": [
+    "Machine-made",
+    "Mild",
+    "Candela wrapper",
+    "Natural leaf"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "geek-bar",
+   "name": "Geek Bar",
+   "kind": "brand",
+   "blurb": "The Pulse family front to back, plus the Mate dock and pod-only refills.",
+   "body": "Geek Bar takes three to four rows of our back wall, and the reason is the Pulse ladder. Pulse runs a straightforward screen and a dual mesh coil. Pulse 2 and Pulse X move to bigger batteries and a curved display that shows charge and liquid at a glance. Pulse X2 sits on top with the largest battery and two power modes. The Mate is a different animal: a rechargeable dock plus prefilled pods, so you keep the battery and swap flavor. We stock those pods on their own.",
+   "notes": [
+    "Pulse / Pulse 2 / Pulse X / Pulse X2",
+    "Dual mesh coils",
+    "Curved status display",
+    "Mate dock plus pod-only refills"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "geek-vape",
+   "name": "Geek Vape",
+   "kind": "brand",
+   "blurb": "Aegis. Built to survive a truck bed, a job site and a concrete drop.",
+   "body": "Geekvape is the durability brand. The Aegis line is rated against water, dust and impact, with a rubberized shell you notice the moment you pick one up. Legend is the full-size mod with the whole feature set. Wenax and Sonder are the pod-sized versions of the same idea, for someone who wants the toughness without the bulk. If you work outside, or you have already killed a device by dropping it, start here.",
+   "notes": [
+    "Aegis durability line",
+    "Legend box mods",
+    "Wenax and Sonder pods",
+    "Water, dust and impact rated"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "glass-colors-and-finishes",
+   "name": "Colors and Finishes",
+   "kind": "house",
+   "blurb": "Fume, frost, wrap-and-rake: how the color on the shelf was made.",
+   "body": "Color on good glass is not paint. Gold and silver fume is vaporized metal laid down inside the glass, which is why fumed pieces shift amber to blue as they get used. Frosted jade and mint are sandblasted to a satin surface. Wrap-and-rake is colored rod wound on hot and combed with a tool. Cobalt, emerald, cranberry and milky white are colored borosilicate rod straight through.",
+   "notes": [
+    "Fume shifts with use",
+    "Satin frost is sandblasted",
+    "Raked patterns pulled by hand"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "gurkha-k-hansotia-co",
+   "name": "Gurkha (K. Hansotia & Co.)",
+   "kind": "house",
+   "blurb": "Elaborate boxes, and the smoking is better than the packaging leads you to expect.",
+   "body": "Gurkha runs a wide catalog with elaborate boxes, and the cigars are better than the presentation leads you to expect. Production is spread across the Dominican Republic, Nicaragua, and Honduras depending on the blend, and the Rare Limited Edition releases sit at the medium-to-full end. It makes a good gift and a better Saturday. Come look at the boxes in the walk-in humidor before you commit.",
+   "notes": [
+    "DR, Nicaragua, Honduras",
+    "Medium to full",
+    "Limited releases",
+    "Gift boxes"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "hand-pipes-spoons",
+   "name": "Hand Pipes and Spoons",
+   "kind": "piece",
+   "blurb": "Thick-walled spoons with a carb, in plain clear or worked color.",
+   "body": "The spoon is the shape that never went away. What separates a good one is glass thickness at the bowl and the shank, a carb hole you can actually cover with a thumb, and a bowl deep enough to hold a load without spilling it. Ours run from plain clear borosilicate to hand-worked color. Pick a few up before you decide. Weight in the hand tells you most of what you need.",
+   "notes": [
+    "Thick bowl and shank",
+    "Left or right carb",
+    "Clear or worked color"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "high-hemp",
+   "name": "High Hemp",
+   "kind": "brand",
+   "blurb": "Tobacco-free hemp wraps, two per pack, paper filter tips included.",
+   "body": "High Hemp wraps are made from hemp with no tobacco leaf and no nicotine. Each pouch holds two wraps plus two paper filter tips, and the pouch reseals so the second wrap does not dry out on you. They are more forgiving to roll than a whole leaf wrap if your hands are not practiced. The organic cones are on the same peg.",
+   "notes": [
+    "Tobacco-free",
+    "2 wraps per pack",
+    "Tips included",
+    "Cones available"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "honeycomb-disc-stack-perc",
+   "name": "Honeycomb and Disc Stack Perc",
+   "kind": "piece",
+   "blurb": "Flat disc drilled with dozens of holes. Stack two for more.",
+   "body": "A honeycomb is a flat disc set across the tube with dozens of small holes drilled through it. Bubbles come off the entire surface at once, which is why stacked honeycombs are the perc people buy for the look. The straight-through design keeps drag low. Two or three discs stacked diffuse hard. Hot water and a shake clears them, but do not leave one standing full.",
+   "notes": [
+    "Disc with many holes",
+    "Stackable",
+    "Low drag",
+    "Straight-through path"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "hookah-bowl-egyptian",
+   "name": "Egyptian and Traditional Bowls",
+   "kind": "piece",
+   "blurb": "Classic clay dish with several small holes drilled in the floor.",
+   "body": "The shape most pipes ship with. A shallow clay dish with a handful of small holes in the bottom, sitting on a tapered base. Clay takes heat evenly and handles a coal sitting right on the foil. It works best with drier tobacco. Heavily juiced modern shisha will run straight through those bottom holes and down into your stem.",
+   "notes": [
+    "Multi-hole floor",
+    "Clay body",
+    "Best with drier shisha",
+    "Standard on most pipes"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "hookah-bowl-phunnel",
+   "name": "Phunnel Bowls",
+   "kind": "piece",
+   "blurb": "Raised center spire with one large opening. The juice stays in the bowl.",
+   "body": "A phunnel trades the drilled floor for a single spire in the middle with one large hole at the top. Molasses pools in the dish instead of draining into the stem, so wet modern shisha lasts longer through a session and your stem stays clean. Airflow is open. If you are packing juicy tobacco and fighting a sticky stem, this is the bowl to move to.",
+   "notes": [
+    "Single top hole",
+    "Holds molasses",
+    "Open draw",
+    "Suits wet shisha"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "hookah-bowl-silicone",
+   "name": "Silicone Bowls",
+   "kind": "piece",
+   "blurb": "Shatterproof, for anyone tired of replacing cracked clay.",
+   "body": "Silicone will not crack when it hits the floor or when a hot bowl meets cold water in the sink. It is a poorer heat conductor than clay, so it takes longer to come up to temperature and it holds onto flavor between sessions more than a glazed bowl does. Most seat inside the bowl port rather than over it. A sensible pick for travel and for a pipe that gets passed around.",
+   "notes": [
+    "Shatterproof",
+    "Slower to heat",
+    "Inside-fit port",
+    "Dishwasher safe"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "hookah-bowl-vortex",
+   "name": "Vortex Bowls",
+   "kind": "piece",
+   "blurb": "Spire drilled through the sides. Phunnel behavior, slightly tighter draw.",
+   "body": "A vortex looks like a phunnel, but the spire is drilled with three or four holes through its sides rather than one opening on top. Juice still stays in the dish. Those smaller openings restrict airflow a little compared to a phunnel, which some people prefer for a denser pull. Pack it the same way, fluffy and level with the rim.",
+   "notes": [
+    "Side-drilled spire",
+    "Tighter than a phunnel",
+    "Retains juice",
+    "Level pack"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "hookah-coals-coconut",
+   "name": "Coconut Shell Coals",
+   "kind": "piece",
+   "blurb": "Natural coconut cubes and flats. Clean burn, long session, no odor.",
+   "body": "Coconut shell charcoal is what most people should be running. It lights on an electric burner rather than off a flame, burns close to odorless, and holds heat long enough to get through a bowl without constant swapping. Cubes are the standard. Flats spread heat more evenly under a heat management device. Larger cubes run hotter and longer, so size them to your bowl.",
+   "notes": [
+    "Cubes and flats",
+    "Burner-lit",
+    "Low odor",
+    "Long burn time"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "hookah-coals-quick-light",
+   "name": "Quick-Light Coals",
+   "kind": "piece",
+   "blurb": "Foil-rolled discs that catch off a lighter in seconds.",
+   "body": "Quick-light discs are pressed charcoal treated so they ignite off a flame and self-spread across the tablet. Convenient when there is no burner around: camping, a hotel room, someone else's back porch. The tradeoff is a chemical note at ignition and a shorter burn than coconut. Let one ash over completely, edge to edge, before it goes anywhere near the bowl.",
+   "notes": [
+    "Lights off a flame",
+    "Rolls of ten",
+    "Shorter burn",
+    "Let it ash fully"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "hookah-grommets-mouth-tips",
+   "name": "Grommets, Plugs and Mouth Tips",
+   "kind": "piece",
+   "blurb": "Replacement grommets, port plugs, brush sets and disposable tips.",
+   "body": "Grommets are the rubber seals between bowl and stem, stem and base, hose and port. They harden and leak with age, and a pipe that will not pull is far more often a bad grommet than a bad stem. We keep the common sizes. Also on that peg: port plugs for multi-hose pipes, brush sets for the stem and base, and plastic mouth tips for when the hose goes around a table.",
+   "notes": [
+    "Common grommet sizes",
+    "Port plugs",
+    "Stem and base brushes",
+    "Disposable tips"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "hookah-heat-management",
+   "name": "Heat Management Devices",
+   "kind": "piece",
+   "blurb": "A lidded metal cap that sits on the bowl in place of foil.",
+   "body": "A heat management device is a metal housing that holds the coals above the tobacco with a movable lid to control airflow. It replaces foil entirely: no poking holes, no ash falling onto the tobacco, and you can raise or drop the heat mid-session just by cracking the lid. It also stretches a bowl further on the same coals. Check that your bowl has the interior lip these are designed to sit in.",
+   "notes": [
+    "Replaces foil",
+    "Adjustable lid",
+    "Keeps ash off the pack",
+    "Needs a lipped bowl"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "hookah-hose-traditional",
+   "name": "Traditional Leather Hoses",
+   "kind": "piece",
+   "blurb": "Leather or vinyl over a coiled wire core. Never put water through it.",
+   "body": "The old style: a coiled wire spine wrapped in leather or vinyl with a plastic liner running through the middle. It draws wide and it looks right on a traditional Egyptian stem. Water ruins the liner, so you clear one by blowing air through it after a session. Expect months rather than years, and expect the liner to hold flavor as it ages.",
+   "notes": [
+    "Coiled wire core",
+    "Wide draw",
+    "Air-clear only",
+    "Shorter service life"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "hookah-hose-washable",
+   "name": "Washable Silicone Hoses",
+   "kind": "piece",
+   "blurb": "Silicone tube with a removable handle and heel. Rinse it and reuse it.",
+   "body": "A washable hose is three parts: silicone tubing, a handle and a heel tip that seats in the port. Rinse it with warm water after a session and the flavor does not carry over into the next one. Handles and tips are close enough to standard across brands that you can mix and match. These last years with basic care. Do not run one through a dishwasher.",
+   "notes": [
+    "Silicone tubing",
+    "Swappable handle and tip",
+    "Rinse after use",
+    "No flavor carryover"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "hookah-pipes",
+   "name": "Hookah Pipes",
+   "kind": "house",
+   "blurb": "Around two dozen on the floor, single and multi-hose, table to full height.",
+   "body": "Stems run from short table models up to full-height pipes, in stainless and in painted steel over glass bases. Three things to check before you buy: how many hose ports it has, whether the unused ports seal with a plug or a purge ball, and whether the base uses a standard taper so you can replace it later. Bring in an old stem and we will tell you what fits it.",
+   "notes": [
+    "Single and multi-hose",
+    "Glass base",
+    "Stainless and painted steel",
+    "Replaceable parts"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "hookah-tongs-foil-punch",
+   "name": "Tongs, Foil and Punch",
+   "kind": "piece",
+   "blurb": "Tongs, heavy-gauge foil and a punch. The dull parts that matter.",
+   "body": "Long tongs keep your hand away from a lit coal and let you rotate one without dropping it into the rug. Hookah foil is heavier gauge than kitchen foil, so it holds a taut drum over the bowl and does not tear when you punch it. A punch tool gives an even hole pattern in seconds instead of a fork and guesswork. Small parts. The session gets worse without every one of them.",
+   "notes": [
+    "Long-handle tongs",
+    "Heavy-gauge foil",
+    "Hole punch tool"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "ice-pinch-tubes",
+   "name": "Ice-Pinch Tubes",
+   "kind": "piece",
+   "blurb": "Three indents in the neck that hold cubes above the water line.",
+   "body": "An ice pinch is three dimples blown into the neck so cubes stop there instead of dropping into the water. Smoke passes the ice on the way up and arrives cold. It costs nothing in airflow and adds nothing extra to clean. Use cubes big enough to catch on the pinch. Crushed ice slides straight through and just raises your water line.",
+   "notes": [
+    "Three-point pinch",
+    "No added drag",
+    "Use full cubes",
+    "Found on tubes and beakers"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "ijoy",
+   "name": "iJOY",
+   "kind": "brand",
+   "blurb": "The high-capacity outlier. A base with replaceable pods rated to 100K.",
+   "body": "The XP 100K is the biggest number on our shelf, and how it gets there matters: it is a kit, not one sealed unit. A base with a large battery takes replaceable prefilled pods, so the figure on the box is the system total rather than one tank. About five facings on the top shelf, alongside smaller 10,000-puff boxes. Pick it if you move through devices quickly and would rather restock a pod than a whole unit.",
+   "notes": [
+    "XP 100K kit format",
+    "Replaceable prefilled pods",
+    "10K boxes also stocked",
+    "USB-C rechargeable"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "inline-perc",
+   "name": "Inline Perc",
+   "kind": "piece",
+   "blurb": "Horizontal slitted bar across the base. High flow, low resistance.",
+   "body": "An inline is a horizontal tube laid across the bottom of the chamber with slits cut along its length. It moves a lot of air for very little resistance, which is why it turns up in recyclers and in rigs where flavor matters more than heavy filtration. Slit count and width set the feel. Wide slits pull open and loud. Tight slits bubble finer and add a bit of drag.",
+   "notes": [
+    "Horizontal bar",
+    "Low drag",
+    "Common in recyclers",
+    "Slit width sets the feel"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "job",
+   "name": "JOB",
+   "kind": "brand",
+   "blurb": "French papers dating to the 1800s, in the orange and gold pack.",
+   "body": "JOB is one of the oldest names on the paper wall, a French house whose diamond logo predates most of what we sell. The classic is a thin, slow-burning leaf with an even gum line that seals without fighting you. We stock the 1.25 booklets and the cones. If you learned to roll on something you cannot name, there is a fair chance this was it.",
+   "notes": [
+    "Made in France",
+    "1.25 booklets",
+    "Cones",
+    "Even gum line"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "juice-head",
+   "name": "Juice Head",
+   "kind": "brand",
+   "blurb": "Fruit-pairing e-liquid in freebase bottles and salt nicotine sizes.",
+   "body": "Juice Head builds around straightforward two-fruit pairings rather than stacked dessert profiles. The large bottles are freebase for tanks. The small bottles are salt nicotine for pod systems and low-wattage hardware. Flavor names carry across both formats, which makes it easy if you run two devices. Check the nicotine type on the label before you fill anything.",
+   "notes": [
+    "100mL freebase",
+    "30mL salts",
+    "Fruit blends",
+    "Tank and pod"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "jumbo",
+   "name": "Jumbo",
+   "kind": "brand",
+   "blurb": "Value king size, usually with pre-rolled tips in the same booklet.",
+   "body": "Jumbo is a value king-size paper, usually packed with pre-rolled tips in the same booklet so you are not buying two things. Thin enough, gummed properly, and the pack you keep in the glovebox rather than the one you save for company. The colored packs mark the paper, and the range covers standard king through slim. Ask us what is currently hanging on the peg.",
+   "notes": [
+    "King size",
+    "Pre-rolled tips",
+    "Value line",
+    "Multiple weights"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "king-palm",
+   "name": "King Palm",
+   "kind": "brand",
+   "blurb": "Real Cordia leaf, corn husk filter already in it, no paper and no glue.",
+   "body": "King Palm rolls are real Cordia leaf, hand-rolled and cured, with a corn husk filter already in place. No paper, no glue, no tobacco. The leaf burns slower than anything else in the shop and holds a cone shape on its own without help. Sizes run Mini, Rollie, Slim, King, and XXL, and every pack includes a wooden packing stick. The flavored versions carry a bead in the filter you squeeze.",
+   "notes": [
+    "Cordia leaf",
+    "Tobacco free",
+    "Corn husk filter",
+    "Five sizes"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "klein-incycler-recyclers",
+   "name": "Klein and Incycler Recyclers",
+   "kind": "piece",
+   "blurb": "Klein loops outside the chamber; incycler tucks the whole loop inside.",
+   "body": "Both are recyclers, built two different ways. A Klein sends the drain arm out the side and back around, so the circuit is visible from the outside and easy to inspect when you clean. An incycler hides the return tube inside the main chamber, which makes a shorter piece with fewer exposed arms to snap off. Incyclers travel better. Kleins are simpler to see into.",
+   "notes": [
+    "External vs internal loop",
+    "Compact rig size",
+    "Fewer weak points on incyclers"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "la-estrella-cubana",
+   "name": "La Estrella Cubana",
+   "kind": "house",
+   "blurb": "Three wrappers on one blend — the cheapest way to learn what a wrapper actually does.",
+   "body": "Handmade in Esteli, Nicaragua, out of the same house that builds Macanudo. Three wrappers, three moods. Connecticut is the mild one, tan and creamy. Cameroon sits in the middle, drier and nuttier. Habano is the brick-red one, medium to full, peppery with a sweet finish. Take one of each out of the walk-in humidor and smoke them back to back. You will learn more in an afternoon than from a year of reading.",
+   "notes": [
+    "Esteli, Nicaragua",
+    "Mild through full",
+    "Three wrapper options",
+    "Long filler"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "lookah-seahorse-max",
+   "name": "Lookah Seahorse Max",
+   "kind": "brand",
+   "blurb": "Electric nectar collector, 950mAh, swappable quartz and ceramic tips.",
+   "body": "The Seahorse Max is the large body in Lookah's straw line: a 950mAh battery with multiple voltage settings, a bubbler attachment for water filtration, and 510 threading so the battery does other work when you want it to. Tips are consumable. Quartz reads cleanest, ceramic and coil-style tips last longer. Pick up spares when you buy the unit, because you will go through them.",
+   "notes": [
+    "950mAh battery",
+    "Voltage settings",
+    "Bubbler attachment",
+    "510 threaded"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "loose-leaf",
+   "name": "Loose Leaf",
+   "kind": "brand",
+   "blurb": "Natural leaf that stays pliable after opening — the resealable pack is the point.",
+   "body": "Loose Leaf is natural tobacco leaf in a resealable pack, five wraps per pack, and the resealable part is the entire selling point. The leaf stays pliable days after you open it instead of going brittle on you. Slower burn than paper, more grip than a cigarillo shell. Broad flavor range plus a plain natural. If other leaf wraps dry out before you finish the pack, this is the fix.",
+   "notes": [
+    "Natural tobacco leaf",
+    "Resealable pack",
+    "Five per pack",
+    "Slow burn"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "lost-mary",
+   "name": "Lost Mary",
+   "kind": "brand",
+   "blurb": "One model, stacked up top: the MT35000 Turbo with a two-speed output.",
+   "body": "We carry one Lost Mary and stack it where you can see it. The MT35000 Turbo has a screen and two output settings — a standard mode that stretches the tank, and Turbo for a warmer, denser draw at the cost of runtime. The body is squat and flat rather than tall, so it sits better in a front pocket than most devices this size. Choose it if you want something you can dial up and back down by feel.",
+   "notes": [
+    "Standard and Turbo modes",
+    "Status screen",
+    "Flat pocket profile",
+    "USB-C rechargeable"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "macanudo",
+   "name": "Macanudo",
+   "kind": "house",
+   "blurb": "The cigar most people start on, plus Inspirado for when Cafe has gone quiet on you.",
+   "body": "Macanudo Cafe is the cigar most people start on: Connecticut shade wrapper, Dominican and Mexican filler, mild and even with almost no bite. Maduro swaps in Connecticut Broadleaf for something darker and sweeter. Inspirado is where the brand got serious, Nicaraguan-forward and medium to full, a real jump in strength. If Cafe stopped registering, move to Inspirado. Boxes and singles both in the walk-in humidor.",
+   "notes": [
+    "Dominican Republic",
+    "Mild to medium-full",
+    "Connecticut shade",
+    "Boxes and singles"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "matrix-perc",
+   "name": "Matrix Perc",
+   "kind": "piece",
+   "blurb": "Barrel drilled with a grid of slots. Heavy diffusion, quiet pull.",
+   "body": "A matrix is a barrel or donut cut with rows and columns of small slots, top to bottom. Smoke exits from every face at once, so you get a wall of fine bubbles and a noticeably quieter draw than a single-slit perc. More openings also means more drag and more places for residue to settle. Plan on cleaning it more often than a showerhead.",
+   "notes": [
+    "Grid of slots",
+    "Heavy diffusion",
+    "Quiet draw",
+    "Slower to clean"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "mr-fog",
+   "name": "Mr Fog",
+   "kind": "brand",
+   "blurb": "Four models, four different answers: pod system, screen, endurance, compact.",
+   "body": "Mr Fog covers a full lower row plus a top-shelf run because the four lines genuinely do different jobs. The Switch Pod is a two-part system — powered base, swappable prefilled pods, side display. Nova is the screen-forward disposable. Aura drops the screen entirely and puts everything into tank size and runtime. The SW15000 is the small one, with a simple Eco and Boost toggle. Tell us which of those you care about and the choice makes itself.",
+   "notes": [
+    "Switch Pod: base plus pods",
+    "Nova: screen-forward",
+    "Aura: largest tank",
+    "SW15000: Eco / Boost"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "nectar-collectors",
+   "name": "Nectar Collectors",
+   "kind": "piece",
+   "blurb": "Straw-style dab pipe: heat the tip, touch it to the concentrate.",
+   "body": "A nectar collector reverses the usual order. Instead of dropping concentrate into a hot nail, you heat the tip and bring it down to material sitting in a dish. Quartz tips hold flavor best. Titanium is harder to break and more forgiving if you are heavy-handed. Most bodies have a small water chamber in the middle. Sizes here run from a pocket straw to a full kit with a stand and dish.",
+   "notes": [
+    "Quartz or titanium tips",
+    "Water chamber body",
+    "10mm and 14mm tips",
+    "Dish included on some"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "nica-rustica",
+   "name": "Nica Rustica",
+   "kind": "house",
+   "blurb": "Drew Estate's everyday Esteli cigar — broadleaf, earthy, pepper and cocoa.",
+   "body": "Drew Estate's tribute to Esteli, and the workhorse of their lineup. Broadleaf is the one most people mean: a Connecticut Broadleaf wrapper over Mexican and Nicaraguan leaf, medium to full, earthy with black pepper and a cocoa finish. Adobe and Shade give you a darker and a lighter take on the same idea. If Liga Privada is the special occasion, this is Tuesday. Drew Estate shelf inside the humidor.",
+   "notes": [
+    "Esteli, Nicaragua",
+    "Medium-full",
+    "Connecticut Broadleaf",
+    "Made by Drew Estate"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "north",
+   "name": "North",
+   "kind": "brand",
+   "blurb": "Our largest single block: Stellar 40K in four editions, plus the compact North 5000.",
+   "body": "North holds more of this wall than any other brand. The Stellar is the workhorse — a 20mL tank, dual mesh coil, adjustable airflow, and a wraparound screen for charge and liquid level. The editions are flavor families, not different hardware. Dark Moon and Sour lean tart, Skyfall and Slushy lean cold. If that device is more than you want to carry every day, the North 5000 is the same brand in a smaller rechargeable body with a shorter run.",
+   "notes": [
+    "Stellar: 20mL, dual mesh",
+    "Curved status screen",
+    "Adjustable airflow",
+    "Dark Moon / Sour / Skyfall / Slushy"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "north-ft12000",
+   "name": "North FT12000",
+   "kind": "brand",
+   "blurb": "North's 12,000-puff device, roughly 15mL of liquid, rechargeable.",
+   "body": "The FT12000 is North's mid-size disposable: around fifteen milliliters of e-liquid, a mesh coil, and a rechargeable battery so the liquid runs out before the charge does. It sits below the Stellar in the lineup and above the North 5000. Same wall, same rules. Sold to adults twenty-one and over with ID at the counter.",
+   "notes": [
+    "12,000 puffs",
+    "15mL",
+    "Rechargeable",
+    "Mesh coil"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "novelty-figural-heady-pieces",
+   "name": "Novelty and Figural Heady Pieces",
+   "kind": "piece",
+   "blurb": "Hand-sculpted one-offs: hands, skulls, characters, fruit, a sneaker.",
+   "body": "These are the pieces people stop and photograph. Every one is worked by hand off the torch, so no two match in size, weight or color layout. They are sculpted glass, not pressed, and they function. The figure is built around a real bowl and a real airpath. Because they are one-offs, when one goes out the door that exact piece is gone. Come see what is in the case now.",
+   "notes": [
+    "Hand-sculpted",
+    "One of a kind",
+    "Functional, not decor",
+    "Front case"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "ocb",
+   "name": "OCB",
+   "kind": "brand",
+   "blurb": "French papers with real range: unbleached, bamboo, X-Pert ultra thin.",
+   "body": "OCB has been pressing paper in France since 1918, and the range is the reason to buy it. Virgin unbleached, the very thin X-Pert, Premium, and a bamboo line, plus cones and rolling tips. Thinner papers burn faster and taste less. Heavier ones are more forgiving to roll and hold a seal better. Start with the Virgin if you want the middle of the road.",
+   "notes": [
+    "Made in France",
+    "Unbleached and bamboo",
+    "X-Pert ultra thin",
+    "Cones and tips"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "olit",
+   "name": "OLIT",
+   "kind": "brand",
+   "blurb": "Hookalit hookah-style devices. Wider draw than a standard bar.",
+   "body": "OLIT is best known for the Hookalit line — high-capacity, hookah-style devices rather than cigarette-style bars. The draw is the whole differentiator: looser and cooler, closer to what you would expect off a hose than off a pod. What we have in hand rotates, so this is one to ask about at the counter rather than assume. Worth trying if the tight draw on most pod hardware has never suited you.",
+   "notes": [
+    "Hookalit line",
+    "Hookah-style draw",
+    "High capacity",
+    "Stock rotates — ask"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "oliva",
+   "name": "Oliva",
+   "kind": "house",
+   "blurb": "A family ladder from Esteli: Connecticut Reserve, Serie O, Serie V. Climb it.",
+   "body": "Oliva is a family operation in Esteli and the line reads like a ladder. Connecticut Reserve is the mild end, Ecuadorian shade, creamy, a morning cigar. Serie O steps up to Nicaraguan habano, medium and spicy. Serie V is the full one, loaded with ligero, cedar and pepper and a finish that stays. Start at the bottom and climb until it pushes back. The whole ladder is stocked in the walk-in cedar humidor.",
+   "notes": [
+    "Esteli, Nicaragua",
+    "Mild to full",
+    "Habano & Connecticut",
+    "Three-step lineup"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "ooze",
+   "name": "Ooze",
+   "kind": "brand",
+   "blurb": "510 batteries with a real voltage dial, plus glass, silicone and storage.",
+   "body": "Ooze is the 510 battery most people end up with, and the dial is why. The Twist Slim Pen has a variable voltage ring on the base, so you can turn a cartridge down when it starts tasting scorched or up when it is not pulling properly. Recharges over USB. They also make silicone containers, trays and glass, and we keep a spread of colors rather than a rack of black ones.",
+   "notes": [
+    "Variable voltage dial",
+    "510 thread",
+    "Recharges over USB",
+    "Silicone, glass and storage"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "partagas",
+   "name": "Partagas",
+   "kind": "house",
+   "blurb": "Black Label is the heavyweight broadleaf maduro; 1845 is the modern medium-full side.",
+   "body": "Dominican Partagas, built at General Cigar. Black Label is the heavyweight: a thick Connecticut Broadleaf maduro wrapper, full-bodied, sweet and almost syrupy dark. The 1845 line is the modern side, medium to full with more spice and less sugar. If you like Punch and want the volume turned up, Black is the one to try first. Both live in the cedar room where the humidity actually holds.",
+   "notes": [
+    "Dominican Republic",
+    "Medium-full to full",
+    "Broadleaf maduro",
+    "Two distinct lines"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "perdomo",
+   "name": "Perdomo",
+   "kind": "house",
+   "blurb": "Bourbon-barrel-aged Connecticut shade on the 10th Anniversary — cream, cedar, almond.",
+   "body": "Nick Perdomo grows and rolls in Nicaragua, and the Reserve 10th Anniversary is the one worth knowing. Champagne wears a bourbon-barrel-aged Connecticut shade wrapper and smokes mild to medium: cream, cedar, a little almond. Sun Grown and Maduro versions of the same size step it up when you want more. The bundle bags are the everyday play. Boxes in the walk-in humidor, bundles on the shelf beside them.",
+   "notes": [
+    "Nicaragua",
+    "Mild to medium",
+    "Barrel-aged wrapper",
+    "Boxes and bundles"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "ploox",
+   "name": "Ploox",
+   "kind": "brand",
+   "blurb": "A hookah-style disposable at a low nicotine strength. Four facings, top right.",
+   "body": "Ploox is the odd one on this wall, which is why we keep it. Luxpodz builds it as a hookah-style device rather than a cigarette-style bar: a wider, looser draw and a much lower nicotine strength than nearly everything next to it. The XS runs a digital screen and a dual mesh coil. There is also a portable hookah nest the device seats into, sold separately. Ask at the counter if you want that ordered in.",
+   "notes": [
+    "Hookah-style draw",
+    "Low nicotine strength",
+    "Digital screen",
+    "Dual mesh coil"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "pod-juice",
+   "name": "Pod Juice",
+   "kind": "brand",
+   "blurb": "Salt nicotine liquid formulated for pod devices and small tanks.",
+   "body": "Pod Juice is a salt-first line: small bottles at pod-appropriate strengths, with larger freebase bottles for tank users. Salt nicotine is smoother at high strength and it is meant for low-wattage hardware. Put it in a sub-ohm tank and you will get far more than you wanted. Read the milligram figure on the bottle and match it to the device you are actually running.",
+   "notes": [
+    "30mL salts",
+    "100mL freebase",
+    "For low-wattage pods",
+    "Check the mg"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "posh",
+   "name": "Posh",
+   "kind": "brand",
+   "blurb": "The counter-case brand. Max 2.0 rechargeable, plus Posh Plus sticks on the wall.",
+   "body": "Posh has been around longer than most of this wall. The Max 2.0 is the current rechargeable — 14mL, a large battery for its footprint, draw-activated, no screen and no modes to fuss with. The Chi Edition packaging is the same device inside. Posh Plus is the original stick format, small and single-use, and we run two lower shelves of it. Max sits in the right half of the front glass case; the sticks are on the back wall.",
+   "notes": [
+    "Max 2.0: 14mL, rechargeable",
+    "Posh Plus: stick format",
+    "Draw-activated",
+    "No screen, no modes"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "prolite",
+   "name": "ProLite",
+   "kind": "brand",
+   "blurb": "Refillable jet torches with adjustable flame and a safety lock.",
+   "body": "ProLite covers the refillable torch slot: butane jet flame, adjustable output, a lock so it does not fire loose in a pocket, and a burn that stays lit in wind. Refill butane hangs on the same peg. Bleed the tank before the first fill and hold the can upright against the valve while you charge it. That step is where most torch problems begin.",
+   "notes": [
+    "Butane refillable",
+    "Adjustable jet flame",
+    "Safety lock",
+    "Windproof"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "puffco",
+   "name": "Puffco",
+   "kind": "brand",
+   "blurb": "The top of the e-rig shelf. Peak Pro, Proxy, and replacement chambers.",
+   "body": "Puffco is the reference point everything else on this shelf gets measured against. The Peak Pro is the full rig — glass, adjustable heat profiles through the app, and the 3D chamber that heats from the sides and the bottom rather than just below. Proxy is the modular one: a heater and battery that drops into different glass, including pieces from other makers. We stock replacement chambers, because that is the part that eventually goes.",
+   "notes": [
+    "Peak Pro e-rig",
+    "3D chamber heating",
+    "Proxy modular heater",
+    "Replacement chambers stocked"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "punch",
+   "name": "Punch",
+   "kind": "house",
+   "blurb": "Honduran workhorse — woody, peppery, medium-full, and honest about all three.",
+   "body": "Punch is a Honduran workhorse with a long history behind the name. Clasico runs a Sumatra-seed wrapper over Honduran and Nicaraguan filler: medium to full, woody, peppery, and completely honest about it. Serie R Esteli is the harder-hitting Nicaraguan version for when Clasico stops registering. Not subtle and not trying to be. Boxes in the walk-in humidor, smaller packs kept up at the counter.",
+   "notes": [
+    "Honduras",
+    "Medium-full",
+    "Sumatra-seed wrapper",
+    "Serie R steps up"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "quick-fix-plus",
+   "name": "Quick Fix Plus",
+   "kind": "brand",
+   "blurb": "Premixed synthetic urine kit with a heat pad and temperature strip.",
+   "body": "Quick Fix Plus is a three-ounce bottle of laboratory-mixed synthetic urine, sold as a novelty item. The kit ships with a heating pad and a temperature strip on the bottle itself. Check the lot number and the expiration date on the box before you leave the store, because both matter. Sold to adults only, and we do not offer guidance on what anyone does with it.",
+   "notes": [
+    "3 oz bottle",
+    "Heat pad included",
+    "Temperature strip",
+    "Novelty item"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "quorum",
+   "name": "Quorum",
+   "kind": "house",
+   "blurb": "Long-filler bundle cigar from J.C. Newman's Esteli factory. Consistent box to box.",
+   "body": "J.C. Newman builds Quorum at their Esteli factory and it is long filler, not chopped scrap, which is the whole point of the brand. Classic wears a Sumatra sun-grown wrapper, Shade an Ecuadorian Connecticut, Maduro a broadleaf binder underneath. Medium, straightforward, and consistent bundle to bundle. This is what you buy by the armful for the deck. The Toro sampler sits in the humidor.",
+   "notes": [
+    "Esteli, Nicaragua",
+    "Medium",
+    "Long filler",
+    "Toro 6x50"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "raw",
+   "name": "RAW",
+   "kind": "brand",
+   "blurb": "Unbleached papers plus the whole ecosystem built around them.",
+   "body": "The accessory side of RAW runs deep: cork-topped rolling trays in several sizes, hemp-plastic rollers, pre-rolled tips, cone loaders, storage tins and lighter sleeves. The papers themselves are unrefined and translucent brown because nothing bleaches them on the way out. If you want one label that covers the tray, the paper, the tip and the roller, this is the one.",
+   "notes": [
+    "Rolling trays",
+    "Rollers and loaders",
+    "Pre-rolled tips",
+    "Unbleached papers"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "raz",
+   "name": "RAZ",
+   "kind": "brand",
+   "blurb": "The screen device. A 2.5-inch animated display and a leather-wrapped body.",
+   "body": "If the display is the point, RAZ is the answer. The LTX runs a 2.5-inch animated screen showing charge, liquid level, puff count and current mode, with a light or dark theme. The body is wrapped in leather, which is unusual at this size and makes it noticeably easier to hold. Two settings: regular for runtime, boost for a heavier draw. Five or six facings, top shelf, far left, in 25K and 15K.",
+   "notes": [
+    "2.5-inch HD display",
+    "Leather-wrapped body",
+    "Regular and Boost modes",
+    "Adjustable airflow"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "recyclers",
+   "name": "Recyclers",
+   "kind": "piece",
+   "blurb": "Two chambers loop the water in a circuit so it never sits still.",
+   "body": "A recycler pushes water from a lower chamber up through an intake arm into an upper chamber, then drains it back down. The water is constantly moving, which keeps smoke in contact with it longer and keeps splashback out of the mouthpiece. Watch how the loop runs when someone pulls on one. A good recycler cycles smooth and steady. A bad one chugs and floods the top chamber.",
+   "notes": [
+    "Two-chamber loop",
+    "Little splashback",
+    "Usually 10mm or 14mm",
+    "Rig height"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "rocky-patel",
+   "name": "Rocky Patel",
+   "kind": "house",
+   "blurb": "Vintage means aged leaf. The Edge means ligero up front. Both are here.",
+   "body": "Rocky Patel's two anchors sit on the same shelf. Vintage refers to tobacco aged before rolling, and the 1990 and 1992 blends run maduro and Sumatra, medium to full, sweet cedar and leather. The Edge is the aggressive one, five years aged and built for people who want ligero up front, in Corojo and Maduro. If Oliva Serie V is your bar, the Edge clears it. Right side of the humidor.",
+   "notes": [
+    "Honduras & Nicaragua",
+    "Medium-full to full",
+    "Aged tobacco",
+    "Corojo and Maduro"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "romeo-y-julieta",
+   "name": "Romeo y Julieta",
+   "kind": "house",
+   "blurb": "The Dominican Romeo — smooth enough for a first box, with room to step up.",
+   "body": "The Dominican Romeo, made by General Cigar. The 1875 blend is the long-runner: Indonesian wrapper, Dominican and Nicaraguan filler, mild to medium, smooth enough to be somebody's first box. The Connecticut Nicaragua version splits the difference with a creamier wrapper over a spicier core. Reserve adds body without going full. A good bridge between Macanudo and Oliva. Toros and boxes both in the humidor.",
+   "notes": [
+    "Dominican Republic",
+    "Mild to medium",
+    "Indonesian wrapper",
+    "Toro and boxes"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "rose-wraps",
+   "name": "Rose Wraps",
+   "kind": "brand",
+   "blurb": "Actual pressed rose petals, tobacco and nicotine free. Nothing else here does this.",
+   "body": "Rose Wraps are exactly what the name says: real rose petals pressed and rolled into a wrap. Tobacco free and nicotine free. They burn slower than paper and carry a faint floral note that is either the entire appeal or immediately not your thing. More fragile than a tobacco leaf, so roll gently and do not force the seal. Nothing else on this wall does what these do.",
+   "notes": [
+    "Rose petal",
+    "Tobacco free",
+    "Slow burn",
+    "Delicate"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "sad-boy",
+   "name": "Sad Boy",
+   "kind": "brand",
+   "blurb": "Custard and cookie e-liquid in large-format bottles.",
+   "body": "Sadboy built its name on custard and cookie profiles rather than fruit, thicker and sweeter blends aimed at tank users who want something that reads like dessert. Freebase in the big bottles, salt versions in the small ones. These are high-VG and they want airflow, so they do not run well in a tight pod. Ask what is on the shelf before you plan a week around one flavor.",
+   "notes": [
+    "Custard and cookie",
+    "100mL freebase",
+    "Salt versions",
+    "High-VG"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "scorch-torch",
+   "name": "Scorch Torch",
+   "kind": "brand",
+   "blurb": "Butane torches from single jet to quad, refillable and adjustable.",
+   "body": "Scorch Torch is the counter standard here for good reason: consistent ignition, adjustable flame, a fuel window so you can see what is left, and bodies that survive being dropped on a garage floor. Single, double, triple and quad jet, plus angled and pen shapes. If you are heating quartz, more jets means faster and more even heat across the bucket.",
+   "notes": [
+    "1 to 4 jets",
+    "Refillable butane",
+    "Fuel window",
+    "Safety lock"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "sesh-mint",
+   "name": "sesh+ Mint",
+   "kind": "flavor",
+   "blurb": "Spearmint and peppermint blended. Moderate cooling, even flavor.",
+   "body": "sesh+ builds its Mint from both spearmint and peppermint, so it lands between the two: sweeter than a straight peppermint, cooler than a plain spearmint, and even from front to back rather than spiking early. Cooling is moderate. The pouch is soft and lies flat under the lip. Stocked at 6 mg, a middle strength that suits someone past their first can but not chasing more.",
+   "notes": [
+    "6 mg",
+    "Moderate cooling",
+    "Synthetic nicotine"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "sesh-plus",
+   "name": "sesh+",
+   "kind": "brand",
+   "blurb": "Small synthetic-nicotine line, gentler flavors, unobtrusive pouch.",
+   "body": "sesh+ runs a short list of synthetic nicotine pouches: mint, wintergreen, mango, cappuccino, raspberry lemon and a plain Clear. Flavors sit gentler than the big names, which is either the appeal or the drawback depending on what you are after. The pouch is soft and lies flat. Cans hold twenty. We stock the Mint at 6 mg. A reasonable pick if the mainstream mints have started tasting like each other.",
+   "notes": [
+    "Synthetic nicotine",
+    "20 per can",
+    "Mint at 6 mg"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "showerhead-perc",
+   "name": "Showerhead Perc",
+   "kind": "piece",
+   "blurb": "Flared tube with slits around the rim, the reliable everyday perc.",
+   "body": "A showerhead is a vertical tube that flares out at the bottom with a ring of slits cut around the edge. Smoke goes down, spreads through the slits and comes back up as a wide band of small bubbles. It diffuses well without choking the draw, and there is very little in it to clog. If you do not know what perc you want, start here and go from there.",
+   "notes": [
+    "Even diffusion",
+    "Open airflow",
+    "Easy to clean",
+    "Common in beakers"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "silicone-and-glass-hybrid-water-pipes",
+   "name": "Silicone and Glass Hybrid Water Pipes",
+   "kind": "piece",
+   "blurb": "Silicone body, glass parts where it matters, survives a drop.",
+   "body": "The base and neck are platinum-cure silicone while the bowl, downstem and often the perc stay glass. You get close to the airflow of a glass piece on a body that bounces instead of shattering. Most break down into parts small enough to boil or run through a dishwasher. Sensible for a garage, a boat, or anyone who has already paid the glass tax once.",
+   "notes": [
+    "Silicone body",
+    "Glass bowl and stem",
+    "Breaks down to clean",
+    "Drop tolerant"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "skyline",
+   "name": "Skyline",
+   "kind": "house",
+   "blurb": "Ecuadorian Connecticut wrapper, mild and creamy — the long-afternoon bundle cigar.",
+   "body": "A bundle brand built on an Ecuadorian Connecticut wrapper, the shade-grown leaf that gives you tan color and a creamy, low-pepper smoke. Mild to medium and consistent enough to buy a stack of. This is the cigar for a full round of golf or an afternoon on the patio where you do not want to be worked over by hour two. Ask what sizes are in the humidor before you plan around it.",
+   "notes": [
+    "Ecuadorian Connecticut",
+    "Mild to medium",
+    "Bundle format",
+    "Low pepper"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "slugs",
+   "name": "Slugs",
+   "kind": "brand",
+   "blurb": "Loose Leaf Slugs: pre-rolled leaf cones with a glass tip already in.",
+   "body": "Slugs are Loose Leaf's glass-tipped cones, a pre-rolled leaf wrap with a reusable glass mouthpiece seated in the end at the factory. The tip holds the end open, keeps the wrap from collapsing as it burns down, and never goes soft the way a paper crutch does. Pull the glass out afterward, clean it and use it again. Useful if rolling leaf cleanly is not your skill.",
+   "notes": [
+    "Pre-rolled leaf cone",
+    "Reusable glass tip",
+    "No crutch to roll"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "smok",
+   "name": "Smok",
+   "kind": "brand",
+   "blurb": "The mod-and-tank standby. Nord and Novo pods, sub-ohm tanks, coils in stock.",
+   "body": "Smok is the brand most people picture when they hear box mod. The Nord line is the middle ground — real wattage control and replaceable coils in something still pocket-sized. Novo is the smaller, simpler end of the same idea. Because Smok has been at this so long, coils and replacement glass are easy to find, which matters more than a spec sheet when something breaks on a Saturday. A sensible first step off disposables.",
+   "notes": [
+    "Nord and Novo pod lines",
+    "Replaceable coils",
+    "Sub-ohm tanks",
+    "Parts widely available"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "stemless-beakers",
+   "name": "Stemless Beakers",
+   "kind": "piece",
+   "blurb": "Perc fused straight into the body, no downstem to lose or break.",
+   "body": "On a stemless piece the joint feeds directly into a fixed percolator instead of a removable downstem. Nothing to pull out, nothing to crack when you set it down hard, and one less part to replace. The catch is cleaning: you flush the whole body rather than soaking a stem on its own. Worth it if you have already broken a downstem or two.",
+   "notes": [
+    "Fixed perc",
+    "No removable stem",
+    "Flush-clean the body",
+    "14mm/18mm joint"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "straight-tube-water-pipes",
+   "name": "Straight Tube Water Pipes",
+   "kind": "piece",
+   "blurb": "Narrow column, faster clear, less water than a beaker.",
+   "body": "A straight tube is one column top to bottom. Less water sits in it, so it clears faster and pulls drier than a beaker of the same height. Good if you want a snappier draw and a piece that fits on a shelf rather than hogging a table. The tradeoff is stability: a smaller foot wants a coaster or a stand under it.",
+   "notes": [
+    "Fast clearing",
+    "Smaller water volume",
+    "14mm/18mm joints",
+    "Slim footprint"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "suorin",
+   "name": "Suorin",
+   "kind": "brand",
+   "blurb": "The flat, card-shaped pods. Air and Drop, for people who hate a pocket bulge.",
+   "body": "Suorin built its name on shape. The Air is flat as a credit card. The Drop is a rounded teardrop. Both disappear in a front pocket in a way a tube device never will. Refillable pods, draw-activated, no screens and no menus. Power is modest by design and the draw is on the tight side. If your objection to refillable gear has always been that it is too bulky or too fiddly, this line answers exactly that.",
+   "notes": [
+    "Card-flat form factor",
+    "Air, Drop, Ace",
+    "Refillable pods",
+    "Draw-activated, no buttons"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "sweet-woods-good-times-leaf",
+   "name": "Sweet Woods (Good Times Leaf)",
+   "kind": "brand",
+   "blurb": "Good Times' natural leaf wrap — thicker than hemp, holds a roll well.",
+   "body": "Sweet Woods is Good Times' natural leaf wrap: real tobacco leaf, foil-sealed, two or four to a pack depending on the display it came out of. Thicker than a hemp wrap, slower burning, and it holds a roll without much coaxing. Sweet is the base and the flavored versions build off it. A reasonable stand-in when Backwoods is out of whichever one you came in for.",
+   "notes": [
+    "Natural tobacco leaf",
+    "Slow burn",
+    "Foil-sealed",
+    "Two or four per pack"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "swisher-sweets",
+   "name": "Swisher Sweets",
+   "kind": "house",
+   "blurb": "The most recognized machine-made cigarillo in the country, in four profiles.",
+   "body": "Swisher Sweets is the most recognized machine-made cigarillo in the country and it does not need much introduction. Classic is the sweet original, Gold is mellower, Black is the darker wrapper with more body, and Honey Banana is the sweetest of the four. Foil pouches keep them soft, sold in small packs or by the box. Front counter, always stocked, no reason to ever call ahead.",
+   "notes": [
+    "Machine-made",
+    "Mild",
+    "Foil pouch",
+    "Four profiles"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "tabak-especial",
+   "name": "Tabak Especial",
+   "kind": "house",
+   "blurb": "Coffee-infused by Drew Estate, and done so the coffee sits under the tobacco.",
+   "body": "Drew Estate infuses these with coffee and does it well: the coffee sits under the tobacco instead of on top of it. Dulce wears an Ecuadorian Connecticut shade with a lightly sweetened cap, mild and milky. Negra goes Mexican San Andres maduro, darker and closer to espresso. Medium either way. If ACID is too botanical for you, this is the infused cigar that still smokes like a cigar. Stored separately in the humidor.",
+   "notes": [
+    "Nicaragua",
+    "Medium",
+    "Coffee infused",
+    "Shade or maduro"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "tasty-sticks",
+   "name": "Tasty Sticks",
+   "kind": "house",
+   "blurb": "Flavored six-by-60s from 708, the same Matteson, Illinois outfit.",
+   "body": "Tasty Sticks comes from 708, the same Matteson, Illinois company behind the 708 Cigar line. Big format at six inches by 60, with a sweetened flavored profile: Mango Papaya, Honey Blueberry, Orange. Twenty to a box. Mild, long-burning, meant to be smoked casually rather than studied leaf by leaf. A local company doing a flavored cigar with real construction behind it. Kept boxed on the shelf.",
+   "notes": [
+    "Illinois brand",
+    "Mild",
+    "6x60 format",
+    "Boxes of twenty"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "tatiana",
+   "name": "Tatiana",
+   "kind": "house",
+   "blurb": "The serious end of flavored cigars — hand-rolled Dominican, not a machine shell.",
+   "body": "Tatiana is the grown-up end of flavored cigars: Dominican, hand-rolled, with the flavoring carried on real tobacco instead of a machine-made shell. The Classic is a six by 44 and the list is long, running Cherry, Vanilla, Rum, Cognac, Honey, Night Cap, Groovy Blue, Waking Dream, and Harvest Moon. Mild. If Swisher is too blunt and you still want flavor, this is the step up. Its own shelf in the humidor.",
+   "notes": [
+    "Dominican Republic",
+    "Mild",
+    "Hand-rolled",
+    "Wide flavor range"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "top",
+   "name": "TOP",
+   "kind": "brand",
+   "blurb": "Single-wide gummed papers, plus tubes and the injector to fill them.",
+   "body": "TOP has been making the same single-wide paper for over a century and it is still what a lot of people learned on: thin, gummed, packed flat in the pouch. The brand also covers the roll-your-own side with cigarette tubes and the injector that packs them. If you are making your own rather than rolling by hand, ask for the tubes and we will show you the injector.",
+   "notes": [
+    "Single wide",
+    "Gummed leaf",
+    "Tubes and injectors"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "tree-arm-perc",
+   "name": "Tree-Arm Perc",
+   "kind": "piece",
+   "blurb": "Slitted arms hanging in the chamber. Classic diffusion, delicate build.",
+   "body": "A tree perc drops several individual arms into the chamber, each one slitted at the bottom. Arm count is the spec people ask about: six, eight, twelve. More arms, more diffusion. Those arms are also the thinnest glass in the piece, so never bang a downstem against them and never let one dry out full of water. Rinse it before it sets and a tree stays clear for years.",
+   "notes": [
+    "6, 8 or 12 arms",
+    "Strong diffusion",
+    "Fragile arms",
+    "Rinse promptly"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "trojan",
+   "name": "Trojan",
+   "kind": "brand",
+   "blurb": "Condoms at the register, singles and multipacks.",
+   "body": "Kept behind the counter with the other register items. Latex and non-latex, lubricated and ultra-thin, in singles for tonight and three-packs for the week. Check the date stamp on the wrapper before you go. It is stocked because people ask for it on the way out and there is no sense in sending anyone across the street for it.",
+   "notes": [
+    "Latex and non-latex",
+    "Singles and 3-packs",
+    "At the register"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "tyson",
+   "name": "Tyson",
+   "kind": "brand",
+   "blurb": "Tyson 2.0 cones and wraps, rolled on Futurola equipment.",
+   "body": "The Tyson 2.0 rolling line is produced with Futurola, and that is the part worth knowing. Futurola cones are machine-rolled to a consistent pack and a straight, even burn. You get king size and 1.25 cones, hemp wraps and tips under the same label. The boxing branding is on the outside of the box. The paper inside is the same standard Futurola runs for everyone.",
+   "notes": [
+    "Futurola-made",
+    "King and 1.25 cones",
+    "Hemp wraps",
+    "Tips"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "ut",
+   "name": "UT",
+   "kind": "brand",
+   "blurb": "Two tanks in one device. Run a flavor alone or blend the pair.",
+   "body": "UT comes from Flum and does something none of its neighbors do. The device holds two flavors and lets you run either one on its own or mix them, with the ratio adjustable on the screen. That is what the 6 and 12 Multiple Choices boxes mean — how many combinations are loaded. Eco mode stretches runtime, Turbo shortens it for a heavier draw. The 50K also keeps a puff timer readout on screen.",
+   "notes": [
+    "Dual-tank flavor blending",
+    "Eco and Turbo modes",
+    "6 or 12 flavor variants",
+    "Puff timer readout"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "uwell",
+   "name": "Uwell",
+   "kind": "brand",
+   "blurb": "Caliburn. The mouth-to-lung pod people buy when flavor matters most.",
+   "body": "Uwell's Caliburn is what we hand someone who wants a tight, cigarette-style draw rather than a cloud. The G3 Pro adds a screen, adjustable wattage and airflow, and refillable pods with replaceable coils, so the running cost is a coil rather than a device. It runs restrained on purpose. If you are stepping down from a big disposable to something smaller and refillable, this is usually the first one we suggest trying.",
+   "notes": [
+    "Caliburn G3 and G3 Pro",
+    "Mouth-to-lung draw",
+    "Refillable pods",
+    "Adjustable airflow and wattage"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "vapetasia",
+   "name": "Vapetasia",
+   "kind": "brand",
+   "blurb": "The Killer Kustard house: vanilla custard and everything built off it.",
+   "body": "Vapetasia is known for one blend, Killer Kustard, and the row of variations that came after it. Freebase in the large bottles for tanks, salt nicotine in the small bottles for pods. Custards are thick and sweet, and they will gunk a coil faster than a light fruit blend, so budget for more frequent coil changes if this is your everyday.",
+   "notes": [
+    "Killer Kustard line",
+    "100mL freebase",
+    "30mL salts",
+    "Harder on coils"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "vaporesso",
+   "name": "Vaporesso",
+   "kind": "brand",
+   "blurb": "XROS and LUXE. Refillable pods with a reputation for coil life.",
+   "body": "Vaporesso sits next to Uwell and gets picked for similar reasons with a different feel. The XROS is the slim refillable pod — light, quiet, and built around their COREX coils, which is what most repeat buyers are actually coming back for. LUXE is the larger line, more power and a screen. If you want one device that handles both a tight draw and a looser one without swapping hardware, start on this shelf.",
+   "notes": [
+    "XROS slim pod line",
+    "LUXE larger models",
+    "COREX coils",
+    "Refillable, replaceable coils"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "velo",
+   "name": "VELO",
+   "kind": "brand",
+   "blurb": "Soft, fairly dry pouches with the widest non-mint range we carry.",
+   "body": "VELO uses synthetic nicotine in a soft pouch that runs on the dry side, stays put and does not get sloppy an hour in. The mint side of the line is conventional and well made. The interesting part is everything else: cappuccino, dragon fruit, and a Smooth that reads warm rather than cold. Worth a look if you have decided mint is not for you. The flavors we stock run at 6 mg.",
+   "notes": [
+    "Synthetic nicotine",
+    "Soft dry pouch",
+    "Non-mint options"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "velo-cappuccino",
+   "name": "VELO Cappuccino",
+   "kind": "flavor",
+   "blurb": "Sweet medium-roast coffee with a caramel edge. Warming, not cooling.",
+   "body": "This tastes like coffee with sugar in it, not black coffee. Medium roast, rounded, a caramel note through the middle, and no cooling at all, so it sits warm on the gum. It suits mornings better than evenings. Offered here at 6 mg, which is a step past entry level, so someone brand new to pouches may want to start lower in another line and work up to it.",
+   "notes": [
+    "6 mg",
+    "No cooling",
+    "Sweet coffee"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "velo-dragon-fruit",
+   "name": "VELO Dragon Fruit",
+   "kind": "flavor",
+   "blurb": "Creamy, mild dragon fruit. Low acid, restrained sweetness, no bite.",
+   "body": "Softer than most fruit pouches. Dragon fruit is a mild fruit to begin with, and VELO plays it creamy rather than tart, so there is no sharp edge and very little acid to it. Sweetness is held back. If berry flavors read as too loud to you, this is the calmer option in the case. Made at 6 mg only, so the flavor is gentle even though the strength is mid-range.",
+   "notes": [
+    "6 mg",
+    "No cooling",
+    "Mild fruit"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "velo-smooth",
+   "name": "VELO Smooth",
+   "kind": "flavor",
+   "blurb": "VELO's plain option: faintly warm and toasted, no mint, no cooling.",
+   "body": "Smooth is VELO's near-unflavored pouch, though it is not truly blank. There is a low, dry, faintly toasted note underneath, closer to warm bread than to fruit or mint. No cooling agent and almost no sweetness. Good if you want the format without a flavor announcing itself every few minutes. Stocked at 6 mg. Someone new to pouches usually finds a plain flavor easier to judge than a loud one.",
+   "notes": [
+    "6 mg",
+    "No cooling",
+    "Near-unflavored"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "velo-spearmint",
+   "name": "VELO Spearmint",
+   "kind": "flavor",
+   "blurb": "Bright cooling spearmint, sweeter and softer than peppermint.",
+   "body": "Spearmint here is clean and lightly sweet with a real cooling edge behind it, which makes it brighter than the rounder spearmints in other lines. Not medicinal, not hot. It holds flavor evenly rather than starting strong and dropping off at the twenty-minute mark. Stocked at 6 mg, so it is a fair pick for someone who already knows mint pouches agree with them.",
+   "notes": [
+    "6 mg",
+    "Cooling",
+    "Sweet mint"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "vivazen",
+   "name": "Vivazen",
+   "kind": "brand",
+   "blurb": "Botanical shots and tablets, adults only, kept behind the counter.",
+   "body": "Vivazen makes small botanical shot bottles and tablet packs, sitting in the same category as the kratom brands we keep behind the counter rather than out on the floor. We do not make claims about what any of it does. Read the label, follow the serving guidance printed on it, and ask us if you want to know what is in a given format before you buy it.",
+   "notes": [
+    "Shots and tablets",
+    "Behind the counter",
+    "21+",
+    "Read the label"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "vuse",
+   "name": "Vuse",
+   "kind": "brand",
+   "blurb": "A closed pod system, not a disposable. Keep the battery, buy prefilled pods.",
+   "body": "Vuse sits away from the disposable wall on purpose, because it is a different kind of product. The Alto is a rechargeable battery that takes prefilled pods — magnetic, no filling, no coil changes. Pods come in tobacco and menthol at a few nicotine strengths. Each one runs a couple hundred puffs, not tens of thousands. This is for someone who wants a small consistent device and a predictable refill instead of a new unit every time.",
+   "notes": [
+    "Closed pod system",
+    "Prefilled magnetic pods",
+    "Tobacco and menthol",
+    "Several nicotine strengths"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "white-owl",
+   "name": "White Owl",
+   "kind": "house",
+   "blurb": "One of the oldest names in American machine-made cigars, still moving daily.",
+   "body": "White Owl is a Swisher brand and one of the oldest names in American machine-made cigars. Pineapple and White Grape are the two that move here, both sweet-capped and mild, in foil pouches that keep them from drying out on the rack. Quick smoke, nothing more claimed for it. Front counter alongside the rest of the cigarillos, sold in small packs or by the box.",
+   "notes": [
+    "Machine-made",
+    "Mild",
+    "Foil pouch",
+    "Sweet cap"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "woods-leaf",
+   "name": "Woods Leaf",
+   "kind": "brand",
+   "blurb": "Whole leaf wraps in resealable packs. No paper involved.",
+   "body": "Woods Leaf belongs with the whole-leaf wraps rather than the papers. Leaf comes pre-cut and slightly moist in a resealable pouch, and it rolls differently from paper: slower burn, more body, and it has to stay sealed or it dries out and cracks on you. If a pouch does dry out, a damp paper towel tucked in overnight brings the leaf back.",
+   "notes": [
+    "Whole leaf",
+    "Resealable pouch",
+    "Slower burn",
+    "Keep it sealed"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "yocan",
+   "name": "Yocan",
+   "kind": "brand",
+   "blurb": "Concentrate and cartridge hardware. Evolve wax pens and the UNI adjustable box.",
+   "body": "Yocan is the concentrate side of the counter. The Evolve series is the classic wax pen — coil, cap, magnetic connection, spare atomizers sold separately so you are not replacing the whole pen. UNI Pro is the other half of the line: a 510 box with adjustable height and diameter, so it fits almost any cartridge, including the wide ones that will not seat in a standard battery. Simple hardware, easy to keep running.",
+   "notes": [
+    "Evolve wax pens",
+    "UNI Pro 510 box",
+    "Adjustable to fit most carts",
+    "Replaceable atomizers"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "zig-zag",
+   "name": "Zig-Zag",
+   "kind": "brand",
+   "blurb": "The orange pack, plus unbleached, hemp, cones and cigarillo wraps.",
+   "body": "Zig-Zag is French, dates to the 1800s, and the orange 1.25 pack is the one everybody recognizes on sight. The line is wider than that now: unbleached, ultra-thin, hemp papers, pre-rolled cones in a few sizes, and wraps. Consistent gum and consistent cut pack after pack, which is the entire argument for buying a paper you already know how to roll.",
+   "notes": [
+    "Orange 1.25",
+    "Unbleached and hemp",
+    "Cones",
+    "Wraps"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "zimo",
+   "name": "ZIMO",
+   "kind": "brand",
+   "blurb": "Straightforward tobacco-free pouches across a broad flavor spread.",
+   "body": "ZIMO is one of the newer tobacco-free lines, built around a long flavor list that leans fruit-heavy alongside the standard mint and wintergreen. Construction is basic in a good way: a soft white pouch, moderate moisture, nothing unusual about the fit. Worth trying if you already know which flavor you want and are curious how a different maker handles it. What we carry here is the wintergreen at 3 mg.",
+   "notes": [
+    "Tobacco-free",
+    "White pouch",
+    "Wintergreen at 3 mg"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "zimo-wintergreen",
+   "name": "ZIMO Wintergreen",
+   "kind": "flavor",
+   "blurb": "The classic sweet wintergreen at 3 mg. Mild the whole way through.",
+   "body": "Sweet wintergreen, the profile most people know from dip, with a mild cooling lift and none of the sharpness menthol brings. ZIMO keeps it gentle instead of pushing intensity. At 3 mg it is one of the lower-strength pouches on the shelf, which makes it a sensible first can for someone curious about the format and not looking for much beyond a familiar flavor.",
+   "notes": [
+    "3 mg",
+    "Mild cooling",
+    "Sweet wintergreen"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "zyn",
+   "name": "ZYN",
+   "kind": "brand",
+   "blurb": "The baseline. Dry slim pouches, 15 to a can, 3 mg and 6 mg.",
+   "body": "ZYN is what most people mean when they say pouches. Dry, slim, discreet, and consistent can to can, which is most of why it holds the shelf. The range runs from plain Smooth through Coffee and Cinnamon to a full spread of mints, so there is somewhere to go once your first pick gets old. Two strengths, 3 mg and 6 mg. If you have never used a pouch, this is where the conversation starts.",
+   "notes": [
+    "3 mg and 6 mg",
+    "Dry slim pouch",
+    "15 per can"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "zyn-black-cherry",
+   "name": "ZYN Black Cherry",
+   "kind": "flavor",
+   "blurb": "Dark, sweet cherry with a tart finish. No cooling underneath.",
+   "body": "Cherry played dark rather than bright, with enough tartness on the finish to keep it from going syrupy. There is no cooling agent, which leaves the fruit exposed and makes this one of the sweeter pouches ZYN builds. Flavor runs strong early and settles after ten minutes or so. Offered at 6 mg only, so it is not the one to hand someone on their first can.",
+   "notes": [
+    "6 mg",
+    "No cooling",
+    "Sweet and tart"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "zyn-chill",
+   "name": "ZYN Chill",
+   "kind": "flavor",
+   "blurb": "No flavor, just cold. Cooling agent with nothing in front of it.",
+   "body": "Chill is unflavored but not neutral. No mint, no fruit, no sweetness, only the cooling agent, which registers as cold across the gum with no taste attached to it. People either find that clean or find it strange, and there is not much middle ground. Comes in 3 mg and 6 mg. The 3 mg is a reasonable starting point if you want the format without picking a flavor yet.",
+   "notes": [
+    "3 mg and 6 mg",
+    "Cooling",
+    "Unflavored"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "zyn-cinnamon",
+   "name": "ZYN Cinnamon",
+   "kind": "flavor",
+   "blurb": "Hot red cinnamon, drying, with a burn that builds. 3 mg only.",
+   "body": "This is red-hot cinnamon, not baked cinnamon roll. It starts warm and keeps building, and it dries the mouth more than anything else in the line. There is no cooling to balance it. Divisive on purpose, and the people who like it do not want anything else. Made at 3 mg only, which suits it, since the heat is the main event and more strength would be a lot to sit with.",
+   "notes": [
+    "3 mg",
+    "Warming",
+    "Drying"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "zyn-citrus",
+   "name": "ZYN Citrus",
+   "kind": "flavor",
+   "blurb": "Soft orange citrus with a light cooling lift. Sweet, not sour.",
+   "body": "Orange leads, closer to the flesh of the fruit than the peel, with a light cooling note behind it that stops it from turning syrupy. Rounder and sweeter than most citrus pouches, and short on the bitterness lime-based blends carry. Made in both 3 mg and 6 mg, so it works either as a first fruit pouch at the lower strength or as an everyday pick at the higher one.",
+   "notes": [
+    "3 mg and 6 mg",
+    "Light cooling",
+    "Sweet orange"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "zyn-coffee",
+   "name": "ZYN Coffee",
+   "kind": "flavor",
+   "blurb": "Dark roast, dry and slightly bitter. Closer to black coffee than latte.",
+   "body": "Roasty and dry, with the bitter edge left in rather than buried under sugar. No cream note, no cooling. It reads more like the last third of a cup of black coffee than like a coffee drink, which is exactly why some people keep buying it. If a sweetened cappuccino pouch was too much for you, this is the other direction. Available in 3 mg and 6 mg.",
+   "notes": [
+    "3 mg and 6 mg",
+    "No cooling",
+    "Dry and bitter"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "zyn-cool-mint",
+   "name": "ZYN Cool Mint",
+   "kind": "flavor",
+   "blurb": "The default mint. Peppermint base, steady cooling, nothing sharp.",
+   "body": "The one most people land on and stay with. A peppermint base with cooling that stays level instead of spiking, sweet enough to be easy without tasting sugary. It is the safest flavor in the range and the one that turns over fastest on our shelf. Both 3 mg and 6 mg are stocked, so this is usually the answer when someone asks where to start.",
+   "notes": [
+    "3 mg and 6 mg",
+    "Cooling",
+    "Good starting point"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "zyn-dragonberry",
+   "name": "ZYN Dragonberry",
+   "kind": "flavor",
+   "blurb": "Berry-forward blend with dragon fruit behind it. Sweet, no cooling.",
+   "body": "Mixed berry sits up front with dragon fruit rounding it out underneath, so it lands jammier than the single-fruit pouches. There is no cooling agent, which leaves the sweetness fully exposed and makes this one of the louder flavors ZYN makes. Only offered at 6 mg, so treat it as a step up rather than an introduction to the format.",
+   "notes": [
+    "6 mg",
+    "No cooling",
+    "Sweet berry"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "zyn-espresso-martini",
+   "name": "ZYN Espresso Martini",
+   "kind": "flavor",
+   "blurb": "Espresso with a sweet vanilla edge and a little citrus lift on top.",
+   "body": "Coffee built as a drink rather than a cup: espresso bitterness with vanilla sweetness over it and a faint citrus brightness at the very top. Less dry than the straight Coffee pouch and more layered than the cappuccino-style ones. No cooling, so it sits warm. Made in 3 mg and 6 mg, which gives you room to try it mild before deciding.",
+   "notes": [
+    "3 mg and 6 mg",
+    "No cooling",
+    "Sweet coffee"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "zyn-menthol",
+   "name": "ZYN Menthol",
+   "kind": "flavor",
+   "blurb": "Sharp, cold and medicinal. The hardest cooling in the standard line.",
+   "body": "Menthol without the sugar. Cold, faintly medicinal, and the cooling arrives faster and harder than Cool Mint or Peppermint deliver. Very little sweetness softens it. If menthol is already the taste you reach for, you will recognize it in the first minute and know whether it is what you wanted. Stocked in 3 mg and 6 mg, though the 3 mg still reads plenty cold.",
+   "notes": [
+    "3 mg and 6 mg",
+    "Strong cooling",
+    "Not sweet"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "zyn-mojito",
+   "name": "ZYN Mojito",
+   "kind": "flavor",
+   "blurb": "Lime and mint together. Tart up front, cooling on the finish.",
+   "body": "Lime does the work here, tart and a little green, with mint sitting underneath to cool the finish rather than lead it. Less sweet than the berry flavors and more going on than plain citrus. It reads fresh instead of sugary, which is why it holds up over a long pouch. Offered at 6 mg only, putting it in the stronger half of the standard ZYN range.",
+   "notes": [
+    "6 mg",
+    "Cooling finish",
+    "Tart lime"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "zyn-peach",
+   "name": "ZYN Peach",
+   "kind": "flavor",
+   "blurb": "Soft, ripe peach. Gentle sweetness, no tartness, no cooling.",
+   "body": "A quiet fruit pouch. Ripe peach with the skin-and-fuzz note left out, mildly sweet, no acid bite and no cooling agent underneath it. It holds steady from start to finish instead of fading hard partway through. Among the least assertive flavors ZYN makes, though it only comes at 6 mg, so the strength is not beginner territory even if the taste is.",
+   "notes": [
+    "6 mg",
+    "No cooling",
+    "Mild fruit"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "zyn-peppermint",
+   "name": "ZYN Peppermint",
+   "kind": "flavor",
+   "blurb": "Sharper and sweeter than Cool Mint, with a clean, quick finish.",
+   "body": "Peppermint standing on its own, without the blending that softens Cool Mint. Sweeter at the front, sharper through the middle, and it finishes clean rather than lingering. The cooling is present but is not the main event. A sensible second mint to try once Cool Mint has gone automatic on you. Available in both 3 mg and 6 mg.",
+   "notes": [
+    "3 mg and 6 mg",
+    "Cooling",
+    "Sharp mint"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "zyn-smooth",
+   "name": "ZYN Smooth",
+   "kind": "flavor",
+   "blurb": "Unflavored and uncooled. The most neutral pouch on the shelf.",
+   "body": "Smooth is the plain one. No mint, no fruit, no cooling agent, just a faint sweetness off the pouch itself and otherwise close to nothing at all. If every flavored pouch eventually starts to grate, this is the fix. It is also the least distracting option for anyone trying the format for the first time, and the 3 mg makes that easier still. Also stocked at 6 mg.",
+   "notes": [
+    "3 mg and 6 mg",
+    "Unflavored",
+    "No cooling"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "zyn-spearmint",
+   "name": "ZYN Spearmint",
+   "kind": "flavor",
+   "blurb": "Rounded, sweet spearmint at 3 mg. Mild cooling, no sharp edges.",
+   "body": "Spearmint is the soft mint. Sweeter and rounder than peppermint, with cooling that stays in the background instead of taking over the pouch. Nothing about it is sharp or medicinal. ZYN makes this one at 3 mg only, which pairs well with the flavor and puts it among the easier pouches on the shelf for a first try.",
+   "notes": [
+    "3 mg",
+    "Mild cooling",
+    "Sweet mint"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "zyn-spiced-cider",
+   "name": "ZYN Spiced Cider",
+   "kind": "flavor",
+   "blurb": "Baked apple with cinnamon and clove. Warming rather than cooling.",
+   "body": "Apple cooked rather than fresh, with cinnamon and a touch of clove laid over it. It sits warm on the gum instead of cold, and the spice keeps the sweetness from running away. Closer to Cinnamon than to the fruit pouches, but far less aggressive. It runs as a seasonal flavor, so availability comes and goes. Made at 6 mg only.",
+   "notes": [
+    "6 mg",
+    "Warming",
+    "Seasonal"
+   ],
+   "confidence": "likely"
+  },
+  {
+   "id": "zyn-ultra",
+   "name": "ZYN ULTRA",
+   "kind": "brand",
+   "blurb": "Higher-strength ZYN in a moist pouch, 20 per can, lid holds spent ones.",
+   "body": "Ultra is the same brand built differently. The pouch is moist instead of dry, which changes the feel and how quickly flavor arrives. Cans hold twenty and the lid doubles as a compartment for used pouches. Strengths are 9 mg and 11 mg, well above standard ZYN, and the flavor list is shorter: mostly mints, one citrus, two plain options. This is for someone already settled into pouches, not a first purchase.",
+   "notes": [
+    "9 mg and 11 mg",
+    "Moist pouch",
+    "20 per can",
+    "Waste lid"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "zyn-ultra-arctic-mint",
+   "name": "ZYN Ultra Arctic Mint",
+   "kind": "flavor",
+   "blurb": "Cold, clean mint in the moist Ultra pouch. 9 mg and 11 mg.",
+   "body": "Straight mint with the cooling pushed well past the standard line and very little sweetness carrying it. The moist Ultra pouch releases faster than dry ZYN, so flavor arrives quickly and then holds level. Made only at 9 mg and 11 mg, which puts it in experienced territory. If you are still deciding whether pouches suit you, start with standard ZYN instead.",
+   "notes": [
+    "9 mg and 11 mg",
+    "Strong cooling",
+    "Moist pouch"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "zyn-ultra-chill-mist",
+   "name": "ZYN Ultra Chill Mist",
+   "kind": "flavor",
+   "blurb": "Unflavored with cooling only. Cold sensation, nothing to taste.",
+   "body": "Chill Mist has no flavor in it. What you get is the cooling agent and the moist pouch feel, nothing else, which some people prefer once flavors start wearing on them. Between this and Signature Smooth, this is the cold one. Sold at 9 mg and 11 mg only, so it assumes you are already used to higher-strength pouches.",
+   "notes": [
+    "9 mg and 11 mg",
+    "Unflavored",
+    "Cooling only"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "zyn-ultra-citrus-zest",
+   "name": "ZYN Ultra Citrus Zest",
+   "kind": "flavor",
+   "blurb": "Peel-forward citrus, sharper and less sweet than standard ZYN Citrus.",
+   "body": "More peel than juice. Sharper and drier than the standard Citrus pouch, with a bitter edge that keeps it well clear of soda territory. The moist pouch pushes flavor out faster, so the first few minutes are the loudest. It is the only non-mint option in the Ultra range, which is most of its appeal. Available at 9 mg and 11 mg, both above beginner level.",
+   "notes": [
+    "9 mg and 11 mg",
+    "Tart citrus",
+    "Moist pouch"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "zyn-ultra-fresh-spearmint",
+   "name": "ZYN Ultra Fresh Spearmint",
+   "kind": "flavor",
+   "blurb": "Sweet spearmint with Ultra-level cooling behind it.",
+   "body": "Spearmint's rounded sweetness with far more cooling under it than the standard version carries. That lands it between the soft mints and the cold ones and makes it the easiest Ultra flavor to spend a full hour with. The moist pouch means flavor comes early rather than building. Made at 9 mg and 11 mg only, so bring some tolerance with you.",
+   "notes": [
+    "9 mg and 11 mg",
+    "Cooling",
+    "Sweet mint"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "zyn-ultra-menthol-ice",
+   "name": "ZYN Ultra Menthol Ice",
+   "kind": "flavor",
+   "blurb": "The coldest thing in the case. Sharp menthol, almost no sweetness.",
+   "body": "Menthol with the cooling turned all the way up and nothing sweet to blunt it. Sharp on contact, and the cold hangs on well after the flavor itself has thinned out. Not subtle, and not trying to be. Offered at 9 mg and 11 mg. If Ultra is new to you, this is the wrong flavor to open with, and most people who love it worked up to it.",
+   "notes": [
+    "9 mg and 11 mg",
+    "Very strong cooling",
+    "Not sweet"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "zyn-ultra-peppermint-frost",
+   "name": "ZYN Ultra Peppermint Frost",
+   "kind": "flavor",
+   "blurb": "Sharp peppermint over heavy cooling, finishing clean.",
+   "body": "Peppermint with an edge, backed by the heavier cooling the Ultra line runs. Sweeter than Menthol Ice, colder than Arctic Mint, and it finishes clean instead of hanging around. The moist pouch keeps it steady rather than front-loaded. Made at 9 mg and 11 mg, so it assumes you already know how you handle the higher strengths.",
+   "notes": [
+    "9 mg and 11 mg",
+    "Strong cooling",
+    "Sharp mint"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "zyn-ultra-signature-smooth",
+   "name": "ZYN Ultra Signature Smooth",
+   "kind": "flavor",
+   "blurb": "Unflavored and uncooled. The plain option in the Ultra line.",
+   "body": "No flavor and no cooling agent, which makes it the quietest pouch Ultra builds. There is a faint neutral sweetness from the pouch itself and nothing past that. Pick it over Chill Mist if you want the moist Ultra format without any cold sensation at all. Made at 9 mg and 11 mg only, so quiet in taste does not mean mild overall.",
+   "notes": [
+    "9 mg and 11 mg",
+    "Unflavored",
+    "No cooling"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "zyn-ultra-wintergreen-blast",
+   "name": "ZYN Ultra Wintergreen Blast",
+   "kind": "flavor",
+   "blurb": "Sweet wintergreen with the cooling pushed hard. 9 mg and 11 mg.",
+   "body": "The familiar wintergreen profile, sweeter and deeper than mint, with much more cooling behind it than standard ZYN Wintergreen carries. It stays sweet the whole way through instead of drying out at the end. Wintergreen tends to be the Ultra flavor people come back for. Made at 9 mg and 11 mg only, which is well past where anyone should begin.",
+   "notes": [
+    "9 mg and 11 mg",
+    "Strong cooling",
+    "Sweet wintergreen"
+   ],
+   "confidence": "certain"
+  },
+  {
+   "id": "zyn-wintergreen",
+   "name": "ZYN Wintergreen",
+   "kind": "flavor",
+   "blurb": "Sweet wintergreen with a cool finish. The familiar classic.",
+   "body": "The most familiar flavor in the case for anyone who came over from dip. Sweet wintergreen with that deeper root-beer-adjacent note behind it and a cooling finish softer than menthol. Strong enough to notice all the way through, never harsh. Stocked in 3 mg and 6 mg, which makes it one of the few classics you can take either mild or firm depending on the day.",
+   "notes": [
+    "3 mg and 6 mg",
+    "Cooling",
+    "Sweet wintergreen"
+   ],
+   "confidence": "certain"
+  }
+ ]
+}

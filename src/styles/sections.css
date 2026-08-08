@@ -11,10 +11,6 @@
 }
 .gate[hidden] { display: none; }
 .gate.dismiss { opacity: 0; visibility: hidden; pointer-events: none; }
-.gate-film {
-  position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: cover; z-index: 0; pointer-events: none;
-}
 .gate-scrim {
   position: absolute; inset: 0; z-index: 1; pointer-events: none;
   background:
@@ -31,27 +27,31 @@
   color: var(--orange);
   text-shadow: 0 0 8px var(--orange), 0 0 26px rgba(255,138,30,.8),
                0 0 70px rgba(255,138,30,.45), 0 0 140px rgba(255,138,30,.22);
-  opacity: 0; animation: markArrive 1.1s var(--ease-out) 5.6s forwards;
+  opacity: 0; animation: markArrive .9s var(--ease-out) .06s forwards;
 }
 @keyframes markArrive {
   from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: none; }
 }
-.gate-sub, .gate-q, .gate-note, .gate-actions { opacity: 0; animation: markArrive .9s var(--ease-out) forwards; }
-.gate-sub    { animation-delay: 6.0s; }
-.gate-q      { animation-delay: 6.4s; }
-.gate-note   { animation-delay: 6.6s; }
-.gate-actions{ animation-delay: 6.8s; }
 
-/* Anyone who has already been through the gate, or who asked for less motion,
-   should not sit through nine seconds of film to reach a button. */
+/* These delays used to be 5.6s-6.8s, timed to land after the intro film. The
+   film is gone and the whole .gate-inner now fades in as one unit once the
+   neon is lit, so all these need is a short internal stagger — anything longer
+   and the copy arrives after the thing it is supposed to introduce. */
+.gate-sub, .gate-q, .gate-note, .gate-actions { opacity: 0; animation: markArrive .8s var(--ease-out) forwards; }
+.gate-sub    { animation-delay: .16s; }
+.gate-q      { animation-delay: .26s; }
+.gate-note   { animation-delay: .34s; }
+.gate-actions{ animation-delay: .42s; }
+
+/* Anyone already through the gate, or who asked for less motion, gets the
+   question immediately with no stagger at all. */
 .gate.instant .gate-mark,
 .gate.instant .gate-sub,
 .gate.instant .gate-q,
 .gate.instant .gate-note,
 .gate.instant .gate-actions { animation: none; opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
-  .gate-film { display: none; }
   .gate-mark, .gate-sub, .gate-q, .gate-note, .gate-actions { animation: none; opacity: 1; }
 }
 .gate-mark .thin { font-family: var(--script); font-style: italic; text-transform: none; }

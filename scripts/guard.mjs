@@ -25,30 +25,42 @@ const BANNED = [
   { re: /\bprice[sd]?\s*:\s*\d/i, why: 'looks like a price' },
 ]
 
-// Text the guard should not police: our own rule text, and the phrase we use to
-// tell visitors that prices are deliberately absent.
+// Text the guard should not police: our own rule text, and the comments that
+// explain the rule. The visitor-facing "we don't post prices" sentences the
+// owner asked us to remove are deliberately NOT allow-listed any more — if one
+// creeps back into the copy, that is now a finding rather than an exemption.
 const ALLOW = [
-  /don't post prices online/i,
-  /do not publish prices/i,
-  /Prices are not published online/i,
-  /prices are ignored/i,
   /no prices/i,
-  /talk numbers/i,
+  /does not want prices/i,
+  /no potency figures/i,
 ]
 
-function walk(dir, out = []) {
+// The build tooling is skipped: `$1`/`$2` inside a regex replacement is not a
+// price, and letting the guard trip over its own scaffolding trains people to
+// ignore it. What ships is what matters — dist/ is scanned explicitly below.
+const SKIP_DIRS = new Set(['node_modules', '.git', 'dist', 'scripts'])
+
+function walk(dir, out = [], exts = ['.html', '.ts', '.js', '.mjs', '.json', '.css']) {
   for (const e of readdirSync(dir)) {
-    if (e === 'node_modules' || e === '.git' || e === 'dist') continue
+    if (SKIP_DIRS.has(e)) continue
     const p = join(dir, e)
-    if (statSync(p).isDirectory()) walk(p, out)
-    else if (['.html', '.ts', '.js', '.mjs', '.json', '.css'].includes(extname(p))) out.push(p)
+    if (statSync(p).isDirectory()) walk(p, out, exts)
+    else if (exts.includes(extname(p))) out.push(p)
   }
   return out
 }
 
+// Source first, then the built output if it exists — the artifact is the thing
+// a customer actually reads, and a templating mistake could introduce a price
+// that never appears in any source file.
+const targets = walk(ROOT)
+// Only the markup and stylesheets from dist: minified bundles are full of
+// `$1` and `.99` fragments from library internals, and their real source is
+// already scanned above. Scanning them only produces noise.
+try { walk(join(ROOT, 'dist'), targets, ['.html', '.css']) } catch { /* not built yet */ }
+
 let failures = 0
-for (const file of walk(ROOT)) {
-  if (file.includes('/scripts/guard.mjs')) continue
+for (const file of targets) {
   const text = readFileSync(file, 'utf8')
   for (const line of text.split('\n')) {
     if (ALLOW.some(a => a.test(line))) continue

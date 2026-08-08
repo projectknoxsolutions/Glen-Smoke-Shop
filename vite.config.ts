@@ -1,4 +1,11 @@
 import { defineConfig } from 'vite'
+import { resolve } from 'node:path'
+
+// Nine real pages, not a router. Each section is its own indexable URL with its
+// own title, description and breadcrumbs — for a local business that is worth
+// far more than a slicker transition. They share one CSS and one JS bundle, so
+// after the first view every other page is a cached-asset paint.
+const PAGES = ['index', 'vapes', 'pouches', 'glass', 'cigars', 'papers', 'hookah', 'hemp', 'visit']
 
 export default defineConfig({
   // Relative base so one build works both at the GitHub Pages project sub-path
@@ -8,5 +15,8 @@ export default defineConfig({
     target: 'es2020',
     assetsInlineLimit: 2048,
     cssCodeSplit: false,
+    rollupOptions: {
+      input: Object.fromEntries(PAGES.map(p => [p, resolve(import.meta.dirname, `${p}.html`)])),
+    },
   },
 })

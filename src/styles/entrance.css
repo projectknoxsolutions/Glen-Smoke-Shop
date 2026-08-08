@@ -1,0 +1,332 @@
+/* ==========================================================================
+   Entrance — neon ignition, then the doors open
+
+   The old gate played a pre-rendered film. This lights the real storefront
+   photograph instead, which means it starts on the first frame the browser
+   decodes rather than after a video downloads, and it costs nothing beyond
+   the hero plate the page was already fetching.
+
+   Two layers do all the work, and both already existed for the hero:
+     .ent-plate  the storefront, full bleed
+     .ent-neon   the same storefront, masked down to just the lit sign and
+                 window signs, blended with `screen` so it reads as emitted
+                 light rather than a pasted highlight
+
+   Turning .ent-neon on and off IS the neon turning on and off. No overlay
+   graphics, no sprite sheet, no second download.
+   ========================================================================== */
+
+:root {
+  /* Measured off the shipped plates — this is where the real door leaves meet.
+     Splitting at 50% would tear through the frame post and read as a wipe. */
+  --door-seam: 47.2%;
+  --door-ease: cubic-bezier(.62, .02, .2, 1);
+}
+
+@media (max-width: 700px) {
+  :root { --door-seam: 52.1%; }
+}
+
+/* --- the scene ---------------------------------------------------------- */
+
+.ent-scene {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #04050a;
+}
+
+/* Each half carries a complete copy of the storefront and is then clipped to
+   its side of the seam. Same `src`, so the browser decodes one image and
+   paints it twice — the halves cannot drift out of register. */
+.ent-door {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+
+.ent-door-l { clip-path: inset(0 calc(100% - var(--door-seam)) 0 0); }
+.ent-door-r { clip-path: inset(0 0 0 var(--door-seam)); }
+
+.ent-plate,
+.ent-neon {
+  position: absolute;
+  inset: 0;
+}
+
+/* <picture> is inline by default and establishes no box, so a percentage
+   height on the <img> inside resolved against `auto` and the plate rendered at
+   its intrinsic ratio — letterboxed, with the storefront floating in black.
+   The picture has to be the sized box. */
+.ent-plate picture,
+.ent-neon picture,
+.pagehead-media picture,
+.pagehead-sign picture {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.ent-plate img,
+.ent-neon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  display: block;
+}
+
+/* The room behind the glass sits almost black until the sign catches. */
+.ent-plate {
+  filter: brightness(.16) saturate(.55) contrast(1.05);
+  transition: filter 1.5s var(--ease-out);
+}
+
+.ent-neon {
+  opacity: 0;
+  mix-blend-mode: screen;
+  -webkit-mask-image: url('./img/hero-wide-mask-1400.webp');
+          mask-image: url('./img/hero-wide-mask-1400.webp');
+  -webkit-mask-size: cover;  mask-size: cover;
+  -webkit-mask-position: 50% 50%; mask-position: 50% 50%;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+}
+
+@media (max-width: 700px) {
+  .ent-neon {
+    -webkit-mask-image: url('./img/hero-band-mask-780.webp');
+            mask-image: url('./img/hero-band-mask-780.webp');
+  }
+}
+
+/* --- ignition ------------------------------------------------------------
+
+   Hand-authored, not generated. Real tubes strike unevenly: a couple of
+   half-hearted attempts, a dead beat, then commitment. A random() sequence
+   reads fake because it has no dead beats — the eye reads even chaos as
+   texture, and uneven chaos as electricity. Timings below are in percent of
+   a 1.7s run — which, measured end to end from navigation, puts the question
+   on screen inside two seconds. Anything longer is a toll booth.            */
+
+@keyframes ent-strike {
+   0%   { opacity: 0;   filter: brightness(1)   hue-rotate(0deg); }
+   6%   { opacity: .55; filter: brightness(1.5) hue-rotate(0deg); }
+   8%   { opacity: .04; }
+  11%   { opacity: .70; filter: brightness(1.7) hue-rotate(0deg); }
+  13%   { opacity: 0; }
+  /* dead beat — the tube thinking about it */
+  27%   { opacity: 0; }
+  30%   { opacity: .90; filter: brightness(2.1) hue-rotate(0deg); }
+  32%   { opacity: .35; }
+  35%   { opacity: 1;   filter: brightness(1.9) hue-rotate(0deg); }
+  38%   { opacity: .72; }
+  41%   { opacity: 1;   filter: brightness(1.55) hue-rotate(0deg); }
+  /* lit. now the colour race — the sign is backlit RGB, so this is honest. */
+  55%   { opacity: 1;   filter: brightness(1.5) hue-rotate(-42deg) saturate(1.25); }
+  68%   { opacity: 1;   filter: brightness(1.5) hue-rotate(74deg)  saturate(1.3); }
+  80%   { opacity: 1;   filter: brightness(1.5) hue-rotate(168deg) saturate(1.2); }
+  92%   { opacity: 1;   filter: brightness(1.45) hue-rotate(232deg) saturate(1.15); }
+ 100%   { opacity: 1;   filter: brightness(1.4) hue-rotate(0deg)   saturate(1); }
+}
+
+/* After the strike it settles into the same slow cycle the hero uses, so the
+   entrance and the page behind it are visibly the same sign. */
+@keyframes ent-cycle {
+   0%   { filter: brightness(1.4) hue-rotate(0deg); }
+  25%   { filter: brightness(1.45) hue-rotate(-40deg) saturate(1.2); }
+  50%   { filter: brightness(1.4) hue-rotate(70deg)  saturate(1.25); }
+  75%   { filter: brightness(1.45) hue-rotate(170deg) saturate(1.15); }
+ 100%   { filter: brightness(1.4) hue-rotate(0deg); }
+}
+
+.gate.lighting .ent-neon {
+  animation: ent-strike 1.7s var(--ease-in-out) forwards;
+}
+
+.gate.lit .ent-plate { filter: brightness(.88) saturate(1) contrast(1.02); }
+
+.gate.lit .ent-neon {
+  opacity: 1;
+  animation: ent-cycle 14s var(--ease-in-out) infinite;
+}
+
+/* --- the question ------------------------------------------------------- */
+
+/* The prompt resolves out of the glow rather than sitting on top of it: it is
+   invisible until the tubes are lit, then rises the last few pixels. */
+.gate-inner {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .9s var(--ease-out), transform .9s var(--ease-out);
+}
+
+.gate.lit .gate-inner,
+.gate.instant .gate-inner {
+  opacity: 1;
+  transform: none;
+}
+
+/* The question does not wait politely for the light show to finish — it rises
+   while the colour race is still running behind it. Doing this in CSS rather
+   than a second timer means it stays in step no matter when the bundle boots. */
+.gate.lighting .gate-inner {
+  opacity: 1;
+  transform: none;
+  transition-delay: .95s;
+}
+
+/* --- walking in --------------------------------------------------------- */
+
+/* The two leaves do NOT travel in sync. Real double doors never do, and 60ms
+   of stagger is the whole difference between "a door opened" and "a slideshow
+   transition happened". */
+.gate.opening .ent-door-l {
+  transform: translate3d(-102%, 0, 0);
+  transition: transform 1.15s var(--door-ease);
+}
+
+.gate.opening .ent-door-r {
+  transform: translate3d(102%, 0, 0);
+  transition: transform 1.15s var(--door-ease) 60ms;
+}
+
+/* Push the light up as they part, the way a door swinging open spills the
+   room out onto the sidewalk. */
+.gate.opening .ent-plate { filter: brightness(1.05) saturate(1.05); }
+
+.gate.opening .gate-inner {
+  opacity: 0;
+  transform: translateY(-10px) scale(.98);
+  transition: opacity .34s ease-in, transform .34s ease-in;
+}
+
+.gate.opening .gate-scrim { opacity: 0; transition: opacity .5s ease-in; }
+
+/* --- reduced motion ------------------------------------------------------
+
+   No strike, no race, no doors. The storefront is simply lit and the question
+   is simply there. Someone who asked the OS not to animate things should not
+   have to sit through a light show to find a phone number.                  */
+
+@media (prefers-reduced-motion: reduce) {
+  .gate .ent-plate { filter: brightness(.7) saturate(.95); transition: none; }
+  .gate .ent-neon  { opacity: 1; animation: none; }
+  .gate .gate-inner { opacity: 1; transform: none; transition: none; }
+  .gate.opening .ent-door-l,
+  .gate.opening .ent-door-r { transition: none; transform: none; }
+  .gate.opening { opacity: 0; transition: opacity .3s linear; }
+}
+
+/* --- no JavaScript -------------------------------------------------------
+   Without JS nothing adds .lighting or .lit, so the gate would sit black
+   forever. Light it statically instead.                                    */
+
+.no-js .gate .ent-plate { filter: brightness(.7) saturate(.95); }
+.no-js .gate .ent-neon  { opacity: 1; }
+.no-js .gate .gate-inner { opacity: 1; transform: none; }
+
+/* --- laying the question over the photograph ------------------------------
+
+   Two problems the first pass had, both visible only once it was rendered:
+
+   1. A 96px orange "Glen Smoke Shop" wordmark sat directly on top of the real
+      illuminated sign in the photograph. Two versions of the same logo, one
+      partly covering the other. The storefront IS the wordmark — the type was
+      competing with the photograph instead of sitting in it.
+   2. The copy ran across lit shop windows, which are the busiest, brightest
+      part of the frame. "You must be 21+ to enter" measured well under 4.5:1
+      against the glass behind it.
+
+   So: the wordmark shrinks to an eyebrow, the block moves down to the doors
+   (where you would actually be standing), and it carries its own gradient so
+   the copy is legible no matter what is behind it.                          */
+
+.gate { align-items: end; }
+
+.gate-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: clamp(90px, 16vh, 190px) var(--gutter) clamp(38px, 8vh, 74px);
+}
+
+/* The darkening runs the full width of the viewport, not just behind the text
+   column — a 640px gradient rectangle sitting on a photograph reads as a panel
+   someone pasted on. The type stays in its column; the light does not. */
+.gate-inner > * { max-width: 640px; margin-inline: auto; }
+
+.gate-inner::before {
+  content: '';
+  position: absolute;
+  inset: 0 calc(50% - 50vw);
+  z-index: -1;
+  background: linear-gradient(180deg, transparent 0%, rgba(4,5,9,.55) 34%, rgba(4,5,9,.9) 72%, rgba(4,5,9,.96) 100%);
+  pointer-events: none;
+}
+
+/* The eyebrow, not a second logo. */
+.gate .gate-mark {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .34em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  color: var(--orange);
+  text-shadow: 0 0 14px rgba(255,138,30,.55);
+  margin: 0 0 10px;
+}
+
+.gate .gate-mark .thin {
+  font-family: var(--mono);
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.gate .gate-sub { margin-bottom: 26px; color: var(--ink-2); }
+.gate .gate-note { color: var(--ink-2); }
+
+/* The deny step has no photograph to sit against, so it keeps a flat panel. */
+.gate .gate-deny { padding-top: 0; }
+
+/* --- phones --------------------------------------------------------------
+
+   A 9:19.5 screen is so much taller than any crop of a shopfront that
+   `object-fit: cover` throws away everything either side of centre — the sign
+   lost its first and last words and the entrance became an anonymous close-up
+   of a window. So on a phone the plate is not cropped at all: it runs full
+   width at its own ratio, pinned to the top, and the question occupies the
+   dark below it. The whole sign stays readable, which is the one thing the
+   entrance exists to show.                                                  */
+
+@media (max-width: 700px) {
+  .ent-plate img,
+  .ent-neon img {
+    height: auto;
+    object-fit: fill;
+    position: absolute;
+    top: 0; left: 0;
+  }
+
+  .ent-neon {
+    -webkit-mask-size: 100% auto; mask-size: 100% auto;
+    -webkit-mask-position: 50% 0; mask-position: 50% 0;
+  }
+
+  .gate-inner { padding-top: clamp(300px, 52vh, 460px); }
+}
+
+/* --- what is behind the doors --------------------------------------------
+
+   The gate paints on solid black so there is never a white flash before the
+   bundle boots. But that black is also what the doors were parting to reveal:
+   the effect read as two panels sliding off a void instead of a door opening
+   onto a shop. The moment the doors start moving, the gate stops being opaque
+   and the hub behind it becomes what you are walking into.                  */
+
+.gate.opening,
+.gate.opening .ent-scene { background: transparent; }
+
+/* Both leaves get a lit edge as they swing, so the split reads as a gap
+   opening rather than a straight cut through a photograph. */
+.gate.opening .ent-door-l { box-shadow: 14px 0 46px -6px rgba(0,0,0,.85); }
+.gate.opening .ent-door-r { box-shadow: -14px 0 46px -6px rgba(0,0,0,.85); }
