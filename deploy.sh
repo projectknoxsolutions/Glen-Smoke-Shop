@@ -134,12 +134,28 @@ if ! push_to; then
                                        Workflows: Read and write
        4. Generate, then copy it
 
-     Paste it below. It is not echoed, not saved, and not written to .git.
+     Paste it below with Cmd+V, then press Enter.
+
+     NOTE: the prompt shows dots as you paste, not the token itself. If nothing
+     appeared at all, the paste did not land — try Cmd+V again, or Ctrl+C and
+     run:  GITHUB_TOKEN=your_token ./deploy.sh
 
 HINT
+  # Masked rather than fully silent: a prompt that shows nothing at all reads as
+  # "my paste isn't working", which is exactly what happened the first time.
   printf '  Token: '
-  read -rs TOKEN; echo
-  [ -n "$TOKEN" ] || die "no token entered."
+  TOKEN=''
+  while IFS= read -r -s -n1 ch; do
+    [ -z "$ch" ] && break                      # Enter
+    if [ "$ch" = $'\177' ] || [ "$ch" = $'\b' ]; then   # backspace
+      [ -n "$TOKEN" ] && { TOKEN="${TOKEN%?}"; printf '\b \b'; }
+    else
+      TOKEN="$TOKEN$ch"; printf '•'
+    fi
+  done
+  echo
+  [ -n "$TOKEN" ] || die "no token entered. Try:  GITHUB_TOKEN=your_token ./deploy.sh"
+  say "Read a token of ${#TOKEN} characters."
   AUTH_URL="$(mk_url "$TOKEN")"
   push_to || die "still refused. Check the token has Contents: Read and write on
      Glen-Smoke-Shop, and that it has not expired.

@@ -158,6 +158,30 @@ npm run preview
 `base` is `'./'`, so one build works both at the GitHub Pages project sub-path
 and later at a bare domain root.
 
+## A macOS gotcha worth knowing
+
+This project was first staged under `~/Websites:CRM/`. **Do not keep it in a
+folder whose name contains a colon.** macOS swaps `:` and `/` between the name
+Finder displays and the name stored on disk, and GitHub Desktop (and other
+Electron tooling) cannot resolve a path through it — it reports "this directory
+does not appear to be a Git repository" for a perfectly healthy repo. Command
+line `git` handles it fine, which makes it a confusing failure to diagnose.
+
+The working copy now lives at `~/Desktop/Glen Smoke Shop/glen-smoke-shop`, which
+is colon-free. Keep it there.
+
+## Authenticating
+
+GitHub has not accepted account passwords for git over HTTPS since 2021, and if
+you sign in with Google SSO there is no password to fall back on. Use one of:
+
+- **GitHub Desktop** — signs in through the browser, no token to manage.
+- **A fine-grained token** — `deploy.sh` prompts for one. It needs exactly two
+  permissions on `Glen-Smoke-Shop`: **Contents: Read and write** and
+  **Workflows: Read and write**. The second is easy to miss and mandatory,
+  because the push includes `.github/workflows/pages.yml`.
+- `GITHUB_TOKEN=... ./deploy.sh` to skip the prompt.
+
 ## Deploying
 
 Push to `main`. `.github/workflows/pages.yml` type-checks, runs the guard,
