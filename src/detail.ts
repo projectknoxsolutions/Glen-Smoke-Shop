@@ -18,6 +18,7 @@
    ========================================================================== */
 
 import descriptions from './data/descriptions.json'
+import shelfData from './data/shelf.json'
 
 export interface Entry {
   id: string
@@ -41,6 +42,34 @@ type Extra = {
 const BY_ID = new Map<string, Entry>(
   (descriptions as { entries: Entry[] }).entries.map(e => [e.id, e])
 )
+
+/* What we photographed on this brand's shelf, keyed by catalog id. The vapes
+   page renders this inline under the brand chips; every other section only has
+   the sheet, so the sheet has to carry it too or the papers, cigar, hookah and
+   gear reads are invisible. */
+type ShelfItem = { id: string; name: string; legibility: string }
+type ShelfBrand = { brand: string; count: number; lines: Record<string, ShelfItem[]> }
+
+const SHELF = new Map<string, ShelfBrand>()
+for (const b of Object.values((shelfData as any).brands as Record<string, any>)) {
+  if (b.catalogId) SHELF.set(b.catalogId, b)
+}
+
+function shelfBlock(id: string): string {
+  const b = SHELF.get(id)
+  if (!b) return ''
+  const lines = Object.entries(b.lines)
+  return `
+    <div class="sheet-shelf">
+      <p class="sheet-shelf-head"><strong>${b.count}</strong> on our shelf</p>
+      ${lines.map(([line, items]) => `
+        <div class="shelf-line">
+          ${line !== '\u2014' ? `<p class="shelf-line-name">${line}</p>` : ''}
+          <ul class="flav-list">${items.map(i =>
+            `<li class="flav${i.legibility !== 'clear' ? ' is-soft' : ''}">${i.name}</li>`).join('')}</ul>
+        </div>`).join('')}
+    </div>`
+}
 
 /** Everything we know about an item, or null if we have nothing honest to say. */
 export const describe = (id: string): Entry | null => BY_ID.get(id) || null
@@ -118,6 +147,7 @@ export function open(id: string, extra: Extra = {}, from?: HTMLElement) {
       ${entry.blurb ? `<p class="sheet-blurb">${entry.blurb}</p>` : ''}
       <p class="sheet-text">${entry.body}</p>
       ${notes}
+      ${shelfBlock(id)}
       ${hedge}
       <div class="sheet-actions">
         <a class="btn btn-call" data-call href="tel:+13315510005">Call about this</a>

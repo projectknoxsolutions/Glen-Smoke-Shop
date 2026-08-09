@@ -1,12 +1,12 @@
 {
- "_README": "Every line and flavour legible in the shop's own 48MP photographs, read frame by frame at native resolution. This is what is ON THE SHELF, not what the brands make - the difference is the entire point, and it is why nothing here should ever be topped up from a manufacturer's catalogue. `legibility`: clear = printed name read unambiguously, partial = most read and the rest a confident completion, inferred = packaging recognised but the name not actually legible.",
+ "_README": "Every line, flavour, size and variant legible in the shop's own 48MP photographs, read frame by frame at native resolution. This is what is ON THE SHELF, not what the brands make - the difference is the entire point, and it is why nothing here should ever be topped up from a manufacturer's catalogue. A customer who drives over for something the shop never carried is worse off than one who saw a shorter list. `legibility`: clear = printed name read unambiguously, partial = most read and the rest a confident completion, inferred = packaging recognised but the name not actually legible.",
  "source": "IMG_6069-6097, 8038x5792 each",
  "brands": {
   "4k-s": {
    "brand": "4K's",
-   "category": "cigar",
+   "category": "wrap",
    "catalogId": "4k-s",
-   "count": 8,
+   "count": 9,
    "lines": {
     "Good Times Tobacco": [
      {
@@ -56,6 +56,14 @@
       "name": "Sweet Delicious",
       "legibility": "clear",
       "notes": "FRONT COUNTER. 4-count foil pouches."
+     }
+    ],
+    "—": [
+     {
+      "id": "4ks-black-sweet",
+      "name": "Black Sweet Wraps",
+      "legibility": "clear",
+      "notes": "Black box with flame logo."
      }
     ]
    }
@@ -134,11 +142,43 @@
     ]
    }
   },
+  "al-capone": {
+   "brand": "Al Capone",
+   "category": "wrap",
+   "catalogId": "al-capone",
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "al-capone-leaf-wrap-original",
+      "name": "Original Leaf Wrap",
+      "legibility": "partial",
+      "notes": "Brand clear on the box spine; variant read as Original from the packaging colour."
+     }
+    ]
+   }
+  },
+  "al-fakher": {
+   "brand": "Al Fakher",
+   "category": "hookah",
+   "catalogId": null,
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "al-fakher-shisha",
+      "name": "Hookah Molasses (assorted flavours)",
+      "legibility": "partial",
+      "notes": "Black tins and cartons with the crown logo; brand clear on the large carton, individual flavour names on the small tins not legible."
+     }
+    ]
+   }
+  },
   "alec-bradley": {
    "brand": "Alec Bradley",
    "category": "cigar",
    "catalogId": "alec-bradley",
-   "count": 1,
+   "count": 2,
    "lines": {
     "MAXX": [
      {
@@ -146,6 +186,14 @@
       "name": "MAXX Freak",
       "legibility": "clear",
       "notes": "WALK-IN HUMIDOR. Black box, lid reads ALEC BRADLEY / MAXX / Freak. Cigars banded MAXX."
+     }
+    ],
+    "—": [
+     {
+      "id": "alec-bradley-maxx",
+      "name": "MAXX",
+      "legibility": "clear",
+      "notes": "Black box on the humidor shelf."
      }
     ]
    }
@@ -260,11 +308,39 @@
     ]
    }
   },
+  "billionaire": {
+   "brand": "Billionaire",
+   "category": "wrap",
+   "catalogId": null,
+   "count": 3,
+   "lines": {
+    "—": [
+     {
+      "id": "billionaire-hemp-wraps-pink-lemonade",
+      "name": "Pink Lemonade Hemp Wraps",
+      "legibility": "clear",
+      "notes": "Tobacco free hemp wraps."
+     },
+     {
+      "id": "billionaire-hemp-wraps-russian-cream",
+      "name": "Russian Cream Hemp Wraps",
+      "legibility": "clear",
+      "notes": "Tobacco free hemp wraps."
+     },
+     {
+      "id": "billionaire-hemp-wraps-natural",
+      "name": "Natural Hemp Wraps",
+      "legibility": "clear",
+      "notes": "Tobacco free, unflavoured."
+     }
+    ]
+   }
+  },
   "black-mild": {
    "brand": "Black & Mild",
    "category": "cigar",
    "catalogId": "black-mild",
-   "count": 5,
+   "count": 6,
    "lines": {
     "—": [
      {
@@ -296,6 +372,148 @@
       "name": "Plastic Tip",
       "legibility": "clear",
       "notes": "FRONT COUNTER. Tip-format variant carton; also loose single sticks in an open display box."
+     },
+     {
+      "id": "black-and-mild-cream",
+      "name": "Cream (wood tip)",
+      "legibility": "partial",
+      "notes": "Cream/white box in the Black & Mild run; brand clear, variant word partly obscured by the stack in front."
+     }
+    ]
+   }
+  },
+  "blazy-susan": {
+   "brand": "Blazy Susan",
+   "category": "wrap",
+   "catalogId": "blazy-susan",
+   "count": 13,
+   "lines": {
+    "—": [
+     {
+      "id": "blazy-susan-pink-1-1-4",
+      "name": "Pink Rolling Papers 1 1/4",
+      "legibility": "clear",
+      "notes": "Pink wood-pulp papers."
+     },
+     {
+      "id": "blazy-susan-premium-king-size-slim",
+      "name": "Premium Rolling Papers King Size Slim",
+      "legibility": "clear",
+      "notes": "Purple-label premium papers."
+     },
+     {
+      "id": "blazy-susan-premium-1-1-4",
+      "name": "Premium Rolling Papers 1 1/4",
+      "legibility": "clear",
+      "notes": "Purple-label premium papers."
+     },
+     {
+      "id": "blazy-susan-purple-cones-king-size",
+      "name": "Purple Cones King Size",
+      "legibility": "clear",
+      "notes": "Box reads slow burning, ultra-thin, vegan, GMO free; made in France, est. Denver CO. Wood pulp."
+     },
+     {
+      "id": "blazy-susan-pink-cones-king-size",
+      "name": "Pink Cones King Size",
+      "legibility": "clear",
+      "notes": "Box reads ultra-thin, vegan, GMO free, made from wood pulp."
+     },
+     {
+      "id": "blazy-susan-purple-cones-shortys-53mm",
+      "name": "Purple Cones Shortys 53 mm (50 per jar)",
+      "legibility": "clear",
+      "notes": "Jar of 50 short 53 mm cones."
+     },
+     {
+      "id": "blazy-susan-pink-cones-shortys-53mm",
+      "name": "Pink Cones Shortys 53 mm (50 per jar)",
+      "legibility": "clear",
+      "notes": "Jar of 50 short 53 mm cones."
+     },
+     {
+      "id": "blazy-susan-premium-cones-jar",
+      "name": "Premium Cones Jar (50 per jar)",
+      "legibility": "clear",
+      "notes": "Natural unbleached cones in a jar."
+     },
+     {
+      "id": "blazy-susan-rice-cones-jar",
+      "name": "Rice Cones Jar (ultra-thin rice paper)",
+      "legibility": "clear",
+      "notes": "Rice-paper cones in a jar."
+     },
+     {
+      "id": "blazy-susan-queen-size-cones",
+      "name": "Queen Size Cones (25 per jar)",
+      "legibility": "partial",
+      "notes": "Jar labelled 25 queen size cones; count clear, colour variant partly obscured."
+     },
+     {
+      "id": "blazy-susan-filter-tips-jar",
+      "name": "Filter Tips Jar (100 per jar)",
+      "legibility": "clear",
+      "notes": "Jar of 100 pre-rolled filter tips; pink and lavender 'Stay Green' lids."
+     },
+     {
+      "id": "blazy-susan-carbon-filters-jar",
+      "name": "Carbon Filters Jar (coconut-based activated carbon, 100 per jar)",
+      "legibility": "clear",
+      "notes": "Activated carbon filter tips."
+     },
+     {
+      "id": "blazy-susan-rose-wraps",
+      "name": "Rose Wraps (made with real rose petals, tobacco free)",
+      "legibility": "clear",
+      "notes": "Pink box on the wrap shelf."
+     }
+    ]
+   }
+  },
+  "blink": {
+   "brand": "Blink",
+   "category": "gear",
+   "catalogId": "blink",
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "blink-mini-neons-torch",
+      "name": "Mini Neons Butane Gas Torch Lighter",
+      "legibility": "clear",
+      "notes": "Display card of small coloured jet-flame torches."
+     }
+    ]
+   }
+  },
+  "bluntlife": {
+   "brand": "BluntLife",
+   "category": "gear",
+   "catalogId": null,
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "bluntlife-incense",
+      "name": "Incense Sticks (assorted fragrances)",
+      "legibility": "clear",
+      "notes": "Branded counter/floor display of bagged incense; brand clear, individual fragrance names not legible."
+     }
+    ]
+   }
+  },
+  "bob-marley": {
+   "brand": "Bob Marley",
+   "category": "wrap",
+   "catalogId": "bob-marley",
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "bob-marley-hemp-wraps-ogk",
+      "name": "OGK Hemp Wraps",
+      "legibility": "clear",
+      "notes": "Box printed organic, tobacco free."
      }
     ]
    }
@@ -466,6 +684,22 @@
     ]
    }
   },
+  "camo": {
+   "brand": "CAMO",
+   "category": "wrap",
+   "catalogId": null,
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "camo-blunt-wraps",
+      "name": "Blunt Wraps (5 wraps per pack)",
+      "legibility": "clear",
+      "notes": "Multi-flavour display box; brand and pack count clear, individual flavour facings not separable."
+     }
+    ]
+   }
+  },
   "cao": {
    "brand": "CAO",
    "category": "cigar",
@@ -508,7 +742,7 @@
    "brand": "City Life",
    "category": "cigar",
    "catalogId": "city-life",
-   "count": 2,
+   "count": 3,
    "lines": {
     "—": [
      {
@@ -522,6 +756,12 @@
       "name": "Watermelon",
       "legibility": "partial",
       "notes": "FRONT COUNTER. Multi-cigar foil pouches below the Napa Grape box; flavour panel partly obscured."
+     },
+     {
+      "id": "city-life-sweet-cigarillos",
+      "name": "Sweet Cigarillos",
+      "legibility": "clear",
+      "notes": "Foil pouch display in the cigarillo run."
      }
     ]
    }
@@ -530,7 +770,7 @@
    "brand": "Cohiba",
    "category": "cigar",
    "catalogId": "cohiba",
-   "count": 3,
+   "count": 4,
    "lines": {
     "Rubicon": [
      {
@@ -554,6 +794,30 @@
       "name": "Red Dot Toro tubo",
       "legibility": "clear",
       "notes": "WALK-IN HUMIDOR. Red box, red tubes marked TORO. Singles/tubo format."
+     }
+    ],
+    "—": [
+     {
+      "id": "cohiba-humidor",
+      "name": "Cohiba (walk-in humidor, multiple lines including Red Dot)",
+      "legibility": "clear",
+      "notes": "Open boxes on the humidor shelf; brand and Red Dot line clear, individual vitolas not itemised."
+     }
+    ]
+   }
+  },
+  "cookies": {
+   "brand": "Cookies",
+   "category": "gear",
+   "catalogId": null,
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "cookies-backpack",
+      "name": "Backpack",
+      "legibility": "clear",
+      "notes": "Green branded backpack displayed on the hookah alcove shelf; smaller black soft cases beside it."
      }
     ]
    }
@@ -637,6 +901,38 @@
     ]
    }
   },
+  "da-boss": {
+   "brand": "Da Boss",
+   "category": "wrap",
+   "catalogId": null,
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "da-boss-leaf-gold",
+      "name": "Leaf Gold Wraps",
+      "legibility": "partial",
+      "notes": "Gold box on the lower wrap shelf; brand and 'Gold' readable, remaining copy obscured."
+     }
+    ]
+   }
+  },
+  "dark-horse": {
+   "brand": "Dark Horse",
+   "category": "wrap",
+   "catalogId": "dark-horse",
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "dark-horse-rose-blunt-wraps",
+      "name": "Rose Blunt Wraps",
+      "legibility": "partial",
+      "notes": "Magenta box with rose artwork; brand clear, flavour/variant name read from the rose graphic rather than printed text."
+     }
+    ]
+   }
+  },
   "deadwood-tobacco-co": {
    "brand": "Deadwood Tobacco Co.",
    "category": "cigar",
@@ -691,7 +987,7 @@
    "brand": "Dutch Masters",
    "category": "cigar",
    "catalogId": null,
-   "count": 10,
+   "count": 11,
    "lines": {
     "Dutch": [
      {
@@ -753,6 +1049,58 @@
       "name": "Green Envy",
       "legibility": "clear",
       "notes": "FRONT COUNTER. Carton of 2-count pouches."
+     }
+    ],
+    "—": [
+     {
+      "id": "dutch-masters-sweet-fusion",
+      "name": "Sweet Fusion",
+      "legibility": "clear",
+      "notes": "Red pouch."
+     }
+    ]
+   }
+  },
+  "elements": {
+   "brand": "Elements",
+   "category": "paper",
+   "catalogId": "elements",
+   "count": 3,
+   "lines": {
+    "—": [
+     {
+      "id": "elements-ultra-thin-rice-king-size-slim",
+      "name": "Ultra Thin Rice Papers King Size Slim (50 per box)",
+      "legibility": "clear",
+      "notes": "Rice paper with sugar gum."
+     },
+     {
+      "id": "elements-ultra-thin-rice-single-wide",
+      "name": "Ultra Thin Rice Papers Single Wide Double Pack (25 per box)",
+      "legibility": "clear",
+      "notes": "Rice paper, single wide double pack."
+     },
+     {
+      "id": "elements-ultra-thin-rice-1-1-4",
+      "name": "Ultra Thin Rice Papers 1 1/4",
+      "legibility": "clear",
+      "notes": "Rice paper, 1 1/4 size."
+     }
+    ]
+   }
+  },
+  "exseed": {
+   "brand": "Exseed",
+   "category": "gear",
+   "catalogId": "exseed",
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "exseed-dabcool-w3",
+      "name": "Dabcool W3 Electric Rig",
+      "legibility": "clear",
+      "notes": "Boxed electric rig in the accessory case."
      }
     ]
    }
@@ -831,6 +1179,62 @@
       "name": "Switch Pro Kit",
       "legibility": "clear",
       "notes": "Rechargeable device kit shelved with the Foger disposables"
+     }
+    ]
+   }
+  },
+  "fujima": {
+   "brand": "Fujima",
+   "category": "gear",
+   "catalogId": "fujima",
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "fujima-cigar-cutter-54-gauge",
+      "name": "54 Gauge Cigar Cutter",
+      "legibility": "clear",
+      "notes": "Boxed guillotine cutter on the papers-band shelf."
+     }
+    ]
+   }
+  },
+  "fum": {
+   "brand": "FUM",
+   "category": "gear",
+   "catalogId": "fum",
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "fum-the-good-habit",
+      "name": "The Good Habit Flavoured Air Device",
+      "legibility": "clear",
+      "notes": "Wooden airflow device; packaging states no vapor, no nicotine. Flavoured core refills sold alongside."
+     }
+    ]
+   }
+  },
+  "futurola": {
+   "brand": "Futurola",
+   "category": "wrap",
+   "catalogId": null,
+   "count": 2,
+   "lines": {
+    "Tyson Ranch": [
+     {
+      "id": "futurola-tyson-ranch-cone-roller",
+      "name": "Cone Roller",
+      "legibility": "clear",
+      "notes": "Boxed cone-rolling device, co-branded Tyson Ranch."
+     }
+    ],
+    "Tyson 2.0": [
+     {
+      "id": "futurola-tyson-2-0-the-toad",
+      "name": "The Toad Terpene-Infused Tobacco-Free Blunt Wraps",
+      "legibility": "clear",
+      "notes": "Black and green box, co-branded Tyson 2.0."
      }
     ]
    }
@@ -1444,7 +1848,7 @@
    "brand": "Gurkha",
    "category": "cigar",
    "catalogId": null,
-   "count": 1,
+   "count": 2,
    "lines": {
     "K. Hansotia & Co.": [
      {
@@ -1452,6 +1856,48 @@
       "name": "Rare Limited Edition Cigars",
       "legibility": "clear",
       "notes": "WALK-IN HUMIDOR. Sampler box; lid reads 'Rare Limited Edition Cigars' with the K. Hansotia & Co. mark. Mixed Gurkha bands inside."
+     }
+    ],
+    "—": [
+     {
+      "id": "gurkha-humidor",
+      "name": "Gurkha (walk-in humidor)",
+      "legibility": "clear",
+      "notes": "Black box, K. Hansotia & Co. Individual lines not separated."
+     }
+    ]
+   }
+  },
+  "high-hemp": {
+   "brand": "High Hemp",
+   "category": "paper",
+   "catalogId": "high-hemp",
+   "count": 4,
+   "lines": {
+    "—": [
+     {
+      "id": "high-hemp-organic-rolling-papers",
+      "name": "Organic Rolling Papers",
+      "legibility": "clear",
+      "notes": "Organic hemp papers, alongside the OCB facings."
+     },
+     {
+      "id": "high-hemp-organic-wraps-grape-ape",
+      "name": "Grape Ape Organic Herbal Wraps",
+      "legibility": "clear",
+      "notes": "Pack marked 2 wraps + 2 filter tips, GMO free, 0% tobacco."
+     },
+     {
+      "id": "high-hemp-organic-wraps-assorted",
+      "name": "Organic Herbal Wraps (additional flavours)",
+      "legibility": "partial",
+      "notes": "Four further flavour facings share the display box beside Grape Ape; brand and format are clear but the flavour bands are obscured by shelf tags, so the names are not recorded. Worth a re-shoot if the site needs them itemised."
+     },
+     {
+      "id": "high-hemp-artisanal-organic-hemp-cones",
+      "name": "Artisanal Organic Hemp Cones",
+      "legibility": "clear",
+      "notes": "Boxed hemp cones; brand and product line clear, individual flavour facings partly turned."
      }
     ]
    }
@@ -1483,6 +1929,124 @@
       "id": "ijoy-xp-100k-watermelon-ice",
       "name": "Watermelon Ice",
       "legibility": "clear"
+     }
+    ]
+   }
+  },
+  "job": {
+   "brand": "JOB",
+   "category": "paper",
+   "catalogId": "job",
+   "count": 2,
+   "lines": {
+    "—": [
+     {
+      "id": "job-1-0-rolling-papers",
+      "name": "1.0 Rolling Papers",
+      "legibility": "clear",
+      "notes": "Gold-label French wood pulp papers."
+     },
+     {
+      "id": "job-1-5-slim-rolling-papers",
+      "name": "1.5 Slim Rolling Papers",
+      "legibility": "clear",
+      "notes": "Gold-label, 1.5 slim format."
+     }
+    ]
+   }
+  },
+  "jumbo": {
+   "brand": "Jumbo",
+   "category": "paper",
+   "catalogId": "jumbo",
+   "count": 2,
+   "lines": {
+    "—": [
+     {
+      "id": "jumbo-dutch-brown-cones-king-size",
+      "name": "Dutch Brown Cones King Size",
+      "legibility": "clear",
+      "notes": "Brown unbleached pre-rolled cones."
+     },
+     {
+      "id": "jumbo-original-dutch-cones-king-size",
+      "name": "Original Dutch Cones King Size",
+      "legibility": "clear",
+      "notes": "Box reads 'Premium Quality Green Cones'."
+     }
+    ]
+   }
+  },
+  "king-palm": {
+   "brand": "King Palm",
+   "category": "wrap",
+   "catalogId": "king-palm",
+   "count": 8,
+   "lines": {
+    "—": [
+     {
+      "id": "king-palm-watermelon-wave",
+      "name": "Watermelon Wave Real Leaf Rolls",
+      "legibility": "clear",
+      "notes": "Squeeze-and-pop flavour, 62% humidity pack."
+     },
+     {
+      "id": "king-palm-berry-terps",
+      "name": "Berry Terps Real Leaf Rolls",
+      "legibility": "clear",
+      "notes": "2 minis, holds 1 g each."
+     },
+     {
+      "id": "king-palm-honey-mango",
+      "name": "Honey Mango Real Leaf Rolls",
+      "legibility": "clear",
+      "notes": "2 minis, holds 1 g each."
+     },
+     {
+      "id": "king-palm-banana-cream",
+      "name": "Banana Cream Real Leaf Rolls",
+      "legibility": "clear",
+      "notes": "Squeeze and pop for flavour."
+     },
+     {
+      "id": "king-palm-peach-pineapple",
+      "name": "Peach Pineapple Real Leaf Rolls",
+      "legibility": "clear",
+      "notes": "Holds 1 g each."
+     },
+     {
+      "id": "king-palm-magic-mint",
+      "name": "Magic Mint Real Leaf Rolls",
+      "legibility": "clear",
+      "notes": "2 minis, squeeze and pop to activate flavour."
+     },
+     {
+      "id": "king-palm-lemon-haze",
+      "name": "Lemon Haze Real Leaf Rolls",
+      "legibility": "clear",
+      "notes": "2 minis, 'Just Pack It'."
+     },
+     {
+      "id": "king-palm-mini-tobacco-free",
+      "name": "Mini Rolls (tobacco free, 2 super slow burning rolls)",
+      "legibility": "clear",
+      "notes": "Unflavoured mini leaf rolls, holds 1 g each."
+     }
+    ]
+   }
+  },
+  "la-cubana": {
+   "brand": "La Cubana",
+   "category": "cigar",
+   "catalogId": null,
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "la-cubana-humidor",
+      "name": "La Cubana (walk-in humidor)",
+      "legibility": "clear",
+      "notes": "White/blue boxes on the third humidor shelf."
      }
     ]
    }
@@ -1521,6 +2085,62 @@
       "name": "Serie R Esteli",
       "legibility": "clear",
       "notes": "WALK-IN HUMIDOR. NOT IN catalog.json as its own house — catalog.json currently files 'Serie R Esteli' as a note under Punch, which is wrong. Yellow shelf card reads 'La Gloria Cubana / SERIE R ESTELI' with red-and-yellow bands on the cigars below. Box format."
+     }
+    ]
+   }
+  },
+  "lookah": {
+   "brand": "Lookah",
+   "category": "gear",
+   "catalogId": null,
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "lookah-seahorse-max",
+      "name": "Seahorse Max Electric Nectar Collector",
+      "legibility": "clear",
+      "notes": "Boxed electric nectar collector on the top shelf of the dab case."
+     }
+    ]
+   }
+  },
+  "looseleaf": {
+   "brand": "LooseLeaf",
+   "category": "wrap",
+   "catalogId": null,
+   "count": 5,
+   "lines": {
+    "—": [
+     {
+      "id": "looseleaf-peach-dream",
+      "name": "Peach Dream Wraps",
+      "legibility": "clear",
+      "notes": "Minis display box."
+     },
+     {
+      "id": "looseleaf-watermelon-dream",
+      "name": "Watermelon Dream Wraps",
+      "legibility": "clear",
+      "notes": "Minis display box."
+     },
+     {
+      "id": "looseleaf-banana-dream",
+      "name": "Banana Dream Wraps",
+      "legibility": "clear",
+      "notes": "Minis display box."
+     },
+     {
+      "id": "looseleaf-minis-perfect-roll",
+      "name": "Minis 'Perfect Roll' Wraps",
+      "legibility": "partial",
+      "notes": "Purple/grape facing in the Minis run; 'Perfect Roll' readable, flavour word partly hidden behind the shelf tag."
+     },
+     {
+      "id": "looseleaf-slugs-natural-leaf-cones",
+      "name": "Slugs Natural Leaf Glass-Tipped Cones",
+      "legibility": "clear",
+      "notes": "Green box, glass-tipped natural leaf cones."
      }
     ]
    }
@@ -1580,7 +2200,7 @@
    "brand": "Macanudo",
    "category": "cigar",
    "catalogId": "macanudo",
-   "count": 5,
+   "count": 6,
    "lines": {
     "Inspirado": [
      {
@@ -1614,6 +2234,12 @@
       "name": "Macanudo (black box)",
       "legibility": "partial",
       "notes": "WALK-IN HUMIDOR. Black box, Macanudo mark legible, line name not resolvable."
+     },
+     {
+      "id": "macanudo-humidor",
+      "name": "Macanudo (walk-in humidor)",
+      "legibility": "partial",
+      "notes": "Brand readable on the box edge; line not legible."
      }
     ]
    }
@@ -1622,7 +2248,7 @@
    "brand": "Mazaya",
    "category": "hookah",
    "catalogId": null,
-   "count": 2,
+   "count": 3,
    "lines": {
     "—": [
      {
@@ -1634,6 +2260,28 @@
       "id": "mazaya-watermelon-molasses",
       "name": "Watermelon Molasses",
       "legibility": "clear"
+     },
+     {
+      "id": "mazaya-shisha",
+      "name": "Hookah Molasses (assorted flavours)",
+      "legibility": "partial",
+      "notes": "Row of Mazaya boxes; the brand logo is unmistakable but the flavour names are printed in Arabic and too small to read. Fruit artwork suggests mint, citrus, apple and gum variants — not recorded as names because they are not legible."
+     }
+    ]
+   }
+  },
+  "metal-pipe": {
+   "brand": "Metal Pipe",
+   "category": "gear",
+   "catalogId": null,
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "metal-pipe-brass-hand-pipe",
+      "name": "Brass Bullet-Style Hand Pipe",
+      "legibility": "clear",
+      "notes": "Counter display card reads METAL PIPE, for tobacco use only; brass bullet-shaped pipes stood in rows."
      }
     ]
    }
@@ -2228,6 +2876,52 @@
     ]
    }
   },
+  "ocb": {
+   "brand": "OCB",
+   "category": "paper",
+   "catalogId": "ocb",
+   "count": 3,
+   "lines": {
+    "Organic Hemp": [
+     {
+      "id": "ocb-organic-hemp-slim",
+      "name": "Organic Hemp Slim Rolling Papers",
+      "legibility": "clear",
+      "notes": "Unbleached organic hemp, slim format."
+     },
+     {
+      "id": "ocb-organic-hemp-single-wide",
+      "name": "Organic Hemp Single Wide Rolling Papers",
+      "legibility": "clear",
+      "notes": "Unbleached organic hemp, single wide."
+     }
+    ],
+    "Brown Rice": [
+     {
+      "id": "ocb-brown-rice-king-size",
+      "name": "Brown Rice King Size Papers",
+      "legibility": "partial",
+      "notes": "Brown/unbleached rice paper box on the top shelf of the papers band; brand and 'brown rice' readable, size marking partly turned away."
+     }
+    ]
+   }
+  },
+  "oilseed": {
+   "brand": "OilSeed",
+   "category": "hookah",
+   "catalogId": null,
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "oilseed-glass-bowl",
+      "name": "High Quality Borosilicate Glass Bowl",
+      "legibility": "clear",
+      "notes": "Yellow boxes stacked on the accessory counter; box reads HIGH QUALITY / borosilicate / GLASS BOWL."
+     }
+    ]
+   }
+  },
   "olit": {
    "brand": "OLIT",
    "category": "disposable",
@@ -2248,7 +2942,7 @@
    "brand": "Oliva",
    "category": "cigar",
    "catalogId": "oliva",
-   "count": 3,
+   "count": 4,
    "lines": {
     "Reserve": [
      {
@@ -2272,6 +2966,54 @@
       "name": "Serie G Aged Cameroon",
       "legibility": "clear",
       "notes": "WALK-IN HUMIDOR. CORRECTION to catalog.json, which lists 'Serie V Aged Cameroon'. The box lid plainly reads 'Serie G / Aged Cameroon / Made by Hand in Nicaragua'. I found no Serie V box in any frame."
+     }
+    ],
+    "—": [
+     {
+      "id": "oliva-humidor",
+      "name": "Oliva (walk-in humidor, Serie G among the facings)",
+      "legibility": "partial",
+      "notes": "Brand clear on the box lids; series marking readable only on part of the run."
+     }
+    ]
+   }
+  },
+  "ooze": {
+   "brand": "Ooze",
+   "category": "gear",
+   "catalogId": "ooze",
+   "count": 5,
+   "lines": {
+    "—": [
+     {
+      "id": "ooze-kettle",
+      "name": "Kettle Silicone Glass Water Pipe",
+      "legibility": "clear",
+      "notes": "Boxed silicone-and-glass water pipe."
+     },
+     {
+      "id": "ooze-bactar",
+      "name": "Bactar Nectar Collector & Water Bubbler",
+      "legibility": "clear",
+      "notes": "Box lists silicone container, titanium nail and glass bowl."
+     },
+     {
+      "id": "ooze-toke-buddy",
+      "name": "Toke Buddy Nectar Collector & Water Bubbler",
+      "legibility": "clear",
+      "notes": "Boxed silicone nectar collector."
+     },
+     {
+      "id": "ooze-mojo",
+      "name": "Mojo Silicone Glass Nectar Collector & Water Bubbler",
+      "legibility": "clear",
+      "notes": "Boxed silicone-and-glass unit."
+     },
+     {
+      "id": "ooze-trip",
+      "name": "Trip Silicone Pipe",
+      "legibility": "partial",
+      "notes": "'ooze TRIP' readable on the box face; the descriptor line under it is obscured by the case frame."
      }
     ]
    }
@@ -2326,9 +3068,9 @@
   },
   "ploox": {
    "brand": "Ploox",
-   "category": "disposable",
+   "category": "hookah",
    "catalogId": "ploox",
-   "count": 1,
+   "count": 2,
    "lines": {
     "XS": [
      {
@@ -2336,6 +3078,14 @@
       "name": "XS disposable (flavour band not legible)",
       "legibility": "inferred",
       "notes": "Four facings of the Ploox XS carton are on the top shelf; the brand and line are readable but the printed flavour names are past the resolution of the frame. Worth re-shooting close if the shop wants them listed."
+     }
+    ],
+    "—": [
+     {
+      "id": "ploox-plug-and-play-hookah",
+      "name": "Plug and Play Portable Hookah",
+      "legibility": "clear",
+      "notes": "Boxed instant-setup portable hookah on the alcove shelf."
      }
     ]
    }
@@ -2464,6 +3214,22 @@
     ]
    }
   },
+  "prolite": {
+   "brand": "ProLite",
+   "category": "gear",
+   "catalogId": "prolite",
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "prolite-lighter-briquet-torch",
+      "name": "Lighter-Briquet Torch with Jet Flame",
+      "legibility": "clear",
+      "notes": "Blue boxed jet-flame lighters."
+     }
+    ]
+   }
+  },
   "punch": {
    "brand": "Punch",
    "category": "cigar",
@@ -2500,6 +3266,298 @@
       "name": "Toro Sampler 6x50",
       "legibility": "clear",
       "notes": "WALK-IN HUMIDOR. Cello sampler pack, size printed 6 x 50."
+     }
+    ]
+   }
+  },
+  "raw": {
+   "brand": "RAW",
+   "category": "gear",
+   "catalogId": "raw",
+   "count": 43,
+   "lines": {
+    "Classic": [
+     {
+      "id": "raw-classic-1-1-4",
+      "name": "1 1/4 Rolling Papers",
+      "legibility": "clear",
+      "notes": "Unbleached slow-burning papers. RAW display case, mid shelf. Also stocked as loose booklets in the papers band."
+     },
+     {
+      "id": "raw-classic-1-1-2",
+      "name": "1 1/2 Size Rolling Papers",
+      "legibility": "clear",
+      "notes": "Unbleached. Upper shelf of the RAW tower case."
+     },
+     {
+      "id": "raw-classic-single-wide",
+      "name": "Single Wide Rolling Papers",
+      "legibility": "clear",
+      "notes": "Unbleached, single-wide booklets."
+     },
+     {
+      "id": "raw-classic-rolls-5m",
+      "name": "Rolls 5 Metre",
+      "legibility": "clear",
+      "notes": "Continuous paper roll in a tin-style box."
+     },
+     {
+      "id": "raw-classic-rolls-3m-single-wide",
+      "name": "Rolls 3 Metre Single Wide",
+      "legibility": "clear",
+      "notes": "Continuous roll, single-wide width."
+     },
+     {
+      "id": "raw-classic-roll-and-tips-masterpiece",
+      "name": "Masterpiece Roll & Tips (3 m roll + 30 pre-rolled tips)",
+      "legibility": "clear",
+      "notes": "Combination roll-and-tips box."
+     },
+     {
+      "id": "raw-classic-gum-strips",
+      "name": "Gum Strips (3 foot rolls, acacia gum)",
+      "legibility": "clear",
+      "notes": "Adhesive gum strip rolls for hand-rolling."
+     },
+     {
+      "id": "raw-classic-emperador-cone",
+      "name": "Emperador Cone (king size)",
+      "legibility": "partial",
+      "notes": "Oversized novelty cone box; 'Emperador' readable, size marking partly obscured."
+     }
+    ],
+    "Organic Hemp": [
+     {
+      "id": "raw-organic-hemp-single-wide",
+      "name": "Single Wide Rolling Papers",
+      "legibility": "clear",
+      "notes": "Organic hemp, unbleached."
+     },
+     {
+      "id": "raw-organic-hemp-rolling-papers",
+      "name": "Organic Hemp Rolling Papers",
+      "legibility": "clear",
+      "notes": "Green-label organic hemp booklets, multiple sizes faced together."
+     },
+     {
+      "id": "raw-organic-hemp-rolls-5m",
+      "name": "Organic Hemp Rolls 5 Metre",
+      "legibility": "clear",
+      "notes": "Continuous organic hemp roll."
+     }
+    ],
+    "Classic 300's": [
+     {
+      "id": "raw-classic-300s-1-1-4",
+      "name": "300's 1 1/4 Rolling Papers",
+      "legibility": "clear",
+      "notes": "300 leaves per pack, unbleached."
+     }
+    ],
+    "Organic Hemp 300's": [
+     {
+      "id": "raw-organic-hemp-300s-1-1-4",
+      "name": "300's 1 1/4 Rolling Papers",
+      "legibility": "clear",
+      "notes": "300 leaves per pack, organic hemp."
+     }
+    ],
+    "Black": [
+     {
+      "id": "raw-black-1-1-4",
+      "name": "1 1/4 Rolling Papers",
+      "legibility": "clear",
+      "notes": "RAW Black ultra-thin line, bottom shelf of the RAW case."
+     },
+     {
+      "id": "raw-black-king-size-slim",
+      "name": "King Size Slim Rolling Papers",
+      "legibility": "clear",
+      "notes": "RAW Black ultra-thin."
+     },
+     {
+      "id": "raw-black-single-wide",
+      "name": "Single Wide Rolling Papers",
+      "legibility": "clear",
+      "notes": "RAW Black ultra-thin."
+     }
+    ],
+    "Classic Artesano": [
+     {
+      "id": "raw-classic-artesano-1-1-4",
+      "name": "Artesano 1 1/4 (papers, tips and tray)",
+      "legibility": "clear",
+      "notes": "Fold-out pack containing papers, tips and a small tray."
+     }
+    ],
+    "Organic Hemp Artesano": [
+     {
+      "id": "raw-organic-hemp-artesano-king-size-slim",
+      "name": "Artesano King Size Slim (papers, tips and tray)",
+      "legibility": "clear",
+      "notes": "Organic hemp version of the Artesano pack."
+     }
+    ],
+    "Classic Connoisseur": [
+     {
+      "id": "raw-classic-connoisseur-king-size-slim",
+      "name": "Connoisseur King Size Slim + Tips",
+      "legibility": "clear",
+      "notes": "Papers packaged with pre-cut tips."
+     }
+    ],
+    "Organic Hemp Connoisseur": [
+     {
+      "id": "raw-organic-hemp-connoisseur-king-size-slim",
+      "name": "Connoisseur King Size Slim + Tips",
+      "legibility": "clear",
+      "notes": "Organic hemp Connoisseur pack."
+     }
+    ],
+    "RAW x Lyrical Lemonade": [
+     {
+      "id": "raw-x-lyrical-lemonade-grape-king-size-wide",
+      "name": "Grape Organic Hemp King Size Wide Papers",
+      "legibility": "clear",
+      "notes": "Collaboration pack, purple box, organic hemp."
+     }
+    ],
+    "—": [
+     {
+      "id": "raw-tips-original",
+      "name": "Original Tips (unbleached, unrefined)",
+      "legibility": "clear",
+      "notes": "Flat card tips booklet."
+     },
+     {
+      "id": "raw-perforated-wide-tips",
+      "name": "Perforated Wide Tips",
+      "legibility": "clear",
+      "notes": "Tear-off wide tips booklet."
+     },
+     {
+      "id": "raw-gummed-perforated-tips",
+      "name": "Gummed Perforated Tips",
+      "legibility": "clear",
+      "notes": "Tips with a gum strip."
+     },
+     {
+      "id": "raw-authentic-soft-tips",
+      "name": "Authentic Soft Tips (50 per pack)",
+      "legibility": "clear",
+      "notes": "Softer card tips."
+     },
+     {
+      "id": "raw-cone-tips-perfecto",
+      "name": "Perfecto Cone Tips",
+      "legibility": "clear",
+      "notes": "Tapered cone-shaped tips."
+     },
+     {
+      "id": "raw-maestro-tips",
+      "name": "Maestro Tips (32 tips per booklet)",
+      "legibility": "clear",
+      "notes": "Pre-scored tip booklet."
+     },
+     {
+      "id": "raw-pre-rolled-tips-tin",
+      "name": "Pre-Rolled Tips Tin (100 tips)",
+      "legibility": "clear",
+      "notes": "Metal tin of 100 pre-rolled tips."
+     },
+     {
+      "id": "raw-pre-rolled-tips-bag-200",
+      "name": "Pre-Rolled Tips Bag (200 tips)",
+      "legibility": "clear",
+      "notes": "Bulk bag of pre-rolled tips."
+     },
+     {
+      "id": "raw-slim-pre-rolled-tips",
+      "name": "Slim Pre-Rolled Tips",
+      "legibility": "clear",
+      "notes": "Narrower pre-rolled tips."
+     },
+     {
+      "id": "raw-dlx-cannon",
+      "name": "DLX Cannon Glass-Tipped Cone",
+      "legibility": "clear",
+      "notes": "Single large glass-tipped cone in a display box."
+     },
+     {
+      "id": "raw-six-shooter",
+      "name": "Six Shooter King Size Cone Filler",
+      "legibility": "clear",
+      "notes": "Loader/filler that packs six king size cones at once."
+     },
+     {
+      "id": "raw-loader",
+      "name": "Cone Loader",
+      "legibility": "partial",
+      "notes": "Boxed cone loader; brand and 'Loader' clear, size variant not readable."
+     },
+     {
+      "id": "raw-hemp-wick",
+      "name": "Hemp Wick (3 metre / 10 ft)",
+      "legibility": "clear",
+      "notes": "Beeswax hemp wick spool."
+     },
+     {
+      "id": "raw-hemp-plastic-rolling-machine-70mm",
+      "name": "Hemp Plastic Cigarette Rolling Machine 70 mm",
+      "legibility": "clear",
+      "notes": "Hand roller, 70 mm."
+     },
+     {
+      "id": "raw-hemp-plastic-rolling-machine-110mm",
+      "name": "Hemp Plastic Cigarette Rolling Machine 110 mm",
+      "legibility": "clear",
+      "notes": "Hand roller, 110 mm."
+     },
+     {
+      "id": "raw-two-way-roller-70mm",
+      "name": "2-Way Roller 70 mm",
+      "legibility": "clear",
+      "notes": "Two-way adjustable roller."
+     }
+    ],
+    "Classic Cone": [
+     {
+      "id": "raw-classic-cone-1-1-4-20pk",
+      "name": "1 1/4 Size Cones (20 per pack)",
+      "legibility": "clear",
+      "notes": "Top shelf of the papers band, boxed cone display."
+     },
+     {
+      "id": "raw-classic-cone-1-1-4-6pk",
+      "name": "1 1/4 Size Cones (6 per pack)",
+      "legibility": "clear",
+      "notes": "Bulk carton on the lowest open shelf."
+     },
+     {
+      "id": "raw-classic-cone-king-size",
+      "name": "King Size Cones (20 per pack)",
+      "legibility": "clear",
+      "notes": "Boxed cone display, top shelf."
+     },
+     {
+      "id": "raw-classic-cone-98-special",
+      "name": "98 Special Cones (20 per pack)",
+      "legibility": "clear",
+      "notes": "98 mm format."
+     },
+     {
+      "id": "raw-classic-cone-lean",
+      "name": "Lean Cones (20 per pack)",
+      "legibility": "clear",
+      "notes": "Slim 'Lean' cone format."
+     }
+    ],
+    "Black Cone": [
+     {
+      "id": "raw-black-cone-1-1-4",
+      "name": "1 1/4 Size Cones (20 per pack)",
+      "legibility": "clear",
+      "notes": "Black-label ultra-thin cones."
      }
     ]
    }
@@ -2584,6 +3642,38 @@
       "name": "Tubos (aluminium tubes)",
       "legibility": "partial",
       "notes": "WALK-IN HUMIDOR. Red-and-white aluminium tubes standing in an open box. Single/tubo format."
+     }
+    ]
+   }
+  },
+  "satya": {
+   "brand": "Satya",
+   "category": "gear",
+   "catalogId": null,
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "satya-incense-sticks",
+      "name": "Incense Sticks (assorted, incl. Natural and Meditation Dreams)",
+      "legibility": "partial",
+      "notes": "Floor display box; brand clear, only some of the individual fragrance names readable."
+     }
+    ]
+   }
+  },
+  "scorch-torch": {
+   "brand": "Scorch Torch",
+   "category": "gear",
+   "catalogId": "scorch-torch",
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "scorch-torch-lighter",
+      "name": "Butane Torch Lighter",
+      "legibility": "clear",
+      "notes": "Boxed torch lighters on the top shelf of the lighter case."
      }
     ]
    }
@@ -2688,6 +3778,22 @@
     ]
    }
   },
+  "special-blue": {
+   "brand": "Special Blue",
+   "category": "gear",
+   "catalogId": null,
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "special-blue-lighter-briquet-torch",
+      "name": "Lighter-Briquet Torch with Jet Flame",
+      "legibility": "clear",
+      "notes": "Boxed torch lighters, dragon logo; loose units in assorted colours in the case below."
+     }
+    ]
+   }
+  },
   "starbuzz": {
    "brand": "Starbuzz",
    "category": "disposable",
@@ -2752,9 +3858,9 @@
   },
   "sweet-woods": {
    "brand": "Sweet Woods",
-   "category": "cigar",
+   "category": "wrap",
    "catalogId": null,
-   "count": 6,
+   "count": 12,
    "lines": {
     "Good Times Leaf": [
      {
@@ -2792,6 +3898,42 @@
       "name": "Platinum",
       "legibility": "clear",
       "notes": "FRONT COUNTER. Foil pouches."
+     },
+     {
+      "id": "sweet-woods-leaf-classic",
+      "name": "Classic Leaf Wraps",
+      "legibility": "clear",
+      "notes": "Resealable foil pouch, natural leaf wraps."
+     },
+     {
+      "id": "sweet-woods-leaf-watermelon",
+      "name": "Watermelon Leaf Wraps (Limited Edition)",
+      "legibility": "clear",
+      "notes": "Limited edition banner printed on the box."
+     },
+     {
+      "id": "sweet-woods-leaf-vanilla",
+      "name": "Vanilla Leaf Wraps",
+      "legibility": "clear",
+      "notes": "Resealable foil pouch."
+     },
+     {
+      "id": "sweet-woods-leaf-russian-cream",
+      "name": "Russian Cream Leaf Wraps",
+      "legibility": "clear",
+      "notes": "Also stocked as a 30 pouch / 60 wrap carton on the lower shelf."
+     },
+     {
+      "id": "sweet-woods-leaf-natural",
+      "name": "Natural Leaf Wraps",
+      "legibility": "clear",
+      "notes": "Carton marked 30 pouches / 2 ct."
+     },
+     {
+      "id": "sweet-woods-leaf-platinum",
+      "name": "Platinum Leaf Wraps",
+      "legibility": "clear",
+      "notes": "Silver/grey box facing."
      }
     ]
    }
@@ -2994,6 +4136,104 @@
     ]
    }
   },
+  "top": {
+   "brand": "TOP",
+   "category": "gear",
+   "catalogId": "top",
+   "count": 2,
+   "lines": {
+    "—": [
+     {
+      "id": "top-fine-gummed-rolling-papers",
+      "name": "Fine Gummed Rolling Papers",
+      "legibility": "clear",
+      "notes": "Classic single-wide gummed papers."
+     },
+     {
+      "id": "top-cigarette-machine-100mm",
+      "name": "Cigarette Rolling Machine 100 mm",
+      "legibility": "clear",
+      "notes": "Boxed hand-crank style roller."
+     }
+    ]
+   }
+  },
+  "unbranded-shop-stock": {
+   "brand": "unbranded (shop stock)",
+   "category": "hookah",
+   "catalogId": null,
+   "count": 11,
+   "lines": {
+    "—": [
+     {
+      "id": "brass-screens-wallet-pack",
+      "name": "Brass Pipe Screens (wallet pack)",
+      "legibility": "clear",
+      "notes": "Red-bordered wallet packs; boxes read 'brass screens, 5 in each wallet pack'."
+     },
+     {
+      "id": "silver-screens-wallet-pack",
+      "name": "Silver Pipe Screens (wallet pack)",
+      "legibility": "clear",
+      "notes": "Blue-bordered wallet packs."
+     },
+     {
+      "id": "gold-screens-wallet-pack",
+      "name": "Gold Pipe Screens (wallet pack)",
+      "legibility": "clear",
+      "notes": "Boxed wallet packs beside the brass and silver."
+     },
+     {
+      "id": "stainless-steel-screens",
+      "name": "Stainless Steel Pipe Screens",
+      "legibility": "partial",
+      "notes": "Box reads 'stainless ... screens'; full wording clipped by the shelf edge."
+     },
+     {
+      "id": "nectar-collector-glass-set",
+      "name": "Glass Nectar Collector Set (boxed)",
+      "legibility": "partial",
+      "notes": "Box reads 'Nectar Collector Set'; the maker's mark is not legible at this angle. Several loose glass and silicone nectar collectors displayed alongside."
+     },
+     {
+      "id": "silicone-hand-pipes-assorted",
+      "name": "Silicone Hand Pipes and Nectar Collectors (assorted colours)",
+      "legibility": "inferred",
+      "notes": "A run of unboxed silicone pipes and collectors in the counter case. Shapes are unmistakable but no brand marking is readable on any unit."
+     },
+     {
+      "id": "glass-hookah-tabletop-assorted",
+      "name": "Tabletop Glass Hookahs (assorted colours)",
+      "legibility": "inferred",
+      "notes": "A full row of small and mid-size glass hookahs with chrome stems and ceramic bowls, in purple, red, green, amber and clear. No brand marking readable on any unit."
+     },
+     {
+      "id": "glass-hookah-vases-bases",
+      "name": "Glass Hookah Vases / Replacement Bases",
+      "legibility": "inferred",
+      "notes": "Standalone decorative glass bases displayed on the upper alcove shelf."
+     },
+     {
+      "id": "clay-hookah-bowls",
+      "name": "Clay / Ceramic Hookah Bowls",
+      "legibility": "clear",
+      "notes": "Terracotta Egyptian-style bowls displayed loose on the alcove shelves and on the accessory counter."
+     },
+     {
+      "id": "hookah-hoses",
+      "name": "Hookah Hoses",
+      "legibility": "inferred",
+      "notes": "Patterned flexible hoses hanging from and coiled on the alcove shelves. No packaging or brand visible."
+     },
+     {
+      "id": "hookah-charcoal-boxed",
+      "name": "Hookah Charcoal (boxed discs)",
+      "legibility": "inferred",
+      "notes": "Red retail boxes printed with a hookah and a coal disc, stacked on the accessory counter. The brand name on the box face is not legible at this angle — worth a close re-shoot before listing it by name."
+     }
+    ]
+   }
+  },
   "ut": {
    "brand": "UT",
    "category": "disposable",
@@ -3147,6 +4387,22 @@
     ]
    }
   },
+  "vector": {
+   "brand": "Vector",
+   "category": "gear",
+   "catalogId": null,
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "vector-420-torch",
+      "name": "420 Torch Lighter",
+      "legibility": "clear",
+      "notes": "Orange box in the lighter case."
+     }
+    ]
+   }
+  },
   "vertigo": {
    "brand": "Vertigo",
    "category": "gear",
@@ -3225,6 +4481,44 @@
       "name": "Swirl Triple Grape",
       "legibility": "clear",
       "notes": "FRONT COUNTER. Carton of foil pouches."
+     }
+    ]
+   }
+  },
+  "yocan": {
+   "brand": "Yocan",
+   "category": "gear",
+   "catalogId": "yocan",
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "yocan-celestial",
+      "name": "Celestial Portable Dab Pen",
+      "legibility": "clear",
+      "notes": "Boxed portable unit in the accessory case."
+     }
+    ]
+   }
+  },
+  "zig-zag": {
+   "brand": "Zig-Zag",
+   "category": "paper",
+   "catalogId": "zig-zag",
+   "count": 2,
+   "lines": {
+    "—": [
+     {
+      "id": "zig-zag-organic-hemp-king-slim",
+      "name": "Organic Hemp King Slim Rolling Papers",
+      "legibility": "clear",
+      "notes": "Green-label organic hemp."
+     },
+     {
+      "id": "zig-zag-original-rolling-papers",
+      "name": "Original Rolling Papers (natural gum arabic)",
+      "legibility": "partial",
+      "notes": "Classic orange-label wood pulp papers; brand and 'Original' clear, size marking obscured by neighbouring stock."
      }
     ]
    }
