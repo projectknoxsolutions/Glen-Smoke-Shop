@@ -379,3 +379,30 @@
   opacity: 0;
   transition: opacity .8s ease-in .5s;
 }
+
+/* ==========================================================================
+   THE CAUSE OF THE BLACK ENTRANCE — found at last
+
+   .grain is a fixed, full-viewport `mix-blend-mode: overlay` layer over the
+   whole document (base.css). Overlay against a dark backdrop crushes darks, and
+   a root-level blend layer forces the entire page into a blending group. The
+   gate has its own internal blends — the screen-blended neon plate, the smoke
+   canvas — so it composites as an isolated group, and that group resolved to
+   black underneath the root overlay on a GPU-composited browser.
+
+   Every earlier fix was inside the gate: scrim opacity, gradient stops, layer
+   counts, will-change, blend isolation, filter vs opacity, removing the neon,
+   removing the smoke, restoring a known-good file wholesale. None of them could
+   have worked, because the offending layer was never in the gate — it was two
+   files away, applied to <body>, and had been there since the first build.
+
+   The lesson is about method, not CSS: I kept bisecting inside the component
+   that showed the symptom and never widened to the document that contained it.
+   Hiding .grain fixes it instantly, and that test cost thirty seconds.
+
+   The gate does not want a film-grain overlay anyway. It is hidden while the
+   gate is open and comes back with the page.
+   ========================================================================== */
+
+body.gate-locked .grain,
+body.gate-locked .ambient { display: none; }

@@ -66,10 +66,19 @@ export function initEntrance({ onPass, onConfirm }: EntranceHandles): boolean {
     setBackground(false)
   }
 
-  // --- already 21+ on a previous visit -------------------------------------
-  let remembered = false
-  try { remembered = localStorage.getItem(AGE_KEY) === 'ok' } catch { /* private mode */ }
-  if (remembered) {
+  // --- every visit ----------------------------------------------------------
+  // The gate used to remember a confirmation in localStorage and skip itself on
+  // return visits. The owner wants the entrance every time — it is the site's
+  // opening shot, not a toll — so the persistence is gone. The 21+ answer is
+  // still required before anything behind it is reachable, which is the part
+  // that actually matters for compliance.
+  //
+  // It still does NOT re-run within a single session: internal navigation
+  // between the nine pages would otherwise re-gate on every click. sessionStorage
+  // covers that, and closing the tab resets it.
+  let sameSession = false
+  try { sameSession = sessionStorage.getItem(AGE_KEY) === 'ok' } catch { /* private mode */ }
+  if (sameSession) {
     gate.classList.add('lit', 'instant')
     release()
     return true
@@ -101,6 +110,8 @@ export function initEntrance({ onPass, onConfirm }: EntranceHandles): boolean {
     try { sessionStorage.setItem(SEEN_KEY, '1') } catch {}
   }
 
+  // SEEN_KEY only suppresses the light show for a repeat view inside one
+  // session (hitting No then Go back, or a reload) — never across visits.
   let seen = false
   try { seen = sessionStorage.getItem(SEEN_KEY) === '1' } catch {}
 
@@ -129,7 +140,7 @@ export function initEntrance({ onPass, onConfirm }: EntranceHandles): boolean {
   const enter = () => {
     if (opening) return
     opening = true
-    try { localStorage.setItem(AGE_KEY, 'ok') } catch {}
+    try { sessionStorage.setItem(AGE_KEY, 'ok') } catch {}
     onConfirm?.()
 
     settle()
