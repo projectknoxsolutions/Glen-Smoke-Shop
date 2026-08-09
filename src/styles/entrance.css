@@ -404,3 +404,19 @@
   -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 20%);
           mask-image: linear-gradient(180deg, transparent 0%, #000 20%);
 }
+
+/* --- the copy panel, actually full-bleed ---------------------------------
+
+   .gate-inner still carried max-width:640px from sections.css, so the
+   "full-width" darkening behind the copy was 640px wide with hard vertical
+   edges — the exact pasted-on rectangle this was written to avoid. The block
+   goes full width; the type keeps its measure via the children rule above. */
+.gate-inner { max-width: none; }
+
+/* Hard ceiling on the haze. Whatever the random field does, the storefront has
+   to stay readable through it — atmosphere, not an occluder. */
+.gate.lighting .smoke-canvas,
+.gate.lit .smoke-canvas,
+.gate.instant .smoke-canvas { opacity: .92; }
+
+.gate.opening .smoke-canvas { opacity: .92; transition: none; }

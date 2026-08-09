@@ -156,6 +156,14 @@ export function initSmoke(host: HTMLElement, opts: { density?: number } = {}): S
   // nothing. Smoke reads as smoke because of the gaps.
   const COUNT = Math.round(Math.min(52, Math.max(26, (w * h) / 24000)) * density)
 
+  /* Density has to be BOUNDED, not just tuned. Every puff is randomised, so
+     across reloads the field ranged from a few wisps to an opaque wall that hid
+     the storefront completely — and the storefront is the thing the entrance
+     exists to show. Two loads of the same build looked like different designs.
+     Alpha now scales down as the count goes up, and the whole field is capped
+     by the canvas opacity below, so the worst case is still see-through. */
+  const crowd = Math.min(1, COUNT / 46)
+
   const puffs: Puff[] = []
   for (let i = 0; i < COUNT; i++) {
     const y = Math.random()
@@ -165,7 +173,7 @@ export function initSmoke(host: HTMLElement, opts: { density?: number } = {}): S
       // Wide size spread on purpose: a few big soft banks for mass, plenty of
       // small tight ones for the structure your eye actually reads as smoke.
       r: h * (0.07 + Math.pow(Math.random(), 1.7) * 0.38),
-      a: 0.32 + Math.random() * 0.42,
+      a: (0.34 + Math.random() * 0.46) * (1 - crowd * 0.2),
       rot: Math.random() * Math.PI * 2,
       spin: (Math.random() - 0.5) * 0.00016,
       vx: (Math.random() - 0.3) * 0.016,
