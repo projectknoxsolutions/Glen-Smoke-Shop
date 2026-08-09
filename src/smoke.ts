@@ -199,7 +199,7 @@ export function initSmoke(host: HTMLElement, opts: { density?: number } = {}): S
       // The old 0.5-1.65 range projected to well over a thousand pixels a puff,
       // which is why sixty of them added up to one featureless cloud.
       r: 0.34 + Math.random() * 0.52,
-      a: 0.30 + Math.random() * 0.26,
+      a: 0.22 + Math.random() * 0.21,
       rot: Math.random() * Math.PI * 2,
       spin: (Math.random() - 0.5) * 0.00030,
       tex: i % TEX.length,
@@ -267,7 +267,7 @@ export function initSmoke(host: HTMLElement, opts: { density?: number } = {}): S
         if (p.y + p.r < -2.4 || p.a < 0.03) {
           p.y = 1.9 + Math.random() * 0.6
           p.x = (Math.random() - 0.5) * 5.6
-          p.a = 0.30 + Math.random() * 0.26
+          p.a = 0.22 + Math.random() * 0.21
         }
       }
 

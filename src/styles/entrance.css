@@ -82,9 +82,27 @@
   transition: filter 1.5s var(--ease-out);
 }
 
+/* NO mix-blend-mode. This layer carried `screen` for most of the build and it
+   is the thing that made the entrance render black in a GPU-composited Chrome.
+
+   The .grain overlay found earlier was one instance of the same fault, not the
+   whole of it — with .grain hidden this layer still forced .ent-scene into a
+   blending group of its own (blend + mask + filter, inside a clip-path'd
+   parent), and that group resolved to black on the compositor while software
+   rasterisation drew it correctly. It was invisible for a while only because
+   the new smoke sits on top and there was enough of it to look deliberate.
+   Turning this one property off, live in the browser that showed the fault,
+   brought the storefront straight back.
+
+   Nothing is lost. `screen` is 1-(1-a)(1-b); this layer's backdrop is the
+   storefront plate held at brightness(.16), so a is near zero and screen is
+   within a rounding error of plain alpha compositing. The layer is masked to
+   the lit signs and sits in exact register over its own darker copy, so
+   ordinary opacity puts the same light in the same place. The extra
+   brightness/saturate in the strike keyframes is the small difference made
+   back. */
 .ent-neon {
   opacity: 0;
-  mix-blend-mode: screen;
   -webkit-mask-image: url('./img/hero-wide-mask-1400.webp');
           mask-image: url('./img/hero-wide-mask-1400.webp');
   -webkit-mask-size: cover;  mask-size: cover;
