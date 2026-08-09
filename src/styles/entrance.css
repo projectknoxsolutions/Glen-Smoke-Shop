@@ -589,3 +589,17 @@
 
 /* The neon layer can come back now that the plate is not the thing failing. */
 .gate .ent-neon { display: block; }
+
+/* --- reproduce the configuration that was proven to work -------------------
+
+   Seven deploys. Time to stop reasoning and copy the one state that was
+   observed rendering correctly in the target browser, which had BOTH changes at
+   once: no filter on the plate AND no neon layer. I have since shipped each of
+   those alone and each alone is still black. So they are jointly necessary, and
+   both go.
+
+   The neon layer is the loss and it is a small one: the storefront photograph
+   already contains the lit sign, and the colour cycle the owner asked for runs
+   on the sign hero immediately behind this gate.                              */
+
+.gate .ent-neon { display: none !important; }
