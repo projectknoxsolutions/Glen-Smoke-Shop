@@ -560,3 +560,32 @@
    A working entrance beats a flourish that only works on my machine.          */
 
 .gate .ent-neon { display: none; }
+
+/* --- it was the filter ----------------------------------------------------
+
+   Re-reading the one test that DID show the storefront in the real browser: it
+   changed three things at once — hid .ent-neon, set a background, and set
+   `filter: none` on .ent-plate. I credited the neon. Removing the neon alone on
+   the next deploy proved that wrong, which leaves the filter.
+
+   A `filter` on .ent-plate promotes it into its own compositing group. Stacked
+   with the screen-blended canvas above it and the masked layer beside it, that
+   group composites to black on this GPU path — while software compositing
+   headless resolves it correctly. Six deploys of chasing the symptom; the tell
+   was in the first successful test and I read it wrong.
+
+   So the dimming moves from `filter` to `opacity`, which does not create the
+   same group. Same visual result, none of the compositing exposure.           */
+
+.gate .ent-plate {
+  filter: none !important;
+  opacity: .2;
+  transition: opacity 1.4s var(--ease-out);
+}
+
+.gate.lit .ent-plate,
+.gate.instant .ent-plate,
+.gate.opening .ent-plate { opacity: 1; }
+
+/* The neon layer can come back now that the plate is not the thing failing. */
+.gate .ent-neon { display: block; }
