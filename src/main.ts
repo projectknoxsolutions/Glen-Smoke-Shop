@@ -371,6 +371,48 @@ function init3D() {
   }
 }
 
+/* ------------------------------------------------------- spec grids */
+
+/* Glass shapes, percolator types and hookah components. These are the parts of
+   the shop where the staff knowledge IS the product — a customer buying a rig
+   blind does not know what a recycler does differently, and the perc is the
+   single thing most people buy without understanding. We already wrote the
+   copy; it just had nowhere to live, because glass has no brands to hang chips
+   off and hookah's only chips were the botanical brands. */
+const GLASS_PERC = /perc|condenser|ice-pinch/i
+
+function specTile(id: string): string {
+  const d = describe(id)
+  if (!d) return ''
+  return `<button class="spec" type="button" data-detail="${id}">
+    <span class="spec-n">${d.name}</span>
+    ${d.blurb ? `<span class="spec-b">${d.blurb}</span>` : ''}
+  </button>`
+}
+
+function initSpecGrids() {
+  const slug = (s: string) => s.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+
+  const shapes = $('#glass-shapes'), percs = $('#glass-percs')
+  if (shapes && percs) {
+    const styles = catalog.glass.styles as string[]
+    shapes.innerHTML = styles.filter(s => !GLASS_PERC.test(s)).map(s => specTile(slug(s))).join('')
+    percs.innerHTML = styles.filter(s => GLASS_PERC.test(s)).map(s => specTile(slug(s))).join('')
+  }
+
+  const hk = $('#hookah-parts')
+  if (hk) {
+    // These ids were written by the copy pass and have no catalog array behind
+    // them, so they are listed here rather than derived.
+    hk.innerHTML = [
+      'hookah-pipes', 'hookah-bowl-phunnel', 'hookah-bowl-egyptian', 'hookah-bowl-vortex',
+      'hookah-bowl-silicone', 'hookah-hose-washable', 'hookah-hose-traditional',
+      'hookah-coals-coconut', 'hookah-coals-quick-light', 'hookah-heat-management',
+      'hookah-tongs-foil-punch', 'hookah-grommets-mouth-tips',
+    ].map(specTile).join('')
+  }
+}
+
 /* -------------------------------------------------------------- pouches */
 const FLAVOR_TINT: Record<string, string> = {
   mint: '#4FC3F7', peppermint: '#4FC3F7', 'cool mint': '#4FC3F7', 'arctic mint': '#7FDBFF',
@@ -777,6 +819,7 @@ function boot() {
   init3D()
   initPouches()
   initGlass()
+  initSpecGrids()
   initLists()
   initPortal()
   initGallery()

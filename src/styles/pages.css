@@ -439,3 +439,65 @@ button.cigar-name::after {
 }
 
 .sheet-shelf-head strong { color: var(--orange); font-size: 14px; letter-spacing: 0; }
+
+/* ==========================================================================
+   Spec grids — glass shapes, percolators, hookah components
+
+   These are the parts of the shop where the staff knowledge IS the product.
+   Nobody buys a recycler because of the word; they buy it because someone
+   explained what it does. Text tiles rather than photo tiles on purpose: we
+   have no photograph of a "matrix perc" that isn't a photograph of one
+   particular pipe, and implying otherwise would be a promise about stock.
+   ========================================================================== */
+
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 10px;
+}
+
+.spec {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+  padding: 16px 16px 17px;
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: rgba(255,255,255,.018);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  transition: border-color var(--dur-fast), background var(--dur-fast), transform var(--dur-fast);
+}
+
+.spec:hover,
+.spec:focus-visible {
+  border-color: var(--leaf);
+  background: var(--leaf-dim);
+  transform: translateY(-2px);
+}
+
+.spec:focus-visible { outline: 2px solid var(--leaf); outline-offset: 2px; }
+
+.spec-n {
+  font-family: var(--display);
+  font-size: 19px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--ink);
+  line-height: 1.05;
+}
+
+.spec-b {
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+
+/* The cigar section runs gold and the glass section runs green; the hookah
+   grid sits under the blue kicker, so it borrows that. */
+#hookah-parts .spec:hover,
+#hookah-parts .spec:focus-visible { border-color: var(--blue); background: var(--blue-dim); }
+#hookah-parts .spec:focus-visible { outline-color: var(--blue); }
