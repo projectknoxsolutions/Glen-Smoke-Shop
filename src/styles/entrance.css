@@ -360,3 +360,47 @@
 @media (prefers-reduced-motion: reduce) {
   .smoke-canvas { display: none; }
 }
+
+/* --- the scrim, re-balanced -----------------------------------------------
+
+   Caught on the deployed site, not locally: the entrance rendered essentially
+   black. Every layer was individually correct — plate loaded, filter applied,
+   mask fetched, smoke drawing at the right density — and the composite was
+   unreadable.
+
+   The cause was cumulative. .gate-scrim was tuned when the plate sat at full
+   brightness behind a film. Since then the plate dropped to .62 to stop the
+   screen-blended smoke going milky, .gate-inner grew its own full-width
+   darkening gradient behind the copy, and the smoke canvas went to opacity 1.
+   Four reasonable decisions, each fine alone, multiplying into near-zero.
+
+   So the scrim now does the one job nothing else does — keeping the nav legible
+   at the very top and grounding the very bottom — and stays out of the middle,
+   where the storefront is the entire point.                                   */
+
+.gate .gate-scrim {
+  background:
+    linear-gradient(180deg, rgba(5,6,10,.72) 0%, rgba(5,6,10,.12) 18%, rgba(5,6,10,0) 42%, rgba(5,6,10,.55) 100%);
+}
+
+/* And the plate comes back up. .62 was set to stop the smoke washing it out,
+   but the smoke's own density was the better lever and it has since come down. */
+.gate.lit .ent-plate { filter: brightness(.86) saturate(1.04) contrast(1.03); }
+
+/* The copy block needs to sit on something of its own now that the scrim has
+   backed off. "GLEN SMOKE SHOP" and the address line were landing on lit shop
+   windows — the busiest, brightest part of the frame — and measured well under
+   4.5:1. This gradient is the only thing standing between that copy and the
+   glass, so it starts earlier and lands harder than it did. */
+.gate-inner::before {
+  background: linear-gradient(180deg,
+    rgba(4,5,9,0) 0%,
+    rgba(4,5,9,.62) 24%,
+    rgba(4,5,9,.9) 52%,
+    rgba(4,5,9,.97) 100%);
+}
+
+.gate-inner {
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 20%);
+          mask-image: linear-gradient(180deg, transparent 0%, #000 20%);
+}
