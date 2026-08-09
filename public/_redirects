@@ -1,0 +1,10 @@
+# Cloudflare Pages redirects.
+#
+# www to the bare domain, permanently. One canonical address is worth real
+# money to a local business: every link, citation and review profile that
+# points at either spelling consolidates onto the same URL in Google's index
+# instead of splitting the site's authority across two hosts.
+#
+# :splat carries the rest of the path through, so a deep link like
+# www.glensmokeshop.com/cigars.html lands on cigars.html and not the home page.
+https://www.glensmokeshop.com/*  https://glensmokeshop.com/:splat  301!

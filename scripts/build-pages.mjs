@@ -45,7 +45,23 @@ const part = {
   visit: P('visit.html'),
 }
 
-const SITE = 'https://projectknoxsolutions.github.io/Glen-Smoke-Shop'
+// The canonical home of this site. Everything indexable — canonical links,
+// og:url, og:image, the LocalBusiness JSON-LD, the sitemap — is built from
+// this one string, so moving hosts is a one-line change rather than a hunt
+// through nine generated files.
+//
+// LEGACY_ORIGINS exists because those URLs also appear as literals inside
+// src/pages/parts/_head.html, and only some of them are rewritten field by
+// field below. og:image and the JSON-LD @id were not, and would have kept
+// pointing at the old project sub-path after the move — declaring one
+// canonical host while advertising another is exactly how a small business
+// ends up with Google indexing the wrong address. The sweep in compose()
+// catches every one of them, wherever it appears.
+const SITE = 'https://glensmokeshop.com'
+
+const LEGACY_ORIGINS = [
+  'https://projectknoxsolutions.github.io/Glen-Smoke-Shop',
+]
 
 /** The eight doors, in the order they appear on the hub. */
 export const SECTIONS = [
@@ -187,7 +203,10 @@ function headFor({ title, desc, url, extra = '' }) {
 
 function compose({ slug, head, body, current }) {
   const premain = part.premain.replace(/<div class="nav-links">[\s\S]*?<\/div>/, navHtml(current).trim())
-  const out = [head, premain, '<main id="main" class="shell">', body, part.postmain].join('\n')
+  let out = [head, premain, '<main id="main" class="shell">', body, part.postmain].join('\n')
+  // Last thing before the file is written: no absolute URL may name an origin
+  // this site does not live at. See the note on LEGACY_ORIGINS.
+  for (const origin of LEGACY_ORIGINS) out = out.split(origin).join(SITE)
   fs.writeFileSync(path.join(ROOT, slug === 'index' ? 'index.html' : `${slug}.html`), out)
   return out.length
 }
