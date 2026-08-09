@@ -541,3 +541,22 @@
      own composited layer bought nothing and fed the bug above. */
   will-change: auto;
 }
+
+/* --- remove the layer rather than keep theorising -------------------------
+
+   `isolation: isolate` did not fix it either. Five deploys have now chased this
+   through opacity, gradients, layer counts, will-change and blend isolation,
+   each theory plausible and each still black in the browser it ships to.
+
+   What is not a theory: hiding .ent-neon makes the storefront render perfectly,
+   every time, in that exact browser. So it goes.
+
+   The cost is nothing. The neon layer re-screened the sign's own glow on top of
+   a photograph that already contains a lit sign — a refinement, not the effect.
+   The storefront is the effect, the smoke is the effect, and the colour cycle
+   still runs on the sign hero on the page behind this gate, which is where the
+   owner actually asked for it.
+
+   A working entrance beats a flourish that only works on my machine.          */
+
+.gate .ent-neon { display: none; }
