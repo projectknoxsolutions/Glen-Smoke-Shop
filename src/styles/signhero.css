@@ -1,0 +1,181 @@
+/* ==========================================================================
+   The sign as the hero
+
+   The owner's own words: he likes the way the sign looks with the neon colours
+   around it, and wants that expressed more. So the sign is not wallpaper behind
+   a headline any more — it is the subject, lifted off the wall, hanging in the
+   dark with its backlight breathing.
+
+   Three plates, all cut from one 48MP frame so they are in perfect register:
+
+     .sign-bloom   the halo again, scaled up and blurred to nothing. This is the
+                   wash of colour that spills onto the wall around a real sign,
+                   and it is the layer doing most of the emotional work.
+     .sign-halo    the backlight itself. Hue-cycles.
+     .sign-face    the lettering and the logo. Never touched, so the brand stays
+                   gold and white no matter what colour the light behind it is.
+
+   Everything animates transform/filter/opacity only, so it stays on the
+   compositor and never triggers layout.
+   ========================================================================== */
+
+.hero-signled {
+  position: relative;
+  min-height: min(100svh, 900px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* --- the room ------------------------------------------------------------ */
+
+.hero-signled .hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  /* Pushed right back. If you can read what is in the cases you are looking at
+     the cases instead of the sign. */
+  filter: brightness(.3) saturate(.55) blur(4px);
+  transform: scale(1.08);
+}
+
+.hero-signled .hero-media,
+.hero-signled .hero-media picture { position: absolute; inset: 0; display: block; }
+
+.hero-signled .hero-scrim {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(120% 78% at 50% 34%, rgba(5,6,10,0) 0%, rgba(5,6,10,.72) 62%, rgba(5,6,10,.96) 100%),
+    linear-gradient(180deg, rgba(5,6,10,.86) 0%, rgba(5,6,10,.1) 26%, rgba(5,6,10,.9) 100%);
+}
+
+/* --- the stage ----------------------------------------------------------- */
+
+.signstage {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  padding: clamp(96px, 15vh, 180px) var(--gutter) clamp(24px, 5vh, 56px);
+  pointer-events: none;
+}
+
+.signwrap {
+  position: relative;
+  width: min(1020px, 74vw);
+  /* The plates are 3.287:1. Reserving the box by ratio means no reflow when
+     they decode, which matters because this is the LCP element. */
+  aspect-ratio: 3.287 / 1;
+  animation: signFloat 13s var(--ease-in-out) infinite;
+}
+
+.signwrap picture,
+.signwrap img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+/* --- the layers ---------------------------------------------------------- */
+
+.sign-face { z-index: 3; }
+
+.sign-halo {
+  z-index: 2;
+  mix-blend-mode: screen;
+  animation: signCycle 15s linear infinite;
+  will-change: filter;
+}
+
+/* Blown up well past the sign's own bounds and blurred into a wash. This is the
+   colour "around it" — without this layer the sign reads as a sticker, with it
+   the wall behind is lit by it. */
+/* Blurred until it is colour and nothing else. At blur(46px) and scale(1.5)
+   this read as a second, badly-registered ghost sign behind the real one —
+   the shape was still legible, so the eye saw a duplicate instead of light. */
+.sign-bloom {
+  z-index: 1;
+  mix-blend-mode: screen;
+  transform: scale(1.16);
+  filter: blur(90px) saturate(1.8) brightness(1.25);
+  opacity: .7;
+  animation: signCycle 15s linear infinite;
+  will-change: filter;
+}
+
+@media (max-width: 700px) {
+  .sign-bloom { filter: blur(44px) saturate(1.7) brightness(1.2); transform: scale(1.12); }
+  .signwrap { width: min(1020px, 90vw); }
+  .signstage { padding-top: clamp(64px, 10vh, 110px); }
+}
+
+/* --- the light ----------------------------------------------------------- */
+
+/* Linear, not eased: this is an LED controller running a programme, and real
+   ones do not ease. Hue only — the sign's own brightness is in the plate. */
+@keyframes signCycle {
+    0% { filter: hue-rotate(0deg)   saturate(1.15) brightness(1.12); }
+   20% { filter: hue-rotate(52deg)  saturate(1.3)  brightness(1.18); }
+   40% { filter: hue-rotate(128deg) saturate(1.25) brightness(1.1); }
+   60% { filter: hue-rotate(206deg) saturate(1.35) brightness(1.16); }
+   80% { filter: hue-rotate(288deg) saturate(1.3)  brightness(1.14); }
+  100% { filter: hue-rotate(360deg) saturate(1.15) brightness(1.12); }
+}
+
+/* Barely there. A sign on a bracket in still air moves about this much. */
+@keyframes signFloat {
+    0% { transform: translate3d(0, 0, 0) rotate(0deg); }
+   35% { transform: translate3d(0, -8px, 0) rotate(-.18deg); }
+   70% { transform: translate3d(0, 4px, 0) rotate(.12deg); }
+  100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signwrap { animation: none; }
+  .sign-halo, .sign-bloom { animation: none; }
+}
+
+/* --- the copy under it --------------------------------------------------- */
+
+.hero-signled .hero-body {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding-bottom: clamp(30px, 6vh, 64px);
+}
+
+.hero-signled .hero-eyebrow { justify-content: center; }
+
+.hero-signled .hero-title {
+  font-size: clamp(30px, 5.4vw, 62px);
+  line-height: 1;
+  margin: 10px 0 12px;
+  /* .hero-title carries max-width:15ch from the old left-aligned layout, so
+     centring the text inside it did nothing — the box itself was still hard
+     left. It needs the auto margins too. */
+  text-align: center;
+  max-width: 22ch;
+  margin-inline: auto;
+}
+
+.hero-signled .hero-sub {
+  margin-inline: auto;
+  max-width: 60ch;
+}
+
+.hero-signled .hero-actions { justify-content: center; }
+
+.hero-signled .hero-stats {
+  justify-content: center;
+  margin-inline: auto;
+}
+
+/* The headline had a hard <br> in it, which on a centred layout at 380px pushed
+   "shelf" onto a third line on its own. It wraps naturally now. */
+.hero-signled .hero-title .thin { white-space: nowrap; }

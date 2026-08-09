@@ -1,0 +1,3233 @@
+{
+ "_README": "Every line and flavour legible in the shop's own 48MP photographs, read frame by frame at native resolution. This is what is ON THE SHELF, not what the brands make - the difference is the entire point, and it is why nothing here should ever be topped up from a manufacturer's catalogue. `legibility`: clear = printed name read unambiguously, partial = most read and the rest a confident completion, inferred = packaging recognised but the name not actually legible.",
+ "source": "IMG_6069-6097, 8038x5792 each",
+ "brands": {
+  "4k-s": {
+   "brand": "4K's",
+   "category": "cigar",
+   "catalogId": "4k-s",
+   "count": 8,
+   "lines": {
+    "Good Times Tobacco": [
+     {
+      "id": "4ks-green-sweet",
+      "name": "Green Sweet",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Carton plus loose 4-count foil pouches."
+     },
+     {
+      "id": "4ks-kiwi-berry",
+      "name": "Kiwi Berry",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. 4-count resealable foil pouches."
+     },
+     {
+      "id": "4ks-mango",
+      "name": "Mango",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. 4-count foil pouches."
+     },
+     {
+      "id": "4ks-melonberry",
+      "name": "Melonberry",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. 4-count foil pouches."
+     },
+     {
+      "id": "4ks-blueberry-pineapple",
+      "name": "Blueberry Pineapple",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. 4-count foil pouches."
+     },
+     {
+      "id": "4ks-diamond",
+      "name": "Diamond",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. 4-count foil pouches."
+     },
+     {
+      "id": "4ks-french-vanilla",
+      "name": "French Vanilla",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. 4-count foil pouches."
+     },
+     {
+      "id": "4ks-sweet-delicious",
+      "name": "Sweet Delicious",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. 4-count foil pouches."
+     }
+    ]
+   }
+  },
+  "708-cigar": {
+   "brand": "708 Cigar",
+   "category": "cigar",
+   "catalogId": "708-cigar",
+   "count": 2,
+   "lines": {
+    "—": [
+     {
+      "id": "708-robusto-connecticut",
+      "name": "Robusto Connecticut 52x5",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Box, size printed 52 x 5."
+     },
+     {
+      "id": "708-second-box",
+      "name": "708 (second box, darker wrapper)",
+      "legibility": "partial",
+      "notes": "WALK-IN HUMIDOR. Companion box beside the Robusto Connecticut; wrapper name on the lid not resolvable."
+     }
+    ]
+   }
+  },
+  "acid-by-drew-estate": {
+   "brand": "Acid by Drew Estate",
+   "category": "cigar",
+   "catalogId": "acid-by-drew-estate",
+   "count": 4,
+   "lines": {
+    "Kuba": [
+     {
+      "id": "acid-kuba-deluxe",
+      "name": "Kuba Deluxe",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Blue Acid box, lid open."
+     },
+     {
+      "id": "acid-kuba-grande",
+      "name": "Kuba Grande",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Box format."
+     }
+    ],
+    "Blondie": [
+     {
+      "id": "acid-blondie",
+      "name": "Blondie",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Box format."
+     },
+     {
+      "id": "acid-blondie-belicoso",
+      "name": "Blondie Belicoso",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Box format."
+     }
+    ]
+   }
+  },
+  "aj-fernandez-cigar-company": {
+   "brand": "AJ Fernandez Cigar Company",
+   "category": "cigar",
+   "catalogId": "aj-fernandez-cigar-company",
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "aj-fernandez-pack",
+      "name": "AJ Fernandez multi-cigar pack",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Cello pack, header reads 'Passion, Discipline, Great Tobacco'."
+     }
+    ]
+   }
+  },
+  "alec-bradley": {
+   "brand": "Alec Bradley",
+   "category": "cigar",
+   "catalogId": "alec-bradley",
+   "count": 1,
+   "lines": {
+    "MAXX": [
+     {
+      "id": "alec-bradley-maxx-freak",
+      "name": "MAXX Freak",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Black box, lid reads ALEC BRADLEY / MAXX / Freak. Cigars banded MAXX."
+     }
+    ]
+   }
+  },
+  "arturo-fuente": {
+   "brand": "Arturo Fuente",
+   "category": "cigar",
+   "catalogId": "arturo-fuente",
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "arturo-fuente-imported",
+      "name": "Arturo Fuente Imported",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Box lid stamped 'ARTURO FUENTE / IMPORTED'."
+     }
+    ]
+   }
+  },
+  "backwoods": {
+   "brand": "Backwoods",
+   "category": "cigar",
+   "catalogId": "backwoods",
+   "count": 13,
+   "lines": {
+    "—": [
+     {
+      "id": "backwoods-original",
+      "name": "Original",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Yellow carton of 5-cigar packs, all-natural leaf wrapper."
+     },
+     {
+      "id": "backwoods-honey",
+      "name": "Honey",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. 5-pack carton plus a 12-count single-cigar pouch box."
+     },
+     {
+      "id": "backwoods-black-russian",
+      "name": "Black Russian",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. 5-pack carton plus single-cigar boxes."
+     },
+     {
+      "id": "backwoods-russian-cream",
+      "name": "Russian Cream",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. 5-pack carton."
+     },
+     {
+      "id": "backwoods-white",
+      "name": "White",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. 5-pack carton."
+     },
+     {
+      "id": "backwoods-dark-stout",
+      "name": "Dark Stout",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. 5-pack carton plus 1-cigar boxes."
+     },
+     {
+      "id": "backwoods-honey-berry",
+      "name": "Honey Berry",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. 3-cigar packs plus 1-cigar packs."
+     },
+     {
+      "id": "backwoods-honey-bourbon",
+      "name": "Honey Bourbon",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. 1-cigar box."
+     },
+     {
+      "id": "backwoods-bold",
+      "name": "Bold",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. 1-cigar box."
+     }
+    ],
+    "Authentic Cigars": [
+     {
+      "id": "backwoods-vanilla",
+      "name": "Vanilla",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Navy 'Authentic Cigars' carton."
+     },
+     {
+      "id": "backwoods-banana",
+      "name": "Banana",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Yellow 'Authentic Cigars' carton."
+     }
+    ],
+    "Tical Edition": [
+     {
+      "id": "backwoods-tical",
+      "name": "Tical",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Limited 'Tical Edition' carton."
+     }
+    ],
+    "Select": [
+     {
+      "id": "backwoods-select-kentucky-small-batch",
+      "name": "Kentucky Small Batch",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. 'Backwoods Select' 3-cigar carton."
+     }
+    ]
+   }
+  },
+  "black-mild": {
+   "brand": "Black & Mild",
+   "category": "cigar",
+   "catalogId": "black-mild",
+   "count": 5,
+   "lines": {
+    "—": [
+     {
+      "id": "black-and-mild-original",
+      "name": "Original",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. NOT IN the cigars section of catalog.json (only under papers). Upright cartons of pipe-tobacco cigars."
+     },
+     {
+      "id": "black-and-mild-wine",
+      "name": "Wine (Wood Tip)",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Wood-tip carton."
+     },
+     {
+      "id": "black-and-mild-jazz",
+      "name": "Jazz (Wood Tip)",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Wood-tip carton."
+     },
+     {
+      "id": "black-and-mild-casino",
+      "name": "Casino (Wood Tip)",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Wood-tip carton."
+     },
+     {
+      "id": "black-and-mild-plastic-tip",
+      "name": "Plastic Tip",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Tip-format variant carton; also loose single sticks in an open display box."
+     }
+    ]
+   }
+  },
+  "breeze-smoke": {
+   "brand": "Breeze Smoke",
+   "category": "disposable",
+   "catalogId": "breeze-smoke",
+   "count": 30,
+   "lines": {
+    "Pro Edition": [
+     {
+      "id": "breeze-pro-edition-tobacco",
+      "name": "Tobacco",
+      "legibility": "clear",
+      "notes": "Pro Edition 2000 puffs; tobacco carton shows 4.3% nicotine, 10 ct"
+     },
+     {
+      "id": "breeze-pro-edition-menthol",
+      "name": "Menthol",
+      "legibility": "clear",
+      "notes": "Pro Edition 2000 puffs, 5.0% nicotine"
+     },
+     {
+      "id": "breeze-pro-edition-watermelon-mint",
+      "name": "Watermelon Mint",
+      "legibility": "clear"
+     },
+     {
+      "id": "breeze-pro-edition-lemon-mint",
+      "name": "Lemon Mint",
+      "legibility": "clear"
+     },
+     {
+      "id": "breeze-pro-edition-pomegranate-berry-mint",
+      "name": "Pomegranate Berry Mint",
+      "legibility": "clear"
+     },
+     {
+      "id": "breeze-pro-edition-blueberry-watermelon",
+      "name": "Blueberry Watermelon",
+      "legibility": "clear"
+     },
+     {
+      "id": "breeze-pro-edition-blue-raspberry",
+      "name": "Blue Raspberry",
+      "legibility": "clear"
+     },
+     {
+      "id": "breeze-pro-edition-strawmelon",
+      "name": "Strawmelon",
+      "legibility": "clear"
+     },
+     {
+      "id": "breeze-pro-edition-citrus",
+      "name": "Citrus",
+      "legibility": "clear"
+     },
+     {
+      "id": "breeze-pro-edition-blueberry-banana",
+      "name": "Blueberry Banana",
+      "legibility": "clear"
+     },
+     {
+      "id": "breeze-pro-edition-cherry-lemon",
+      "name": "Cherry Lemon",
+      "legibility": "clear"
+     },
+     {
+      "id": "breeze-pro-edition-grape",
+      "name": "Grape",
+      "legibility": "clear"
+     },
+     {
+      "id": "breeze-pro-edition-pineapple-coconut",
+      "name": "Pineapple Coconut",
+      "legibility": "clear"
+     },
+     {
+      "id": "breeze-pro-edition-strawberry-kiwi",
+      "name": "Strawberry Kiwi",
+      "legibility": "clear"
+     },
+     {
+      "id": "breeze-pro-edition-orange-mango-watermelon",
+      "name": "Orange Mango Watermelon",
+      "legibility": "clear"
+     },
+     {
+      "id": "breeze-pro-edition-banana-mint",
+      "name": "Banana Mint",
+      "legibility": "clear"
+     },
+     {
+      "id": "breeze-pro-edition-vanilla-tobacco",
+      "name": "Vanilla Tobacco",
+      "legibility": "clear"
+     },
+     {
+      "id": "breeze-pro-edition-strawberry-banana",
+      "name": "Strawberry Banana",
+      "legibility": "clear"
+     },
+     {
+      "id": "breeze-pro-edition-spearmint",
+      "name": "Spearmint",
+      "legibility": "clear"
+     },
+     {
+      "id": "breeze-pro-edition-mint",
+      "name": "Mint",
+      "legibility": "clear"
+     },
+     {
+      "id": "breeze-pro-edition-blueberry-mint",
+      "name": "Blueberry Mint",
+      "legibility": "clear"
+     },
+     {
+      "id": "breeze-pro-edition-strawberry-peach-mint",
+      "name": "Strawberry Peach Mint",
+      "legibility": "clear",
+      "notes": "10 ct carton"
+     }
+    ],
+    "Prime Edition": [
+     {
+      "id": "breeze-prime-edition-cherry-lemon",
+      "name": "Cherry Lemon",
+      "legibility": "clear",
+      "notes": "Prime Edition disposable pod device, 6000 puffs, 5% nicotine"
+     },
+     {
+      "id": "breeze-prime-edition-honeydew-pineapple",
+      "name": "Honeydew Pineapple",
+      "legibility": "clear"
+     },
+     {
+      "id": "breeze-prime-edition-lemon-cola",
+      "name": "Lemon Cola",
+      "legibility": "clear"
+     },
+     {
+      "id": "breeze-prime-edition-mango",
+      "name": "Mango",
+      "legibility": "clear"
+     },
+     {
+      "id": "breeze-prime-edition-mint",
+      "name": "Mint",
+      "legibility": "clear"
+     },
+     {
+      "id": "breeze-prime-edition-strawberry-mint",
+      "name": "Strawberry Mint",
+      "legibility": "clear"
+     },
+     {
+      "id": "breeze-prime-edition-coconut-banana",
+      "name": "Coconut Banana",
+      "legibility": "clear"
+     },
+     {
+      "id": "breeze-prime-edition-strawberry-apple",
+      "name": "Strawberry Apple",
+      "legibility": "partial"
+     }
+    ]
+   }
+  },
+  "cao": {
+   "brand": "CAO",
+   "category": "cigar",
+   "catalogId": "cao",
+   "count": 1,
+   "lines": {
+    "Flathead": [
+     {
+      "id": "cao-flathead-660",
+      "name": "Flathead 660",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Multi-cigar cello pack, header reads 'Go Full Throttle' with a 95 rating flash."
+     }
+    ]
+   }
+  },
+  "casa-blanca": {
+   "brand": "Casa Blanca",
+   "category": "cigar",
+   "catalogId": null,
+   "count": 2,
+   "lines": {
+    "—": [
+     {
+      "id": "casa-blanca-natural",
+      "name": "Natural",
+      "legibility": "inferred",
+      "notes": "WALK-IN HUMIDOR. NOT IN catalog.json. Cream box; band is gold with two cameo medallions, a two-word script name over the word NATURAL. I read the script as 'Casa Blanca' but could not fully resolve it at native resolution — worth confirming with the owner before publishing. Box format."
+     },
+     {
+      "id": "casa-blanca-maduro",
+      "name": "Maduro",
+      "legibility": "inferred",
+      "notes": "WALK-IN HUMIDOR. NOT IN catalog.json. Matching box to the Natural; MADURO is clearly printed on the band, the script house name above it is only inferred. Box format."
+     }
+    ]
+   }
+  },
+  "city-life": {
+   "brand": "City Life",
+   "category": "cigar",
+   "catalogId": "city-life",
+   "count": 2,
+   "lines": {
+    "—": [
+     {
+      "id": "city-life-napa-grape",
+      "name": "Napa Grape",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. NOT IN the cigars section of catalog.json (only under papers). Purple box printed '75 CIGARILLOS'."
+     },
+     {
+      "id": "city-life-watermelon",
+      "name": "Watermelon",
+      "legibility": "partial",
+      "notes": "FRONT COUNTER. Multi-cigar foil pouches below the Napa Grape box; flavour panel partly obscured."
+     }
+    ]
+   }
+  },
+  "cohiba": {
+   "brand": "Cohiba",
+   "category": "cigar",
+   "catalogId": "cohiba",
+   "count": 3,
+   "lines": {
+    "Rubicon": [
+     {
+      "id": "cohiba-rubicon",
+      "name": "Rubicon",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Orange lacquered box, open on the shelf."
+     }
+    ],
+    "Blue": [
+     {
+      "id": "cohiba-blue-robusto-tubo",
+      "name": "Blue Robusto Tubo",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Blue box, front edge printed 'ROBUSTO TUBO / TWENTY CIGARS'. Blue aluminium tubes inside."
+     }
+    ],
+    "Red Dot": [
+     {
+      "id": "cohiba-red-dot-toro-tubo",
+      "name": "Red Dot Toro tubo",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Red box, red tubes marked TORO. Singles/tubo format."
+     }
+    ]
+   }
+  },
+  "crown-bar-al-fakher": {
+   "brand": "Crown Bar Al Fakher",
+   "category": "disposable",
+   "catalogId": null,
+   "count": 13,
+   "lines": {
+    "12K Crystal V2": [
+     {
+      "id": "crown-bar-al-fakher-12k-two-apple",
+      "name": "Two Apple",
+      "legibility": "clear"
+     },
+     {
+      "id": "crown-bar-al-fakher-12k-summer-dream",
+      "name": "Summer Dream",
+      "legibility": "clear"
+     },
+     {
+      "id": "crown-bar-al-fakher-12k-cool-mango",
+      "name": "Cool Mango",
+      "legibility": "clear"
+     },
+     {
+      "id": "crown-bar-al-fakher-12k-pineapple-ice",
+      "name": "Pineapple Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "crown-bar-al-fakher-12k-lemon-mint",
+      "name": "Lemon Mint",
+      "legibility": "clear"
+     },
+     {
+      "id": "crown-bar-al-fakher-12k-peach-ice",
+      "name": "Peach Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "crown-bar-al-fakher-12k-blueberry-raspberry",
+      "name": "Blueberry Raspberry",
+      "legibility": "clear"
+     },
+     {
+      "id": "crown-bar-al-fakher-12k-magic-love",
+      "name": "Magic Love",
+      "legibility": "clear"
+     },
+     {
+      "id": "crown-bar-al-fakher-12k-love",
+      "name": "Love",
+      "legibility": "clear"
+     }
+    ],
+    "12K Crystal V3": [
+     {
+      "id": "crown-bar-al-fakher-12k-v3-blueberry",
+      "name": "Blueberry",
+      "legibility": "clear"
+     }
+    ],
+    "15K Ice Adjust": [
+     {
+      "id": "crown-bar-al-fakher-15k-blueberry-mint",
+      "name": "Blueberry Mint",
+      "legibility": "clear"
+     },
+     {
+      "id": "crown-bar-al-fakher-15k-blueberry-lemonade",
+      "name": "Blueberry Lemonade",
+      "legibility": "clear"
+     },
+     {
+      "id": "crown-bar-al-fakher-15k-blue-razz-lemonade",
+      "name": "Blue Razz Lemonade",
+      "legibility": "clear"
+     }
+    ]
+   }
+  },
+  "deadwood-tobacco-co": {
+   "brand": "Deadwood Tobacco Co.",
+   "category": "cigar",
+   "catalogId": "deadwood-tobacco-co",
+   "count": 2,
+   "lines": {
+    "—": [
+     {
+      "id": "deadwood-sweet-jane",
+      "name": "Sweet Jane",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Box format, white lid with black illustration."
+     },
+     {
+      "id": "deadwood-crazy-alice",
+      "name": "Crazy Alice",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Box format; adjacent Deadwood lid also carries the house line 'Love is for Suckers'."
+     }
+    ]
+   }
+  },
+  "don-rafa": {
+   "brand": "Don Rafa",
+   "category": "cigar",
+   "catalogId": "don-rafa",
+   "count": 3,
+   "lines": {
+    "Don Rafa Sweets": [
+     {
+      "id": "don-rafa-sweets",
+      "name": "Don Rafa Sweets",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. A full run of boxes under black 'DON RAFA SWEETS' shelf-talkers with the gold DR monogram."
+     },
+     {
+      "id": "don-rafa-raspberry-champagne",
+      "name": "Raspberry Champagne",
+      "legibility": "partial",
+      "notes": "WALK-IN HUMIDOR. Box front reads as Raspberry Champagne with a 25-count Toro 6x50 marking."
+     },
+     {
+      "id": "don-rafa-strawberry-diamond",
+      "name": "Strawberry Diamond",
+      "legibility": "partial",
+      "notes": "WALK-IN HUMIDOR. Box front reads as Strawberry Diamond, 25-count Toro 6x50."
+     }
+    ]
+   }
+  },
+  "dutch-masters": {
+   "brand": "Dutch Masters",
+   "category": "cigar",
+   "catalogId": null,
+   "count": 10,
+   "lines": {
+    "Dutch": [
+     {
+      "id": "dutch-masters-dutch-blend-silver",
+      "name": "Dutch Blend Silver",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. NOT IN the cigars section of catalog.json (only listed under papers). Carton of 2-count natural-leaf cigarillo pouches."
+     },
+     {
+      "id": "dutch-masters-irish-fusion",
+      "name": "Irish Fusion Creamy",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Carton of 2-count pouches."
+     },
+     {
+      "id": "dutch-masters-sweet-fusion-red",
+      "name": "Sweet Fusion Red",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Carton of 2-count pouches."
+     },
+     {
+      "id": "dutch-masters-royal-haze",
+      "name": "Royal Haze",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Carton of 2-count pouches."
+     },
+     {
+      "id": "dutch-masters-blue-dream-fusion",
+      "name": "Blue Dream Fusion",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Carton of 2-count pouches, also a 30-premium-cigarillo box."
+     },
+     {
+      "id": "dutch-masters-sunset-dream",
+      "name": "Sunset Dream",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Pink/orange box, natural leaf wrapper, made in the Dominican Republic."
+     },
+     {
+      "id": "dutch-masters-cocoa",
+      "name": "Cocoa",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Brown box, natural leaf wrapper."
+     },
+     {
+      "id": "dutch-masters-diamond-fusion",
+      "name": "Diamond Fusion",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Carton of 2-count pouches."
+     },
+     {
+      "id": "dutch-masters-platinum-fusion",
+      "name": "Platinum Fusion",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Carton of 2-count pouches."
+     },
+     {
+      "id": "dutch-masters-green-envy",
+      "name": "Green Envy",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Carton of 2-count pouches."
+     }
+    ]
+   }
+  },
+  "factory-smokes": {
+   "brand": "Factory Smokes",
+   "category": "cigar",
+   "catalogId": "factory-smokes",
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "factory-smokes",
+      "name": "Factory Smokes bundles",
+      "legibility": "partial",
+      "notes": "WALK-IN HUMIDOR value shelf. Yellow open bundle boxes of cello-wrapped cigars; the black-and-orange bands read FACTORY SMOKES. Individual wrapper names (Sun Grown / Maduro / Shade) are not resolvable. Bundle format."
+     }
+    ]
+   }
+  },
+  "foger": {
+   "brand": "Foger",
+   "category": "hardware",
+   "catalogId": "foger",
+   "count": 9,
+   "lines": {
+    "30K": [
+     {
+      "id": "foger-30k-strawberry-kiwi",
+      "name": "Strawberry Kiwi",
+      "legibility": "clear"
+     },
+     {
+      "id": "foger-30k-juicy-peach-ice",
+      "name": "Juicy Peach Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "foger-30k-blue-razz-ice",
+      "name": "Blue Razz Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "foger-30k-miami-mint",
+      "name": "Miami Mint",
+      "legibility": "clear"
+     },
+     {
+      "id": "foger-30k-sour-fcuking-fab",
+      "name": "Sour Fcuking Fab",
+      "legibility": "clear"
+     },
+     {
+      "id": "foger-30k-strawberry-watermelon",
+      "name": "Strawberry Watermelon",
+      "legibility": "clear"
+     }
+    ],
+    "30K (Pod Only)": [
+     {
+      "id": "foger-30k-blue-sour-raspberry-pod",
+      "name": "Blue Sour Raspberry",
+      "legibility": "clear",
+      "notes": "Replacement-pod-only carton, 5% nic"
+     },
+     {
+      "id": "foger-30k-california-cherry-pod",
+      "name": "California Cherry",
+      "legibility": "clear",
+      "notes": "Replacement-pod-only carton, 5% nic"
+     }
+    ],
+    "Switch Pro": [
+     {
+      "id": "foger-switch-pro-kit",
+      "name": "Switch Pro Kit",
+      "legibility": "clear",
+      "notes": "Rechargeable device kit shelved with the Foger disposables"
+     }
+    ]
+   }
+  },
+  "game": {
+   "brand": "Game",
+   "category": "cigar",
+   "catalogId": null,
+   "count": 8,
+   "lines": {
+    "Garcia y Vega": [
+     {
+      "id": "game-white-peach",
+      "name": "White Peach",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. NOT IN the cigars section of catalog.json (only under papers). Carton of 2-cigar packs."
+     },
+     {
+      "id": "game-white-grape",
+      "name": "White Grape",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Carton of 2-cigar packs."
+     },
+     {
+      "id": "game-mango",
+      "name": "Mango",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Carton of 2-cigar packs."
+     },
+     {
+      "id": "game-black-cherry",
+      "name": "Black Cherry",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Carton of 2-cigar packs."
+     },
+     {
+      "id": "game-grape",
+      "name": "Grape",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Carton of 2-cigar packs."
+     }
+    ],
+    "Game Leaf": [
+     {
+      "id": "game-leaf-natural",
+      "name": "Natural",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. 'Natural Rolled Leaf Cigars', 2-cigar packs."
+     },
+     {
+      "id": "game-leaf-black-raspberry",
+      "name": "Black Raspberry",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. 2-cigar packs."
+     },
+     {
+      "id": "game-leaf-cognac",
+      "name": "Cognac",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. 2-cigar packs."
+     }
+    ]
+   }
+  },
+  "garcia-y-vega": {
+   "brand": "Garcia y Vega",
+   "category": "cigar",
+   "catalogId": "garcia-y-vega",
+   "count": 3,
+   "lines": {
+    "Natural": [
+     {
+      "id": "garcia-y-vega-natural-green",
+      "name": "Natural Green",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER machine-made. Carton of leaf-cigar packs."
+     },
+     {
+      "id": "garcia-y-vega-natural-sweets",
+      "name": "Natural Sweets",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER machine-made. Carton of leaf-cigar packs."
+     },
+     {
+      "id": "garcia-y-vega-natural-brown",
+      "name": "Natural Brown",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER machine-made. Carton of leaf-cigar packs."
+     }
+    ]
+   }
+  },
+  "geek-bar": {
+   "brand": "Geek Bar",
+   "category": "hardware",
+   "catalogId": "geek-bar",
+   "count": 94,
+   "lines": {
+    "Pulse 2": [
+     {
+      "id": "geek-bar-pulse-2-watermelon-ice",
+      "name": "Watermelon Ice",
+      "legibility": "clear",
+      "notes": "Box prints 25000 puffs regular / 15000 pulse mode"
+     },
+     {
+      "id": "geek-bar-pulse-2-fcuking-fab",
+      "name": "Fcuking Fab",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-2-juicy-peach-ice",
+      "name": "Juicy Peach Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-2-blue-razz-hubba",
+      "name": "Blue Razz Hubba",
+      "legibility": "clear",
+      "notes": "Hubba (bubblegum) sub-series"
+     },
+     {
+      "id": "geek-bar-pulse-2-lemon-hubba",
+      "name": "Lemon Hubba",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-2-white-peach-hubba",
+      "name": "White Peach Hubba",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-2-grape-hubba",
+      "name": "Grape Hubba",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-2-strawberry-watermelon-hubba",
+      "name": "Strawberry Watermelon Hubba",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-2-sour-gush",
+      "name": "Sour Gush",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-2-white-gummy-ice",
+      "name": "White Gummy Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-2-sour-apple-ice",
+      "name": "Sour Apple Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-2-raspberry-watermelon",
+      "name": "Raspberry Watermelon",
+      "legibility": "clear"
+     }
+    ],
+    "Pulse X2": [
+     {
+      "id": "geek-bar-pulse-x2-watermelon-ice",
+      "name": "Watermelon Ice",
+      "legibility": "clear",
+      "notes": "Box prints 50000 puffs regular mode / 25000 pulse mode"
+     },
+     {
+      "id": "geek-bar-pulse-x2-blue-razz-ice",
+      "name": "Blue Razz Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x2-banana-taffy-freeze",
+      "name": "Banana Taffy Freeze",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x2-pink-and-blue",
+      "name": "Pink&Blue",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x2-sour-straws",
+      "name": "Sour Straws",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x2-miami-mint-pod",
+      "name": "Miami Mint",
+      "legibility": "clear",
+      "notes": "Replacement-pod-only carton, not the full kit"
+     }
+    ],
+    "Pulse X2 Bull Edition": [
+     {
+      "id": "geek-bar-pulse-x2-bull-coco-berry-bull",
+      "name": "Coco Berry Bull",
+      "legibility": "clear",
+      "notes": "Bull Edition; 25K pulse / 50K regular printed on box"
+     },
+     {
+      "id": "geek-bar-pulse-x2-bull-blue-razz-bull",
+      "name": "Blue Razz Bull",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x2-bull-strawberry-bull",
+      "name": "Strawberry Bull",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x2-bull-watermelon-bull",
+      "name": "Watermelon Bull",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x2-bull-peach-bull",
+      "name": "Peach Bull",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x2-bull-sour-fcuking-fab",
+      "name": "Sour Fcuking Fab",
+      "legibility": "partial"
+     }
+    ],
+    "Mate Kit": [
+     {
+      "id": "geek-bar-mate-strawberry-banana",
+      "name": "Strawberry Banana",
+      "legibility": "clear",
+      "notes": "Mate pod kit; box prints 30000 pulse mode / 60000 regular mode, 1100mAh, 5 pods"
+     },
+     {
+      "id": "geek-bar-mate-juicy-peach",
+      "name": "Juicy Peach",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-mate-blue-razz-ice",
+      "name": "Blue Razz Ice",
+      "legibility": "clear"
+     }
+    ],
+    "Pulse X": [
+     {
+      "id": "geek-bar-pulse-x-strawberry-watermelon",
+      "name": "Strawberry Watermelon",
+      "legibility": "clear",
+      "notes": "Pulse X box prints 25000 regular / 15000 pulse mode"
+     },
+     {
+      "id": "geek-bar-pulse-x-miami-mint",
+      "name": "Miami Mint",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x-blackberry-blueberry",
+      "name": "Blackberry Blueberry",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x-white-peach-raspberry",
+      "name": "White Peach Raspberry",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x-blackberry-b-pop",
+      "name": "Blackberry B-Pop",
+      "legibility": "partial"
+     },
+     {
+      "id": "geek-bar-pulse-x-blue-razz-ice",
+      "name": "Blue Razz Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x-watermelon-ice",
+      "name": "Watermelon Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x-orange-slush",
+      "name": "Orange Slush",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x-strawberry-kiwi-ice",
+      "name": "Strawberry Kiwi Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x-blue-rancher",
+      "name": "Blue Rancher",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x-strawberry-jam",
+      "name": "Strawberry Jam",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x-orange-jam",
+      "name": "Orange Jam",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x-blueberry-jam",
+      "name": "Blueberry Jam",
+      "legibility": "partial"
+     },
+     {
+      "id": "geek-bar-pulse-x-peach-jam",
+      "name": "Peach Jam",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x-raspberry-jam",
+      "name": "Raspberry Jam",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x-lime-berry-orange",
+      "name": "Lime Berry Orange",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x-sour-mango-pineapple",
+      "name": "Sour Mango Pineapple",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x-strawberry-colada",
+      "name": "Strawberry Colada",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x-sour-straws",
+      "name": "Sour Straws",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x-strawberry-b-burst",
+      "name": "Strawberry B-Burst",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x-orange-fcuking-fab",
+      "name": "Orange Fcuking Fab",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x-sour-apple-ice",
+      "name": "Sour Apple Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x-sour-fcuking-fab",
+      "name": "Sour Fcuking Fab",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x-raspberry-peach-lime",
+      "name": "Raspberry Peach Lime",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x-orange-mint",
+      "name": "Orange Mint",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x-wild-cherry-slush",
+      "name": "Wild Cherry Slush",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x-blackberry-b-burst",
+      "name": "Blackberry B-Burst",
+      "legibility": "partial"
+     },
+     {
+      "id": "geek-bar-pulse-x-lemon-heads",
+      "name": "Lemon Heads",
+      "legibility": "partial"
+     },
+     {
+      "id": "geek-bar-pulse-x-cola-slush",
+      "name": "Cola Slush",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-x-dualicious",
+      "name": "Dualicious",
+      "legibility": "clear"
+     }
+    ],
+    "Pulse": [
+     {
+      "id": "geek-bar-pulse-blue-razz-ice",
+      "name": "Blue Razz Ice",
+      "legibility": "clear",
+      "notes": "Pulse box prints Pulse Mode 7500 puffs / Regular Mode 15000 puffs"
+     },
+     {
+      "id": "geek-bar-pulse-california-cherry",
+      "name": "California Cherry",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-mexico-mango",
+      "name": "Mexico Mango",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-sour-blue-dust",
+      "name": "Sour Blue Dust",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-b-burst",
+      "name": "B-Burst",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-frozen-watermelon",
+      "name": "Frozen Watermelon",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-fcuking-fab",
+      "name": "Fcuking Fab",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-crazy-melon",
+      "name": "Crazy Melon",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-sour-apple-ice",
+      "name": "Sour Apple Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-stonemintz",
+      "name": "Stonemintz",
+      "legibility": "partial"
+     },
+     {
+      "id": "geek-bar-pulse-blackmintz",
+      "name": "Blackmintz",
+      "legibility": "partial"
+     },
+     {
+      "id": "geek-bar-pulse-creamymintz",
+      "name": "Creamymintz",
+      "legibility": "partial"
+     },
+     {
+      "id": "geek-bar-pulse-peach-lemonade",
+      "name": "Peach Lemonade",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-pink-lemonade",
+      "name": "Pink Lemonade",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-blackberry-watermelon",
+      "name": "Blackberry Watermelon",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-drop-sour-savers",
+      "name": "Drop Sour Savers",
+      "legibility": "partial"
+     },
+     {
+      "id": "geek-bar-pulse-sour-apple-b-burst",
+      "name": "Sour Apple B-Burst",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-watermelon-ice",
+      "name": "Watermelon Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-omg-b-burst",
+      "name": "OMG B-Burst",
+      "legibility": "partial"
+     },
+     {
+      "id": "geek-bar-pulse-raspberry-watermelon",
+      "name": "Raspberry Watermelon",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-sour-watermelon-drop",
+      "name": "Sour Watermelon Drop",
+      "legibility": "partial"
+     },
+     {
+      "id": "geek-bar-pulse-blueberry-watermelon",
+      "name": "Blueberry Watermelon",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-strawberry-banana",
+      "name": "Strawberry Banana",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-orange-mint-savers",
+      "name": "Orange Mint Savers",
+      "legibility": "partial"
+     },
+     {
+      "id": "geek-bar-pulse-banana-ice",
+      "name": "Banana Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-tobacco",
+      "name": "Tobacco",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-tropical-rainbow-blast",
+      "name": "Tropical Rainbow Blast",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-punch",
+      "name": "Punch",
+      "legibility": "partial"
+     },
+     {
+      "id": "geek-bar-pulse-pineapple-savers",
+      "name": "Pineapple Savers",
+      "legibility": "partial"
+     },
+     {
+      "id": "geek-bar-pulse-sour-cranapple",
+      "name": "Sour Cranapple",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-wild-cherry-slush",
+      "name": "Wild Cherry Slush",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-meta-moon",
+      "name": "Meta Moon",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-berry-bliss",
+      "name": "Berry Bliss",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-sour-gush",
+      "name": "Sour Gush",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-juicy-peach-ice",
+      "name": "Juicy Peach Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "geek-bar-pulse-sour-strawberry",
+      "name": "Sour Strawberry",
+      "legibility": "partial"
+     }
+    ],
+    "—": [
+     {
+      "id": "geek-bar-pod-device",
+      "name": "Geek Bar Pod Device",
+      "legibility": "partial",
+      "notes": "Boxed refillable pod device shelved with the SMOK and Uwell kits"
+     }
+    ]
+   }
+  },
+  "geekvape": {
+   "brand": "GeekVape",
+   "category": "hardware",
+   "catalogId": null,
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "geekvape-pod-kit",
+      "name": "GeekVape Pod Kit (500mAh, 2mL)",
+      "legibility": "partial",
+      "notes": "Model name on the sleeve is obscured by the device sitting on top of it"
+     }
+    ]
+   }
+  },
+  "gurkha": {
+   "brand": "Gurkha",
+   "category": "cigar",
+   "catalogId": null,
+   "count": 1,
+   "lines": {
+    "K. Hansotia & Co.": [
+     {
+      "id": "gurkha-rare-limited-edition",
+      "name": "Rare Limited Edition Cigars",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Sampler box; lid reads 'Rare Limited Edition Cigars' with the K. Hansotia & Co. mark. Mixed Gurkha bands inside."
+     }
+    ]
+   }
+  },
+  "ijoy": {
+   "brand": "iJOY",
+   "category": "disposable",
+   "catalogId": "ijoy",
+   "count": 4,
+   "lines": {
+    "XP 100K Kit": [
+     {
+      "id": "ijoy-xp-100k-blueberry-watermelon",
+      "name": "Blueberry Watermelon",
+      "legibility": "partial",
+      "notes": "100000 puffs printed on box; flavour band partially hidden by neighbouring carton"
+     },
+     {
+      "id": "ijoy-xp-100k-miami-mint",
+      "name": "Miami Mint",
+      "legibility": "clear"
+     },
+     {
+      "id": "ijoy-xp-100k-strawberry-ice",
+      "name": "Strawberry Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "ijoy-xp-100k-watermelon-ice",
+      "name": "Watermelon Ice",
+      "legibility": "clear"
+     }
+    ]
+   }
+  },
+  "la-estrella-cubana": {
+   "brand": "La Estrella Cubana",
+   "category": "cigar",
+   "catalogId": "la-estrella-cubana",
+   "count": 2,
+   "lines": {
+    "—": [
+     {
+      "id": "la-estrella-cubana-red",
+      "name": "La Estrella Cubana (red/white box)",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Box format. Wrapper designation on the lid not resolvable, so I cannot confirm the Habano/Cameroon/Connecticut split catalog.json lists."
+     },
+     {
+      "id": "la-estrella-cubana-blue",
+      "name": "La Estrella Cubana (blue/white box)",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Second La Estrella Cubana box in a different colourway."
+     }
+    ]
+   }
+  },
+  "la-gloria-cubana": {
+   "brand": "La Gloria Cubana",
+   "category": "cigar",
+   "catalogId": null,
+   "count": 1,
+   "lines": {
+    "Serie R Esteli": [
+     {
+      "id": "la-gloria-cubana-serie-r-esteli",
+      "name": "Serie R Esteli",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. NOT IN catalog.json as its own house — catalog.json currently files 'Serie R Esteli' as a note under Punch, which is wrong. Yellow shelf card reads 'La Gloria Cubana / SERIE R ESTELI' with red-and-yellow bands on the cigars below. Box format."
+     }
+    ]
+   }
+  },
+  "lost-mary": {
+   "brand": "Lost Mary",
+   "category": "disposable",
+   "catalogId": "lost-mary",
+   "count": 8,
+   "lines": {
+    "MT35000 Turbo": [
+     {
+      "id": "lost-mary-mt35000-turbo-blue-razz-ice",
+      "name": "Blue Razz Ice",
+      "legibility": "clear",
+      "notes": "35K carton, 1000mAh fast charging"
+     },
+     {
+      "id": "lost-mary-mt35000-turbo-winter-mint",
+      "name": "Winter Mint",
+      "legibility": "clear"
+     },
+     {
+      "id": "lost-mary-mt35000-turbo-strawberry-plus",
+      "name": "Strawberry+",
+      "legibility": "clear"
+     },
+     {
+      "id": "lost-mary-mt35000-turbo-pink-lemonade-plus",
+      "name": "Pink Lemonade+",
+      "legibility": "clear"
+     },
+     {
+      "id": "lost-mary-mt35000-turbo-white-gami-plus",
+      "name": "White Gami+",
+      "legibility": "clear"
+     },
+     {
+      "id": "lost-mary-mt35000-turbo-baja-splash",
+      "name": "Baja Splash",
+      "legibility": "clear"
+     },
+     {
+      "id": "lost-mary-mt35000-turbo-watermelon-plus",
+      "name": "Watermelon+",
+      "legibility": "clear"
+     },
+     {
+      "id": "lost-mary-mt35000-turbo-berry-burst",
+      "name": "Berry Burst",
+      "legibility": "clear"
+     }
+    ]
+   }
+  },
+  "macanudo": {
+   "brand": "Macanudo",
+   "category": "cigar",
+   "catalogId": "macanudo",
+   "count": 5,
+   "lines": {
+    "Inspirado": [
+     {
+      "id": "macanudo-inspirado-red-box",
+      "name": "Inspirado (red box)",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Box with a red Macanudo tasting-notes card tucked inside the lid."
+     },
+     {
+      "id": "macanudo-inspirado-orange-box",
+      "name": "Inspirado (orange box)",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Box format, branded 'Inspirado' on the inner lid."
+     },
+     {
+      "id": "macanudo-inspirado-gift-box",
+      "name": "Inspirado holiday gift set",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Navy snowflake gift box; printed as 3 Toro cigars plus a lighter."
+     },
+     {
+      "id": "macanudo-inspirado-toro-4pack",
+      "name": "Inspirado Toro 4-cigar pack",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Silver cello sleeve packs; 'Inspirado' and a Toro count printed on the header."
+     }
+    ],
+    "—": [
+     {
+      "id": "macanudo-black-box",
+      "name": "Macanudo (black box)",
+      "legibility": "partial",
+      "notes": "WALK-IN HUMIDOR. Black box, Macanudo mark legible, line name not resolvable."
+     }
+    ]
+   }
+  },
+  "mazaya": {
+   "brand": "Mazaya",
+   "category": "hookah",
+   "catalogId": null,
+   "count": 2,
+   "lines": {
+    "—": [
+     {
+      "id": "mazaya-two-apples-molasses",
+      "name": "Two Apples Molasses",
+      "legibility": "clear"
+     },
+     {
+      "id": "mazaya-watermelon-molasses",
+      "name": "Watermelon Molasses",
+      "legibility": "clear"
+     }
+    ]
+   }
+  },
+  "montecristo": {
+   "brand": "Montecristo",
+   "category": "cigar",
+   "catalogId": null,
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "montecristo-white-box",
+      "name": "Montecristo (white/gold box)",
+      "legibility": "partial",
+      "notes": "WALK-IN HUMIDOR. NOT IN catalog.json. White lid with gold rope border and the red fleur-de-lis/crossed-swords emblem; '...CRISTO' legible upside-down. Inner label shows a red script line I could not resolve. Box format."
+     }
+    ]
+   }
+  },
+  "mr-fog": {
+   "brand": "Mr Fog",
+   "category": "disposable",
+   "catalogId": "mr-fog",
+   "count": 21,
+   "lines": {
+    "Switch Pod 45K": [
+     {
+      "id": "mr-fog-switch-pod-45k-grape-popup",
+      "name": "Grape Popup",
+      "legibility": "clear",
+      "notes": "Disposable + power bank, 45K, made in Canada"
+     },
+     {
+      "id": "mr-fog-switch-pod-45k-blueberry-raspberry-lemon",
+      "name": "Blueberry Raspberry Lemon",
+      "legibility": "clear"
+     },
+     {
+      "id": "mr-fog-switch-pod-45k-mint-menthol-ice",
+      "name": "Mint Menthol Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "mr-fog-switch-pod-45k-blue-rancher-blow-pop",
+      "name": "Blue Rancher Blow Pop",
+      "legibility": "clear"
+     },
+     {
+      "id": "mr-fog-switch-pod-45k-peach-berry",
+      "name": "Peach Berry",
+      "legibility": "clear"
+     },
+     {
+      "id": "mr-fog-switch-pod-45k-gold-edition",
+      "name": "Gold Edition",
+      "legibility": "clear",
+      "notes": "5% nicotine; gold anniversary carton"
+     },
+     {
+      "id": "mr-fog-switch-pod-45k-california-cherry",
+      "name": "California Cherry",
+      "legibility": "clear"
+     },
+     {
+      "id": "mr-fog-switch-pod-45k-peach-watermelon",
+      "name": "Peach Watermelon",
+      "legibility": "clear"
+     }
+    ],
+    "Nova": [
+     {
+      "id": "mr-fog-nova-strawberry-ice",
+      "name": "Strawberry Ice",
+      "legibility": "clear",
+      "notes": "Nova carton prints Eco 30000 / Boost 30000 / Turbo 30000, 5% nic, 20mL"
+     },
+     {
+      "id": "mr-fog-nova-blue-razz-steezy-strawberry",
+      "name": "Blue Razz Steezy Strawberry",
+      "legibility": "clear"
+     },
+     {
+      "id": "mr-fog-nova-grape-bubble-gang",
+      "name": "Grape Bubble Gang",
+      "legibility": "clear"
+     },
+     {
+      "id": "mr-fog-nova-blueberry-watermelon-ice",
+      "name": "Blueberry Watermelon Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "mr-fog-nova-sour-apple-ice",
+      "name": "Sour Apple Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "mr-fog-nova-peach-watermelon",
+      "name": "Peach Peach Watermelon",
+      "legibility": "partial"
+     },
+     {
+      "id": "mr-fog-nova-blue-razz-steezy-blackberry",
+      "name": "Blue Razz Steezy Blackberry",
+      "legibility": "clear"
+     },
+     {
+      "id": "mr-fog-nova-blue-razz-steezy-blue-rancher-ice",
+      "name": "Blue Razz Steezy Blue Rancher Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "mr-fog-nova-mint-steezy-mint-menthol",
+      "name": "Mint Steezy Mint Menthol",
+      "legibility": "clear"
+     },
+     {
+      "id": "mr-fog-nova-bubble-gang-blue-raspberry",
+      "name": "Bubble Gang Blue Raspberry",
+      "legibility": "clear"
+     },
+     {
+      "id": "mr-fog-nova-strawberry-ice-2",
+      "name": "Strawberry Ice",
+      "legibility": "clear"
+     }
+    ],
+    "Aura 60K": [
+     {
+      "id": "mr-fog-aura-60k-banana-strawberry-peach",
+      "name": "Banana Strawberry Peach",
+      "legibility": "clear"
+     }
+    ],
+    "Switch SW15000": [
+     {
+      "id": "mr-fog-switch-sw15000-kiwi-strawberry-ice",
+      "name": "Kiwi Strawberry Ice",
+      "legibility": "clear"
+     }
+    ]
+   }
+  },
+  "nica-rustica": {
+   "brand": "Nica Rustica",
+   "category": "cigar",
+   "catalogId": "nica-rustica",
+   "count": 1,
+   "lines": {
+    "La Gran Fabrica Drew Estate": [
+     {
+      "id": "nica-rustica",
+      "name": "Nica Rustica",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Black box, gold stamp 'LA GRAN FABRICA DREW ESTATE' along the lid edge."
+     }
+    ]
+   }
+  },
+  "north": {
+   "brand": "North",
+   "category": "disposable",
+   "catalogId": "north",
+   "count": 81,
+   "lines": {
+    "5000": [
+     {
+      "id": "north-5000-cherry-cola",
+      "name": "Cherry Cola",
+      "legibility": "clear",
+      "notes": "North 5000 cartons print 10ml / 5% nicotine"
+     },
+     {
+      "id": "north-5000-black-ice",
+      "name": "Black Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-strawberry-banana",
+      "name": "Strawberry Banana",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-frozen-raspberry",
+      "name": "Frozen Raspberry",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-grape-soda",
+      "name": "Grape Soda",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-blue-mint",
+      "name": "Blue Mint",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-tropical-summer",
+      "name": "Tropical Summer",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-mexican-mango",
+      "name": "Mexican Mango",
+      "legibility": "clear",
+      "notes": "Seen in the Patriotic Edition carton art"
+     },
+     {
+      "id": "north-5000-strawmelon",
+      "name": "Strawmelon",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-gum-mint",
+      "name": "Gum Mint",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-love-story",
+      "name": "Love Story",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-watermelon-passion-fruit",
+      "name": "Watermelon Passion Fruit",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-peach-berry",
+      "name": "Peach Berry",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-clear-unflavored",
+      "name": "Clear (Unflavored)",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-cherry-lemon",
+      "name": "Cherry Lemon",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-raspberry-mint",
+      "name": "Raspberry Mint",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-blueberry-watermelon",
+      "name": "Blueberry Watermelon",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-kiwi-dragon-fruit",
+      "name": "Kiwi Dragon Fruit",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-grape-blow-pop",
+      "name": "Grape Blow Pop",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-dirty-strawberry",
+      "name": "Dirty Strawberry",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-mango-freeze",
+      "name": "Mango Freeze",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-miami-mint",
+      "name": "Miami Mint",
+      "legibility": "clear",
+      "notes": "Also appears in the Habibi Edition carton"
+     },
+     {
+      "id": "north-5000-polar-mint",
+      "name": "Polar Mint",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-spearmint",
+      "name": "Spearmint",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-mighty-mint",
+      "name": "Mighty Mint",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-blueberry-mint",
+      "name": "Blueberry Mint",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-lemon-mint",
+      "name": "Lemon Mint",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-blackberry-passion-fruit",
+      "name": "Blackberry Passion Fruit",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-grape-berries",
+      "name": "Grape Berries",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-grape-apple",
+      "name": "Grape Apple",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-orange-mango-watermelon",
+      "name": "Orange Mango Watermelon",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-peach-pineapple",
+      "name": "Peach Pineapple",
+      "legibility": "partial"
+     },
+     {
+      "id": "north-5000-pineapple-passion",
+      "name": "Pineapple Passion",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-coconut-banana",
+      "name": "Coconut Banana",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-bubble-gum-freeze",
+      "name": "Bubble Gum Freeze",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-blueberry-pomegranate",
+      "name": "Blueberry Pomegranate",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-peach-ice",
+      "name": "Peach Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-pink-lemonade",
+      "name": "Pink Lemonade",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-blue-slushie",
+      "name": "Blue Slushie",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-blue-raspberry",
+      "name": "Blue Raspberry",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-5000-honeydew-apple",
+      "name": "Honeydew Apple",
+      "legibility": "partial"
+     }
+    ],
+    "Habibi Edition": [
+     {
+      "id": "north-habibi-sour-apple-ice",
+      "name": "Sour Apple Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-habibi-miami-mint",
+      "name": "Miami Mint",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-habibi-gold-leaf-tobacco",
+      "name": "Gold Leaf Tobacco",
+      "legibility": "partial"
+     },
+     {
+      "id": "north-habibi-two-apple",
+      "name": "Two Apple",
+      "legibility": "partial"
+     }
+    ],
+    "Vision": [
+     {
+      "id": "north-vision-15000-banana-bliss",
+      "name": "Banana Bliss",
+      "legibility": "clear",
+      "notes": "North Vision box prints 15000 puffs, 5% nicotine"
+     },
+     {
+      "id": "north-vision-15000-cherry-cola",
+      "name": "Cherry Cola",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-vision-15000-juicy-peach",
+      "name": "Juicy Peach",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-vision-15000-grape-soda",
+      "name": "Grape Soda",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-vision-15000-blueberry-watermelon",
+      "name": "Blueberry Watermelon",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-vision-15000-mighty-mint",
+      "name": "Mighty Mint",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-vision-15000-mango-dragon-fruit",
+      "name": "Mango Dragon Fruit",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-vision-15000-mexican-mango",
+      "name": "Mexican Mango",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-vision-15000-grape-blow-pop",
+      "name": "Grape Blow Pop",
+      "legibility": "partial"
+     },
+     {
+      "id": "north-vision-15000-gum-mint",
+      "name": "Gum Mint",
+      "legibility": "partial"
+     },
+     {
+      "id": "north-vision-15000-blue-mint",
+      "name": "Blue Mint",
+      "legibility": "partial"
+     }
+    ],
+    "Stellar (Dark Moon Edition)": [
+     {
+      "id": "north-stellar-40000-miami-mint",
+      "name": "Miami Mint",
+      "legibility": "clear",
+      "notes": "North Stellar prints 40000 puffs, Nic 5%, fully curved screen"
+     },
+     {
+      "id": "north-stellar-40000-blueberry-watermelon",
+      "name": "Blueberry Watermelon",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-stellar-40000-blue-razz-ice",
+      "name": "Blue Razz Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-stellar-40000-blue-mint",
+      "name": "Blue Mint",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-stellar-40000-juicy-peach-ice",
+      "name": "Juicy Peach Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-stellar-40000-star-blast",
+      "name": "Star Blast",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-stellar-40000-strawberry-banana",
+      "name": "Strawberry Banana",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-stellar-40000-banana-coconut",
+      "name": "Banana Coconut",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-stellar-40000-strawberry-colada",
+      "name": "Strawberry Colada",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-stellar-40000-mexican-mango",
+      "name": "Mexican Mango",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-stellar-40000-sour-apple-ice",
+      "name": "Sour Apple Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-stellar-40000-tropical-rainbow-blast",
+      "name": "Tropical Rainbow Blast",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-stellar-40000-dragon-melon",
+      "name": "Dragon Melon",
+      "legibility": "partial"
+     },
+     {
+      "id": "north-stellar-40000-watermelon-ice",
+      "name": "Watermelon Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-stellar-40000-mango-colada",
+      "name": "Mango Colada",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-stellar-40000-berry-bliss",
+      "name": "Berry Bliss",
+      "legibility": "partial"
+     }
+    ],
+    "Stellar (Slushy Edition)": [
+     {
+      "id": "north-stellar-40000-strawberry-peach-slushy",
+      "name": "Strawberry Peach Slushy",
+      "legibility": "clear",
+      "notes": "Slushy Edition, up to 40K puffs"
+     },
+     {
+      "id": "north-stellar-40000-wild-cherry-slushy",
+      "name": "Wild Cherry Slushy",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-stellar-40000-blueberry-slushy",
+      "name": "Blueberry Slushy",
+      "legibility": "clear"
+     }
+    ],
+    "Stellar (Sour Edition)": [
+     {
+      "id": "north-stellar-40000-sour-candies",
+      "name": "Sour Candies",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-stellar-40000-sour-lush-gummies",
+      "name": "Sour Lush Gummies",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-stellar-40000-sour-cranapple",
+      "name": "Sour Cranapple",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-stellar-40000-sour-fcuking-fab",
+      "name": "Sour Fcuking Fab",
+      "legibility": "clear"
+     },
+     {
+      "id": "north-stellar-40000-sour-apple-blow-pop",
+      "name": "Sour Apple Blow Pop",
+      "legibility": "partial"
+     }
+    ],
+    "Stellar (Skyfall Edition)": [
+     {
+      "id": "north-stellar-40000-pina-colada",
+      "name": "Pina Colada",
+      "legibility": "clear",
+      "notes": "Skyfall Edition, 40K puffs"
+     }
+    ]
+   }
+  },
+  "olit": {
+   "brand": "OLIT",
+   "category": "disposable",
+   "catalogId": "olit",
+   "count": 1,
+   "lines": {
+    "Hookalit 40K": [
+     {
+      "id": "olit-hookalit-40k-peach-mango-watermelon",
+      "name": "Peach Mango Watermelon",
+      "legibility": "clear",
+      "notes": "Hookah-style disposable, 40K puffs"
+     }
+    ]
+   }
+  },
+  "oliva": {
+   "brand": "Oliva",
+   "category": "cigar",
+   "catalogId": "oliva",
+   "count": 3,
+   "lines": {
+    "Reserve": [
+     {
+      "id": "oliva-reserve",
+      "name": "Reserve",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Plain cedar box, lid branded OLIVA / Reserve."
+     }
+    ],
+    "Serie O": [
+     {
+      "id": "oliva-serie-o",
+      "name": "Serie O",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Cedar box, lid reads 'Serie O — Nicaraguan Habano Puro'."
+     }
+    ],
+    "Serie G": [
+     {
+      "id": "oliva-serie-g-aged-cameroon",
+      "name": "Serie G Aged Cameroon",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. CORRECTION to catalog.json, which lists 'Serie V Aged Cameroon'. The box lid plainly reads 'Serie G / Aged Cameroon / Made by Hand in Nicaragua'. I found no Serie V box in any frame."
+     }
+    ]
+   }
+  },
+  "partagas": {
+   "brand": "Partagas",
+   "category": "cigar",
+   "catalogId": "partagas",
+   "count": 2,
+   "lines": {
+    "Black Label": [
+     {
+      "id": "partagas-black-label",
+      "name": "Black Label",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Box; 'PARTAGAS BLACK LABEL' printed along the lower box front."
+     }
+    ],
+    "Flor de Tabacos de Partagas": [
+     {
+      "id": "partagas-1845",
+      "name": "1845",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Box lid carries the 'since 1845' Flor de Tabacos crest and a 20-cigar count."
+     }
+    ]
+   }
+  },
+  "perdomo": {
+   "brand": "Perdomo",
+   "category": "cigar",
+   "catalogId": "perdomo",
+   "count": 2,
+   "lines": {
+    "Reserve Champagne": [
+     {
+      "id": "perdomo-reserve-champagne-10th-anniversary",
+      "name": "Reserve Champagne 10th Anniversary",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Gold box plus a shelf plaque carrying 93 / 92 / 91 rating marks. Cigars in gold foil tubes."
+     }
+    ],
+    "—": [
+     {
+      "id": "perdomo-bundle-bag",
+      "name": "Perdomo Cigars bundle",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Gold and black cello bundle bags stamped 'PERDOMO CIGARS'."
+     }
+    ]
+   }
+  },
+  "ploox": {
+   "brand": "Ploox",
+   "category": "disposable",
+   "catalogId": "ploox",
+   "count": 1,
+   "lines": {
+    "XS": [
+     {
+      "id": "ploox-xs-assorted",
+      "name": "XS disposable (flavour band not legible)",
+      "legibility": "inferred",
+      "notes": "Four facings of the Ploox XS carton are on the top shelf; the brand and line are readable but the printed flavour names are past the resolution of the frame. Worth re-shooting close if the shop wants them listed."
+     }
+    ]
+   }
+  },
+  "posh": {
+   "brand": "Posh",
+   "category": "disposable",
+   "catalogId": "posh",
+   "count": 21,
+   "lines": {
+    "Plus": [
+     {
+      "id": "posh-plus-grape",
+      "name": "Grape",
+      "legibility": "clear"
+     },
+     {
+      "id": "posh-plus-grape-ice",
+      "name": "Grape Ice",
+      "legibility": "clear",
+      "notes": "Limited Edition carton"
+     },
+     {
+      "id": "posh-plus-mint",
+      "name": "Mint",
+      "legibility": "clear"
+     },
+     {
+      "id": "posh-plus-spearmint",
+      "name": "Spearmint",
+      "legibility": "clear"
+     },
+     {
+      "id": "posh-plus-blue-b-ice",
+      "name": "Blue B Ice",
+      "legibility": "partial",
+      "notes": "Limited Edition carton"
+     },
+     {
+      "id": "posh-plus-strawberry",
+      "name": "Strawberry",
+      "legibility": "clear"
+     },
+     {
+      "id": "posh-plus-apple",
+      "name": "Apple",
+      "legibility": "clear"
+     },
+     {
+      "id": "posh-plus-peach",
+      "name": "Peach",
+      "legibility": "clear"
+     },
+     {
+      "id": "posh-plus-blue-raspberry",
+      "name": "Blue Raspberry",
+      "legibility": "clear"
+     },
+     {
+      "id": "posh-plus-cuban-tobacco",
+      "name": "Cuban Tobacco",
+      "legibility": "clear",
+      "notes": "Limited Edition carton"
+     },
+     {
+      "id": "posh-plus-clear",
+      "name": "Clear",
+      "legibility": "clear",
+      "notes": "Limited Edition carton"
+     }
+    ],
+    "Max 2.0": [
+     {
+      "id": "posh-max-2-blue-raspberry-ice",
+      "name": "Blue Raspberry Ice",
+      "legibility": "clear",
+      "notes": "Posh Max 2.0 rechargeable, up to 5200 puffs, 20% more puffs flash"
+     },
+     {
+      "id": "posh-max-2-spearmint",
+      "name": "Spearmint",
+      "legibility": "clear"
+     },
+     {
+      "id": "posh-max-2-florida-apple",
+      "name": "Florida Apple",
+      "legibility": "clear"
+     },
+     {
+      "id": "posh-max-2-grape-ice",
+      "name": "Grape Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "posh-max-2-razzmataz",
+      "name": "Razzmataz",
+      "legibility": "clear"
+     },
+     {
+      "id": "posh-max-2-kiwi-strawberry-ice",
+      "name": "Kiwi Strawberry Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "posh-max-2-mint-ice",
+      "name": "Mint Ice",
+      "legibility": "partial"
+     }
+    ],
+    "Max 2.0 (CHI Edition)": [
+     {
+      "id": "posh-max-2-cherry-cola",
+      "name": "Cherry Cola",
+      "legibility": "clear"
+     },
+     {
+      "id": "posh-max-2-cuban-tobacco",
+      "name": "Cuban Tobacco",
+      "legibility": "clear"
+     },
+     {
+      "id": "posh-max-2-clear",
+      "name": "Clear",
+      "legibility": "partial"
+     }
+    ]
+   }
+  },
+  "punch": {
+   "brand": "Punch",
+   "category": "cigar",
+   "catalogId": "punch",
+   "count": 2,
+   "lines": {
+    "Clasico": [
+     {
+      "id": "punch-clasico",
+      "name": "Clasico",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Box, 'since 1940' on the lid."
+     }
+    ],
+    "—": [
+     {
+      "id": "punch-smoke-like-a-pro-pack",
+      "name": "Smoke Like a Pro! pack",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Red multi-cigar pack, front reads 'SMOKE LIKE A PRO!'."
+     }
+    ]
+   }
+  },
+  "quorum": {
+   "brand": "Quorum",
+   "category": "cigar",
+   "catalogId": "quorum",
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "quorum-toro-sampler",
+      "name": "Toro Sampler 6x50",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Cello sampler pack, size printed 6 x 50."
+     }
+    ]
+   }
+  },
+  "raz": {
+   "brand": "RAZ",
+   "category": "disposable",
+   "catalogId": "raz",
+   "count": 1,
+   "lines": {
+    "LTX Mega": [
+     {
+      "id": "raz-ltx-miami-mint",
+      "name": "Miami Mint",
+      "legibility": "clear",
+      "notes": "Box prints 25K normal mode / 15K boost mode, mega HD screen"
+     }
+    ]
+   }
+  },
+  "rocky-patel": {
+   "brand": "Rocky Patel",
+   "category": "cigar",
+   "catalogId": "rocky-patel",
+   "count": 3,
+   "lines": {
+    "Vintage Collection": [
+     {
+      "id": "rocky-patel-vintage-aged-7-years",
+      "name": "Vintage Collection Aged 7 Years",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Wooden shelf plaque reading 'Aged 7 Years / Signature Collection' above the boxes."
+     }
+    ],
+    "The Edge": [
+     {
+      "id": "rocky-patel-the-edge",
+      "name": "The Edge",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Box printed 'Aged 5 Years / Premium Long Filler Cigar'. A separate plaque nearby reads 'ORIGINAL EDGE — BEWARE OF ALL IMITATIONS'."
+     },
+     {
+      "id": "rocky-patel-the-edge-sampler",
+      "name": "The Edge 4-cigar sampler",
+      "legibility": "partial",
+      "notes": "WALK-IN HUMIDOR. Four-cigar cello sampler pack; individual wrapper names on the bands are not fully resolvable."
+     }
+    ]
+   }
+  },
+  "romeo-y-julieta": {
+   "brand": "Romeo y Julieta",
+   "category": "cigar",
+   "catalogId": "romeo-y-julieta",
+   "count": 4,
+   "lines": {
+    "Reserve": [
+     {
+      "id": "romeo-y-julieta-reserve",
+      "name": "Reserve",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Cedar box, lid open on the shelf. Box format."
+     }
+    ],
+    "1875": [
+     {
+      "id": "romeo-y-julieta-1875-connecticut-nicaragua",
+      "name": "Connecticut Nicaragua",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Box; lid printed 'Toro 52 x 6'."
+     }
+    ],
+    "—": [
+     {
+      "id": "romeo-y-julieta-toro",
+      "name": "Toro",
+      "legibility": "partial",
+      "notes": "WALK-IN HUMIDOR. Red lacquered box, Dominican Republic. 'Toro' readable, full line name not resolvable at this angle."
+     },
+     {
+      "id": "romeo-y-julieta-tubos",
+      "name": "Tubos (aluminium tubes)",
+      "legibility": "partial",
+      "notes": "WALK-IN HUMIDOR. Red-and-white aluminium tubes standing in an open box. Single/tubo format."
+     }
+    ]
+   }
+  },
+  "skyline": {
+   "brand": "Skyline",
+   "category": "cigar",
+   "catalogId": "skyline",
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "skyline-ecuador-connecticut",
+      "name": "Skyline (Ecuador Connecticut wrapper)",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Box lid text names an Ecuador Connecticut wrapper over Nicaraguan binder and filler."
+     }
+    ]
+   }
+  },
+  "smok": {
+   "brand": "SMOK",
+   "category": "hardware",
+   "catalogId": "smok",
+   "count": 11,
+   "lines": {
+    "Novo": [
+     {
+      "id": "smok-novo-white-cobra",
+      "name": "White Cobra",
+      "legibility": "clear"
+     },
+     {
+      "id": "smok-novo-mesh-blue-cobra",
+      "name": "Mesh Blue Cobra",
+      "legibility": "clear"
+     },
+     {
+      "id": "smok-novo-silver-blue-cobra",
+      "name": "Silver Blue Cobra",
+      "legibility": "partial"
+     }
+    ],
+    "Nord GT Kit": [
+     {
+      "id": "smok-nord-gt-kit-green-blue-armor",
+      "name": "Green Blue Armor",
+      "legibility": "clear"
+     }
+    ],
+    "Nord 5": [
+     {
+      "id": "smok-nord-5-matte-white",
+      "name": "Matte White",
+      "legibility": "partial"
+     }
+    ],
+    "Novo 4": [
+     {
+      "id": "smok-novo-4-pod-mesh",
+      "name": "Novo 4 Replacement Pod (Mesh 0.8Ω)",
+      "legibility": "clear",
+      "notes": "3-pack pod cartons"
+     }
+    ],
+    "Novo 5": [
+     {
+      "id": "smok-novo-5-pod-mesh",
+      "name": "Novo 5 Replacement Pod (Mesh 0.8Ω)",
+      "legibility": "clear"
+     }
+    ],
+    "Nord": [
+     {
+      "id": "smok-nord-pod",
+      "name": "Nord Replacement Pod",
+      "legibility": "partial"
+     }
+    ],
+    "X-Priv Solo Kit": [
+     {
+      "id": "smok-x-priv-solo-kit-pale-blue",
+      "name": "Pale Blue",
+      "legibility": "clear",
+      "notes": "Full box mod kit with tank"
+     }
+    ],
+    "X-Priv Plus Kit": [
+     {
+      "id": "smok-x-priv-plus-kit-white-shell",
+      "name": "White Shell",
+      "legibility": "clear",
+      "notes": "225W box mod kit"
+     }
+    ],
+    "V12": [
+     {
+      "id": "smok-v12-t8-coils",
+      "name": "V12-T8 Replacement Coils",
+      "legibility": "partial"
+     }
+    ]
+   }
+  },
+  "starbuzz": {
+   "brand": "Starbuzz",
+   "category": "disposable",
+   "catalogId": null,
+   "count": 3,
+   "lines": {
+    "50K E-Hose": [
+     {
+      "id": "starbuzz-50k-e-hose-first-love",
+      "name": "First Love",
+      "legibility": "clear",
+      "notes": "Starbuzz Tobacco branded E-Hose disposable"
+     },
+     {
+      "id": "starbuzz-50k-e-hose-blue-razz-blast",
+      "name": "Blue Razz Blast",
+      "legibility": "clear"
+     },
+     {
+      "id": "starbuzz-50k-e-hose-cool-mint",
+      "name": "Cool Mint",
+      "legibility": "clear"
+     }
+    ]
+   }
+  },
+  "striker": {
+   "brand": "Striker",
+   "category": "gear",
+   "catalogId": null,
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "striker-cigar-punch",
+      "name": "8mm cigar punch",
+      "legibility": "partial",
+      "notes": "WALK-IN HUMIDOR accessory peg, hanging beside the V-cutters."
+     }
+    ]
+   }
+  },
+  "suorin": {
+   "brand": "Suorin",
+   "category": "hardware",
+   "catalogId": "suorin",
+   "count": 2,
+   "lines": {
+    "—": [
+     {
+      "id": "suorin-drop",
+      "name": "Suorin Drop",
+      "legibility": "clear"
+     },
+     {
+      "id": "suorin-air-mod",
+      "name": "Suorin Air Mod",
+      "legibility": "clear"
+     }
+    ]
+   }
+  },
+  "sweet-woods": {
+   "brand": "Sweet Woods",
+   "category": "cigar",
+   "catalogId": null,
+   "count": 6,
+   "lines": {
+    "Good Times Leaf": [
+     {
+      "id": "sweet-woods-classic",
+      "name": "Classic",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. NOT IN the cigars section of catalog.json (only under papers). Resealable foil pouches."
+     },
+     {
+      "id": "sweet-woods-watermelon",
+      "name": "Watermelon (Limited Edition)",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Limited-edition foil pouches."
+     },
+     {
+      "id": "sweet-woods-vanilla",
+      "name": "Vanilla",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Foil pouches."
+     },
+     {
+      "id": "sweet-woods-black-sweet",
+      "name": "Black Sweet",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Foil pouches."
+     },
+     {
+      "id": "sweet-woods-russian-cream",
+      "name": "Russian Cream",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Foil pouches."
+     },
+     {
+      "id": "sweet-woods-platinum",
+      "name": "Platinum",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Foil pouches."
+     }
+    ]
+   }
+  },
+  "swisher-sweets": {
+   "brand": "Swisher Sweets",
+   "category": "cigar",
+   "catalogId": "swisher-sweets",
+   "count": 12,
+   "lines": {
+    "—": [
+     {
+      "id": "swisher-sweets-classic",
+      "name": "Classic",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Carton of 2-count cigarillo packs."
+     },
+     {
+      "id": "swisher-sweets-gold",
+      "name": "Gold",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Carton of 2-count cigarillo packs."
+     },
+     {
+      "id": "swisher-sweets-black",
+      "name": "Black",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Carton of 2-count cigarillo packs."
+     },
+     {
+      "id": "swisher-sweets-honey-banana",
+      "name": "Honey Banana",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Carton of 2-count cigarillo packs."
+     }
+    ],
+    "Cigarillos": [
+     {
+      "id": "swisher-sweets-cigarillos-original-classic",
+      "name": "Original Classic",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Dark red carton, 'CIGARILLOS / ORIGINAL / CLASSIC'."
+     }
+    ],
+    "Mini Cigarillos": [
+     {
+      "id": "swisher-sweets-mini-cigarillos-blueberry",
+      "name": "Blueberry Classic",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Blue carton, 45-cigar count printed."
+     },
+     {
+      "id": "swisher-sweets-3-mini-cigarillos",
+      "name": "3 Mini Cigarillos multipack",
+      "legibility": "partial",
+      "notes": "FRONT COUNTER. '3 MINI CIGARILLOS' header card; flavour on the pack not resolvable."
+     }
+    ],
+    "BLK": [
+     {
+      "id": "swisher-sweets-blk-cherry",
+      "name": "Cherry (Pipe Tip)",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. BLK 2-Tip Cigarillos carton, pipe-tip format."
+     },
+     {
+      "id": "swisher-sweets-blk-berry",
+      "name": "Berry (Pipe Tip)",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. BLK 2-Tip Cigarillos carton."
+     },
+     {
+      "id": "swisher-sweets-blk-wine",
+      "name": "Wine (Pipe Tip)",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. BLK 2-Tip Cigarillos carton."
+     },
+     {
+      "id": "swisher-sweets-blk-cocoa",
+      "name": "Cocoa (Pipe Tip)",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. BLK 2-Tip Cigarillos carton."
+     },
+     {
+      "id": "swisher-sweets-blk-grape",
+      "name": "Grape (Pipe Tip)",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. BLK 2-Tip Cigarillos carton."
+     }
+    ]
+   }
+  },
+  "tabak-especial": {
+   "brand": "Tabak Especial",
+   "category": "cigar",
+   "catalogId": "tabak-especial",
+   "count": 1,
+   "lines": {
+    "—": [
+     {
+      "id": "tabak-especial",
+      "name": "Tabak Especial",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR. Box format (Drew Estate coffee-infused line)."
+     }
+    ]
+   }
+  },
+  "tasty-sticks": {
+   "brand": "Tasty Sticks",
+   "category": "cigar",
+   "catalogId": "tasty-sticks",
+   "count": 3,
+   "lines": {
+    "—": [
+     {
+      "id": "tasty-sticks-mango-papaya",
+      "name": "Mango Papaya",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR, flavoured run. 20-count box."
+     },
+     {
+      "id": "tasty-sticks-honey-blueberry",
+      "name": "Honey Blueberry",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR, flavoured run. 20-count box."
+     },
+     {
+      "id": "tasty-sticks-orange",
+      "name": "Orange",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR, flavoured run. 20-count box."
+     }
+    ]
+   }
+  },
+  "tatiana": {
+   "brand": "Tatiana",
+   "category": "cigar",
+   "catalogId": "tatiana",
+   "count": 9,
+   "lines": {
+    "—": [
+     {
+      "id": "tatiana-cherry",
+      "name": "Cherry",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR, flavoured shelf. Box format, boxes stood on end with the flavour on the front panel."
+     },
+     {
+      "id": "tatiana-cognac",
+      "name": "Cognac",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR, flavoured shelf. Box format."
+     },
+     {
+      "id": "tatiana-vanilla",
+      "name": "Vanilla",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR, flavoured shelf. Box format."
+     },
+     {
+      "id": "tatiana-honey",
+      "name": "Honey",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR, flavoured shelf. Box format."
+     },
+     {
+      "id": "tatiana-groovy-blue",
+      "name": "Groovy Blue",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR, flavoured shelf. Box format."
+     },
+     {
+      "id": "tatiana-rum",
+      "name": "Rum",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR, flavoured shelf. Box format."
+     },
+     {
+      "id": "tatiana-night-cap",
+      "name": "Night Cap",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR, flavoured shelf. Box format."
+     },
+     {
+      "id": "tatiana-harvest-moon",
+      "name": "Harvest Moon",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR, flavoured shelf. Box format."
+     }
+    ],
+    "Classic 6x44": [
+     {
+      "id": "tatiana-waking-dream",
+      "name": "Waking Dream",
+      "legibility": "partial",
+      "notes": "WALK-IN HUMIDOR, flavoured shelf. Box format; size marking read as Classic 6 x 44."
+     }
+    ]
+   }
+  },
+  "ut": {
+   "brand": "UT",
+   "category": "disposable",
+   "catalogId": "ut",
+   "count": 20,
+   "lines": {
+    "50000": [
+     {
+      "id": "ut-50000-sour-apple",
+      "name": "Sour Apple",
+      "legibility": "clear",
+      "notes": "UT cartons print 50000 puffs, clear tank, Powered by PLUM USA"
+     },
+     {
+      "id": "ut-50000-pink-lemonade-mixberry",
+      "name": "Pink Lemonade Mixberry",
+      "legibility": "clear"
+     },
+     {
+      "id": "ut-50000-bluerazz-ice",
+      "name": "Bluerazz Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "ut-50000-miami-mint-mint-slushy",
+      "name": "Miami Mint / Mint Slushy",
+      "legibility": "clear"
+     },
+     {
+      "id": "ut-50000-naked-spring-water",
+      "name": "Naked Spring Water",
+      "legibility": "clear"
+     },
+     {
+      "id": "ut-50000-mango-strawberry",
+      "name": "Mango Strawberry",
+      "legibility": "clear"
+     },
+     {
+      "id": "ut-50000-white-gummy",
+      "name": "White Gummy",
+      "legibility": "clear"
+     },
+     {
+      "id": "ut-50000-sour-fab-citrus-ice",
+      "name": "Sour Fab Citrus Ice",
+      "legibility": "partial"
+     },
+     {
+      "id": "ut-50000-cool-mint-icy-mint",
+      "name": "Cool Mint / Icy Mint",
+      "legibility": "partial"
+     },
+     {
+      "id": "ut-50000-wild-berry-drop",
+      "name": "Wild Berry Drop",
+      "legibility": "clear"
+     },
+     {
+      "id": "ut-50000-watermelon-ice",
+      "name": "Watermelon Ice",
+      "legibility": "clear"
+     },
+     {
+      "id": "ut-50000-aloe-grape",
+      "name": "Aloe Grape",
+      "legibility": "partial",
+      "notes": "Green 50000 carton in the UT run; brand mark on the carton face is not sharp enough to read, flavour name is"
+     },
+     {
+      "id": "ut-50000-aloe-watermelon",
+      "name": "Aloe Watermelon",
+      "legibility": "partial"
+     },
+     {
+      "id": "ut-50000-strawberry-swirl",
+      "name": "Strawberry Swirl",
+      "legibility": "clear"
+     },
+     {
+      "id": "ut-50000-thai-mango-juice-peach",
+      "name": "Thai Mango / Juice Peach",
+      "legibility": "partial"
+     },
+     {
+      "id": "ut-50000-banana-smoothy-strawberry",
+      "name": "Banana Smoothy Strawberry",
+      "legibility": "partial"
+     },
+     {
+      "id": "ut-50000-tobacco-gold",
+      "name": "Gold Tobacco",
+      "legibility": "partial"
+     },
+     {
+      "id": "ut-50000-lemon-drop",
+      "name": "Lemon Drop",
+      "legibility": "clear"
+     },
+     {
+      "id": "ut-50000-tropical-rainbow-blast",
+      "name": "Tropical Rainbow Blast",
+      "legibility": "clear"
+     },
+     {
+      "id": "ut-50000-cherry-strawberry-gummy",
+      "name": "Cherry Strawberry Gummy",
+      "legibility": "partial"
+     }
+    ]
+   }
+  },
+  "uwell": {
+   "brand": "Uwell",
+   "category": "hardware",
+   "catalogId": "uwell",
+   "count": 3,
+   "lines": {
+    "Caliburn": [
+     {
+      "id": "uwell-caliburn-gk2-pod-system",
+      "name": "Caliburn GK2 Pod System",
+      "legibility": "clear"
+     },
+     {
+      "id": "uwell-caliburn-koko",
+      "name": "Caliburn Koko",
+      "legibility": "clear",
+      "notes": "Several colourways on display including gold and purple"
+     },
+     {
+      "id": "uwell-caliburn-a2",
+      "name": "Caliburn A2 Pod System",
+      "legibility": "partial"
+     }
+    ]
+   }
+  },
+  "vaporesso": {
+   "brand": "Vaporesso",
+   "category": "hardware",
+   "catalogId": "vaporesso",
+   "count": 1,
+   "lines": {
+    "XROS": [
+     {
+      "id": "vaporesso-xros",
+      "name": "XROS Pod System",
+      "legibility": "clear"
+     }
+    ]
+   }
+  },
+  "vertigo": {
+   "brand": "Vertigo",
+   "category": "gear",
+   "catalogId": null,
+   "count": 1,
+   "lines": {
+    "Quantum": [
+     {
+      "id": "vertigo-quantum-v-cut",
+      "name": "Quantum V-Cut cigar cutter",
+      "legibility": "clear",
+      "notes": "WALK-IN HUMIDOR accessory peg. Blister card, 64 ring gauge marking."
+     }
+    ]
+   }
+  },
+  "white-owl": {
+   "brand": "White Owl",
+   "category": "cigar",
+   "catalogId": "white-owl",
+   "count": 9,
+   "lines": {
+    "—": [
+     {
+      "id": "white-owl-pineapple",
+      "name": "Pineapple",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Carton of resealable foil 2-count pouches."
+     },
+     {
+      "id": "white-owl-white-grape",
+      "name": "White Grape",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Carton of resealable foil pouches."
+     },
+     {
+      "id": "white-owl-green-sweets",
+      "name": "Green Sweets",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Carton of foil pouches."
+     },
+     {
+      "id": "white-owl-sweets",
+      "name": "Sweets",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Carton of foil pouches."
+     },
+     {
+      "id": "white-owl-mango",
+      "name": "Mango",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Carton of foil pouches."
+     },
+     {
+      "id": "white-owl-white-peach",
+      "name": "White Peach",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Carton of foil pouches."
+     },
+     {
+      "id": "white-owl-platinum",
+      "name": "Platinum (Un-Sweet)",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Carton marked 'UN-SWEET'."
+     },
+     {
+      "id": "white-owl-tropical-twist",
+      "name": "Tropical Twist",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Carton of foil pouches."
+     }
+    ],
+    "Swirl": [
+     {
+      "id": "white-owl-swirl-triple-grape",
+      "name": "Swirl Triple Grape",
+      "legibility": "clear",
+      "notes": "FRONT COUNTER. Carton of foil pouches."
+     }
+    ]
+   }
+  }
+ }
+}

@@ -1,7 +1,29 @@
 {
-  "_README": "Real Google reviews only. Never invent a testimonial - fabricated reviews are an FTC violation and would be trivially disproved against the live Google profile. Add entries as: { name, initial, stars, text, date }. The marquee renders a graceful placeholder while this array is empty, so the site is shippable either way.",
+  "_README": "Real Google reviews only. Never invent a testimonial, never complete a partial one, never 'clean up' the wording - fabricated or edited testimonials are an FTC violation and would be trivially disproved against the live Google profile. The three below are verbatim, spelling and punctuation included. Google does not expose review text to anything crawlable; these surfaced through an aggregator that mirrors the profile. The shop has 49 reviews at 4.2 stars, so there are more good ones - the owner can copy them off the listing on his phone and they can be added here as { name, initial, stars, text, date }. The marquee renders whatever is in this array and removes itself entirely when it is empty.",
   "source": "Google",
   "profileUrl": "https://www.google.com/maps/place/Glen+Smoke+Shop/@41.8599993,-88.0480804,17z",
-  "aggregate": { "rating": 4.2, "count": null },
-  "reviews": []
+  "aggregate": { "rating": 4.2, "count": 49 },
+  "reviews": [
+    {
+      "name": "Tori Bean",
+      "initial": "T",
+      "stars": 5,
+      "text": "They were so incredibly welcoming and accommodating! I just moved here from Utah. They were so friendly. And they were able to help answer all my questions! Definitely coming back here Everytime :) they definitely went above and beyond for me",
+      "date": "May 2023"
+    },
+    {
+      "name": "Brianna Brady-Benson",
+      "initial": "B",
+      "stars": 5,
+      "text": "Best shop ever!! Always has my favorite vapes and glass needs I never go anywhere else",
+      "date": "December 2023"
+    },
+    {
+      "name": "Amanda Blanco",
+      "initial": "A",
+      "stars": 5,
+      "text": "Had a great experience buying at this store, store manager was very friendly and helpful! I definitely recommend shopping here!",
+      "date": "March 2022"
+    }
+  ]
 }

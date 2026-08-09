@@ -8,18 +8,20 @@
 
    Sequence:
      black storefront -> neon strikes (uneven, with false starts)
-     -> colour race   -> question resolves out of the glow
-     -> "Yes, I'm 21+" splits the doors and you walk in
+     -> colour race   -> haze rolls in, question resolves out of the glow
+     -> "Yes, I'm 21+" blows the smoke off screen and you are inside
 
    Everything here degrades. No JS: statically lit gate (see entrance.css).
    Reduced motion: lit, no strike, no doors. Skipped: jumps to lit.
    ========================================================================== */
 
+import { initSmoke, type SmokeHandle } from './smoke'
+
 const AGE_KEY = 'gss.age.v1'
 const SEEN_KEY = 'gss.entered.v1'
 
 const STRIKE_MS = 1700
-const DOORS_MS = 1250
+const CLEAR_MS = 1250
 
 export interface EntranceHandles {
   /** Called once the visitor is through — after the doors, not before. */
@@ -77,6 +79,16 @@ export function initEntrance({ onPass, onConfirm }: EntranceHandles): boolean {
   document.body.classList.add('gate-locked')
   setBackground(true)
 
+  // --- haze -----------------------------------------------------------------
+  // Drawn, not filmed — see smoke.ts. Reduced motion gets none of it: a
+  // full-screen particle field is exactly what that preference is asking us
+  // not to do.
+  let smoke: SmokeHandle | null = null
+  const scene = q('.ent-scene')
+  if (!reduced && scene) {
+    try { smoke = initSmoke(scene) } catch { smoke = null }
+  }
+
   // --- ignition -------------------------------------------------------------
   let settled = false
 
@@ -131,10 +143,18 @@ export function initEntrance({ onPass, onConfirm }: EntranceHandles): boolean {
 
     const finish = () => {
       gate.setAttribute('hidden', '')
+      smoke?.destroy()
       onPass()
     }
-    if (reduced) setTimeout(finish, 320)
-    else setTimeout(finish, DOORS_MS)
+
+    if (reduced || !smoke) {
+      setTimeout(finish, reduced ? 320 : CLEAR_MS)
+    } else {
+      // The storefront and the copy fade while the gust is still running, so
+      // what you actually watch is the smoke leaving — not a crossfade that
+      // happens to have smoke in it.
+      smoke.clear().then(finish)
+    }
   }
 
   q('#gate-yes')!.addEventListener('click', enter)

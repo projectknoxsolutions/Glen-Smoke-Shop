@@ -166,27 +166,50 @@
 
 
 <main id="main" class="shell">
-<header class="hero" id="top">
-  <div class="hero-media">
+<header class="hero hero-signled" id="top">
+  <!-- The backdrop is the INTERIOR, not the storefront. Using the storefront
+       put its own fascia behind the hero, so the page showed the sign twice: a
+       huge dark ghost above a smaller lit one. Cropping it out fought
+       object-position (there is no vertical overflow at this aspect, so the Y
+       value was a no-op) and then fought transform-scale, which crops about the
+       centre after the fit. Switching to a photo with no sign in it removes the
+       whole class of problem, and lit glass cases are a better backdrop than
+       stucco anyway. -->
+  <div class="hero-media" aria-hidden="true">
     <picture>
-      <source media="(max-width:700px)" type="image/avif" sizes="100vw"
-        srcset="img/hero-band-800.avif 800w, img/hero-band-1200.avif 1200w">
       <source type="image/avif" sizes="100vw"
-        srcset="img/hero-wide-1600.avif 1600w, img/hero-wide-2200.avif 2200w, img/hero-wide-3000.avif 3000w">
-      <img src="img/hero-wide-1600.jpg" srcset="img/hero-wide-1600.jpg 1600w, img/hero-wide-2200.jpg 2200w" sizes="100vw" alt="Glen Smoke Shop storefront at dusk, its illuminated sign glowing above windows full of glass and neon" fetchpriority="high" decoding="async" width="3000" height="1500">
-    </picture>
-  </div>
-  <div class="hero-sign" aria-hidden="true">
-    <picture>
-      <source media="(max-width:700px)" type="image/avif" sizes="100vw"
-        srcset="img/hero-band-800.avif 800w, img/hero-band-1200.avif 1200w">
-      <source type="image/avif" sizes="100vw"
-        srcset="img/hero-wide-1600.avif 1600w, img/hero-wide-2200.avif 2200w, img/hero-wide-3000.avif 3000w">
-      <img src="img/hero-wide-1600.jpg" alt="" aria-hidden="true" decoding="async" fetchpriority="high">
+        srcset="img/IMG_6077-960.avif 960w, img/IMG_6077-1600.avif 1600w">
+      <img src="img/IMG_6077-1600.jpg" srcset="img/IMG_6077-960.jpg 960w, img/IMG_6077-1600.jpg 1600w" sizes="100vw" alt="" decoding="async">
     </picture>
   </div>
 
   <div class="hero-scrim" aria-hidden="true"></div>
+
+  <!-- THE SIGN. Three plates, all cut from the same 48MP frame and therefore in
+       perfect register with each other:
+         .sign-bloom  the halo again, blown up and blurred - this is the colour
+                      that washes the wall around it
+         .sign-halo   the backlight, hue-cycling
+         .sign-face   the lettering and logo, never recoloured
+       Only the face carries the alt text; the other two are decoration. -->
+  <div class="signstage">
+    <div class="signwrap">
+      <picture class="sign-bloom" aria-hidden="true">
+        <img src="img/sign-halo-1000.webp" alt="" decoding="async">
+      </picture>
+      <picture class="sign-halo" aria-hidden="true">
+        <source type="image/webp" sizes="(max-width:700px) 96vw, 78vw"
+          srcset="img/sign-halo-1000.webp 1000w, img/sign-halo-1600.webp 1600w, img/sign-halo-2400.webp 2400w">
+        <img src="img/sign-halo-1600.webp" alt="" decoding="async">
+      </picture>
+      <picture class="sign-face">
+        <source type="image/webp" sizes="(max-width:700px) 96vw, 78vw"
+          srcset="img/sign-face-1000.webp 1000w, img/sign-face-1600.webp 1600w, img/sign-face-2400.webp 2400w">
+        <img src="img/sign-face-1600.webp" fetchpriority="high" decoding="async" width="2400" height="730"
+             alt="The illuminated Glen Smoke Shop sign above the storefront at 944 Roosevelt Road">
+      </picture>
+    </div>
+  </div>
 
   <div class="wrap hero-body">
     <p class="hero-eyebrow">
@@ -195,7 +218,7 @@
     </p>
     <h1 class="hero-title">
       <span class="visually-hidden">Glen Smoke Shop — vapes, nicotine pouches, glass and cigars in Glen Ellyn, Illinois.</span>
-      <span aria-hidden="true">DuPage County's<br><span class="thin">deepest</span> shelf</span>
+      <span aria-hidden="true">DuPage County's <span class="thin">deepest</span> shelf</span>
     </h1>
     <p class="hero-sub"><strong>Disposables, pouches, hand-blown glass, a real cedar humidor</strong> — and someone behind the counter who actually knows the difference.</p>
 
@@ -281,7 +304,7 @@
 
     <div class="footer-legal">
       <p>© <span id="year"></span> Glen Smoke Shop. All product names, logos and brands are property of their respective owners and are used here for identification purposes only. Product availability varies and changes frequently.</p>
-      <p class="mono" style="font-size:10.5px">Site by Project Knox Solutions</p>
+      <p class="mono" style="font-size:10.5px">Site by <a href="https://www.getprojectknox.com" rel="noopener">www.getprojectknox.com</a></p>
     </div>
   </div>
 </footer>

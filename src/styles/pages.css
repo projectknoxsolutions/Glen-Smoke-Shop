@@ -343,3 +343,80 @@ button.cigar-name::after {
 /* The two CTAs stack on a narrow phone because .btn carries a 168px floor from
    the gate. Inside the sheet they should sit side by side and share the width. */
 .sheet-actions .btn { min-width: 0; flex: 1 1 auto; justify-content: center; }
+
+/* The site credit is a link now, and an inline link in 10.5px mono is a 14px
+   tall tap target on a phone. Give it real padding rather than leaving the one
+   link on the page that nobody with a thumb can hit. */
+.footer .mono a {
+  display: inline-block;
+  min-height: 44px;
+  line-height: 44px;
+  padding: 0 4px;
+  margin: -6px 0 -6px -4px;
+  color: var(--ink-3);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color var(--dur-fast), border-color var(--dur-fast);
+}
+
+.footer .mono a:hover,
+.footer .mono a:focus-visible { color: var(--orange); border-bottom-color: currentColor; }
+
+/* ==========================================================================
+   The shelf breakdown — what is actually on the wall
+   ========================================================================== */
+
+.shelf { margin-top: 16px; }
+
+.shelf-head {
+  font-family: var(--mono);
+  font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 0 14px;
+}
+
+.shelf-head strong { color: var(--orange); font-size: 15px; letter-spacing: 0; }
+
+.shelf-line + .shelf-line { margin-top: 14px; }
+
+.shelf-line-name {
+  font-family: var(--mono);
+  font-size: 10px; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--ink-2);
+  margin: 0 0 7px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--line);
+}
+
+.flav-list {
+  list-style: none;
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin: 0; padding: 0;
+}
+
+.flav {
+  font-size: 12.5px;
+  line-height: 1.2;
+  color: var(--ink-2);
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255,255,255,.016);
+}
+
+/* Names we could only partly read off the packaging. Marked rather than
+   dropped — and rather than silently completed, which is how a customer ends
+   up driving over for a flavour that was never there. */
+.flav.is-soft {
+  color: var(--ink-3);
+  border-style: dashed;
+}
+
+.shelf-note {
+  font-size: 12px;
+  color: var(--ink-3);
+  margin: 14px 0 0;
+  padding-left: 11px;
+  border-left: 2px solid var(--line-hot);
+  line-height: 1.5;
+}

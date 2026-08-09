@@ -9,6 +9,7 @@ import './styles/base.css'
 import './styles/sections.css'
 import './styles/entrance.css'
 import './styles/pages.css'
+import './styles/signhero.css'
 
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -18,6 +19,7 @@ import catalog from './data/catalog.json'
 import store from './data/store.json'
 import reviewData from './data/reviews.json'
 import pouchImages from './data/pouch-images.json'
+import shelfData from './data/shelf.json'
 
 import { initEntrance } from './entrance'
 import { bind as bindDetail, describe, openFromHash } from './detail'
@@ -220,6 +222,39 @@ function initSectionPhotos() {
   })
 }
 
+/* --------------------------------------------------------------- shelf */
+
+/* What is actually on the wall, read off the shop's own 48MP frames. Keyed by
+   the catalog brand id so it hangs off the existing chips rather than becoming
+   a second taxonomy. */
+type ShelfItem = { id: string; name: string; legibility: string; notes?: string }
+type ShelfBrand = { brand: string; category: string; catalogId: string | null; count: number; lines: Record<string, ShelfItem[]> }
+
+const SHELF = shelfData.brands as unknown as Record<string, ShelfBrand>
+
+const shelfByCatalogId = new Map<string, ShelfBrand>()
+for (const b of Object.values(SHELF)) if (b.catalogId) shelfByCatalogId.set(b.catalogId, b)
+
+/** The flavours for one brand, grouped by product line. */
+function shelfMarkup(b: ShelfBrand): string {
+  const lines = Object.entries(b.lines)
+  const total = b.count
+  const chip = (f: ShelfItem) =>
+    `<li class="flav${f.legibility !== 'clear' ? ' is-soft' : ''}"${f.legibility !== 'clear'
+      ? ' title="Read partially off the packaging — ask us to confirm"' : ''}>${f.name}</li>`
+
+  return `
+    <div class="shelf">
+      <p class="shelf-head"><strong>${total}</strong> ${total === 1 ? 'flavour' : 'flavours'} of ${b.brand} on the wall right now</p>
+      ${lines.map(([line, items]) => `
+        <div class="shelf-line">
+          ${line !== '—' ? `<p class="shelf-line-name">${line}</p>` : ''}
+          <ul class="flav-list">${items.map(chip).join('')}</ul>
+        </div>`).join('')}
+      <p class="shelf-note">Counted off our own shelf photos, not a brand catalogue — if it is listed here we stocked it. The wall turns over fast, so call or text to confirm a specific one.</p>
+    </div>`
+}
+
 /* ---------------------------------------------------------- vape brands */
 function initVapes() {
   const list = $('#vape-brands'), detail = $('#vape-detail')
@@ -238,12 +273,13 @@ function initVapes() {
   const show = (id: string) => {
     const v = catalog.vapes.find(x => x.id === id)!
     const d = describe(id)
+    const shelf = shelfByCatalogId.get(id)
     detail.innerHTML = `
       <h3>${v.brand}</h3>
       ${d?.blurb ? `<p class="brand-blurb">${d.blurb}</p>` : ''}
-      ${v.lines.length
+      ${shelf ? shelfMarkup(shelf) : (v.lines.length
         ? `<div class="lines">${v.lines.map(l => `<span>${l}</span>`).join('')}</div>`
-        : ''}
+        : '')}
       ${d ? `<button class="btn btn-more" type="button" data-detail="${id}">What it is &amp; who it suits</button>` : ''}`
     detail.classList.add('open')
   }
@@ -586,11 +622,19 @@ function initReviews() {
       </div></article>`
   }
 
-  const half = Math.ceil(list.length / 2)
-  const rowA = list.slice(0, half), rowB = list.slice(half).length ? list.slice(half) : list
-  const row = (rs: Review[], cls: string) =>
-    `<div class="rev-row ${cls}">${rs.map(card).join('')}${rs.map(card).join('')}</div>`
-  host.innerHTML = row(rowA, 'a') + row(rowB, 'b')
+  // Two counter-scrolling rows only make sense with enough cards to fill both.
+  // With three real reviews, splitting them 2/1 left the second row visibly
+  // thin and drew attention to how few there are. Under six, run a single row
+  // and repeat it enough times to cover the widest viewport instead.
+  const row = (rs: Review[], cls: string, reps: number) =>
+    `<div class="rev-row ${cls}">${Array.from({ length: reps }, () => rs.map(card).join('')).join('')}</div>`
+
+  if (list.length < 6) {
+    host.innerHTML = row(list, 'a', Math.max(3, Math.ceil(9 / list.length)))
+  } else {
+    const half = Math.ceil(list.length / 2)
+    host.innerHTML = row(list.slice(0, half), 'a', 2) + row(list.slice(half), 'b', 2)
+  }
 }
 
 /* ------------------------------------------------------------------ map */

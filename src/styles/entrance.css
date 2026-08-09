@@ -48,6 +48,12 @@
 .ent-door-l { clip-path: inset(0 calc(100% - var(--door-seam)) 0 0); }
 .ent-door-r { clip-path: inset(0 0 0 var(--door-seam)); }
 
+/* The reveal is smoke now, not doors. The two halves stay in the markup and
+   stay in register, but they no longer part — clearing the clip makes them one
+   continuous storefront again, which is what the haze rolls across. */
+.ent-door-l, .ent-door-r { clip-path: none; }
+.ent-door-r { display: none; }
+
 .ent-plate,
 .ent-neon {
   position: absolute;
@@ -143,7 +149,10 @@
   animation: ent-strike 1.7s var(--ease-in-out) forwards;
 }
 
-.gate.lit .ent-plate { filter: brightness(.88) saturate(1) contrast(1.02); }
+/* Held darker than the un-hazed hero on purpose: the smoke is screen-blended
+   over this, and a bright plate under bright smoke just goes milky. The
+   storefront comes up to full as the haze leaves. */
+.gate.lit .ent-plate { filter: brightness(.62) saturate(1.02) contrast(1.04); }
 
 .gate.lit .ent-neon {
   opacity: 1;
@@ -180,19 +189,18 @@
 /* The two leaves do NOT travel in sync. Real double doors never do, and 60ms
    of stagger is the whole difference between "a door opened" and "a slideshow
    transition happened". */
+/* The storefront does not move. It brightens and lifts a hair as the gust
+   passes, the way a room does when the haze thins, and the smoke does the
+   travelling. */
 .gate.opening .ent-door-l {
-  transform: translate3d(-102%, 0, 0);
-  transition: transform 1.15s var(--door-ease);
-}
-
-.gate.opening .ent-door-r {
-  transform: translate3d(102%, 0, 0);
-  transition: transform 1.15s var(--door-ease) 60ms;
+  transform: scale(1.045);
+  transition: transform 1.5s var(--door-ease), opacity .75s ease-in .55s;
+  opacity: 0;
 }
 
 /* Push the light up as they part, the way a door swinging open spills the
    room out onto the sidewalk. */
-.gate.opening .ent-plate { filter: brightness(1.05) saturate(1.05); }
+.gate.opening .ent-plate { filter: brightness(1) saturate(1.04); transition: filter 1.2s var(--ease-out); }
 
 .gate.opening .gate-inner {
   opacity: 0;
@@ -326,7 +334,29 @@
 .gate.opening,
 .gate.opening .ent-scene { background: transparent; }
 
-/* Both leaves get a lit edge as they swing, so the split reads as a gap
-   opening rather than a straight cut through a photograph. */
-.gate.opening .ent-door-l { box-shadow: 14px 0 46px -6px rgba(0,0,0,.85); }
-.gate.opening .ent-door-r { box-shadow: -14px 0 46px -6px rgba(0,0,0,.85); }
+/* --- the haze ------------------------------------------------------------ */
+
+.smoke-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  /* Screen, so the haze picks up the neon behind it instead of greying it out.
+     Smoke lit from behind by a sign is the whole point. */
+  mix-blend-mode: screen;
+  opacity: 0;
+  transition: opacity 1.6s var(--ease-out);
+}
+
+.gate.lighting .smoke-canvas,
+.gate.lit .smoke-canvas,
+.gate.instant .smoke-canvas { opacity: 1; }
+
+/* Do not fade the canvas out on the way through — the puffs carry their own
+   alpha as they leave, and cross-fading on top of that reads as a dissolve
+   rather than as smoke being blown away. */
+.gate.opening .smoke-canvas { opacity: 1; transition: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .smoke-canvas { display: none; }
+}
