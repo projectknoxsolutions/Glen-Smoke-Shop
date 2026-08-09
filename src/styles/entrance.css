@@ -48,12 +48,6 @@
 .ent-door-l { clip-path: inset(0 calc(100% - var(--door-seam)) 0 0); }
 .ent-door-r { clip-path: inset(0 0 0 var(--door-seam)); }
 
-/* The reveal is smoke now, not doors. The two halves stay in the markup and
-   stay in register, but they no longer part — clearing the clip makes them one
-   continuous storefront again, which is what the haze rolls across. */
-.ent-door-l, .ent-door-r { clip-path: none; }
-.ent-door-r { display: none; }
-
 .ent-plate,
 .ent-neon {
   position: absolute;
@@ -149,10 +143,7 @@
   animation: ent-strike 1.7s var(--ease-in-out) forwards;
 }
 
-/* Held darker than the un-hazed hero on purpose: the smoke is screen-blended
-   over this, and a bright plate under bright smoke just goes milky. The
-   storefront comes up to full as the haze leaves. */
-.gate.lit .ent-plate { filter: brightness(.62) saturate(1.02) contrast(1.04); }
+.gate.lit .ent-plate { filter: brightness(.88) saturate(1) contrast(1.02); }
 
 .gate.lit .ent-neon {
   opacity: 1;
@@ -189,18 +180,19 @@
 /* The two leaves do NOT travel in sync. Real double doors never do, and 60ms
    of stagger is the whole difference between "a door opened" and "a slideshow
    transition happened". */
-/* The storefront does not move. It brightens and lifts a hair as the gust
-   passes, the way a room does when the haze thins, and the smoke does the
-   travelling. */
 .gate.opening .ent-door-l {
-  transform: scale(1.045);
-  transition: transform 1.5s var(--door-ease), opacity .75s ease-in .55s;
-  opacity: 0;
+  transform: translate3d(-102%, 0, 0);
+  transition: transform 1.15s var(--door-ease);
+}
+
+.gate.opening .ent-door-r {
+  transform: translate3d(102%, 0, 0);
+  transition: transform 1.15s var(--door-ease) 60ms;
 }
 
 /* Push the light up as they part, the way a door swinging open spills the
    room out onto the sidewalk. */
-.gate.opening .ent-plate { filter: brightness(1) saturate(1.04); transition: filter 1.2s var(--ease-out); }
+.gate.opening .ent-plate { filter: brightness(1.05) saturate(1.05); }
 
 .gate.opening .gate-inner {
   opacity: 0;
@@ -334,272 +326,56 @@
 .gate.opening,
 .gate.opening .ent-scene { background: transparent; }
 
-/* --- the haze ------------------------------------------------------------ */
+/* Both leaves get a lit edge as they swing, so the split reads as a gap
+   opening rather than a straight cut through a photograph. */
+.gate.opening .ent-door-l { box-shadow: 14px 0 46px -6px rgba(0,0,0,.85); }
+.gate.opening .ent-door-r { box-shadow: -14px 0 46px -6px rgba(0,0,0,.85); }
+
+/* ==========================================================================
+   Smoke — added back onto the entrance that was verified working
+
+   Everything above this line is the entrance exactly as it shipped at 581fd59
+   and rendered correctly in the owner's browser. Eight deploys of incremental
+   fixes on top of the v3 rewrite never got back to that, so this restores the
+   known-good file and re-adds only the one thing v3 needed.
+
+   The critical difference from v3: the canvas does NOT use mix-blend-mode.
+   `screen` on a canvas inside .ent-scene pulls the whole scene — plate, its
+   filter, and the masked neon layer — into one blend group, and on a
+   GPU-composited browser that group resolved to black. Software-composited
+   headless resolved it correctly, which is why it passed every local check at
+   four viewport sizes. Plain alpha compositing has no group and no exposure:
+   the smoke simply draws over the storefront. Marginally less luminous, and it
+   renders.
+
+   The doors are gone; confirming 21+ blows the smoke off screen instead.
+   ========================================================================== */
+
+.ent-door-l, .ent-door-r { clip-path: none; }
+.ent-door-r { display: none; }
 
 .smoke-canvas {
   position: absolute;
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  /* Screen, so the haze picks up the neon behind it instead of greying it out.
-     Smoke lit from behind by a sign is the whole point. */
-  mix-blend-mode: screen;
   opacity: 0;
   transition: opacity 1.6s var(--ease-out);
 }
 
 .gate.lighting .smoke-canvas,
 .gate.lit .smoke-canvas,
-.gate.instant .smoke-canvas { opacity: 1; }
+.gate.instant .smoke-canvas { opacity: .8; }
 
-/* Do not fade the canvas out on the way through — the puffs carry their own
-   alpha as they leave, and cross-fading on top of that reads as a dissolve
-   rather than as smoke being blown away. */
-.gate.opening .smoke-canvas { opacity: 1; transition: none; }
+.gate.opening .smoke-canvas { opacity: .8; transition: none; }
 
 @media (prefers-reduced-motion: reduce) {
   .smoke-canvas { display: none; }
 }
 
-/* --- the scrim, re-balanced -----------------------------------------------
-
-   Caught on the deployed site, not locally: the entrance rendered essentially
-   black. Every layer was individually correct — plate loaded, filter applied,
-   mask fetched, smoke drawing at the right density — and the composite was
-   unreadable.
-
-   The cause was cumulative. .gate-scrim was tuned when the plate sat at full
-   brightness behind a film. Since then the plate dropped to .62 to stop the
-   screen-blended smoke going milky, .gate-inner grew its own full-width
-   darkening gradient behind the copy, and the smoke canvas went to opacity 1.
-   Four reasonable decisions, each fine alone, multiplying into near-zero.
-
-   So the scrim now does the one job nothing else does — keeping the nav legible
-   at the very top and grounding the very bottom — and stays out of the middle,
-   where the storefront is the entire point.                                   */
-
-.gate .gate-scrim {
-  background:
-    linear-gradient(180deg, rgba(5,6,10,.72) 0%, rgba(5,6,10,.12) 18%, rgba(5,6,10,0) 42%, rgba(5,6,10,.55) 100%);
+/* The storefront no longer parts — it holds while the smoke leaves. */
+.gate.opening .ent-door-l {
+  transform: none;
+  opacity: 0;
+  transition: opacity .8s ease-in .5s;
 }
-
-/* And the plate comes back up. .62 was set to stop the smoke washing it out,
-   but the smoke's own density was the better lever and it has since come down. */
-.gate.lit .ent-plate { filter: brightness(.86) saturate(1.04) contrast(1.03); }
-
-/* The copy block needs to sit on something of its own now that the scrim has
-   backed off. "GLEN SMOKE SHOP" and the address line were landing on lit shop
-   windows — the busiest, brightest part of the frame — and measured well under
-   4.5:1. This gradient is the only thing standing between that copy and the
-   glass, so it starts earlier and lands harder than it did. */
-.gate-inner::before {
-  background: linear-gradient(180deg,
-    rgba(4,5,9,0) 0%,
-    rgba(4,5,9,.62) 24%,
-    rgba(4,5,9,.9) 52%,
-    rgba(4,5,9,.97) 100%);
-}
-
-.gate-inner {
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 20%);
-          mask-image: linear-gradient(180deg, transparent 0%, #000 20%);
-}
-
-/* --- the copy panel, actually full-bleed ---------------------------------
-
-   .gate-inner still carried max-width:640px from sections.css, so the
-   "full-width" darkening behind the copy was 640px wide with hard vertical
-   edges — the exact pasted-on rectangle this was written to avoid. The block
-   goes full width; the type keeps its measure via the children rule above. */
-.gate-inner { max-width: none; }
-
-/* Hard ceiling on the haze. Whatever the random field does, the storefront has
-   to stay readable through it — atmosphere, not an occluder. */
-.gate.lighting .smoke-canvas,
-.gate.lit .smoke-canvas,
-.gate.instant .smoke-canvas { opacity: .92; }
-
-.gate.opening .smoke-canvas { opacity: .92; transition: none; }
-
-/* --- one darkening layer, not two ----------------------------------------
-
-   The near-black entrance survived the first fix because the diagnosis was
-   incomplete. Hiding EITHER .gate-scrim or .gate-inner made the storefront
-   appear, which looked like each was innocent — but they are multiplicative.
-   Two layers at ~72% over the same region leave 8% of the image, and 8% of a
-   bright stucco fascia is the dark grey that was on screen.
-
-   It also only reproduced at some viewport heights: the scrim's transparent
-   window and .gate-inner's top padding are both vh-based, so on a 723px-tall
-   window they overlap in a way they do not at 844px. Which is why a headless
-   check at one size passed a page that was broken in the real browser.
-
-   So the scrim stops darkening the entrance at all. The copy block's own
-   gradient is the single layer responsible for legibility, and the top of the
-   frame gets a thin bar for the nav rather than a full-height wash. One layer
-   cannot multiply with itself.                                              */
-
-.gate .gate-scrim {
-  background: linear-gradient(180deg, rgba(5,6,10,.6) 0%, rgba(5,6,10,0) 12%);
-}
-
-/* With the scrim out of the middle, the copy block is the only thing keeping
-   the eyebrow and address off the lit windows — so it has to reach real opacity
-   by the time the first line of type appears, not halfway down the block. */
-.gate-inner::before {
-  background: linear-gradient(180deg,
-    rgba(4,5,9,0) 0%,
-    rgba(4,5,9,.55) 11%,
-    rgba(4,5,9,.9) 26%,
-    rgba(4,5,9,.96) 46%,
-    rgba(4,5,9,.98) 100%);
-}
-
-/* The eyebrow and address were still landing on lit windows: .gate-inner's mask
-   fades the whole block (gradient included) in over its first 20%, so by the
-   time the first line of type appears the backing was only about 60% there.
-   The mask was only ever guarding against a hard top edge, and a gradient that
-   starts at fully transparent does that by itself. */
-.gate-inner {
-  -webkit-mask-image: none;
-          mask-image: none;
-}
-
-.gate-inner::before {
-  background: linear-gradient(180deg,
-    rgba(4,5,9,0) 0%,
-    rgba(4,5,9,.5) 8%,
-    rgba(4,5,9,.88) 19%,
-    rgba(4,5,9,.96) 38%,
-    rgba(4,5,9,.98) 100%);
-}
-
-/* --- stop tuning, start bounding -----------------------------------------
-
-   Three rounds of adjusting overlapping translucent layers, each verified
-   headless and each still dark in the real browser. The layers are the problem,
-   not their values: two vh-positioned gradients over the same photograph
-   multiply, and their overlap changes with viewport height, so a value that
-   reads correctly at one size is wrong at another and nothing catches it.
-
-   So the entrance stops using translucent full-frame overlays entirely.
-
-     - The storefront is untouched. Nothing washes over it.
-     - The copy sits on an opaque panel with a hard top edge softened by a
-       single short gradient. It is bounded by its own box, so it cannot creep
-       up the frame at any viewport height.
-     - The scrim is gone from the gate.
-
-   Legibility now depends on one element whose geometry is stated in pixels.   */
-
-.gate .gate-scrim { display: none; }
-
-.gate-inner::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
-  background:
-    linear-gradient(180deg, rgba(4,5,9,0) 0, rgba(4,5,9,.97) 86px),
-    rgba(4,5,9,.97);
-  pointer-events: none;
-}
-
-/* The panel starts just above the type rather than 16vh above it, so its height
-   is driven by content instead of by the viewport. */
-.gate-inner { padding-top: 104px; }
-
-@media (max-width: 700px) {
-  .gate-inner { padding-top: 96px; }
-}
-
-/* --- the actual cause of the black entrance -------------------------------
-
-   .ent-neon is BOTH masked and `mix-blend-mode: screen`. In GPU-composited
-   Chrome that combination promotes it to its own layer and blends it against
-   the parent group's buffer rather than against the storefront plate sitting
-   directly beneath it — so where the mask is opaque it composited to black and
-   wiped out the photograph. Headless Chromium composites in software and blends
-   against the right backdrop, which is why every local check passed a page that
-   was black in the browser it actually ships to.
-
-   `isolation: isolate` on the shared parent forces the blend group to be plate
-   + neon, which is what "screen the sign over the storefront" always meant.
-
-   Three earlier commits adjusted opacity, gradients and layer counts trying to
-   fix this. None of them could have: the layers were never the problem, the
-   blend backdrop was. The tell was that hiding .ent-neon fixed it instantly
-   while every other element could be removed with no effect.                  */
-
-.ent-door {
-  isolation: isolate;
-  /* The doors no longer animate — the reveal is smoke. Promoting them to their
-     own composited layer bought nothing and fed the bug above. */
-  will-change: auto;
-}
-
-/* --- remove the layer rather than keep theorising -------------------------
-
-   `isolation: isolate` did not fix it either. Five deploys have now chased this
-   through opacity, gradients, layer counts, will-change and blend isolation,
-   each theory plausible and each still black in the browser it ships to.
-
-   What is not a theory: hiding .ent-neon makes the storefront render perfectly,
-   every time, in that exact browser. So it goes.
-
-   The cost is nothing. The neon layer re-screened the sign's own glow on top of
-   a photograph that already contains a lit sign — a refinement, not the effect.
-   The storefront is the effect, the smoke is the effect, and the colour cycle
-   still runs on the sign hero on the page behind this gate, which is where the
-   owner actually asked for it.
-
-   A working entrance beats a flourish that only works on my machine.          */
-
-.gate .ent-neon { display: none; }
-
-/* --- it was the filter ----------------------------------------------------
-
-   Re-reading the one test that DID show the storefront in the real browser: it
-   changed three things at once — hid .ent-neon, set a background, and set
-   `filter: none` on .ent-plate. I credited the neon. Removing the neon alone on
-   the next deploy proved that wrong, which leaves the filter.
-
-   A `filter` on .ent-plate promotes it into its own compositing group. Stacked
-   with the screen-blended canvas above it and the masked layer beside it, that
-   group composites to black on this GPU path — while software compositing
-   headless resolves it correctly. Six deploys of chasing the symptom; the tell
-   was in the first successful test and I read it wrong.
-
-   So the dimming moves from `filter` to `opacity`, which does not create the
-   same group. Same visual result, none of the compositing exposure.           */
-
-.gate .ent-plate {
-  filter: none !important;
-  opacity: .2;
-  transition: opacity 1.4s var(--ease-out);
-}
-
-.gate.lit .ent-plate,
-.gate.instant .ent-plate,
-.gate.opening .ent-plate { opacity: 1; }
-
-/* The neon layer can come back now that the plate is not the thing failing. */
-.gate .ent-neon { display: block; }
-
-/* --- reproduce the configuration that was proven to work -------------------
-
-   Seven deploys. Time to stop reasoning and copy the one state that was
-   observed rendering correctly in the target browser, which had BOTH changes at
-   once: no filter on the plate AND no neon layer. I have since shipped each of
-   those alone and each alone is still black. So they are jointly necessary, and
-   both go.
-
-   The neon layer is the loss and it is a small one: the storefront photograph
-   already contains the lit sign, and the colour cycle the owner asked for runs
-   on the sign hero immediately behind this gate.                              */
-
-.gate .ent-neon { display: none !important; }
