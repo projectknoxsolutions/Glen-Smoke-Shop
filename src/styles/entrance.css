@@ -420,3 +420,56 @@
 .gate.instant .smoke-canvas { opacity: .92; }
 
 .gate.opening .smoke-canvas { opacity: .92; transition: none; }
+
+/* --- one darkening layer, not two ----------------------------------------
+
+   The near-black entrance survived the first fix because the diagnosis was
+   incomplete. Hiding EITHER .gate-scrim or .gate-inner made the storefront
+   appear, which looked like each was innocent — but they are multiplicative.
+   Two layers at ~72% over the same region leave 8% of the image, and 8% of a
+   bright stucco fascia is the dark grey that was on screen.
+
+   It also only reproduced at some viewport heights: the scrim's transparent
+   window and .gate-inner's top padding are both vh-based, so on a 723px-tall
+   window they overlap in a way they do not at 844px. Which is why a headless
+   check at one size passed a page that was broken in the real browser.
+
+   So the scrim stops darkening the entrance at all. The copy block's own
+   gradient is the single layer responsible for legibility, and the top of the
+   frame gets a thin bar for the nav rather than a full-height wash. One layer
+   cannot multiply with itself.                                              */
+
+.gate .gate-scrim {
+  background: linear-gradient(180deg, rgba(5,6,10,.6) 0%, rgba(5,6,10,0) 12%);
+}
+
+/* With the scrim out of the middle, the copy block is the only thing keeping
+   the eyebrow and address off the lit windows — so it has to reach real opacity
+   by the time the first line of type appears, not halfway down the block. */
+.gate-inner::before {
+  background: linear-gradient(180deg,
+    rgba(4,5,9,0) 0%,
+    rgba(4,5,9,.55) 11%,
+    rgba(4,5,9,.9) 26%,
+    rgba(4,5,9,.96) 46%,
+    rgba(4,5,9,.98) 100%);
+}
+
+/* The eyebrow and address were still landing on lit windows: .gate-inner's mask
+   fades the whole block (gradient included) in over its first 20%, so by the
+   time the first line of type appears the backing was only about 60% there.
+   The mask was only ever guarding against a hard top edge, and a gradient that
+   starts at fully transparent does that by itself. */
+.gate-inner {
+  -webkit-mask-image: none;
+          mask-image: none;
+}
+
+.gate-inner::before {
+  background: linear-gradient(180deg,
+    rgba(4,5,9,0) 0%,
+    rgba(4,5,9,.5) 8%,
+    rgba(4,5,9,.88) 19%,
+    rgba(4,5,9,.96) 38%,
+    rgba(4,5,9,.98) 100%);
+}
