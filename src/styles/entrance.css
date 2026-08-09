@@ -516,3 +516,28 @@
 @media (max-width: 700px) {
   .gate-inner { padding-top: 96px; }
 }
+
+/* --- the actual cause of the black entrance -------------------------------
+
+   .ent-neon is BOTH masked and `mix-blend-mode: screen`. In GPU-composited
+   Chrome that combination promotes it to its own layer and blends it against
+   the parent group's buffer rather than against the storefront plate sitting
+   directly beneath it — so where the mask is opaque it composited to black and
+   wiped out the photograph. Headless Chromium composites in software and blends
+   against the right backdrop, which is why every local check passed a page that
+   was black in the browser it actually ships to.
+
+   `isolation: isolate` on the shared parent forces the blend group to be plate
+   + neon, which is what "screen the sign over the storefront" always meant.
+
+   Three earlier commits adjusted opacity, gradients and layer counts trying to
+   fix this. None of them could have: the layers were never the problem, the
+   blend backdrop was. The tell was that hiding .ent-neon fixed it instantly
+   while every other element could be removed with no effect.                  */
+
+.ent-door {
+  isolation: isolate;
+  /* The doors no longer animate — the reveal is smoke. Promoting them to their
+     own composited layer bought nothing and fed the bug above. */
+  will-change: auto;
+}
