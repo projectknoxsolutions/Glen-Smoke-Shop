@@ -27,6 +27,18 @@
   justify-content: center;
   overflow: hidden;
   isolation: isolate;
+
+  /* MUST be set, and it is why the sign sat off-centre on desktop.
+     The base `.hero` rule carries `align-items: flex-end`, from the original
+     layout where the copy was pinned to the bottom of a full-bleed photo. In a
+     column flex container that property controls the HORIZONTAL axis, so it was
+     pushing every in-flow child to the right edge. .hero-body never showed it
+     because it is a .wrap and already width:100%; .signstage is shrink-to-fit
+     around .signwrap, so it ended up flush right with all the slack piled on
+     the left — 210px of it at a 1300px viewport, which is exactly the shift
+     that was visible. Stretching the stage to full width lets its own
+     justify-content:center do the centring it was always meant to do. */
+  align-items: stretch;
 }
 
 /* --- the room ------------------------------------------------------------ */
@@ -147,11 +159,31 @@
 
 /* --- the copy under it --------------------------------------------------- */
 
+/* The top padding here has to be stated at BOTH breakpoints, because both of
+   the values it is overriding were reserving space for a sign that is no
+   longer in the background.
+
+   The base rule sets padding-top:120px, and the phone rule sets
+   `calc(46svh + 26px)` — 414px on a 844px-tall screen. Both date from the
+   original hero, where the storefront photo WAS the background and its sign
+   was baked into it: the copy had to start below the middle of the viewport or
+   it would have covered the shop's name. The sign-led hero puts the sign in
+   .signstage, as a real element, directly above this block — so that reserved
+   space is now pure emptiness, and on a phone it was pushing the headline and
+   the call buttons most of a screen further down. That was the gap. */
 .hero-signled .hero-body {
   position: relative;
   z-index: 2;
   text-align: center;
+  padding-top: clamp(24px, 4vh, 56px);
   padding-bottom: clamp(30px, 6vh, 64px);
+}
+
+@media (max-width: 700px) {
+  .hero-signled .hero-body { padding-top: clamp(10px, 2.4vh, 22px); }
+  /* The stats grid is the last thing on the screen on a phone and it was
+     carrying desktop-sized breathing room. */
+  .hero-signled .hero-stats { margin-top: 24px; }
 }
 
 .hero-signled .hero-eyebrow { justify-content: center; }
@@ -234,8 +266,10 @@
 
 @media (max-width: 700px) {
   .logo3d { padding-top: clamp(96px, 13.5vh, 140px); }
+  /* 94vw, not 99. The clip's own framing runs the sign nearly edge to edge,
+     so at 99vw the last letter of "SHOP" sat right on the bezel. */
   .logo3d-video,
-  .logo3d-still { width: min(1122px, 99vw); }
+  .logo3d-still { width: min(1122px, 94vw); }
 }
 
 /* The clip is a lit sign on a dark brick wall, and the hero behind it is a
