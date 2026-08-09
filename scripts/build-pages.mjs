@@ -63,6 +63,19 @@ const LEGACY_ORIGINS = [
   'https://projectknoxsolutions.github.io/Glen-Smoke-Shop',
 ]
 
+/** The public URL path for a section, WITHOUT the .html extension.
+
+    Cloudflare Pages serves every page at its extensionless path and issues a
+    308 from the .html form — /cigars.html permanently redirects to /cigars.
+    Linking with the extension therefore made every nav click, every tile, every
+    breadcrumb and every sitemap entry a redirect: an extra round trip for the
+    visitor, and a sitemap full of URLs that are not the ones Google will index.
+
+    The files on disk keep their .html names — Vite's rollupOptions.input needs
+    real filenames, and Pages maps /cigars onto cigars.html itself. Only what we
+    ADVERTISE changes. */
+const pathFor = (slug) => (slug === 'index' ? '/' : `/${slug}`)
+
 /** The eight doors, in the order they appear on the hub. */
 export const SECTIONS = [
   {
@@ -136,9 +149,9 @@ export const SECTIONS = [
 const navHtml = (current) => `
   <div class="nav-links">
     ${SECTIONS.filter(s => s.slug !== 'visit').map(s =>
-      `<a href="${s.slug}.html"${s.slug === current ? ' aria-current="page"' : ''} data-prefetch>${s.nav}</a>`
+      `<a href="${pathFor(s.slug)}"${s.slug === current ? ' aria-current="page"' : ''} data-prefetch>${s.nav}</a>`
     ).join('\n    ')}
-    <a href="visit.html"${current === 'visit' ? ' aria-current="page"' : ''} data-prefetch>Visit</a>
+    <a href="${pathFor('visit')}"${current === 'visit' ? ' aria-current="page"' : ''} data-prefetch>Visit</a>
   </div>`
 
 /** The strip of other doors that closes every section page. */
@@ -148,7 +161,7 @@ const moreDoors = (current) => `
     <p class="sec-kicker">More of the shop</p>
     <div class="door-strip">
       ${SECTIONS.filter(s => s.slug !== current).map(s =>
-        `<a class="door-chip" href="${s.slug}.html" data-prefetch>${s.tile}</a>`).join('\n      ')}
+        `<a class="door-chip" href="${pathFor(s.slug)}" data-prefetch>${s.tile}</a>`).join('\n      ')}
     </div>
   </div>
 </section>`
@@ -172,7 +185,7 @@ const sectionHead = (s) => `
   </div>
   <div class="pagehead-scrim" aria-hidden="true"></div>
   <div class="wrap pagehead-body">
-    <a class="backlink" href="index.html" data-prefetch>
+    <a class="backlink" href="/" data-prefetch>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
       All sections
     </a>
@@ -186,7 +199,7 @@ const breadcrumbs = (s) => `
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
  {"@type":"ListItem","position":1,"name":"Glen Smoke Shop","item":"${SITE}/"},
- {"@type":"ListItem","position":2,"name":${JSON.stringify(s.tile)},"item":"${SITE}/${s.slug}.html"}]}
+ {"@type":"ListItem","position":2,"name":${JSON.stringify(s.tile)},"item":"${SITE}${pathFor(s.slug)}"}]}
 </script>`
 
 /** Rewrite the shared <head> for one page. */
@@ -247,7 +260,7 @@ for (const s of SECTIONS) {
     head: headFor({
       title: s.title,
       desc: s.desc,
-      url: `${SITE}/${s.slug}.html`,
+      url: `${SITE}${pathFor(s.slug)}`,
       extra: breadcrumbs(s),
     }),
     body,
@@ -257,7 +270,7 @@ for (const s of SECTIONS) {
 /* -------------------------------------------------------------- sitemap -- */
 
 const today = process.env.SOURCE_DATE || new Date().toISOString().slice(0, 10)
-const urls = ['', ...SECTIONS.map(s => `${s.slug}.html`)]
+const urls = ['', ...SECTIONS.map(s => s.slug)]
 fs.writeFileSync(path.join(ROOT, 'public/sitemap.xml'),
 `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

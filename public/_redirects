@@ -1,10 +1,17 @@
 # Cloudflare Pages redirects.
 #
-# www to the bare domain, permanently. One canonical address is worth real
-# money to a local business: every link, citation and review profile that
-# points at either spelling consolidates onto the same URL in Google's index
-# instead of splitting the site's authority across two hosts.
+# The www -> apex redirect does NOT live here, and cannot. Pages' _redirects
+# only accepts a RELATIVE path as the source; an absolute one is silently
+# skipped, which the first build said out loud:
 #
-# :splat carries the rest of the path through, so a deep link like
-# www.glensmokeshop.com/cigars.html lands on cigars.html and not the home page.
-https://www.glensmokeshop.com/*  https://glensmokeshop.com/:splat  301!
+#   Found invalid redirect lines:
+#     - #10: https://www.glensmokeshop.com/*  https://glensmokeshop.com/:splat  301!
+#       Only relative URLs are allowed.
+#
+# A rule that parses, deploys, and does nothing is worse than no rule, because
+# it reads as configured. Host-to-host redirects are done with a Redirect Rule
+# on the zone instead (Rules -> Redirect Rules), which runs at the edge before
+# Pages is reached: hostname eq "www.glensmokeshop.com" -> 301 to
+# https://glensmokeshop.com with the path and query preserved.
+#
+# Path-level redirects, if any are ever needed, belong in this file.
