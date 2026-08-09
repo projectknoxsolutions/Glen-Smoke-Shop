@@ -473,3 +473,46 @@
     rgba(4,5,9,.96) 38%,
     rgba(4,5,9,.98) 100%);
 }
+
+/* --- stop tuning, start bounding -----------------------------------------
+
+   Three rounds of adjusting overlapping translucent layers, each verified
+   headless and each still dark in the real browser. The layers are the problem,
+   not their values: two vh-positioned gradients over the same photograph
+   multiply, and their overlap changes with viewport height, so a value that
+   reads correctly at one size is wrong at another and nothing catches it.
+
+   So the entrance stops using translucent full-frame overlays entirely.
+
+     - The storefront is untouched. Nothing washes over it.
+     - The copy sits on an opaque panel with a hard top edge softened by a
+       single short gradient. It is bounded by its own box, so it cannot creep
+       up the frame at any viewport height.
+     - The scrim is gone from the gate.
+
+   Legibility now depends on one element whose geometry is stated in pixels.   */
+
+.gate .gate-scrim { display: none; }
+
+.gate-inner::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(4,5,9,0) 0, rgba(4,5,9,.97) 86px),
+    rgba(4,5,9,.97);
+  pointer-events: none;
+}
+
+/* The panel starts just above the type rather than 16vh above it, so its height
+   is driven by content instead of by the viewport. */
+.gate-inner { padding-top: 104px; }
+
+@media (max-width: 700px) {
+  .gate-inner { padding-top: 96px; }
+}
