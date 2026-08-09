@@ -365,9 +365,9 @@
 
 .gate.lighting .smoke-canvas,
 .gate.lit .smoke-canvas,
-.gate.instant .smoke-canvas { opacity: .8; }
+.gate.instant .smoke-canvas { opacity: .96; }
 
-.gate.opening .smoke-canvas { opacity: .8; transition: none; }
+.gate.opening .smoke-canvas { opacity: .96; transition: none; }
 
 @media (prefers-reduced-motion: reduce) {
   .smoke-canvas { display: none; }

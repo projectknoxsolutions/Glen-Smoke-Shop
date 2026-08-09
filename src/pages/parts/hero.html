@@ -25,6 +25,17 @@
          .sign-face   the lettering and logo, never recoloured
        Only the face carries the alt text; the other two are decoration. -->
   <div class="signstage">
+    <!-- #logo3d holds the mesh once it loads. The two-plate static sign below
+         is not a placeholder to be swapped out - it is the fallback, and it
+         stays in the DOM so a failed import, missing WebGL or a 404 on the
+         mesh leaves a complete header rather than a hole. -->
+    <!-- The wall-wash behind the mesh. Only visible once the mesh is live; the
+         static sign brings its own bloom plate and does not need this. -->
+    <div class="signglow" aria-hidden="true"></div>
+    <div class="logo3d" id="logo3d"
+         data-mp4="video/sign-neon.mp4"
+         data-webm="video/sign-neon.webm"
+         data-poster="img/sign-neon-poster.jpg"></div>
     <div class="signwrap">
       <picture class="sign-bloom" aria-hidden="true">
         <img src="img/sign-halo-1000.webp" alt="" decoding="async">

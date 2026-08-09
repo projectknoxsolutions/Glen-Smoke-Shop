@@ -92,10 +92,18 @@ export function initEntrance({ onPass, onConfirm }: EntranceHandles): boolean {
   // Drawn, not filmed — see smoke.ts. Reduced motion gets none of it: a
   // full-screen particle field is exactly what that preference is asking us
   // not to do.
+  // Mounted on the GATE, not on .ent-scene. It lived inside the scene at first,
+  // which put it underneath .gate-scrim — a radial wash of rgba(5,6,10,.55) in
+  // the middle rising to .9 at the corners, there to keep the copy readable
+  // over the storefront photo. The particles were drawing correctly the whole
+  // time (measured: 25% mean coverage, 75% peak) and the scrim was quietly
+  // multiplying all of it down to nothing. Above the scrim it reads, and it is
+  // where the smoke belongs anyway: in the room, between you and the shop.
+  // .smoke-canvas carries z-index 1, so it still passes under .gate-inner (2)
+  // and the question stays legible.
   let smoke: SmokeHandle | null = null
-  const scene = q('.ent-scene')
-  if (!reduced && scene) {
-    try { smoke = initSmoke(scene) } catch { smoke = null }
+  if (!reduced) {
+    try { smoke = initSmoke(gate as HTMLElement) } catch { smoke = null }
   }
 
   // --- ignition -------------------------------------------------------------

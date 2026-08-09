@@ -59,7 +59,11 @@
   z-index: 1;
   display: flex;
   justify-content: center;
-  padding: clamp(96px, 15vh, 180px) var(--gutter) clamp(24px, 5vh, 56px);
+  /* Top padding has to clear the fixed nav with room to spare — at the old
+     clamp(96px,15vh,180px) the sign's glow ran under the wordmark on a phone.
+     The .logo3d box repeats these values so the clip and the plate it fades
+     out sit in exactly the same place. */
+  padding: clamp(124px, 17vh, 200px) var(--gutter) clamp(20px, 4vh, 44px);
   pointer-events: none;
 }
 
@@ -112,7 +116,7 @@
 @media (max-width: 700px) {
   .sign-bloom { filter: blur(44px) saturate(1.7) brightness(1.2); transform: scale(1.12); }
   .signwrap { width: min(1020px, 90vw); }
-  .signstage { padding-top: clamp(64px, 10vh, 110px); }
+  .signstage { padding-top: clamp(96px, 13.5vh, 140px); }
 }
 
 /* --- the light ----------------------------------------------------------- */
@@ -179,3 +183,130 @@
 /* The headline had a hard <br> in it, which on a centred layout at 380px pushed
    "shelf" onto a third line on its own. It wraps naturally now. */
 .hero-signled .hero-title .thin { white-space: nowrap; }
+
+/* ==========================================================================
+   The neon header
+
+   The clip sits on top of the static two-plate sign and fades it out once it
+   is actually playing. Until then — and forever, if the codec is unsupported
+   or the fetch fails — the static sign is what you see. Nothing here can
+   produce an empty header.
+   ========================================================================== */
+
+/* Sized to the plate it replaces, not by a percentage inset.
+
+   Two goes at an inset both cut the end off "SMOKE SHOP", and for the same
+   reason each time: object-fit:contain fits the clip to whichever axis binds
+   FIRST, and on a 3.43:1 clip in a box that is taller than a third of its
+   width that axis is the width — so the video came out as wide as its box,
+   the box was wider than the viewport, and .hero-signled's overflow:hidden
+   took the difference off both ends.
+
+   So the box is laid out the same way .signstage lays out .signwrap — same
+   top padding, same centring — and the clip is given an explicit width of
+   1.1x the plate's. The extra tenth is the tube glow, which spills past the
+   sign box and would otherwise be clipped flat. */
+.logo3d {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: clamp(124px, 17vh, 200px) var(--gutter) 0;
+  opacity: 0;
+  transition: opacity .9s var(--ease-out);
+  pointer-events: none;
+}
+
+.logo3d.is-live { opacity: 1; }
+
+.logo3d-video,
+.logo3d-still {
+  width: min(1122px, 81.4vw);   /* 1.1x .signwrap's min(1020px, 74vw) */
+  height: auto;
+  aspect-ratio: 3.43 / 1;       /* the crop's ratio; no reflow on load */
+  display: block;
+  object-fit: contain;
+  background: transparent;
+  margin-top: -1.4%;            /* centres the sign box on the plate's centre */
+}
+
+@media (max-width: 700px) {
+  .logo3d { padding-top: clamp(96px, 13.5vh, 140px); }
+  .logo3d-video,
+  .logo3d-still { width: min(1122px, 99vw); }
+}
+
+/* The clip is a lit sign on a dark brick wall, and the hero behind it is a
+   dark interior — so the frame's own black edges do most of the blending for
+   free. This just softens the last of the rectangle so it reads as a sign on
+   a wall rather than as a video window pasted into the page.
+
+   Edges only, and gently. A radial mask here ate the ends of "SMOKE SHOP":
+   the clip is 3.43:1, so a radius that clears the top and bottom is nowhere
+   near wide enough to clear the sides. */
+.logo3d-video,
+.logo3d-still {
+  -webkit-mask-image:
+    linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%),
+    linear-gradient(180deg, transparent 0, #000 9%, #000 91%, transparent 100%);
+  mask-image:
+    linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%),
+    linear-gradient(180deg, transparent 0, #000 9%, #000 91%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+
+/* Once the mesh is up, EVERY flat plate goes — the bloom included.
+   Driven by a class the loader sets, not :has(): the selector version left the
+   static wordmark ghosting through the model at a different scale.
+
+   The bloom was kept at first on the theory that blur(90px) had destroyed the
+   shape and left only colour. It had not. The wordmark is nearly 500px tall on
+   a desktop viewport, so a 90px blur is a soft edge on a still-legible letter:
+   a second, larger, badly-registered "Glen" sat behind the mesh and the eye
+   read it as a duplicate. The wall-wash it was providing is now .signglow —
+   the same light, from a shape that cannot spell anything. */
+.signwrap.is-replaced .sign-face,
+.signwrap.is-replaced .sign-halo,
+.signwrap.is-replaced .sign-bloom {
+  opacity: 0;
+  transition: opacity .7s var(--ease-out);
+}
+
+/* The colour the sign throws on the wall behind it. A radial gradient, so
+   there is no lettering left in it to ghost. Cycles on the same programme as
+   the plate did, a beat behind the mesh — bounced light lags its source. */
+.signglow {
+  position: absolute;
+  inset: -40% -18%;
+  z-index: 0;
+  opacity: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(58% 40% at 50% 46%, rgba(255,142,44,.42), rgba(255,142,44,0) 70%),
+    radial-gradient(90% 62% at 50% 50%, rgba(255,86,150,.20), rgba(255,86,150,0) 72%);
+  filter: blur(52px);
+  transition: opacity 1.1s var(--ease-out);
+  animation: signCycle 15s linear infinite;
+  animation-delay: -1.4s;
+}
+
+/* Class toggled by the loader, not :has(). Same reasoning as .is-replaced:
+   a selector that silently fails to match leaves the hero half-dressed, and
+   a class the JS sets cannot silently fail to match. */
+.signstage.mesh-live .signglow { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .signglow { animation: none; }
+}
+
+/* The clip is cropped to 3.43:1 — near enough the static plate's 3.287:1 that
+   the sign lands in almost the same place. The small negative inset is the
+   difference in ratio plus room for the tube glow, which spills past the box.
+
+   It was -46%/-14% when the source was the uncropped 16:9 frame, and at that
+   size the element ran wider than the hero and .hero-signled's overflow:hidden
+   sheared the end off "SMOKE SHOP". Crop the video, not the layout. */
+.logo3d { inset: -14% -6%; }

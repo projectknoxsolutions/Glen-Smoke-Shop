@@ -22,6 +22,7 @@ import pouchImages from './data/pouch-images.json'
 import shelfData from './data/shelf.json'
 
 import { initEntrance } from './entrance'
+import { initLogo3D } from './logo3d'
 import { bind as bindDetail, describe, openFromHash } from './detail'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -827,6 +828,7 @@ function boot() {
   initMap()
   initMotion()
   initPrefetch()
+  initLogo3D()
   initDetails()
   setInterval(initHours, 60_000)   // keep open/closed honest without a reload
 }
