@@ -1,0 +1,35 @@
+<!-- ============================================================== SHOP ====
+     The master index: every brand and every item read off the shelf, in one
+     searchable page.
+
+     This is the page that catches long-tail search. Someone typing "Geek Bar
+     Pulse X Glen Ellyn" or "Al Capone wraps near me" has high intent and low
+     competition, and until now the site had nowhere for them to land — the
+     category pages name brands but not the individual lines and flavours.
+
+     Everything renders server-side into the HTML, then filters client-side.
+     A search that only works with JavaScript is invisible to a crawler, and
+     the crawler is the entire point of this page.
+     ==================================================================== -->
+<section class="section" id="shopindex">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-kicker">The whole shelf</p>
+      <h2 class="sec-title">Everything <span class="thin">we carry</span></h2>
+      <p class="sec-lede" id="shop-lede">Read off the shelves at 944 Roosevelt Rd. Stock moves — call the shop to check a specific item before you drive over.</p>
+    </div>
+
+    <div class="shop-controls reveal">
+      <label class="shop-search">
+        <span class="visually-hidden">Search brands and products</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" id="shop-q" placeholder="Search a brand, flavour or product…" autocomplete="off" spellcheck="false">
+      </label>
+      <div class="shop-filters" id="shop-filters" role="group" aria-label="Filter by category"></div>
+    </div>
+
+    <p class="shop-count" id="shop-count" aria-live="polite"></p>
+    <div class="shop-grid" id="shop-grid"></div>
+    <p class="shop-empty" id="shop-empty" hidden>Nothing matches that. Try a brand name, or <a href="tel:+13315510005">call the shop</a> — if it's behind the counter, someone will know.</p>
+  </div>
+</section>

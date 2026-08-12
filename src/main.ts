@@ -268,6 +268,60 @@ function initRoom21() {
     </article>`).join('')
 }
 
+/* ---------------------------------------------------------------- shop */
+/* Filters the master index. Progressive enhancement ONLY — every card and
+   every product name is already in the HTML from the build, because a crawler
+   that cannot see 615 product names makes this page pointless. If this never
+   runs, the visitor gets the complete list and the browser's own find-in-page,
+   which is a perfectly good fallback. */
+function initShopIndex() {
+  const grid = $('#shop-grid'); if (!grid) return
+  const q = $('#shop-q') as HTMLInputElement | null
+  const chips = $$('.shop-chip')
+  const count = $('#shop-count')
+  const empty = $('#shop-empty')
+  const cards = $$<HTMLElement>('.shop-card')
+
+  let term = '', cat = 'all'
+
+  const apply = () => {
+    let shown = 0
+    for (const c of cards) {
+      const okCat = cat === 'all' || c.dataset.cat === cat
+      // Word-START matching, not substring. Plain .includes() meant searching
+      // "raw" returned eleven brands because it matches STRAWberry — the one
+      // brand actually called RAW was buried among flavour names. Matching on
+      // word starts keeps partial typing working ("geek", "vapor") while
+      // "raw" now finds RAW.
+      const okTerm = !term || (c.dataset.hay || '').split(' ').some(w => w.startsWith(term))
+      const on = okCat && okTerm
+      c.hidden = !on
+      if (on) shown++
+    }
+    if (count) count.textContent = shown === cards.length
+      ? `${cards.length} brands · 615 products`
+      : `${shown} brand${shown === 1 ? '' : 's'} matching`
+    if (empty) empty.hidden = shown !== 0
+  }
+
+  // Debounced: the haystack lives in a data attribute so each pass is a string
+  // compare over ~100 nodes, but typing fires this on every keystroke and there
+  // is no reason to run it faster than the eye can read the result.
+  let t = 0
+  q?.addEventListener('input', () => {
+    clearTimeout(t)
+    t = window.setTimeout(() => { term = q.value.trim().toLowerCase(); apply() }, 120)
+  })
+
+  for (const chip of chips) {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.toggle('on', c === chip))
+      cat = (chip as HTMLElement).dataset.cat || 'all'
+      apply()
+    })
+  }
+}
+
 function initCategories() {
   const el = $('#cat-grid'); if (!el) return
   el.innerHTML = CATEGORIES.map(c0 => { const c = { ...c0, href: PAGE_OF[c0.id] || '/' }; return `
@@ -908,6 +962,7 @@ function boot() {
   initCategories()
   initGear()
   initRoom21()
+  initShopIndex()
   initSectionPhotos()
   initVapes()
   init3D()

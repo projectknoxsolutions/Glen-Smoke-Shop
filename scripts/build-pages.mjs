@@ -41,6 +41,7 @@ const part = {
   gear: P('gear.html'),
   notfound: P('notfound.html'),
   room21: P('room21.html'),
+  shopindex: P('shopindex.html'),
   hookah: P('hookah.html'),
   tour: P('tour.html'),
   reviews: P('reviews.html'),
@@ -334,6 +335,88 @@ for (const s of SECTIONS) {
     body,
   })
 }
+
+/* ---------------------------------------------------------------- shop -- */
+/* The master index is rendered into the HTML at BUILD time, not by the client.
+
+   The whole value of this page is that a crawler can read 97 brands and 615
+   product names on it. A client-rendered list is invisible to that crawler,
+   which would leave the site with a search box that helps nobody find it. The
+   filtering on top is progressive enhancement; the content is not. */
+const SHELF = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/shelf.json'), 'utf8'))
+
+const CAT_PAGE = {
+  disposable: '/vapes', hardware: '/vapes', cigar: '/cigars',
+  paper: '/papers', wrap: '/papers', gear: '/gear', hookah: '/hookah',
+}
+const CAT_LABEL = {
+  disposable: 'Disposables', hardware: 'Vape hardware', cigar: 'Cigars',
+  paper: 'Papers', wrap: 'Wraps', gear: 'Gear', hookah: 'Hookah',
+}
+
+const esc = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+
+function shopBody() {
+  const brands = Object.values(SHELF.brands)
+    .sort((a, b) => a.brand.localeCompare(b.brand))
+
+  const cards = brands.map(b => {
+    const items = Object.entries(b.lines).flatMap(([line, list]) =>
+      list.map(i => ({ line, name: i.name })))
+    const cat = CAT_LABEL[b.category] || b.category
+    const href = CAT_PAGE[b.category] || '/'
+    // Data attributes carry the haystack so the filter never has to walk the DOM.
+    const hay = esc([b.brand, cat, ...items.map(i => i.name), ...Object.keys(b.lines)].join(' ').toLowerCase())
+    // NO .reveal on these. Reveal elements start at opacity 0 and are turned on
+    // by a scroll observer; a card that is display:none when that observer runs
+    // never gets turned on, so filtering to it produced a card that was
+    // un-hidden and still invisible. The grid as a whole reveals instead.
+    return `<article class="shop-card" id="b-${esc(b.catalogId || b.brand.toLowerCase().replace(/\W+/g, '-'))}"
+      data-cat="${esc(b.category)}" data-hay="${hay}">
+      <header class="shop-card-head">
+        <h3 class="shop-brand">${esc(b.brand)}</h3>
+        <a class="shop-cat" href="${href}" data-prefetch>${esc(cat)}</a>
+      </header>
+      <p class="shop-n">${items.length} on the shelf</p>
+      <ul class="shop-items">${items.map(i => `<li>${esc(i.name)}</li>`).join('')}</ul>
+    </article>`
+  }).join('\n')
+
+  const counts = {}
+  for (const b of brands) counts[b.category] = (counts[b.category] || 0) + 1
+  const filters = ['all', ...Object.keys(counts).sort()].map(c =>
+    `<button class="shop-chip${c === 'all' ? ' on' : ''}" data-cat="${c}">${c === 'all' ? 'Everything' : esc(CAT_LABEL[c] || c)}</button>`
+  ).join('')
+
+  const items = brands.reduce((n, b) => n + Object.values(b.lines).reduce((m, l) => m + l.length, 0), 0)
+
+  const ld = {
+    '@context': 'https://schema.org', '@type': 'ItemList',
+    name: 'Everything Glen Smoke Shop carries',
+    numberOfItems: brands.length,
+    itemListElement: brands.map((b, i) => ({ '@type': 'ListItem', position: i + 1, name: b.brand })),
+  }
+
+  return part.shopindex
+    .replace('<div class="shop-filters" id="shop-filters" role="group" aria-label="Filter by category"></div>',
+             `<div class="shop-filters" id="shop-filters" role="group" aria-label="Filter by category">${filters}</div>`)
+    .replace('<div class="shop-grid" id="shop-grid"></div>',
+             `<div class="shop-grid reveal" id="shop-grid">\n${cards}\n</div>`)
+    .replace('<p class="shop-count" id="shop-count" aria-live="polite"></p>',
+             `<p class="shop-count" id="shop-count" aria-live="polite">${brands.length} brands · ${items} products</p>`)
+    + `\n<script type="application/ld+json">${JSON.stringify(ld)}</script>`
+}
+
+bytes += compose({
+  slug: 'shop',
+  current: '',
+  head: headFor({
+    title: 'Every Brand We Carry — Glen Smoke Shop, Glen Ellyn IL',
+    desc: 'The full shelf at Glen Smoke Shop, 944 Roosevelt Rd, Glen Ellyn: every disposable, cigar, wrap, paper, hookah and gear brand we stock, searchable.',
+    url: `${SITE}/shop`,
+  }),
+  body: shopBody(),
+})
 
 /* ------------------------------------------------------------------ 404 -- */
 /* Cloudflare Pages serves 404.html with a real 404 status for any unmatched

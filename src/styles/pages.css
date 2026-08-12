@@ -669,3 +669,157 @@ button.cigar-name::after {
   color: var(--ink-2);
   margin-right: 8px;
 }
+
+/* ==========================================================================
+   SHOP — the master index
+
+   97 brands and 615 products on one page. The job is scanability: a visitor
+   is looking for one brand, and a crawler is reading all of them.
+   ========================================================================== */
+
+.shop-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-top: clamp(20px, 3vh, 34px);
+}
+
+.shop-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1 1 280px;
+  max-width: 420px;
+}
+
+.shop-search svg {
+  position: absolute;
+  left: 14px;
+  width: 16px; height: 16px;
+  color: var(--ink-3);
+  pointer-events: none;
+}
+
+.shop-search input {
+  width: 100%;
+  /* 44px min height: this is the one control on the page everybody touches. */
+  min-height: 46px;
+  padding: 10px 14px 10px 40px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255,255,255,.04);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 14.5px;
+}
+
+.shop-search input:focus-visible {
+  outline: 2px solid rgba(255,138,30,.7);
+  outline-offset: 2px;
+}
+
+.shop-filters { display: flex; flex-wrap: wrap; gap: 7px; }
+
+.shop-chip {
+  min-height: 40px;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-3);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color .25s, border-color .25s, background .25s;
+}
+
+.shop-chip:hover { color: var(--ink); border-color: rgba(255,138,30,.4); }
+.shop-chip.on { color: #0b0b0e; background: var(--accent, #ff8a1e); border-color: transparent; }
+
+.shop-count {
+  margin-top: 18px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.shop-card {
+  padding: 18px 18px 16px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255,255,255,.022);
+}
+
+.shop-card[hidden] { display: none; }
+
+.shop-card-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.shop-brand {
+  font-family: var(--display);
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: .01em;
+  line-height: 1.1;
+}
+
+.shop-cat {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  white-space: nowrap;
+  border-bottom: 1px solid transparent;
+}
+
+.shop-cat:hover { color: var(--ink-2); border-bottom-color: currentColor; }
+
+.shop-n {
+  margin-top: 4px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,138,30,.75);
+}
+
+.shop-items {
+  list-style: none;
+  margin-top: 12px;
+  padding-top: 11px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+}
+
+.shop-items li {
+  font-size: 12.5px;
+  color: var(--ink-3);
+  line-height: 1.5;
+}
+
+.shop-empty { margin-top: 22px; color: var(--ink-3); font-size: 14px; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px;
+  margin: -1px; padding: 0; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}

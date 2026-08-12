@@ -58,7 +58,7 @@
       "notes": "FRONT COUNTER. 4-count foil pouches."
      }
     ],
-    "—": [
+    "\u2014": [
      {
       "id": "4ks-black-sweet",
       "name": "Black Sweet Wraps",
@@ -74,7 +74,7 @@
    "catalogId": "708-cigar",
    "count": 2,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "708-robusto-connecticut",
       "name": "Robusto Connecticut 52x5",
@@ -132,7 +132,7 @@
    "catalogId": "aj-fernandez-cigar-company",
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "aj-fernandez-pack",
       "name": "AJ Fernandez multi-cigar pack",
@@ -148,7 +148,7 @@
    "catalogId": "al-capone",
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "al-capone-leaf-wrap-original",
       "name": "Original Leaf Wrap",
@@ -164,7 +164,7 @@
    "catalogId": null,
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "al-fakher-shisha",
       "name": "Hookah Molasses (assorted flavours)",
@@ -188,7 +188,7 @@
       "notes": "WALK-IN HUMIDOR. Black box, lid reads ALEC BRADLEY / MAXX / Freak. Cigars banded MAXX."
      }
     ],
-    "—": [
+    "\u2014": [
      {
       "id": "alec-bradley-maxx",
       "name": "MAXX",
@@ -204,7 +204,7 @@
    "catalogId": "arturo-fuente",
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "arturo-fuente-imported",
       "name": "Arturo Fuente Imported",
@@ -220,7 +220,7 @@
    "catalogId": "backwoods",
    "count": 13,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "backwoods-original",
       "name": "Original",
@@ -314,7 +314,7 @@
    "catalogId": null,
    "count": 3,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "billionaire-hemp-wraps-pink-lemonade",
       "name": "Pink Lemonade Hemp Wraps",
@@ -342,7 +342,7 @@
    "catalogId": "black-mild",
    "count": 6,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "black-and-mild-original",
       "name": "Original",
@@ -388,7 +388,7 @@
    "catalogId": "blazy-susan",
    "count": 13,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "blazy-susan-pink-1-1-4",
       "name": "Pink Rolling Papers 1 1/4",
@@ -476,7 +476,7 @@
    "catalogId": "blink",
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "blink-mini-neons-torch",
       "name": "Mini Neons Butane Gas Torch Lighter",
@@ -492,7 +492,7 @@
    "catalogId": null,
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "bluntlife-incense",
       "name": "Incense Sticks (assorted fragrances)",
@@ -508,7 +508,7 @@
    "catalogId": "bob-marley",
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "bob-marley-hemp-wraps-ogk",
       "name": "OGK Hemp Wraps",
@@ -690,7 +690,7 @@
    "catalogId": null,
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "camo-blunt-wraps",
       "name": "Blunt Wraps (5 wraps per pack)",
@@ -722,12 +722,12 @@
    "catalogId": null,
    "count": 2,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "casa-blanca-natural",
       "name": "Natural",
       "legibility": "inferred",
-      "notes": "WALK-IN HUMIDOR. NOT IN catalog.json. Cream box; band is gold with two cameo medallions, a two-word script name over the word NATURAL. I read the script as 'Casa Blanca' but could not fully resolve it at native resolution — worth confirming with the owner before publishing. Box format."
+      "notes": "WALK-IN HUMIDOR. NOT IN catalog.json. Cream box; band is gold with two cameo medallions, a two-word script name over the word NATURAL. I read the script as 'Casa Blanca' but could not fully resolve it at native resolution \u2014 worth confirming with the owner before publishing. Box format."
      },
      {
       "id": "casa-blanca-maduro",
@@ -744,7 +744,7 @@
    "catalogId": "city-life",
    "count": 3,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "city-life-napa-grape",
       "name": "Napa Grape",
@@ -796,7 +796,7 @@
       "notes": "WALK-IN HUMIDOR. Red box, red tubes marked TORO. Singles/tubo format."
      }
     ],
-    "—": [
+    "\u2014": [
      {
       "id": "cohiba-humidor",
       "name": "Cohiba (walk-in humidor, multiple lines including Red Dot)",
@@ -812,7 +812,7 @@
    "catalogId": null,
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "cookies-backpack",
       "name": "Backpack",
@@ -907,7 +907,7 @@
    "catalogId": null,
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "da-boss-leaf-gold",
       "name": "Leaf Gold Wraps",
@@ -923,7 +923,7 @@
    "catalogId": "dark-horse",
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "dark-horse-rose-blunt-wraps",
       "name": "Rose Blunt Wraps",
@@ -939,7 +939,7 @@
    "catalogId": "deadwood-tobacco-co",
    "count": 2,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "deadwood-sweet-jane",
       "name": "Sweet Jane",
@@ -1051,7 +1051,7 @@
       "notes": "FRONT COUNTER. Carton of 2-count pouches."
      }
     ],
-    "—": [
+    "\u2014": [
      {
       "id": "dutch-masters-sweet-fusion",
       "name": "Sweet Fusion",
@@ -1067,7 +1067,7 @@
    "catalogId": "elements",
    "count": 3,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "elements-ultra-thin-rice-king-size-slim",
       "name": "Ultra Thin Rice Papers King Size Slim (50 per box)",
@@ -1095,7 +1095,7 @@
    "catalogId": "exseed",
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "exseed-dabcool-w3",
       "name": "Dabcool W3 Electric Rig",
@@ -1111,7 +1111,7 @@
    "catalogId": "factory-smokes",
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "factory-smokes",
       "name": "Factory Smokes bundles",
@@ -1123,7 +1123,7 @@
   },
   "foger": {
    "brand": "Foger",
-   "category": "hardware",
+   "category": "disposable",
    "catalogId": "foger",
    "count": 9,
    "lines": {
@@ -1181,7 +1181,8 @@
       "notes": "Rechargeable device kit shelved with the Foger disposables"
      }
     ]
-   }
+   },
+   "_recategorised": "was 'hardware'. Lines are 30K and Switch Pro \u2014 disposables, not hardware."
   },
   "fujima": {
    "brand": "Fujima",
@@ -1189,7 +1190,7 @@
    "catalogId": "fujima",
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "fujima-cigar-cutter-54-gauge",
       "name": "54 Gauge Cigar Cutter",
@@ -1205,7 +1206,7 @@
    "catalogId": "fum",
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "fum-the-good-habit",
       "name": "The Good Habit Flavoured Air Device",
@@ -1329,7 +1330,7 @@
   },
   "geek-bar": {
    "brand": "Geek Bar",
-   "category": "hardware",
+   "category": "disposable",
    "catalogId": "geek-bar",
    "count": 94,
    "lines": {
@@ -1818,7 +1819,7 @@
       "legibility": "partial"
      }
     ],
-    "—": [
+    "\u2014": [
      {
       "id": "geek-bar-pod-device",
       "name": "Geek Bar Pod Device",
@@ -1826,7 +1827,8 @@
       "notes": "Boxed refillable pod device shelved with the SMOK and Uwell kits"
      }
     ]
-   }
+   },
+   "_recategorised": "was 'hardware'. Lines are Pulse 2, Pulse X2, Pulse X2 Bull Edition, Mate Kit \u2014 disposables. Categorised 'hardware', which labelled the shop's single biggest brand (94 products) as vape hardware on the index."
   },
   "geekvape": {
    "brand": "GeekVape",
@@ -1834,7 +1836,7 @@
    "catalogId": null,
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "geekvape-pod-kit",
       "name": "GeekVape Pod Kit (500mAh, 2mL)",
@@ -1858,7 +1860,7 @@
       "notes": "WALK-IN HUMIDOR. Sampler box; lid reads 'Rare Limited Edition Cigars' with the K. Hansotia & Co. mark. Mixed Gurkha bands inside."
      }
     ],
-    "—": [
+    "\u2014": [
      {
       "id": "gurkha-humidor",
       "name": "Gurkha (walk-in humidor)",
@@ -1874,7 +1876,7 @@
    "catalogId": "high-hemp",
    "count": 4,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "high-hemp-organic-rolling-papers",
       "name": "Organic Rolling Papers",
@@ -1939,7 +1941,7 @@
    "catalogId": "job",
    "count": 2,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "job-1-0-rolling-papers",
       "name": "1.0 Rolling Papers",
@@ -1961,7 +1963,7 @@
    "catalogId": "jumbo",
    "count": 2,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "jumbo-dutch-brown-cones-king-size",
       "name": "Dutch Brown Cones King Size",
@@ -1983,7 +1985,7 @@
    "catalogId": "king-palm",
    "count": 8,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "king-palm-watermelon-wave",
       "name": "Watermelon Wave Real Leaf Rolls",
@@ -2041,7 +2043,7 @@
    "catalogId": null,
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "la-cubana-humidor",
       "name": "La Cubana (walk-in humidor)",
@@ -2057,7 +2059,7 @@
    "catalogId": "la-estrella-cubana",
    "count": 2,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "la-estrella-cubana-red",
       "name": "La Estrella Cubana (red/white box)",
@@ -2084,7 +2086,7 @@
       "id": "la-gloria-cubana-serie-r-esteli",
       "name": "Serie R Esteli",
       "legibility": "clear",
-      "notes": "WALK-IN HUMIDOR. NOT IN catalog.json as its own house — catalog.json currently files 'Serie R Esteli' as a note under Punch, which is wrong. Yellow shelf card reads 'La Gloria Cubana / SERIE R ESTELI' with red-and-yellow bands on the cigars below. Box format."
+      "notes": "WALK-IN HUMIDOR. NOT IN catalog.json as its own house \u2014 catalog.json currently files 'Serie R Esteli' as a note under Punch, which is wrong. Yellow shelf card reads 'La Gloria Cubana / SERIE R ESTELI' with red-and-yellow bands on the cigars below. Box format."
      }
     ]
    }
@@ -2095,7 +2097,7 @@
    "catalogId": null,
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "lookah-seahorse-max",
       "name": "Seahorse Max Electric Nectar Collector",
@@ -2111,7 +2113,7 @@
    "catalogId": null,
    "count": 5,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "looseleaf-peach-dream",
       "name": "Peach Dream Wraps",
@@ -2228,7 +2230,7 @@
       "notes": "WALK-IN HUMIDOR. Silver cello sleeve packs; 'Inspirado' and a Toro count printed on the header."
      }
     ],
-    "—": [
+    "\u2014": [
      {
       "id": "macanudo-black-box",
       "name": "Macanudo (black box)",
@@ -2250,7 +2252,7 @@
    "catalogId": null,
    "count": 3,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "mazaya-two-apples-molasses",
       "name": "Two Apples Molasses",
@@ -2265,7 +2267,7 @@
       "id": "mazaya-shisha",
       "name": "Hookah Molasses (assorted flavours)",
       "legibility": "partial",
-      "notes": "Row of Mazaya boxes; the brand logo is unmistakable but the flavour names are printed in Arabic and too small to read. Fruit artwork suggests mint, citrus, apple and gum variants — not recorded as names because they are not legible."
+      "notes": "Row of Mazaya boxes; the brand logo is unmistakable but the flavour names are printed in Arabic and too small to read. Fruit artwork suggests mint, citrus, apple and gum variants \u2014 not recorded as names because they are not legible."
      }
     ]
    }
@@ -2276,7 +2278,7 @@
    "catalogId": null,
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "metal-pipe-brass-hand-pipe",
       "name": "Brass Bullet-Style Hand Pipe",
@@ -2292,7 +2294,7 @@
    "catalogId": null,
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "montecristo-white-box",
       "name": "Montecristo (white/gold box)",
@@ -2912,7 +2914,7 @@
    "catalogId": null,
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "oilseed-glass-bowl",
       "name": "High Quality Borosilicate Glass Bowl",
@@ -2957,7 +2959,7 @@
       "id": "oliva-serie-o",
       "name": "Serie O",
       "legibility": "clear",
-      "notes": "WALK-IN HUMIDOR. Cedar box, lid reads 'Serie O — Nicaraguan Habano Puro'."
+      "notes": "WALK-IN HUMIDOR. Cedar box, lid reads 'Serie O \u2014 Nicaraguan Habano Puro'."
      }
     ],
     "Serie G": [
@@ -2968,7 +2970,7 @@
       "notes": "WALK-IN HUMIDOR. CORRECTION to catalog.json, which lists 'Serie V Aged Cameroon'. The box lid plainly reads 'Serie G / Aged Cameroon / Made by Hand in Nicaragua'. I found no Serie V box in any frame."
      }
     ],
-    "—": [
+    "\u2014": [
      {
       "id": "oliva-humidor",
       "name": "Oliva (walk-in humidor, Serie G among the facings)",
@@ -2984,7 +2986,7 @@
    "catalogId": "ooze",
    "count": 5,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "ooze-kettle",
       "name": "Kettle Silicone Glass Water Pipe",
@@ -3056,7 +3058,7 @@
       "notes": "WALK-IN HUMIDOR. Gold box plus a shelf plaque carrying 93 / 92 / 91 rating marks. Cigars in gold foil tubes."
      }
     ],
-    "—": [
+    "\u2014": [
      {
       "id": "perdomo-bundle-bag",
       "name": "Perdomo Cigars bundle",
@@ -3080,7 +3082,7 @@
       "notes": "Four facings of the Ploox XS carton are on the top shelf; the brand and line are readable but the printed flavour names are past the resolution of the frame. Worth re-shooting close if the shop wants them listed."
      }
     ],
-    "—": [
+    "\u2014": [
      {
       "id": "ploox-plug-and-play-hookah",
       "name": "Plug and Play Portable Hookah",
@@ -3220,7 +3222,7 @@
    "catalogId": "prolite",
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "prolite-lighter-briquet-torch",
       "name": "Lighter-Briquet Torch with Jet Flame",
@@ -3244,7 +3246,7 @@
       "notes": "WALK-IN HUMIDOR. Box, 'since 1940' on the lid."
      }
     ],
-    "—": [
+    "\u2014": [
      {
       "id": "punch-smoke-like-a-pro-pack",
       "name": "Smoke Like a Pro! pack",
@@ -3260,7 +3262,7 @@
    "catalogId": "quorum",
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "quorum-toro-sampler",
       "name": "Toro Sampler 6x50",
@@ -3272,7 +3274,7 @@
   },
   "raw": {
    "brand": "RAW",
-   "category": "gear",
+   "category": "paper",
    "catalogId": "raw",
    "count": 43,
    "lines": {
@@ -3422,7 +3424,7 @@
       "notes": "Collaboration pack, purple box, organic hemp."
      }
     ],
-    "—": [
+    "\u2014": [
      {
       "id": "raw-tips-original",
       "name": "Original Tips (unbleached, unrefined)",
@@ -3560,7 +3562,8 @@
       "notes": "Black-label ultra-thin cones."
      }
     ]
-   }
+   },
+   "_recategorised": "was 'gear'. RAW's lines are Classic, Organic Hemp, 300's, Black \u2014 rolling papers, cones and tips. Categorised 'gear', which routed the shop's flagship paper brand and its 43 products to /gear. Someone searching RAW landed on grinders."
   },
   "raz": {
    "brand": "RAZ",
@@ -3597,7 +3600,7 @@
       "id": "rocky-patel-the-edge",
       "name": "The Edge",
       "legibility": "clear",
-      "notes": "WALK-IN HUMIDOR. Box printed 'Aged 5 Years / Premium Long Filler Cigar'. A separate plaque nearby reads 'ORIGINAL EDGE — BEWARE OF ALL IMITATIONS'."
+      "notes": "WALK-IN HUMIDOR. Box printed 'Aged 5 Years / Premium Long Filler Cigar'. A separate plaque nearby reads 'ORIGINAL EDGE \u2014 BEWARE OF ALL IMITATIONS'."
      },
      {
       "id": "rocky-patel-the-edge-sampler",
@@ -3630,7 +3633,7 @@
       "notes": "WALK-IN HUMIDOR. Box; lid printed 'Toro 52 x 6'."
      }
     ],
-    "—": [
+    "\u2014": [
      {
       "id": "romeo-y-julieta-toro",
       "name": "Toro",
@@ -3652,7 +3655,7 @@
    "catalogId": null,
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "satya-incense-sticks",
       "name": "Incense Sticks (assorted, incl. Natural and Meditation Dreams)",
@@ -3668,7 +3671,7 @@
    "catalogId": "scorch-torch",
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "scorch-torch-lighter",
       "name": "Butane Torch Lighter",
@@ -3684,7 +3687,7 @@
    "catalogId": "skyline",
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "skyline-ecuador-connecticut",
       "name": "Skyline (Ecuador Connecticut wrapper)",
@@ -3734,7 +3737,7 @@
     "Novo 4": [
      {
       "id": "smok-novo-4-pod-mesh",
-      "name": "Novo 4 Replacement Pod (Mesh 0.8Ω)",
+      "name": "Novo 4 Replacement Pod (Mesh 0.8\u03a9)",
       "legibility": "clear",
       "notes": "3-pack pod cartons"
      }
@@ -3742,7 +3745,7 @@
     "Novo 5": [
      {
       "id": "smok-novo-5-pod-mesh",
-      "name": "Novo 5 Replacement Pod (Mesh 0.8Ω)",
+      "name": "Novo 5 Replacement Pod (Mesh 0.8\u03a9)",
       "legibility": "clear"
      }
     ],
@@ -3784,7 +3787,7 @@
    "catalogId": null,
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "special-blue-lighter-briquet-torch",
       "name": "Lighter-Briquet Torch with Jet Flame",
@@ -3826,7 +3829,7 @@
    "catalogId": null,
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "striker-cigar-punch",
       "name": "8mm cigar punch",
@@ -3842,7 +3845,7 @@
    "catalogId": "suorin",
    "count": 2,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "suorin-drop",
       "name": "Suorin Drop",
@@ -3944,7 +3947,7 @@
    "catalogId": "swisher-sweets",
    "count": 12,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "swisher-sweets-classic",
       "name": "Classic",
@@ -4032,7 +4035,7 @@
    "catalogId": "tabak-especial",
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "tabak-especial",
       "name": "Tabak Especial",
@@ -4048,7 +4051,7 @@
    "catalogId": "tasty-sticks",
    "count": 3,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "tasty-sticks-mango-papaya",
       "name": "Mango Papaya",
@@ -4076,7 +4079,7 @@
    "catalogId": "tatiana",
    "count": 9,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "tatiana-cherry",
       "name": "Cherry",
@@ -4142,7 +4145,7 @@
    "catalogId": "top",
    "count": 2,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "top-fine-gummed-rolling-papers",
       "name": "Fine Gummed Rolling Papers",
@@ -4164,7 +4167,7 @@
    "catalogId": null,
    "count": 11,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "brass-screens-wallet-pack",
       "name": "Brass Pipe Screens (wallet pack)",
@@ -4229,7 +4232,7 @@
       "id": "hookah-charcoal-boxed",
       "name": "Hookah Charcoal (boxed discs)",
       "legibility": "inferred",
-      "notes": "Red retail boxes printed with a hookah and a coal disc, stacked on the accessory counter. The brand name on the box face is not legible at this angle — worth a close re-shoot before listing it by name."
+      "notes": "Red retail boxes printed with a hookah and a coal disc, stacked on the accessory counter. The brand name on the box face is not legible at this angle \u2014 worth a close re-shoot before listing it by name."
      }
     ]
    }
@@ -4393,7 +4396,7 @@
    "catalogId": null,
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "vector-420-torch",
       "name": "420 Torch Lighter",
@@ -4425,7 +4428,7 @@
    "catalogId": "white-owl",
    "count": 9,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "white-owl-pineapple",
       "name": "Pineapple",
@@ -4491,7 +4494,7 @@
    "catalogId": "yocan",
    "count": 1,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "yocan-celestial",
       "name": "Celestial Portable Dab Pen",
@@ -4507,7 +4510,7 @@
    "catalogId": "zig-zag",
    "count": 2,
    "lines": {
-    "—": [
+    "\u2014": [
      {
       "id": "zig-zag-organic-hemp-king-slim",
       "name": "Organic Hemp King Slim Rolling Papers",
