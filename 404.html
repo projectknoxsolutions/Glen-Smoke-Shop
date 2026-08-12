@@ -96,16 +96,8 @@
 <div class="ambient" aria-hidden="true"></div>
 <div class="grain" aria-hidden="true"></div>
 
-<!-- ====================================================== ENTRANCE ==== -->
-<!-- Was an age gate. The owner does not want a 21+ challenge on the way in, so
-     the question, the two buttons and the refusal step are gone and this is now
-     purely the opening shot: the neon strikes, the haze rolls, the doors part
-     and you are in the shop. It blocks nothing — it dismisses itself, and any
-     input at all dismisses it sooner. The one place the site still asks is the
-     21+ Room page, which has its own confirmation on the shelf that warrants it.
-     Not a dialog any more, so no role, no aria-modal, nothing for a screen
-     reader to announce and nothing to trap focus in. -->
-<div class="gate" id="gate" aria-hidden="true">
+<!-- ====================================================== AGE GATE ==== -->
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-q">
   <!-- The entrance. Two copies of the storefront plate, each clipped to one
        side of where the real door leaves meet (--door-seam, measured off the
        photograph — splitting at 50% would tear through the frame post). The
@@ -151,8 +143,21 @@
   <div class="gate-scrim" aria-hidden="true"></div>
 
   <div class="gate-inner">
-    <p class="gate-mark"><span class="thin">Glen</span> Smoke Shop</p>
-    <p class="gate-sub">944 Roosevelt Rd &nbsp;&middot;&nbsp; Glen Ellyn, Illinois</p>
+    <div id="gate-step-1">
+      <p class="gate-mark"><span class="thin">Glen</span> Smoke Shop</p>
+      <p class="gate-sub">944 Roosevelt Rd &nbsp;·&nbsp; Glen Ellyn, Illinois</p>
+      <p class="gate-q" id="gate-q">Are you 21 or older?</p>
+      <p class="gate-note">You must be 21+ to enter. We card everyone, every time.</p>
+      <div class="gate-actions">
+        <button class="btn btn-call" id="gate-yes">Yes, I'm 21+</button>
+        <button class="btn" id="gate-no">No</button>
+      </div>
+    </div>
+    <div id="gate-step-2" class="gate-deny" hidden>
+      <p class="gate-mark" style="animation:none;color:var(--ink-3);text-shadow:none"><span class="thin">Glen</span> Smoke Shop</p>
+      <p>You must be 21 or older to view this site. Thanks for stopping by.</p>
+      <p style="margin-top:26px"><button class="btn" id="gate-back">Go back</button></p>
+    </div>
   </div>
 </div>
 
