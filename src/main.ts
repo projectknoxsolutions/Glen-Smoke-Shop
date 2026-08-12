@@ -349,7 +349,11 @@ function initSectionPhotos() {
   $$('[data-photo]').forEach(fig => {
     const slug = fig.getAttribute('data-photo')!
     const alt = fig.getAttribute('data-alt') || ''
-    fig.insertAdjacentHTML('afterbegin', photo(slug, alt, sizes))
+    // Strip shots sit three-up, so they never need a full-viewport candidate.
+    const s = fig.classList.contains('strip-shot')
+      ? '(max-width:700px) 92vw, (max-width:1100px) 46vw, 31vw'
+      : sizes
+    fig.insertAdjacentHTML('afterbegin', photo(slug, alt, s))
   })
 }
 

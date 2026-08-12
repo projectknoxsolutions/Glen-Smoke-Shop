@@ -169,3 +169,39 @@ a { color: inherit; text-decoration: none; }
   }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* ==========================================================================
+   VIEW TRANSITIONS
+
+   Cross-document, enabled by @view-transition in the head. These names give
+   the browser things to MATCH across the two documents — anything with the
+   same view-transition-name on both pages morphs rather than cross-fading.
+
+   Only three, on purpose. Naming a dozen elements produces a page that
+   appears to reassemble itself, which reads as slow even when it is fast.
+   ========================================================================== */
+
+.nav        { view-transition-name: nav; }
+.footer     { view-transition-name: foot; }
+.sign-strip { view-transition-name: strip; }
+
+/* The default cross-fade is 250ms and feels abrupt against this much dark.
+   Slightly longer, eased out, and only the incoming page moves. */
+::view-transition-old(root) {
+  animation: vt-out .22s var(--ease-out) both;
+}
+::view-transition-new(root) {
+  animation: vt-in .42s var(--ease-out) both;
+}
+
+@keyframes vt-out { to { opacity: 0; } }
+@keyframes vt-in  { from { opacity: 0; transform: translateY(6px); } }
+
+/* The nav and footer are continuous across pages — they must not slide. */
+::view-transition-group(nav),
+::view-transition-group(foot) { animation-duration: .01s; }
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) { animation: none; }
+}

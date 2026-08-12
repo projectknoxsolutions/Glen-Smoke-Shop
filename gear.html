@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#05060A">
 
+<!-- Cross-document view transitions. One line, no library, no router: the
+     browser cross-fades between real page loads and the nav stays put through
+     the change. Browsers without support ignore the rule entirely and get the
+     ordinary navigation they already had, so there is nothing to degrade. -->
+<style>@view-transition { navigation: auto; }</style>
+
 <title>Grinders, Torches, Lighters & Scales — Glen Ellyn, IL</title>
 <meta name="description" content="Grinders, torch lighters, BIC and Clipper, digital scales, glass and silicone storage, trays and tools at Glen Smoke Shop, 944 Roosevelt Rd, Glen Ellyn.">
 <link rel="canonical" href="https://glensmokeshop.com/gear">
@@ -235,6 +241,17 @@
     <div class="gear-grid" id="gear-grid"></div>
 
     <p class="sec-note reveal">Everything here is behind the counter at 944 Roosevelt Rd — ask and it comes out of the case.</p>
+  </div>
+</section>
+
+<!-- The shoot, as a strip. Same idea the owner singled out on the pouch page:
+     real photographs of the real shelf, at a size you can actually read. -->
+<section class="section section-tight" id="gear-strip">
+  <div class="wrap">
+    <div class="photo-strip reveal">
+      <figure class="strip-shot" data-photo="grinder-case" data-alt="Two shelves of metal grinders in anodised and printed finishes"></figure>
+      <figure class="strip-shot" data-photo="lighter-wall" data-alt="BIC and Clipper lighter displays beside jumbo disposables"></figure>
+    </div>
   </div>
 </section>
 
