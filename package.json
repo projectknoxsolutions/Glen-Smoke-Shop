@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "sync:images": "bash scripts/sync-images.sh",
     "guard": "node scripts/guard.mjs",
-    "pages": "node scripts/build-pages.mjs"
+    "pages": "node scripts/build-pages.mjs",
+    "verify": "npm run build && npm run guard && node scripts/check-pages.mjs"
   },
   "keywords": [],
   "author": "",

@@ -42,7 +42,6 @@ const part = {
   notfound: P('notfound.html'),
   room21: P('room21.html'),
   hookah: P('hookah.html'),
-  hemp: P('hemp.html'),
   tour: P('tour.html'),
   reviews: P('reviews.html'),
   visit: P('visit.html'),
