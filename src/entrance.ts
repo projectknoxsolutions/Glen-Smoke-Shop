@@ -1,83 +1,67 @@
 /* ==========================================================================
-   Entrance — the 21+ gate, staged as walking into the shop
+   Entrance — walking into the shop
 
-   Replaces the pre-rendered intro film. The film was 4.4MB and could not
-   begin until it downloaded; this drives the storefront plate the page is
-   already fetching for its hero, so the first frame is whatever the browser
-   has decoded and there is no stall to disguise.
+   This used to be a 21+ age gate. The owner does not want a challenge on the
+   way in, so the question, the two buttons and the refusal step are gone. What
+   is left is the part worth keeping: the storefront in the dark, the neon
+   striking, haze rolling through it, and the doors parting. It blocks nothing.
+   It dismisses itself, and any input at all dismisses it sooner.
+
+   The site still asks on the 21+ Room page, which is the one shelf that
+   warrants it. That confirmation lives in room21 and is unaffected by this.
+
+   It drives the storefront plate the page is already fetching for its hero, so
+   the first frame is whatever the browser has decoded and there is no stall to
+   disguise. The version before that was a 4.4MB pre-rendered film that could
+   not begin until it downloaded.
 
    Sequence:
      black storefront -> neon strikes (uneven, with false starts)
-     -> colour race   -> haze rolls in, question resolves out of the glow
-     -> "Yes, I'm 21+" blows the smoke off screen and you are inside
+     -> colour race   -> haze rolls in -> doors part, and you are inside
 
-   Everything here degrades. No JS: statically lit gate (see entrance.css).
-   Reduced motion: lit, no strike, no doors. Skipped: jumps to lit.
+   Everything degrades. No JS: the gate is statically lit and CSS-hidden, so a
+   crawler and a scripting-disabled browser both get the page, not a black
+   screen. Reduced motion: lit, no strike, no doors, out almost immediately.
    ========================================================================== */
 
 import { initSmoke, type SmokeHandle } from './smoke'
 
-const AGE_KEY = 'gss.age.v1'
 const SEEN_KEY = 'gss.entered.v1'
 
 const STRIKE_MS = 1700
+/** How long the lit storefront holds before the doors open on their own. */
+const HOLD_MS = 1150
 const CLEAR_MS = 1250
 
 export interface EntranceHandles {
   /** Called once the visitor is through — after the doors, not before. */
   onPass: () => void
-  /** Called the instant 21+ is confirmed, before the animation finishes. */
+  /** Kept for the caller's convenience; fires as the doors start to move. */
   onConfirm?: () => void
 }
 
 const q = <T extends Element = HTMLElement>(s: string, r: ParentNode = document) =>
   r.querySelector(s) as T | null
 
-const qq = <T extends Element = HTMLElement>(s: string, r: ParentNode = document) =>
-  Array.from(r.querySelectorAll(s)) as T[]
-
 export function initEntrance({ onPass, onConfirm }: EntranceHandles): boolean {
   const gate = q('#gate')
   if (!gate) return true
 
-  const s1 = q('#gate-step-1')!
-  const s2 = q('#gate-step-2')!
-  const shell = q('#main')!
-  const nav = q('#nav')!
-  const footer = q('.footer')
-
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches
-  const FOCUSABLE = 'a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])'
-
-  // Everything behind the gate leaves the tab order and the accessibility tree
-  // while it is open. Without this the skip link, every nav link and every CTA
-  // underneath stays reachable by keyboard through an opaque overlay.
-  const setBackground = (inert: boolean) => {
-    for (const el of [shell, nav, footer]) {
-      if (!el) continue
-      if (inert) { el.setAttribute('inert', ''); el.setAttribute('aria-hidden', 'true') }
-      else { el.removeAttribute('inert'); el.removeAttribute('aria-hidden') }
-    }
-  }
 
   const release = () => {
     gate.setAttribute('hidden', '')
     document.body.classList.remove('gate-locked')
-    setBackground(false)
   }
 
-  // --- every visit ----------------------------------------------------------
-  // The gate used to remember a confirmation in localStorage and skip itself on
-  // return visits. The owner wants the entrance every time — it is the site's
-  // opening shot, not a toll — so the persistence is gone. The 21+ answer is
-  // still required before anything behind it is reachable, which is the part
-  // that actually matters for compliance.
-  //
-  // It still does NOT re-run within a single session: internal navigation
-  // between the nine pages would otherwise re-gate on every click. sessionStorage
-  // covers that, and closing the tab resets it.
+  // --- once per session, not once per page ----------------------------------
+  // The owner wants the entrance on arrival, every visit — it is the site's
+  // opening shot, not a toll — so nothing is remembered across visits. But it
+  // must NOT re-run on internal navigation, or all nine pages would replay it
+  // on every click. sessionStorage covers exactly that, and closing the tab
+  // resets it.
   let sameSession = false
-  try { sameSession = sessionStorage.getItem(AGE_KEY) === 'ok' } catch { /* private mode */ }
+  try { sameSession = sessionStorage.getItem(SEEN_KEY) === '1' } catch { /* private mode */ }
   if (sameSession) {
     gate.classList.add('lit', 'instant')
     release()
@@ -86,21 +70,18 @@ export function initEntrance({ onPass, onConfirm }: EntranceHandles): boolean {
 
   gate.removeAttribute('hidden')
   document.body.classList.add('gate-locked')
-  setBackground(true)
 
   // --- haze -----------------------------------------------------------------
   // Drawn, not filmed — see smoke.ts. Reduced motion gets none of it: a
   // full-screen particle field is exactly what that preference is asking us
   // not to do.
+  //
   // Mounted on the GATE, not on .ent-scene. It lived inside the scene at first,
-  // which put it underneath .gate-scrim — a radial wash of rgba(5,6,10,.55) in
-  // the middle rising to .9 at the corners, there to keep the copy readable
-  // over the storefront photo. The particles were drawing correctly the whole
-  // time (measured: 25% mean coverage, 75% peak) and the scrim was quietly
-  // multiplying all of it down to nothing. Above the scrim it reads, and it is
-  // where the smoke belongs anyway: in the room, between you and the shop.
-  // .smoke-canvas carries z-index 1, so it still passes under .gate-inner (2)
-  // and the question stays legible.
+  // which put it underneath .gate-scrim — a radial wash of rgba(5,6,10,.55)
+  // rising to .9 at the corners, there to keep the wordmark readable over the
+  // storefront photo. The particles were drawing correctly the whole time
+  // (measured: 25% mean coverage, 75% peak) and the scrim was quietly
+  // multiplying all of it down to nothing.
   let smoke: SmokeHandle | null = null
   if (!reduced) {
     try { smoke = initSmoke(gate as HTMLElement) } catch { smoke = null }
@@ -108,6 +89,7 @@ export function initEntrance({ onPass, onConfirm }: EntranceHandles): boolean {
 
   // --- ignition -------------------------------------------------------------
   let settled = false
+  let openTimer = 0
 
   /** Jump to the lit state, cancelling whatever is mid-flight. */
   const settle = () => {
@@ -115,18 +97,9 @@ export function initEntrance({ onPass, onConfirm }: EntranceHandles): boolean {
     settled = true
     gate.classList.remove('lighting')
     gate.classList.add('lit')
-    try { sessionStorage.setItem(SEEN_KEY, '1') } catch {}
   }
 
-  // SEEN_KEY only suppresses the light show for a repeat view inside one
-  // session (hitting No then Go back, or a reload) — never across visits.
-  let seen = false
-  try { seen = sessionStorage.getItem(SEEN_KEY) === '1' } catch {}
-
-  if (reduced || seen) {
-    // Reduced motion gets no light show. A repeat view within the same session
-    // (they hit No and came back, or reloaded) does not get made to watch the
-    // tubes strike a second time — that is when a flourish turns into a toll.
+  if (reduced) {
     gate.classList.add('instant')
     settle()
   } else {
@@ -134,31 +107,19 @@ export function initEntrance({ onPass, onConfirm }: EntranceHandles): boolean {
     setTimeout(settle, STRIKE_MS)
   }
 
-  // Any input at all skips ahead. The entrance is a gift, not a gate within
-  // the gate; someone who just wants the phone number should never wait.
-  const skip = () => settle()
-  gate.addEventListener('pointerdown', skip, { passive: true })
-  gate.addEventListener('keydown', e => {
-    if (e.key === 'Tab' || e.key === 'Enter' || e.key === ' ') skip()
-  })
-
   // --- walking in -----------------------------------------------------------
   let opening = false
 
   const enter = () => {
     if (opening) return
     opening = true
-    try { sessionStorage.setItem(AGE_KEY, 'ok') } catch {}
+    clearTimeout(openTimer)
+    try { sessionStorage.setItem(SEEN_KEY, '1') } catch {}
     onConfirm?.()
 
     settle()
     gate.classList.add('opening')
     document.body.classList.remove('gate-locked')
-    setBackground(false)
-
-    // Hand focus to the page rather than dropping it on <body>.
-    shell.setAttribute('tabindex', '-1')
-    shell.focus({ preventScroll: true })
 
     const finish = () => {
       gate.setAttribute('hidden', '')
@@ -167,46 +128,33 @@ export function initEntrance({ onPass, onConfirm }: EntranceHandles): boolean {
     }
 
     if (reduced || !smoke) {
-      setTimeout(finish, reduced ? 320 : CLEAR_MS)
+      setTimeout(finish, reduced ? 220 : CLEAR_MS)
     } else {
-      // The storefront and the copy fade while the gust is still running, so
-      // what you actually watch is the smoke leaving — not a crossfade that
-      // happens to have smoke in it.
+      // The storefront and the wordmark fade while the gust is still running,
+      // so what you watch is the smoke leaving — not a crossfade that happens
+      // to have smoke in it.
       smoke.clear().then(finish)
     }
   }
 
-  q('#gate-yes')!.addEventListener('click', enter)
+  // It opens on its own. Nobody has to do anything, and nobody is asked
+  // anything — which is the whole point of this rewrite.
+  openTimer = window.setTimeout(enter, reduced ? 260 : STRIKE_MS + HOLD_MS)
 
-  // Moving focus with each step change: hiding the step the focused button
-  // lives in would otherwise drop focus to <body> and strand the keyboard user.
-  q('#gate-no')!.addEventListener('click', () => {
-    s1.hidden = true; s2.hidden = false
-    ;(q('#gate-back') as HTMLElement).focus()
-  })
-  q('#gate-back')!.addEventListener('click', () => {
-    s2.hidden = true; s1.hidden = false
-    ;(q('#gate-yes') as HTMLElement).focus()
-  })
+  // Any input at all goes straight in. Someone who just wants the phone number
+  // should never wait out an animation, and a keyboard user must not have to
+  // find a control that no longer exists.
+  const skip = () => enter()
+  gate.addEventListener('pointerdown', skip, { passive: true })
+  addEventListener('keydown', skip, { passive: true, once: true })
+  addEventListener('wheel', skip, { passive: true, once: true })
 
-  gate.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      // Escape must never grant entry. It steps back to the question.
-      if (!s2.hidden) {
-        s2.hidden = true; s1.hidden = false
-        ;(q('#gate-yes') as HTMLElement).focus()
-      }
-      e.preventDefault()
-      return
-    }
-    if (e.key !== 'Tab') return
-    const items = qq<HTMLElement>(FOCUSABLE, gate).filter(el => el.offsetParent !== null)
-    if (!items.length) return
-    const first = items[0], last = items[items.length - 1]
-    if (e.shiftKey && document.activeElement === first) { last.focus(); e.preventDefault() }
-    else if (!e.shiftKey && document.activeElement === last) { first.focus(); e.preventDefault() }
-  })
-
-  ;(q('#gate-yes') as HTMLElement).focus()
-  return false
+  // Nothing behind the gate is inert any more and there is no focus trap: there
+  // is nothing to focus inside it, and it is leaving in about a second and a
+  // half whatever happens. Trapping focus in a decoration is how you strand a
+  // keyboard user in a curtain.
+  //
+  // The return value used to mean "the visitor confirmed 21+". There is no
+  // confirmation now, so it always reports true: nothing here gates anything.
+  return true
 }

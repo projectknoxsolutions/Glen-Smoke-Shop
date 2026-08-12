@@ -21,6 +21,8 @@ import reviewData from './data/reviews.json'
 import gear from './data/gear.json'
 import room21 from './data/room21.json'
 import pouchImages from './data/pouch-images.json'
+import vapeItems from './data/vape-items.json'
+import cigarItems from './data/cigar-items.json'
 import shelfData from './data/shelf.json'
 
 import { initEntrance } from './entrance'
@@ -74,10 +76,10 @@ function photo(slug: string, alt: string, sizes = '100vw', eager = false): strin
   </picture>`
 }
 
-/* ------------------------------------------------------------------ gate */
+/* ---------------------------------------------------------------- 21+ room */
 
-/** True once the visitor has confirmed 21+, so the hemp shelf need not re-ask. */
-let ageConfirmed = false
+/** Set and read only by the 21+ Room's own confirmation. See initPortal. */
+const ROOM21_KEY = 'gss.room21.v1'
 
 /* ------------------------------------------------------------- contact */
 function initContact() {
@@ -565,6 +567,81 @@ const FLAVOR_TINT: Record<string, string> = {
 }
 const tintFor = (f: string) => FLAVOR_TINT[f.toLowerCase()] || '#9AA6BE'
 
+/* ------------------------------------------------------- product shelves */
+/* The pouch grid, generalised. The owner named that grid as the best thing on
+   the site, so the disposable wall and the humidor now get the same treatment:
+   one photograph per product, cut out of the shelf at native resolution.
+
+   Deliberately ONE function driving both, unlike picture()/photo() which are
+   deliberately two. The difference is what a mistake costs. There, guessing the
+   wrong derivative set produces a broken <img> at runtime and nothing at build
+   time. Here both grids consume manifests with the same shape, emitted by the
+   same script (pipeline/items.py), and a divergence would fail the build. */
+type ProductTile = {
+  id: string; brand: string; line?: string
+  flavor?: string; format?: string; confidence?: string
+}
+
+function initShelf(prefix: 'vape' | 'cigar', items: ProductTile[], label: string) {
+  const grid = $(`#${prefix}-grid`), filters = $(`#${prefix}-filters`)
+  if (!grid || !filters) return
+
+  const sub = (i: ProductTile) => i.flavor || i.format || ''
+  grid.innerHTML = items.map(i => {
+    const src = `img/${prefix}/${i.id}`
+    return `<button class="puck has-shot" type="button"
+                 data-brand="${i.brand}" data-hay="${`${i.brand} ${i.line || ''} ${sub(i)}`.toLowerCase()}"
+                 data-title="${i.brand} ${i.line || ''}" data-meta="${sub(i)}">
+      <span class="puck-shot">
+        <picture>
+          <source type="image/avif" srcset="${src}-160.avif 160w, ${src}-320.avif 320w" sizes="(max-width:560px) 27vw, 132px">
+          <img src="${src}-320.jpg" srcset="${src}-160.jpg 160w, ${src}-320.jpg 320w" sizes="(max-width:560px) 27vw, 132px"
+               alt="${i.brand} ${i.line || ''} ${sub(i)} on the shelf at Glen Smoke Shop"
+               loading="lazy" decoding="async" width="320" height="320">
+        </picture>
+      </span>
+      <span class="b">${i.brand}</span>
+      <span class="f">${i.line || ''}</span>
+      <span class="s">${sub(i)}</span>
+    </button>`
+  }).join('')
+
+  // Brands in descending facing count, so the wall's anchors lead. Alphabetical
+  // put IJOY and Ploox — two facings between them — ahead of Geek Bar.
+  const counts = new Map<string, number>()
+  for (const i of items) counts.set(i.brand, (counts.get(i.brand) || 0) + 1)
+  const brands = ['All', ...[...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(e => e[0])]
+  filters.innerHTML = brands.map((b, n) =>
+    `<button class="filter" role="radio" data-v="${b}" aria-checked="${n === 0}">${b}</button>`).join('')
+
+  const status = document.createElement('p')
+  status.className = 'filter-status'
+  status.setAttribute('aria-live', 'polite')
+  grid.before(status)
+
+  let active = 'All'
+  const apply = () => {
+    let shown = 0
+    $$('.puck', grid).forEach(p => {
+      const show = active === 'All' || p.getAttribute('data-brand') === active
+      p.toggleAttribute('hidden', !show)
+      if (show) shown++
+    })
+    status.textContent = active === 'All'
+      ? `${shown} ${label} photographed on our shelves`
+      : `${shown} ${active} ${shown === 1 ? 'facing' : 'facings'}`
+  }
+
+  filters.addEventListener('click', e => {
+    const b = (e.target as HTMLElement).closest('.filter') as HTMLElement | null
+    if (!b) return
+    active = b.getAttribute('data-v') || 'All'
+    $$('.filter', filters).forEach(f => f.setAttribute('aria-checked', String(f === b)))
+    apply()
+  })
+  apply()
+}
+
 function initPouches() {
   const grid = $('#pouch-grid'), filters = $('#pouch-filters')
   if (!grid || !filters) return
@@ -761,14 +838,21 @@ function initPortal() {
       .map(f => `<div class="form-tile"><div class="n">${f.name}</div><div class="d">${f.note}</div></div>`).join('')
   }
 
-  // The site-wide door gate is gone; this page does its own asking, once per
-  // session. If someone did confirm at the door in this session, honour it
-  // rather than asking twice.
-  if (ageConfirmed) portal.classList.add('unlocked')
+  // This page does its own asking, once per session, and it is now the ONLY
+  // place the site asks. The entrance used to carry a 21+ challenge and hand
+  // its answer down to here; the owner did not want that challenge, so the
+  // entrance is a pure opening shot and this confirmation stands alone. Note
+  // what that means: the flag is set HERE and read HERE, and nothing upstream
+  // can unlock this shelf. When the entrance stopped asking, the variable it
+  // used to set became permanently true — wiring this to it would have quietly
+  // unlocked the one thing that is supposed to be locked.
+  let confirmed = false
+  try { confirmed = sessionStorage.getItem(ROOM21_KEY) === 'ok' } catch { /* private mode */ }
+  if (confirmed) portal.classList.add('unlocked')
 
   $('#portal-unlock')?.addEventListener('click', () => {
     portal.classList.add('unlocked')
-    try { sessionStorage.setItem('gss.age.v1', 'ok') } catch { /* private mode */ }
+    try { sessionStorage.setItem(ROOM21_KEY, 'ok') } catch { /* private mode */ }
     ScrollTrigger.refresh()
   })
 }
@@ -777,15 +861,15 @@ function initPortal() {
 const TOUR = [
   { id: 'IMG_6079', cls: 'w4', alt: 'Wide view of the sales floor, shelves and cases on every wall' },
   { id: 'IMG_6080', cls: 'w2', alt: 'Product shelving and centre display at Glen Smoke Shop' },
-  // Was IMG_6074, which is gone: about ninety hand-written price stickers plus
-  // six ONLY $x.99 starbursts printed into the packaging, on every shelf. Two
-  // legible ones survived a colour sweep and were only caught by eye, so no
-  // window of that frame could be certified. IMG_6087 audited clean end to end.
   { id: 'IMG_6087', cls: 'w2', alt: 'Display case of dab rigs, nectar collectors and silicone pieces' },
   { id: 'IMG_6077', cls: 'w2', alt: 'Lit glass case filled with hand-blown water pipes' },
   { id: 'IMG_6089', cls: 'w2', alt: 'Cedar humidor shelves lined with cigars' },
   { id: 'IMG_6093', cls: 'w3', alt: 'Aisle of disposable vapes stretching to the back of the store' },
+  // Both of these were dropped when price tags were being cropped out rather
+  // than defocused, and both are back now that the rule is about legibility.
+  { id: 'IMG_6074', cls: 'w3', alt: 'A stocked shelf bay of vapes, wraps and hemp-derived products' },
   { id: 'IMG_6070', cls: 'w3', alt: 'Glen Smoke Shop storefront lit up at night' },
+  { id: 'IMG_6094', cls: 'w3', alt: 'The full shelf bay from the counter, floor to arch' },
 ]
 function initGallery() {
   const el = $('#gallery'); if (!el) return
@@ -962,12 +1046,9 @@ function initPrefetch() {
 
 /* --------------------------------------------------------------- boot */
 function boot() {
-  // The entrance returns true when it is not in the way — either the visitor
-  // confirmed 21+ on an earlier visit, or there is no gate on this page.
-  ageConfirmed = initEntrance({
-    onConfirm: () => { ageConfirmed = true; $('#portal')?.classList.add('unlocked') },
-    onPass: () => ScrollTrigger.refresh(),
-  })
+  // The entrance no longer gates anything — it is the opening shot and it
+  // dismisses itself. Nothing downstream waits on it.
+  initEntrance({ onPass: () => ScrollTrigger.refresh() })
   initContact()
   initHours()
   initTicker()
@@ -980,6 +1061,8 @@ function boot() {
   initVapes()
   init3D()
   initPouches()
+  initShelf('vape', vapeItems as ProductTile[], 'disposables')
+  initShelf('cigar', cigarItems as ProductTile[], 'cigars')
   initGlass()
   initSpecGrids()
   initLists()
