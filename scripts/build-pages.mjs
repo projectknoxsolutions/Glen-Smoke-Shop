@@ -39,6 +39,7 @@ const part = {
   cigars: P('cigars.html'),
   papers: P('papers.html'),
   gear: P('gear.html'),
+  notfound: P('notfound.html'),
   hookah: P('hookah.html'),
   hemp: P('hemp.html'),
   tour: P('tour.html'),
@@ -277,6 +278,25 @@ for (const s of SECTIONS) {
     body,
   })
 }
+
+/* ------------------------------------------------------------------ 404 -- */
+/* Cloudflare Pages serves 404.html with a real 404 status for any unmatched
+   path. Without this file it falls back to index.html and answers 200 OK —
+   so every broken link and every typo'd URL looked like a working page, and
+   Google would happily index an unlimited number of them as duplicates of the
+   home page. Measured before this existed: /img/definitely-not-a-real-file
+   returned 200 with the home page's HTML. */
+bytes += compose({
+  slug: '404',
+  current: '',
+  head: headFor({
+    title: 'Page not found — Glen Smoke Shop, Glen Ellyn IL',
+    desc: 'That page could not be found. Browse vapes, pouches, glass, cigars, papers, gear and hookah at Glen Smoke Shop, 944 Roosevelt Rd, Glen Ellyn.',
+    url: `${SITE}/404`,
+    extra: '<meta name="robots" content="noindex">',
+  }),
+  body: part.notfound,
+})
 
 /* -------------------------------------------------------------- sitemap -- */
 

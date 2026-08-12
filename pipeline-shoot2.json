@@ -4,7 +4,8 @@
     "rails": "Shelf rails and case edges carry price stickers. Crop above or between them.",
     "faces": "Frames with a customer or a staff member's face are excluded rather than blurred.",
     "promo": "IMG_6202 carries a 'Last 48 Hours' sign that will read as stale within the week. Excluded.",
-    "printed": "Prices and health claims PRINTED ON PACKAGING are invisible to the colour detector. Every crop must be reviewed by eye at full size before it ships."
+    "printed": "Prices and health claims PRINTED ON PACKAGING are invisible to the colour detector. Every crop must be reviewed by eye at full size before it ships.",
+    "self": "Do not write a literal price into this file, even to document one. It lives inside the scanned tree and the guard will block the build \u2014 correctly. Describe it; do not quote it. (This has now happened twice: once here, once with an excluded brand name in src/data/gear.json.)"
   },
   "images": [
     {
@@ -290,7 +291,7 @@
     },
     {
       "src": "IMG_6185",
-      "why": "DROPPED AFTER PROCESSING. The VivaZen display box carries a printed $7.99 AND the claims 'STRESS RELIEF' and 'MOOD LIFT + ENERGY + FOCUS'. Publishing it would put a price on the site and would make those health claims the shop's own, which is the line the FDA enforces against retailers of kratom-based products. The box is the subject of the frame, so no crop rescues it. Note the green-sticker detector could not have caught this: the price is printed on packaging, not on a shelf tag."
+      "why": "DROPPED AFTER PROCESSING. The VivaZen display box carries a printed price AND the claims 'STRESS RELIEF' and 'MOOD LIFT + ENERGY + FOCUS'. Publishing it would put a price on the site and would make those health claims the shop's own, which is the line the FDA enforces against retailers of kratom-based products. The box is the subject of the frame, so no crop rescues it. Note the green-sticker detector could not have caught this: the price is printed on packaging, not on a shelf tag."
     }
   ]
 }

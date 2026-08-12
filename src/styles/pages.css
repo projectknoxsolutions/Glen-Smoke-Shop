@@ -635,3 +635,12 @@ button.cigar-name::after {
   color: var(--ink-2);
   white-space: nowrap;
 }
+
+/* The 404's category chips. .door-chip already exists for the "more doors"
+   row at the foot of each section page; this is just the container, which
+   that row got from .brand-layout and this page has no reason to inherit. */
+.door-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
