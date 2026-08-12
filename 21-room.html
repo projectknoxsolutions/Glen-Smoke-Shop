@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#05060A">
 
-<title>Hemp Room — Behind the Counter at Glen Smoke Shop, Glen Ellyn IL</title>
-<meta name="description" content="The hemp-derived shelf at Glen Smoke Shop, Glen Ellyn. Categories only. You must be 21 or older; we card everyone, every time.">
-<link rel="canonical" href="https://glensmokeshop.com/hemp">
+<title>Kratom, Kava & Hemp — The 21+ Room at Glen Smoke Shop, Glen Ellyn IL</title>
+<meta name="description" content="Kratom, kava, botanicals and the hemp-derived shelf at Glen Smoke Shop, 944 Roosevelt Rd, Glen Ellyn. Brands and forms only. You must be 21 or older; we card everyone, every time.">
+<link rel="canonical" href="https://glensmokeshop.com/21-room">
 
 <meta property="og:type" content="business.business">
-<meta property="og:title" content="Hemp Room — Behind the Counter at Glen Smoke Shop, Glen Ellyn IL">
-<meta property="og:description" content="The hemp-derived shelf at Glen Smoke Shop, Glen Ellyn. Categories only. You must be 21 or older; we card everyone, every time.">
+<meta property="og:title" content="Kratom, Kava & Hemp — The 21+ Room at Glen Smoke Shop, Glen Ellyn IL">
+<meta property="og:description" content="Kratom, kava, botanicals and the hemp-derived shelf at Glen Smoke Shop, 944 Roosevelt Rd, Glen Ellyn. Brands and forms only. You must be 21 or older; we card everyone, every time.">
 <meta property="og:image" content="https://glensmokeshop.com/img/hero-wide-1600.jpg">
-<meta property="og:url" content="https://glensmokeshop.com/hemp">
+<meta property="og:url" content="https://glensmokeshop.com/21-room">
 <meta property="og:site_name" content="Glen Smoke Shop">
 <meta property="og:image:width" content="1600">
 <meta property="og:image:height" content="865">
@@ -85,7 +85,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
  {"@type":"ListItem","position":1,"name":"Glen Smoke Shop","item":"https://glensmokeshop.com/"},
- {"@type":"ListItem","position":2,"name":"Behind the counter","item":"https://glensmokeshop.com/hemp"}]}
+ {"@type":"ListItem","position":2,"name":"Behind the counter","item":"https://glensmokeshop.com/21-room"}]}
 </script>
 </head>
 
@@ -171,7 +171,7 @@
     <a href="/papers" data-prefetch>Papers</a>
     <a href="/gear" data-prefetch>Gear</a>
     <a href="/hookah" data-prefetch>Hookah</a>
-    <a href="/hemp" aria-current="page" data-prefetch>Hemp room</a>
+    <a href="/21-room" aria-current="page" data-prefetch>21+ Room</a>
     <a href="/visit" data-prefetch>Visit</a>
   </div>
   <div class="nav-cta">
@@ -204,34 +204,53 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
       All sections
     </a>
-    <p class="sec-kicker">07 — Behind the counter</p>
+    <p class="sec-kicker">08 — Behind the counter</p>
     <h1 class="pagehead-title">Behind the counter</h1>
     <p class="pagehead-lede">Kept behind the counter, and we card for it.</p>
   </div>
 </header>
-<section class="section" id="hemp">
+<!-- =========================================================== 21+ ROOM ====
+     Replaces the Hemp Room. The owner wanted the shop's 21+ shelf to be the
+     room, not just the hemp part of it — kratom, kava and botanicals sit
+     alongside the hemp-derived categories, because that is how the counter is
+     actually laid out.
+
+     The blocking site-wide age gate is gone; this page keeps a single
+     confirmation of its own, remembered for the session. That is the shape the
+     owner asked for: the site opens freely, and the one shelf that warrants a
+     check does the checking.
+
+     NOTHING on this page describes how any product feels or what it does. See
+     src/data/room21.json for why, and what was dropped to keep it true.
+     ======================================================================= -->
+<section class="section" id="room21">
   <div class="wrap">
     <div class="sec-head reveal">
-      <p class="sec-kicker">07 — Behind the counter</p>
-      <h2 class="sec-title">Hemp <span class="thin">room</span></h2>
+      <p class="sec-kicker">08 — Behind the counter</p>
+      <h2 class="sec-title">The 21+ <span class="thin">room</span></h2>
+      <p class="sec-lede">Kratom, kava and botanicals, and the hemp-derived shelf. All of it lives behind the counter, and we card for it.</p>
     </div>
+
     <div class="portal reveal" id="portal">
       <div class="portal-lock">
         <h3>21+ only</h3>
-        <p>This shelf covers hemp-derived products and lives behind the counter. Confirm you're 21 or older to see what forms we carry. Categories only — no potency figures and no product claims; the staff will walk you through it in person.</p>
+        <p>This shelf is kept behind the counter. Confirm you're 21 or older to see what the shop carries. Brands and forms only — no potency figures, and nothing about what anything does. Staff will walk you through it in person.</p>
         <button class="btn btn-call" id="portal-unlock">I'm 21 or older — show me</button>
       </div>
+
       <div class="portal-content">
-        <div class="form-grid" id="hemp-forms"></div>
-        <p class="sec-lede" style="margin-top:26px;font-size:13.5px;color:var(--ink-3)">
-          Selection changes weekly and varies by what's in stock. For anything specific, call the shop or come in — staff can walk you through what's on the shelf that day.
-        </p>
+        <figure class="brand-photo reveal" data-photo="botanical-shelf"
+                data-alt="Earth Kratom and Njoy's kratom powders and capsules on a shelf behind the counter">
+          <figcaption>The botanical shelf</figcaption>
+        </figure>
+
+        <div class="room21-grid" id="room21-grid"></div>
+
+        <p class="sec-note reveal">Stock changes weekly. Call the shop on <a href="tel:+13315510005">(331) 551-0005</a> and someone will tell you what's in today.</p>
       </div>
     </div>
   </div>
 </section>
-
-<!-- ========================================================= TOUR ==== -->
 
 
 <section class="section more-doors">

@@ -40,6 +40,7 @@ const part = {
   papers: P('papers.html'),
   gear: P('gear.html'),
   notfound: P('notfound.html'),
+  room21: P('room21.html'),
   hookah: P('hookah.html'),
   hemp: P('hemp.html'),
   tour: P('tour.html'),
@@ -139,12 +140,13 @@ export const SECTIONS = [
     img: 'IMG_6074', parts: ['hookah'],
   },
   {
-    slug: 'hemp', nav: 'Hemp room', tile: 'Behind the counter',
-    title: 'Hemp Room — Behind the Counter at Glen Smoke Shop, Glen Ellyn IL',
-    desc: 'The hemp-derived shelf at Glen Smoke Shop, Glen Ellyn. Categories only. You must be 21 or older; we card everyone, every time.',
-    kicker: '07 — Behind the counter',
+    // Was 'hemp'. The old slug 301s here — see public/_redirects.
+    slug: '21-room', nav: '21+ Room', tile: 'Behind the counter',
+    title: 'Kratom, Kava & Hemp — The 21+ Room at Glen Smoke Shop, Glen Ellyn IL',
+    desc: 'Kratom, kava, botanicals and the hemp-derived shelf at Glen Smoke Shop, 944 Roosevelt Rd, Glen Ellyn. Brands and forms only. You must be 21 or older; we card everyone, every time.',
+    kicker: '08 — Behind the counter',
     lede: 'Kept behind the counter, and we card for it.',
-    img: 'IMG_6081', parts: ['hemp'],
+    img: 'IMG_6081', parts: ['room21'],
   },
   {
     slug: 'visit', nav: 'Visit', tile: 'Visit the shop',

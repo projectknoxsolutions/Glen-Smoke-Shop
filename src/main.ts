@@ -19,6 +19,7 @@ import catalog from './data/catalog.json'
 import store from './data/store.json'
 import reviewData from './data/reviews.json'
 import gear from './data/gear.json'
+import room21 from './data/room21.json'
 import pouchImages from './data/pouch-images.json'
 import shelfData from './data/shelf.json'
 
@@ -212,7 +213,7 @@ function initHeroStats() {
 // form — so every category tile on the home page cost the visitor a redirect.
 const PAGE_OF: Record<string, string> = {
   vapes: '/vapes', pouches: '/pouches', glass: '/glass', cigars: '/cigars',
-  papers: '/papers', gear: '/gear', hookah: '/hookah', hemp: '/hemp',
+  papers: '/papers', gear: '/gear', hookah: '/hookah', '21-room': '/21-room',
 }
 
 const CATEGORIES = [
@@ -227,7 +228,7 @@ const CATEGORIES = [
   // catalog.accessories, a bucket holding Trojan, Vapetasia and Pod Juice, so
   // "31 brands" described nothing a grinder buyer wanted.
   { id: 'gear',    img: 'IMG_6181', name: 'Grinders & Torches', count: () => `${gear.groups.length} kinds of gear`, tint: 'rgba(255,138,30,.22)' },
-  { id: 'hemp',    img: 'IMG_6094', name: 'Hemp Room · 21+',  count: () => 'Behind the counter',                    tint: 'rgba(53,255,122,.26)' },
+  { id: '21-room', img: 'IMG_6094', name: 'The 21+ Room',     count: () => 'Kratom, kava & hemp',                   tint: 'rgba(53,255,122,.26)' },
 ]
 
 /* ---------------------------------------------------------------- gear */
@@ -245,6 +246,25 @@ function initGear() {
       <p class="gear-detail">${g.detail}</p>
       ${g.brands?.length ? `<div class="gear-brands">${g.brands.map(b => `<span class="chip">${b}</span>`).join('')}</div>` : ''}
       ${g.specs?.length ? `<ul class="gear-specs">${g.specs.map(sp => `<li>${sp}</li>`).join('')}</ul>` : ''}
+    </article>`).join('')
+}
+
+/* ------------------------------------------------------------- 21+ room */
+/* Brands, forms, vein colours and origins. Nothing about effects — see
+   src/data/room21.json for the rule and what was dropped to keep it. */
+function initRoom21() {
+  const el = $('#room21-grid'); if (!el) return
+  type G = { id: string; name: string; lede: string; forms?: string[]; veins?: string[]
+             origins?: string[]; note?: string; brands?: Array<{ name: string; source: string }> }
+  el.innerHTML = (room21.groups as G[]).map(g => `
+    <article class="gear-card reveal" id="r21-${g.id}">
+      <h3 class="gear-name">${g.name}</h3>
+      <p class="gear-lede">${g.lede}</p>
+      ${g.brands?.length ? `<div class="gear-brands">${g.brands.map(b => `<span class="chip">${b.name}</span>`).join('')}</div>` : ''}
+      ${g.forms?.length ? `<ul class="gear-specs">${g.forms.map(f => `<li>${f}</li>`).join('')}</ul>` : ''}
+      ${g.veins?.length ? `<p class="r21-meta"><span>Vein</span> ${g.veins.join(' · ')}</p>` : ''}
+      ${g.origins?.length ? `<p class="r21-meta"><span>Origin</span> ${g.origins.join(' · ')}</p>` : ''}
+      ${g.note ? `<p class="gear-detail">${g.note}</p>` : ''}
     </article>`).join('')
 }
 
@@ -662,15 +682,30 @@ function initLists() {
 
 /* ----------------------------------------------------------- hemp gate */
 function initPortal() {
-  const portal = $('#portal'), forms = $('#hemp-forms')
-  if (!portal || !forms) return
-  forms.innerHTML = catalog.hemp_forms
-    .map(f => `<div class="form-tile"><div class="n">${f.name}</div><div class="d">${f.note}</div></div>`).join('')
-  // The visitor already confirmed 21+ at the door. Re-asking is friction, not
-  // compliance - the gate is the control, this is just the section it protects.
+  const portal = $('#portal')
+  if (!portal) return
+
+  // MUST NOT depend on the content element. This previously read
+  //   const portal = $('#portal'), forms = $('#hemp-forms')
+  //   if (!portal || !forms) return
+  // so when the Hemp Room became the 21+ Room and its grid was renamed to
+  // #room21-grid, the whole function returned early — the unlock button
+  // rendered, looked completely normal, and did nothing at all. A guard that
+  // bails on a MISSING OPTIONAL is how you ship a dead button.
+  const forms = $('#hemp-forms')
+  if (forms) {
+    forms.innerHTML = catalog.hemp_forms
+      .map(f => `<div class="form-tile"><div class="n">${f.name}</div><div class="d">${f.note}</div></div>`).join('')
+  }
+
+  // The site-wide door gate is gone; this page does its own asking, once per
+  // session. If someone did confirm at the door in this session, honour it
+  // rather than asking twice.
   if (ageConfirmed) portal.classList.add('unlocked')
-  $('#portal-unlock')!.addEventListener('click', () => {
+
+  $('#portal-unlock')?.addEventListener('click', () => {
     portal.classList.add('unlocked')
+    try { sessionStorage.setItem('gss.age.v1', 'ok') } catch { /* private mode */ }
     ScrollTrigger.refresh()
   })
 }
@@ -872,6 +907,7 @@ function boot() {
   initHeroStats()
   initCategories()
   initGear()
+  initRoom21()
   initSectionPhotos()
   initVapes()
   init3D()

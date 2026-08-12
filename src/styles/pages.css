@@ -644,3 +644,28 @@ button.cigar-name::after {
   flex-wrap: wrap;
   gap: 10px;
 }
+
+/* 21+ room reuses the gear card, plus two metadata rows for vein and origin —
+   the two things someone who knows what they want will scan for first. */
+.room21-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(14px, 2vw, 22px);
+  margin-top: clamp(20px, 3vh, 32px);
+}
+
+.r21-meta {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--ink-3);
+  line-height: 1.5;
+}
+
+.r21-meta span {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin-right: 8px;
+}

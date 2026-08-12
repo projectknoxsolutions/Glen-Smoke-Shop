@@ -1,0 +1,51 @@
+{
+  "_README": "The 21+ Room, replacing the Hemp Room. Two sources, both recorded: `catalog` entries came from the first shoot's extraction, `shoot2` entries were read off IMG_6183 and IMG_6185 at full resolution on 9 Aug 2026.",
+
+  "_claims": "NO EFFECT CLAIMS. Not one. Every product on this page is described by brand, form, and what the label states as its identity — a vein colour, an origin, a count. Nothing about how anything feels, helps, relieves, lifts, calms or energises, for kratom, kava, botanicals or hemp. That is the line the FDA enforces against retailers, and the shelf is impressive enough without crossing it. Strain names like 'Green Malay' and 'White Borneo' are product IDENTITIES (vein colour plus origin), not claims, and are fine. A frame was dropped from this page entirely because its display box carried the words STRESS RELIEF and MOOD LIFT — see pipeline/shoot2.json.",
+
+  "groups": [
+    {
+      "id": "kratom",
+      "name": "Kratom",
+      "lede": "Powders, capsules and tablets, kept behind the counter.",
+      "forms": ["Loose powder", "Capsules", "Tablets", "Extract shots"],
+      "veins": ["Green", "White", "Red", "Gold"],
+      "origins": ["Malay", "Borneo", "Vietnam", "Bali", "Maeng Da", "Trainwreck"],
+      "brands": [
+        { "name": "Earth Kratom", "source": "shoot2" },
+        { "name": "Njoy's", "source": "shoot2" },
+        { "name": "Hello Vietnam", "source": "shoot2" },
+        { "name": "Mood Rite", "source": "shoot2" },
+        { "name": "Bumble Bee", "source": "both" },
+        { "name": "MIT 45", "source": "catalog" },
+        { "name": "O.P.M.S.", "source": "catalog" },
+        { "name": "Happy Hippo", "source": "catalog" },
+        { "name": "Expert Botanicals", "source": "catalog" },
+        { "name": "7Stax", "source": "catalog" },
+        { "name": "Lemmons", "source": "catalog" },
+        { "name": "Dozo Perks", "source": "catalog" },
+        { "name": "Zourz", "source": "catalog" }
+      ]
+    },
+    {
+      "id": "botanicals",
+      "name": "Kava & botanicals",
+      "lede": "The counter display by the register.",
+      "forms": ["Bottled shots", "Capsules"],
+      "note": "Brands are on the shelf and change often — ask at the counter for what is in that day."
+    },
+    {
+      "id": "hemp",
+      "name": "Hemp-derived",
+      "lede": "Categories only, kept behind the counter.",
+      "forms": [
+        "Vapes and cartridges",
+        "Gummies and edibles",
+        "Prerolls",
+        "Flower and concentrates",
+        "Seltzers and drinks"
+      ],
+      "note": "No potency figures and no brand list here on purpose: what is legal to stock in Illinois keeps moving, and a page that goes stale is worse than a page that tells you to ask. Staff will walk you through what is actually on the shelf that day."
+    }
+  ]
+}

@@ -15,3 +15,8 @@
 # https://glensmokeshop.com with the path and query preserved.
 #
 # Path-level redirects, if any are ever needed, belong in this file.
+
+# /hemp became /21-room when the Hemp Room was widened to cover kratom, kava
+# and botanicals as well. A relative source IS allowed here (unlike the
+# host-matching www rule that Pages rejected), so this one actually works.
+/hemp  /21-room  301
