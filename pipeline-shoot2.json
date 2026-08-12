@@ -1,0 +1,296 @@
+{
+  "_README": "The 9 Aug 2026 shoot, mapped to pages. `crop` is [left, top, right, bottom] as fractions of the frame. Every crop is chosen to exclude the shelf rail, because that is where the shop's handwritten green price tags live. Frames confirmed to carry a legible price tag are marked `tags: true` and MUST NOT ship uncropped. A colour detector found tags in 6164, 6178, 6190, 6202 and 6203 but MISSED 6181, which was confirmed by eye \u2014 so the detector is a helper, not the gate. The gate is: no shelf rails.",
+  "_policy": {
+    "rails": "Shelf rails and case edges carry price stickers. Crop above or between them.",
+    "faces": "Frames with a customer or a staff member's face are excluded rather than blurred.",
+    "promo": "IMG_6202 carries a 'Last 48 Hours' sign that will read as stale within the week. Excluded.",
+    "printed": "Prices and health claims PRINTED ON PACKAGING are invisible to the colour detector. Every crop must be reviewed by eye at full size before it ships."
+  },
+  "images": [
+    {
+      "src": "IMG_6151",
+      "slug": "water-pipes-case",
+      "page": "glass",
+      "crop": [
+        0.02,
+        0.06,
+        0.98,
+        0.74
+      ],
+      "alt": "A lit display case of glass water pipes at Glen Smoke Shop, beakers and straight tubes with coloured accents"
+    },
+    {
+      "src": "IMG_6155",
+      "slug": "water-pipes-tall",
+      "page": "glass",
+      "crop": [
+        0.04,
+        0.02,
+        0.96,
+        0.7
+      ],
+      "alt": "Tall straight-tube water pipes and recyclers in a glass case"
+    },
+    {
+      "src": "IMG_6157",
+      "slug": "rigs-and-recyclers",
+      "page": "glass",
+      "crop": [
+        0.03,
+        0.05,
+        0.97,
+        0.72
+      ],
+      "alt": "Small rigs, recyclers and figured glass on a mirrored shelf"
+    },
+    {
+      "src": "IMG_6188",
+      "slug": "hand-pipes-case",
+      "page": "glass",
+      "crop": [
+        0.02,
+        0.1,
+        0.98,
+        0.78
+      ],
+      "alt": "A counter case of hand-blown glass hand pipes in many colours"
+    },
+    {
+      "src": "IMG_6171",
+      "slug": "humidor-wall",
+      "page": "cigars",
+      "crop": [
+        0.02,
+        0.02,
+        0.98,
+        0.8
+      ],
+      "alt": "Cedar shelves of the walk-in humidor stacked with cigar boxes and singles"
+    },
+    {
+      "src": "IMG_6173",
+      "slug": "humidor-boxes",
+      "page": "cigars",
+      "crop": [
+        0.02,
+        0.02,
+        0.98,
+        0.78
+      ],
+      "alt": "Open cigar boxes in the walk-in humidor at Glen Smoke Shop"
+    },
+    {
+      "src": "IMG_6174",
+      "slug": "humidor-singles",
+      "page": "cigars",
+      "crop": [
+        0.03,
+        0.03,
+        0.97,
+        0.76
+      ],
+      "alt": "Premium cigar singles and boxes on cedar shelving"
+    },
+    {
+      "src": "IMG_6175",
+      "slug": "papers-case",
+      "page": "papers",
+      "crop": [
+        0.03,
+        0.04,
+        0.97,
+        0.72
+      ],
+      "alt": "A case of RAW rolling papers, cones and filter tips"
+    },
+    {
+      "src": "IMG_6176",
+      "slug": "papers-wraps",
+      "page": "papers",
+      "crop": [
+        0.03,
+        0.04,
+        0.97,
+        0.7
+      ],
+      "alt": "Rolling papers, blunt wraps and cones across a glass counter"
+    },
+    {
+      "src": "IMG_6196",
+      "slug": "disposable-wall",
+      "page": "vapes",
+      "crop": [
+        0.02,
+        0.02,
+        0.98,
+        0.82
+      ],
+      "alt": "The floor-to-ceiling disposable vape wall at Glen Smoke Shop"
+    },
+    {
+      "src": "IMG_6201",
+      "slug": "disposable-wall-wide",
+      "page": "vapes",
+      "crop": [
+        0.02,
+        0.02,
+        0.98,
+        0.84
+      ],
+      "alt": "Rows of disposable vapes filling a full wall of shelving"
+    },
+    {
+      "src": "IMG_6163",
+      "slug": "vape-hardware",
+      "page": "vapes",
+      "crop": [
+        0.03,
+        0.06,
+        0.97,
+        0.74
+      ],
+      "alt": "Vaporesso XROS and Uwell Caliburn pod kits boxed in a display case"
+    },
+    {
+      "src": "IMG_6198",
+      "slug": "pouch-wall",
+      "page": "pouches",
+      "crop": [
+        0.02,
+        0.02,
+        0.98,
+        0.8
+      ],
+      "alt": "ZYN and LOON nicotine pouch cans arranged across a display rack"
+    },
+    {
+      "src": "IMG_6197",
+      "slug": "pouch-brands",
+      "page": "pouches",
+      "crop": [
+        0.03,
+        0.03,
+        0.97,
+        0.78
+      ],
+      "alt": "Nicotine pouch tins from ZYN, Lucy, Clew and Zimo on a shelf"
+    },
+    {
+      "src": "IMG_6159",
+      "slug": "shisha-wall",
+      "page": "hookah",
+      "crop": [
+        0.02,
+        0.02,
+        0.98,
+        0.8
+      ],
+      "alt": "Tubs of shisha tobacco on a slatwall at Glen Smoke Shop"
+    },
+    {
+      "src": "IMG_6144",
+      "slug": "hookah-stems",
+      "page": "hookah",
+      "crop": [
+        0.02,
+        0.02,
+        0.98,
+        0.86
+      ],
+      "alt": "Hookah stems, bowls and hoses displayed on a dark wall"
+    },
+    {
+      "src": "IMG_6181",
+      "slug": "grinder-case",
+      "page": "gear",
+      "tags": true,
+      "crop": [
+        0.03,
+        0.22,
+        0.97,
+        0.52
+      ],
+      "alt": "Two shelves of metal grinders in anodised and printed finishes",
+      "note": "Crop is the grinder shelf ONLY. The middle and lower shelves in this frame carry both green price stickers and white barcode labels; the colour detector missed them and I found them by eye."
+    },
+    {
+      "src": "IMG_6186",
+      "slug": "lighter-wall",
+      "page": "gear",
+      "crop": [
+        0.04,
+        0.06,
+        0.96,
+        0.64
+      ],
+      "alt": "BIC and Clipper lighter displays beside jumbo disposables"
+    },
+    {
+      "src": "IMG_6183",
+      "slug": "botanical-shelf",
+      "page": "21-room",
+      "crop": [
+        0.5,
+        0.04,
+        0.97,
+        0.62
+      ],
+      "alt": "Earth Kratom and Njoy's kratom powders and capsules on a shelf behind the counter",
+      "note": "Crop starts at 0.50 to exclude a jar carrying a small white price label on its lid. Illegible at delivered size, readable at 5x \u2014 cropped rather than relied on, because 'too small to read' is not the same as 'not there'."
+    },
+    {
+      "src": "IMG_6191",
+      "slug": "main-wall",
+      "page": "index",
+      "crop": [
+        0.02,
+        0.02,
+        0.98,
+        0.86
+      ],
+      "alt": "The main product wall at Glen Smoke Shop, Glen Ellyn"
+    }
+  ],
+  "excluded": [
+    {
+      "src": "IMG_6202",
+      "why": "Legible green price sticker AND a 'Last 48 Hours' promotional sign that dates the photograph."
+    },
+    {
+      "src": "IMG_6203",
+      "why": "Legible green price sticker on the shelf rail, confirmed at full resolution."
+    },
+    {
+      "src": "IMG_6204",
+      "why": "A hand is in frame reaching into the case; also a price sticker."
+    },
+    {
+      "src": "IMG_6178",
+      "why": "Torch case, but the whole frame is covered in green price tags at every shelf level. Also contains an excluded brand's display."
+    },
+    {
+      "src": "IMG_6190",
+      "why": "Price sticker on a box at right; the wider interior is covered by IMG_6191."
+    },
+    {
+      "src": "IMG_6164",
+      "why": "Price tag on the Vaporesso box; IMG_6163 covers the same product better."
+    },
+    {
+      "src": "IMG_6167",
+      "why": "A person is visible through the case glass."
+    },
+    {
+      "src": "IMG_6168",
+      "why": "A person is visible through the case glass."
+    },
+    {
+      "src": "IMG_6177",
+      "why": "Cold drinks cooler \u2014 not a category the site sells on."
+    },
+    {
+      "src": "IMG_6185",
+      "why": "DROPPED AFTER PROCESSING. The VivaZen display box carries a printed $7.99 AND the claims 'STRESS RELIEF' and 'MOOD LIFT + ENERGY + FOCUS'. Publishing it would put a price on the site and would make those health claims the shop's own, which is the line the FDA enforces against retailers of kratom-based products. The box is the subject of the frame, so no crop rescues it. Note the green-sticker detector could not have caught this: the price is printed on packaging, not on a shelf tag."
+    }
+  ]
+}
