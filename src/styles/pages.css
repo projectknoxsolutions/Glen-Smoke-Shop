@@ -501,3 +501,137 @@ button.cigar-name::after {
 #hookah-parts .spec:hover,
 #hookah-parts .spec:focus-visible { border-color: var(--blue); background: var(--blue-dim); }
 #hookah-parts .spec:focus-visible { outline-color: var(--blue); }
+
+/* ==========================================================================
+   GEAR — the counter case
+
+   One card per kind of gear. The card carries a lede, a detail paragraph, the
+   brands whose labels are actually legible in the shoot, and a spec list.
+   Same shape as the pouch tiles the owner singled out as the site's best
+   idea: a real photograph, a name, and the facts you would ask across the
+   counter — not a wall of undifferentiated product shots.
+   ========================================================================== */
+
+.gear-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(14px, 2vw, 22px);
+  margin-top: clamp(24px, 4vh, 44px);
+}
+
+.gear-card {
+  position: relative;
+  padding: clamp(20px, 2.4vw, 28px);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: linear-gradient(165deg, rgba(255,255,255,.035), rgba(255,255,255,.012));
+  overflow: hidden;
+  transition: border-color .45s var(--ease-out), transform .45s var(--ease-out);
+}
+
+/* Lifts toward the light rather than just scaling — the whole site is lit by
+   one sign, and the cards should agree with that. */
+.gear-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px -1px auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,138,30,.55), transparent);
+  opacity: 0;
+  transition: opacity .45s var(--ease-out);
+}
+
+@media (hover: hover) {
+  .gear-card:hover { border-color: rgba(255,138,30,.34); transform: translateY(-3px); }
+  .gear-card:hover::before { opacity: 1; }
+}
+
+.gear-name {
+  font-family: var(--display);
+  text-transform: uppercase;
+  font-size: clamp(19px, 2vw, 24px);
+  letter-spacing: .01em;
+  line-height: 1;
+}
+
+.gear-lede {
+  color: var(--ink-2);
+  font-size: 14.5px;
+  margin-top: 8px;
+}
+
+.gear-detail {
+  color: var(--ink-3);
+  font-size: 13.5px;
+  line-height: 1.62;
+  margin-top: 12px;
+}
+
+.gear-brands {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 16px;
+}
+
+.gear-specs {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.gear-specs li {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+/* The dot is doing the work a bullet would, without the list-item indent. */
+.gear-specs li::before {
+  content: '';
+  display: inline-block;
+  width: 3px; height: 3px;
+  margin-right: 7px;
+  vertical-align: middle;
+  border-radius: 50%;
+  background: rgba(255,138,30,.7);
+}
+
+.sec-note {
+  margin-top: clamp(22px, 3vh, 34px);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gear-card, .gear-card::before { transition: none; }
+  .gear-card:hover { transform: none; }
+}
+
+/* The brand chips were inheriting nothing — "Scorch Torch ProLite Blink" ran
+   together as one string and read as a sentence fragment rather than three
+   separate brands. They are the most scannable thing on the card, so they get
+   a real container. */
+.gear-brands .chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255,255,255,.03);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  white-space: nowrap;
+}

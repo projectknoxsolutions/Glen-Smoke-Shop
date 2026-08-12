@@ -1,0 +1,62 @@
+{
+  "_README": "Read off the 9 Aug 2026 shoot, frames IMG_6178, IMG_6179, IMG_6181, IMG_6186, IMG_6187. Brand names are only listed where the label is legible in the photograph at full resolution. Nothing here is inferred from a category or a supplier list. If a brand cannot be read, it is not in this file — the counts describe what is visibly on the shelf instead. NO PRICES, and note that both IMG_6178 and IMG_6181 carry visible green price stickers, so only tag-free crops of those frames may ship.",
+
+  "_excluded": {
+    "note": "One torch display in IMG_6178 carries a brand that appears on the owner's excluded list. The item photographed is a butane torch rather than the product the rule was written about, but a brand-level rule is a brand-level rule and I am not going to relitigate it on a technicality. It is left out. The brand is named in the commit that added this file, deliberately not here: this file is imported into the bundle, so writing it here would ship the very string the guard exists to keep off the site."
+  },
+
+  "groups": [
+    {
+      "id": "grinders",
+      "name": "Grinders",
+      "lede": "Two full shelves of them, and the case is the first thing you see at the counter.",
+      "detail": "Four-piece metal grinders in anodised finishes — gold, cobalt, red, violet, rainbow — alongside printed and patterned lids, knurled and diamond-cut bodies, clear-window grinders so you can see the chamber, and compact two-piece pocket grinders.",
+      "specs": ["4-piece with kief catch", "2-piece pocket", "Anodised aluminium", "Printed & patterned lids", "Clear-window"]
+    },
+    {
+      "id": "torches",
+      "name": "Torch lighters",
+      "lede": "A case built around jet flame.",
+      "detail": "Single, double and triple-jet torches; angled-neck table torches; slim pen torches; soft-touch bodies in purple, pink, yellow, red and blue. Refillable butane throughout.",
+      "brands": ["Scorch Torch", "ProLite", "Blink"],
+      "specs": ["Single / double / triple jet", "Angled neck", "Pen torch", "Refillable butane", "Adjustable flame"]
+    },
+    {
+      "id": "lighters",
+      "name": "Everyday lighters",
+      "lede": "The wall by the register.",
+      "detail": "Full BIC displays, Clipper, jumbo and standard disposables, keychain torch lighters, and printed novelty sleeves.",
+      "brands": ["BIC", "Clipper", "Blink"],
+      "specs": ["Standard & jumbo", "Keychain torch", "Refillable", "Printed sleeves"]
+    },
+    {
+      "id": "scales",
+      "name": "Digital scales",
+      "lede": "Pocket to platform.",
+      "detail": "Precision pocket scales down to 0.01 g, jewellery scales, and a 3000 g low-profile platform scale.",
+      "brands": ["Fuzion", "Infyniti", "DigitZ"],
+      "specs": ["0.01 g precision", "200 g / 500 g pocket", "3000 g platform", "Tare & calibration"]
+    },
+    {
+      "id": "storage",
+      "name": "Storage & stash",
+      "lede": "Glass, silicone, bamboo and wood.",
+      "detail": "Airtight glass jars with cork and bamboo lids, wooden dugouts with one-hitters, silicone containers in every size from thumb-tip concentrate pots to stackable jars, and wooden storage spheres.",
+      "specs": ["Airtight glass", "Cork & bamboo lids", "Silicone concentrate pots", "Wooden dugouts", "Stackable"]
+    },
+    {
+      "id": "pipes-metal",
+      "name": "Metal pipes & one-hitters",
+      "lede": "Brass, and built to disappear in a pocket.",
+      "detail": "Brass bullet-style one-hitters, taster bats, and metal hand pipes that break down for cleaning.",
+      "specs": ["Brass one-hitter", "Taster bat", "Breaks down to clean"]
+    },
+    {
+      "id": "trays-tools",
+      "name": "Trays & tools",
+      "lede": "The bits that make the rest work.",
+      "detail": "Rolling trays in metal and silicone, dab and packing tools, cleaning brushes, screens, and silicone mats.",
+      "specs": ["Metal & silicone trays", "Dab tools", "Screens", "Cleaning brushes"]
+    }
+  ]
+}

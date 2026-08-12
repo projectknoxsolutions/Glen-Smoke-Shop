@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#05060A">
 
-<title>Hemp Room — Behind the Counter at Glen Smoke Shop, Glen Ellyn IL</title>
-<meta name="description" content="The hemp-derived shelf at Glen Smoke Shop, Glen Ellyn. Categories only. You must be 21 or older; we card everyone, every time.">
-<link rel="canonical" href="https://glensmokeshop.com/hemp">
+<title>Grinders, Torches, Lighters & Scales — Glen Ellyn, IL</title>
+<meta name="description" content="Grinders, torch lighters, BIC and Clipper, digital scales, glass and silicone storage, trays and tools at Glen Smoke Shop, 944 Roosevelt Rd, Glen Ellyn.">
+<link rel="canonical" href="https://glensmokeshop.com/gear">
 
 <meta property="og:type" content="business.business">
-<meta property="og:title" content="Hemp Room — Behind the Counter at Glen Smoke Shop, Glen Ellyn IL">
-<meta property="og:description" content="The hemp-derived shelf at Glen Smoke Shop, Glen Ellyn. Categories only. You must be 21 or older; we card everyone, every time.">
+<meta property="og:title" content="Grinders, Torches, Lighters & Scales — Glen Ellyn, IL">
+<meta property="og:description" content="Grinders, torch lighters, BIC and Clipper, digital scales, glass and silicone storage, trays and tools at Glen Smoke Shop, 944 Roosevelt Rd, Glen Ellyn.">
 <meta property="og:image" content="https://glensmokeshop.com/img/hero-wide-1600.jpg">
-<meta property="og:url" content="https://glensmokeshop.com/hemp">
+<meta property="og:url" content="https://glensmokeshop.com/gear">
 <meta property="og:site_name" content="Glen Smoke Shop">
 <meta property="og:image:width" content="1600">
 <meta property="og:image:height" content="865">
@@ -75,7 +75,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
  {"@type":"ListItem","position":1,"name":"Glen Smoke Shop","item":"https://glensmokeshop.com/"},
- {"@type":"ListItem","position":2,"name":"Behind the counter","item":"https://glensmokeshop.com/hemp"}]}
+ {"@type":"ListItem","position":2,"name":"Grinders, torches & gear","item":"https://glensmokeshop.com/gear"}]}
 </script>
 </head>
 
@@ -159,9 +159,9 @@
     <a href="/glass" data-prefetch>Glass</a>
     <a href="/cigars" data-prefetch>Cigars</a>
     <a href="/papers" data-prefetch>Papers</a>
-    <a href="/gear" data-prefetch>Gear</a>
+    <a href="/gear" aria-current="page" data-prefetch>Gear</a>
     <a href="/hookah" data-prefetch>Hookah</a>
-    <a href="/hemp" aria-current="page" data-prefetch>Hemp room</a>
+    <a href="/hemp" data-prefetch>Hemp room</a>
     <a href="/visit" data-prefetch>Visit</a>
   </div>
   <div class="nav-cta">
@@ -194,34 +194,38 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
       All sections
     </a>
-    <p class="sec-kicker">07 — Behind the counter</p>
-    <h1 class="pagehead-title">Behind the counter</h1>
-    <p class="pagehead-lede">Kept behind the counter, and we card for it.</p>
+    <p class="sec-kicker">06 — Grinders, torches & gear</p>
+    <h1 class="pagehead-title">Grinders, torches & gear</h1>
+    <p class="pagehead-lede">Two shelves of grinders, and a case built around jet flame.</p>
   </div>
 </header>
-<section class="section" id="hemp">
+<!-- ============================================================== GEAR ====
+     Grinders, torches, lighters, scales, storage and tools.
+
+     This page exists because it did not. The home-page tile labelled
+     "Grinders & Torches" carried id:'papers', so PAGE_OF resolved it to the
+     papers page — the same destination as the "Papers & Wraps" tile beside it.
+     Two tiles, one page, and the one that named the thing you wanted was the
+     wrong one.
+
+     The content is read off the 9 Aug shoot at full resolution, not inferred
+     from catalog.json — whose `accessories` array is a dumping ground holding
+     Trojan, Vapetasia, Pod Juice and RAW, and would have produced a "Grinders
+     & Torches" page listing condoms and e-liquid.
+     ==================================================================== -->
+<section class="section" id="gear">
   <div class="wrap">
     <div class="sec-head reveal">
-      <p class="sec-kicker">07 — Behind the counter</p>
-      <h2 class="sec-title">Hemp <span class="thin">room</span></h2>
+      <p class="sec-kicker">06 — Grinders, torches &amp; gear</p>
+      <h2 class="sec-title">The counter <span class="thin">case</span></h2>
+      <p class="sec-lede">Two shelves of grinders, a case built around jet flame, scales down to a hundredth of a gram, and the small things that make everything else work.</p>
     </div>
-    <div class="portal reveal" id="portal">
-      <div class="portal-lock">
-        <h3>21+ only</h3>
-        <p>This shelf covers hemp-derived products and lives behind the counter. Confirm you're 21 or older to see what forms we carry. Categories only — no potency figures and no product claims; the staff will walk you through it in person.</p>
-        <button class="btn btn-call" id="portal-unlock">I'm 21 or older — show me</button>
-      </div>
-      <div class="portal-content">
-        <div class="form-grid" id="hemp-forms"></div>
-        <p class="sec-lede" style="margin-top:26px;font-size:13.5px;color:var(--ink-3)">
-          Selection changes weekly and varies by what's in stock. For anything specific, call the shop or come in — staff can walk you through what's on the shelf that day.
-        </p>
-      </div>
-    </div>
+
+    <div class="gear-grid" id="gear-grid"></div>
+
+    <p class="sec-note reveal">Everything here is behind the counter at 944 Roosevelt Rd — ask and it comes out of the case.</p>
   </div>
 </section>
-
-<!-- ========================================================= TOUR ==== -->
 
 
 <section class="section more-doors">
@@ -233,8 +237,8 @@
       <a class="door-chip" href="/glass" data-prefetch>Glass & water pipes</a>
       <a class="door-chip" href="/cigars" data-prefetch>The walk-in humidor</a>
       <a class="door-chip" href="/papers" data-prefetch>Papers, wraps & gear</a>
-      <a class="door-chip" href="/gear" data-prefetch>Grinders, torches & gear</a>
       <a class="door-chip" href="/hookah" data-prefetch>Hookah & botanicals</a>
+      <a class="door-chip" href="/hemp" data-prefetch>Behind the counter</a>
       <a class="door-chip" href="/visit" data-prefetch>Visit the shop</a>
     </div>
   </div>

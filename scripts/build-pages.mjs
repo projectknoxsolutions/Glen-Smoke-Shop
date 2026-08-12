@@ -38,6 +38,7 @@ const part = {
   glass: P('glass.html'),
   cigars: P('cigars.html'),
   papers: P('papers.html'),
+  gear: P('gear.html'),
   hookah: P('hookah.html'),
   hemp: P('hemp.html'),
   tour: P('tour.html'),
@@ -117,6 +118,16 @@ export const SECTIONS = [
     kicker: '05 — Papers, wraps & gear',
     lede: 'Every size, every material, and the gear that goes with it.',
     img: 'IMG_6084', parts: ['papers'],
+  },
+  {
+    // Its own page at last. See src/pages/parts/gear.html for why it never
+    // had one, and src/data/gear.json for where the content comes from.
+    slug: 'gear', nav: 'Gear', tile: 'Grinders, torches & gear',
+    title: 'Grinders, Torches, Lighters & Scales — Glen Ellyn, IL',
+    desc: 'Grinders, torch lighters, BIC and Clipper, digital scales, glass and silicone storage, trays and tools at Glen Smoke Shop, 944 Roosevelt Rd, Glen Ellyn.',
+    kicker: '06 — Grinders, torches & gear',
+    lede: 'Two shelves of grinders, and a case built around jet flame.',
+    img: 'IMG_6181', parts: ['gear'],
   },
   {
     slug: 'hookah', nav: 'Hookah', tile: 'Hookah & botanicals',

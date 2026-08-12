@@ -18,6 +18,7 @@ import Lenis from 'lenis'
 import catalog from './data/catalog.json'
 import store from './data/store.json'
 import reviewData from './data/reviews.json'
+import gear from './data/gear.json'
 import pouchImages from './data/pouch-images.json'
 import shelfData from './data/shelf.json'
 
@@ -185,9 +186,12 @@ function initHeroStats() {
 }
 
 /* ----------------------------------------------------------- categories */
+// Extensionless, matching what the site advertises everywhere else. These were
+// still '.html' after the move to Cloudflare Pages, which 308-redirects that
+// form — so every category tile on the home page cost the visitor a redirect.
 const PAGE_OF: Record<string, string> = {
-  vapes: 'vapes.html', pouches: 'pouches.html', glass: 'glass.html', cigars: 'cigars.html',
-  papers: 'papers.html', hookah: 'hookah.html', hemp: 'hemp.html',
+  vapes: '/vapes', pouches: '/pouches', glass: '/glass', cigars: '/cigars',
+  papers: '/papers', gear: '/gear', hookah: '/hookah', hemp: '/hemp',
 }
 
 const CATEGORIES = [
@@ -197,13 +201,35 @@ const CATEGORIES = [
   { id: 'cigars',  img: 'IMG_6090', name: 'Cigars & Humidor', count: () => `${catalog.cigars.length} houses`,       tint: 'rgba(255,194,77,.28)' },
   { id: 'papers',  img: 'IMG_6084', name: 'Papers & Wraps',   count: () => `${catalog.papers.length} brands`,       tint: 'rgba(255,45,155,.24)' },
   { id: 'hookah',  img: 'IMG_6081', name: 'Hookah',           count: () => `${catalog.hookah.count} on the shelf`,  tint: 'rgba(46,107,255,.24)' },
-  { id: 'papers',  img: 'IMG_6087', name: 'Grinders & Torches', count: () => `${catalog.accessories.length} brands`, tint: 'rgba(255,138,30,.22)' },
+  // Was id:'papers' — the same destination as the tile directly above it, so
+  // this one silently took you to the papers page. And the count came from
+  // catalog.accessories, a bucket holding Trojan, Vapetasia and Pod Juice, so
+  // "31 brands" described nothing a grinder buyer wanted.
+  { id: 'gear',    img: 'IMG_6181', name: 'Grinders & Torches', count: () => `${gear.groups.length} kinds of gear`, tint: 'rgba(255,138,30,.22)' },
   { id: 'hemp',    img: 'IMG_6094', name: 'Hemp Room · 21+',  count: () => 'Behind the counter',                    tint: 'rgba(53,255,122,.26)' },
 ]
 
+/* ---------------------------------------------------------------- gear */
+/* Rendered from src/data/gear.json, which is read off the photographs rather
+   than from catalog.accessories — see that file's _README for why. */
+function initGear() {
+  const el = $('#gear-grid'); if (!el) return
+  el.innerHTML = (gear.groups as Array<{
+    id: string; name: string; lede: string; detail: string
+    brands?: string[]; specs?: string[]
+  }>).map(g => `
+    <article class="gear-card reveal" id="${g.id}">
+      <h3 class="gear-name">${g.name}</h3>
+      <p class="gear-lede">${g.lede}</p>
+      <p class="gear-detail">${g.detail}</p>
+      ${g.brands?.length ? `<div class="gear-brands">${g.brands.map(b => `<span class="chip">${b}</span>`).join('')}</div>` : ''}
+      ${g.specs?.length ? `<ul class="gear-specs">${g.specs.map(sp => `<li>${sp}</li>`).join('')}</ul>` : ''}
+    </article>`).join('')
+}
+
 function initCategories() {
   const el = $('#cat-grid'); if (!el) return
-  el.innerHTML = CATEGORIES.map(c0 => { const c = { ...c0, href: PAGE_OF[c0.id] || 'index.html' }; return `
+  el.innerHTML = CATEGORIES.map(c0 => { const c = { ...c0, href: PAGE_OF[c0.id] || '/' }; return `
     <a class="cat reveal" href="${c.href}" aria-label="${c.name}" data-prefetch>
       ${picture(c.img, c.name, '(max-width:560px) 100vw, (max-width:1080px) 50vw, 25vw')}
       <span class="cat-glow" style="background:radial-gradient(90% 70% at 50% 100%, ${c.tint}, transparent 70%)"></span>
@@ -815,6 +841,7 @@ function boot() {
   initTicker()
   initHeroStats()
   initCategories()
+  initGear()
   initSectionPhotos()
   initVapes()
   init3D()
