@@ -1,0 +1,346 @@
+[
+  {
+    "id": "ijoy-xp-100k-blueberry-watermelon",
+    "brand": "IJOY",
+    "line": "XP 100K",
+    "flavor": "Blueberry Watermelon",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "ijoy-xp-100k-miami-mint",
+    "brand": "IJOY",
+    "line": "XP 100K",
+    "flavor": "Miami Mint",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "mr-fog-switch-pod-grape-popup",
+    "brand": "Mr Fog",
+    "line": "Switch Pod 45K",
+    "flavor": "Grape Popup",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "lost-mary-mt35000-blue-razz-ice",
+    "brand": "Lost Mary",
+    "line": "MT35000 Turbo",
+    "flavor": "Blue Razz Ice",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "lost-mary-mt35000-strawberry-plus",
+    "brand": "Lost Mary",
+    "line": "MT35000 Turbo",
+    "flavor": "Strawberry+",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "lost-mary-mt35000-pink-lemonade-plus",
+    "brand": "Lost Mary",
+    "line": "MT35000 Turbo",
+    "flavor": "Pink Lemonade+",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "breeze-prime-edition-cherry-lemon",
+    "brand": "Breeze",
+    "line": "Smoke Prime Edition 6000",
+    "flavor": "Cherry Lemon",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "breeze-prime-edition-honeydew-pineapple",
+    "brand": "Breeze",
+    "line": "Smoke Prime Edition 6000",
+    "flavor": "Honeydew Pineapple",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "breeze-pro-edition-watermelon-mint",
+    "brand": "Breeze",
+    "line": "Smoke Pro Edition 2000",
+    "flavor": "Watermelon Mint",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "breeze-pro-edition-spearmint",
+    "brand": "Breeze",
+    "line": "Smoke Pro Edition 2000",
+    "flavor": "Spearmint",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "breeze-pro-edition-blueberry-mint",
+    "brand": "Breeze",
+    "line": "Smoke Pro Edition 2000",
+    "flavor": "Blueberry Mint",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "breeze-pro-edition-strawberry-peach-mint",
+    "brand": "Breeze",
+    "line": "Smoke Pro Edition (10 ct)",
+    "flavor": "Strawberry Peach Mint",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "breeze-pro-edition-tobacco",
+    "brand": "Breeze",
+    "line": "Smoke Pro Edition",
+    "flavor": "Tobacco",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "geek-bar-pulse-x12-coco-berry-bull",
+    "brand": "Geek Bar",
+    "line": "Pulse X12 (Bull Edition)",
+    "flavor": "Coco Berry Bull",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "geek-bar-mate-kit-strawberry-banana",
+    "brand": "Geek Bar",
+    "line": "Mate Kit",
+    "flavor": "Strawberry Banana",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "geek-bar-pulse-x2-watermelon-ice",
+    "brand": "Geek Bar",
+    "line": "Pulse X2",
+    "flavor": "Watermelon Ice",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "geek-bar-mate-kit-blue-razz-ice",
+    "brand": "Geek Bar",
+    "line": "Mate Kit",
+    "flavor": "Blue Razz Ice",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "geek-bar-pulse-x2-watermelon-bull",
+    "brand": "Geek Bar",
+    "line": "Pulse X2 (Bull Edition)",
+    "flavor": "Watermelon Bull",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "geek-bar-pulse-x-peach-jam",
+    "brand": "Geek Bar",
+    "line": "Pulse X",
+    "flavor": "Peach Jam",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "geek-bar-pulse-x-orange-mint",
+    "brand": "Geek Bar",
+    "line": "Pulse X",
+    "flavor": "Orange Mint",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "geek-bar-pulse-x-wild-cherry-slush",
+    "brand": "Geek Bar",
+    "line": "Pulse X",
+    "flavor": "Wild Cherry Slush",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "geek-bar-pulse-punch",
+    "brand": "Geek Bar",
+    "line": "Pulse 15000",
+    "flavor": "Punch",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "geek-bar-pulse-sour-cranapple",
+    "brand": "Geek Bar",
+    "line": "Pulse 15000",
+    "flavor": "Sour Cranapple",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "geek-bar-pulse-blackmintz",
+    "brand": "Geek Bar",
+    "line": "Pulse 15000",
+    "flavor": "Blackmintz",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "ut-50000-wild-berry-drop",
+    "brand": "UT",
+    "line": "50000",
+    "flavor": "Wild Berry Drop",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "ut-50000-aloe-grape",
+    "brand": "UT",
+    "line": "50000",
+    "flavor": "Aloe Grape",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "ut-50000-gold-tobacco",
+    "brand": "UT",
+    "line": "50000",
+    "flavor": "Gold Tobacco",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "ut-50000-cherry-strawberry-gummy",
+    "brand": "UT",
+    "line": "50000",
+    "flavor": "Cherry Strawberry Gummy",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "mr-fog-nova-mint-menthol",
+    "brand": "Mr Fog",
+    "line": "Nova",
+    "flavor": "Mint Menthol",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "mr-fog-nova-bubble-gang-blue-raspberry",
+    "brand": "Mr Fog",
+    "line": "Nova",
+    "flavor": "Bubble Gang Blue Raspberry",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "mr-fog-switch-kiwi-strawberry-ice",
+    "brand": "Mr Fog",
+    "line": "Switch SW15000",
+    "flavor": "Kiwi Strawberry Ice",
+    "confidence": "certain",
+    "source": "IMG_6092"
+  },
+  {
+    "id": "north-stellar-miami-mint",
+    "brand": "North",
+    "line": "Stellar 40000 (Dark Moon Edition)",
+    "flavor": "Miami Mint",
+    "confidence": "certain",
+    "source": "IMG_6082"
+  },
+  {
+    "id": "north-stellar-strawberry-peach-slushy",
+    "brand": "North",
+    "line": "Stellar 40000 (Slushy Edition)",
+    "flavor": "Strawberry Peach Slushy",
+    "confidence": "certain",
+    "source": "IMG_6082"
+  },
+  {
+    "id": "north-stellar-blue-razz-ice",
+    "brand": "North",
+    "line": "Stellar 40000 (Dark Moon Edition)",
+    "flavor": "Blue Razz Ice",
+    "confidence": "certain",
+    "source": "IMG_6082"
+  },
+  {
+    "id": "north-stellar-grape-blow-pop",
+    "brand": "North",
+    "line": "Stellar 40000 (Dark Moon Edition)",
+    "flavor": "Grape Blow Pop",
+    "confidence": "certain",
+    "source": "IMG_6082"
+  },
+  {
+    "id": "north-stellar-strawberry-banana",
+    "brand": "North",
+    "line": "Stellar 40000 (Dark Moon Edition)",
+    "flavor": "Strawberry Banana",
+    "confidence": "certain",
+    "source": "IMG_6082"
+  },
+  {
+    "id": "north-stellar-sour-apple-ice",
+    "brand": "North",
+    "line": "Stellar 40000 (Dark Moon Edition)",
+    "flavor": "Sour Apple Ice",
+    "confidence": "certain",
+    "source": "IMG_6082"
+  },
+  {
+    "id": "posh-max-2-florida-apple",
+    "brand": "Posh",
+    "line": "Max 2.0",
+    "flavor": "Florida Apple",
+    "confidence": "certain",
+    "source": "IMG_6082"
+  },
+  {
+    "id": "posh-max-2-grape-ice",
+    "brand": "Posh",
+    "line": "Max 2.0",
+    "flavor": "Grape Ice",
+    "confidence": "certain",
+    "source": "IMG_6082"
+  },
+  {
+    "id": "posh-max-2-razzmataz",
+    "brand": "Posh",
+    "line": "Max 2.0",
+    "flavor": "Razzmataz",
+    "confidence": "certain",
+    "source": "IMG_6082"
+  },
+  {
+    "id": "north-5000-mango-freeze",
+    "brand": "North",
+    "line": "North 5000",
+    "flavor": "Mango Freeze",
+    "confidence": "certain",
+    "source": "IMG_6093"
+  },
+  {
+    "id": "north-5000-miami-mint",
+    "brand": "North",
+    "line": "North 5000 (Habibi Edition)",
+    "flavor": "Miami Mint",
+    "confidence": "certain",
+    "source": "IMG_6093"
+  },
+  {
+    "id": "north-5000-watermelon-kiwi",
+    "brand": "North",
+    "line": "North 5000",
+    "flavor": "Watermelon Kiwi",
+    "confidence": "certain",
+    "source": "IMG_6093"
+  }
+]
