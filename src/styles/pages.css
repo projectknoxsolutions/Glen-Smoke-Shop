@@ -58,9 +58,12 @@
   padding-bottom: clamp(26px, 4vh, 44px);
 }
 
+/* Bigger than .sec-title (clamp(38px, 7vw, 92px)) at every width. It was not:
+   the two curves crossed at 1086px, so on any laptop the page's <h1> was
+   physically smaller than the first <h2> under it. */
 .pagehead-title {
   font-family: var(--display);
-  font-size: clamp(38px, 8vw, 76px);
+  font-size: clamp(42px, 8vw, 104px);
   line-height: .94;
   letter-spacing: .01em;
   text-transform: uppercase;
@@ -120,6 +123,13 @@
   border-color: var(--orange);
   background: var(--orange-dim);
   transform: translateY(-2px);
+}
+
+/* The master index sits last in every door strip and reads as the "and the
+   rest of it" chip, so it carries the accent rather than the quiet border. */
+.door-chip-all {
+  border-color: var(--line-hot);
+  color: var(--ink);
 }
 
 /* --- current page in the nav -------------------------------------------- */
@@ -837,6 +847,15 @@ button.cigar-name::after {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: clamp(10px, 1.5vw, 16px);
+}
+
+/* auto-fit with 1fr stretches a lone child across the whole grid. On the papers
+   and hookah pages that made one photograph 1312px wide while its `sizes`
+   attribute promised 31vw, so the browser picked a rung a third of the size it
+   needed and painted it soft. Cap it and centre it instead. */
+.photo-strip > .strip-shot:only-child {
+  max-width: 640px;
+  margin-inline: auto;
 }
 
 .strip-shot {

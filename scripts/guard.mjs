@@ -21,7 +21,12 @@ const BANNED = [
   { re: /nitrous\s*oxide/i,    why: 'nitrous' },
   { re: /\bN2O\b/,             why: 'nitrous' },
   { re: /\$\s?\d/,             why: 'looks like a price — the owner does not want prices online' },
-  { re: /\b\d+\.99\b/,         why: 'looks like a price' },
+  // Leading digit 1-9 on purpose. `0.99` is a fraction — a crop coordinate, an
+  // opacity, an easing value — and never a price written that way; "$0.99" is
+  // still caught by the rule above. Before this, pipeline-retouch.json could not
+  // be committed because two crop boxes happen to end at 0.99, and a guard that
+  // fires on coordinates is a guard people start editing around.
+  { re: /\b[1-9]\d*\.99\b/,    why: 'looks like a price' },
   { re: /\bprice[sd]?\s*:\s*\d/i, why: 'looks like a price' },
 ]
 

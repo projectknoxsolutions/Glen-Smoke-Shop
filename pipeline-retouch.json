@@ -1,0 +1,708 @@
+{
+  "_README": "Second compliance pass. See pipeline/retouch.py for the reasoning and the coordinate convention. crop = the framing already shipped (for shoot2, copied verbatim from shoot2.json). patch = rectangles to inpaint, in the cropped frame. trim = final edge crop, also in the cropped frame. Every number here was measured off a preview at magnification, not estimated. One caveat on the wording below: literal price strings and the excluded nitrous brand names have been replaced with descriptions. scripts/guard.mjs fails the build on either, anywhere in the tree, and a file whose whole subject is prices and nitrous is exactly the file that should not get an exemption. The working copy outside the repo keeps the literals.",
+  "_policy": {
+    "line": "A price a visitor cannot read is not an advertised price. Legible prices are removed. Illegible sticker blobs are left, because scrubbing several hundred of them would leave the photographs looking retouched, which is its own kind of dishonest. Legible means legible in the delivered image at ordinary browser zoom — not at 20x.",
+    "absolute": "Nitrous product and branding, and identifiable faces, are removed whether or not they are legible. So is any statement of what a botanical product does: MOOD LIFT, ENERGY + FOCUS, STRESS RELIEF, BOOST, RELAXATION. Those are FDA-line claims and a retailer must not publish them, which makes them worse than a price.",
+    "verify": "Every output was re-read at magnification after export. A crop box nobody looked at is a crop box that does not work — the first pass proved that twice, once by shipping six photographs sideways and once by declaring a frame clean that had four legible prices in the top band."
+  },
+  "images": {
+    "papers-case": {
+      "family": "shoot2",
+      "src": "IMG_6175",
+      "crop": [
+        0.03,
+        0.09,
+        0.97,
+        0.6
+      ],
+      "trim": [
+        0.2,
+        0.518,
+        0.66,
+        0.913
+      ],
+      "why": "The the nitrous charger brand box I found by eye was the visible tip of a continuous row: the nitrous brand on the exclusion list cream-charger displays run from x 0.03 to x 0.66 at y 0.44-0.51, with SHOPthe nitrous brand on the exclusion list.COM legible on four of them, then a the nitrous brand on the exclusion list stand at the right edge. That is a band no inpaint survives, so the frame is trimmed to the lower shelf and the picture becomes a wall of RAW displays. The nitrous shelf goes with the trim, which is free. The eight price stickers on the front row do NOT get retouched, and that is a reversal: both TELEA and a colour-matched blur left marks straight through the RAW wordmarks that were far more conspicuous than the stickers. Checked at 1:1 in the delivered 1100px file, those stickers read as green dashes with no resolvable digits — the same standard under which ~200 other blobs across this set are left alone. Removing them would have been retouching for the audit's benefit, not the visitor's. Bottom cut back to 0.913 and left to 0.20 on the second pass: four of those front-row stickers DO resolve as a handwritten price and a handwritten price at 1:1, so the legibility test I applied was simply wrong about this frame. Trimming them off costs a shelf and damages nothing.",
+      "patch": []
+    },
+    "papers-wraps": {
+      "family": "shoot2",
+      "src": "IMG_6176",
+      "crop": [
+        0.03,
+        0.13,
+        0.97,
+        0.62
+      ],
+      "trim": [
+        0.2,
+        0.325,
+        0.98,
+        1.0
+      ],
+      "why": "Trimmed below the two the nitrous brand on the exclusion list 3.3L cartons (FOOD AND BEVERAGE ADDITIVE nitrous, plainly legible) and the drinks cooler that had no business in a rolling-papers photograph. Same reversal, same reason. The the nitrous brand on the exclusion list cartons go with the trim. The sixteen orange and green stickers below it are not readable at 1:1 in the delivered file, and every fill tried on them printed a pale rectangle across a Blazy Susan or RAW logo.",
+      "patch": []
+    },
+    "pouch-wall": {
+      "family": "shoot2",
+      "src": "IMG_6198",
+      "crop": [
+        0.03,
+        0.03,
+        0.97,
+        0.54
+      ],
+      "patch": [],
+      "trim": [
+        0.086,
+        0.0,
+        0.815,
+        0.757
+      ],
+      "why": "Both offenders are at the edges, so this is pure trim and no retouching at all. Left of 0.086 was a customer in profile — eyeglass arm, ear, cheek — seen through the gap between two shelves. Right of 0.815 were printed Swisher Sweets panels reading a printed price, a printed price, a printed multi-buy price and a printed multi-buy price, the most legible prices anywhere on the site. Bottom lands the ratio on 4:3 so the strip's object-fit crops nothing."
+    },
+    "pouch-brands": {
+      "family": "shoot2",
+      "src": "IMG_6197",
+      "crop": [
+        0.05,
+        0.04,
+        0.95,
+        0.56
+      ],
+      "patch": [],
+      "trim": [
+        0.0,
+        0.095,
+        0.8,
+        0.918
+      ],
+      "why": "Also pure trim. Right of 0.80 held a green a handwritten price, a green a printed price and the stickers on the cigarillo packs; above 0.095 was a yellow SAVE ON 2 promo panel. Bottom stops just under the ULTRA SMOOTH MOUTH FEEL banner rather than slicing it. Cost: the top cut lands below the CLEW wordmark. Keeping it would have forced the ratio to a handwritten price."
+    },
+    "lighter-wall": {
+      "family": "shoot2",
+      "src": "IMG_6186",
+      "crop": [
+        0.04,
+        0.06,
+        0.96,
+        0.64
+      ],
+      "patch": [
+        [
+          0.5794,
+          0.6304,
+          0.6049,
+          0.6808
+        ],
+        [
+          0.76,
+          0.6163,
+          0.7885,
+          0.6684
+        ]
+      ],
+      "trim": [
+        0.288,
+        0,
+        1,
+        0.9
+      ],
+      "why": "Four white price discs on the BIC rails (a printed price, a printed price, a printed price, a printed price) plus a green a handwritten price on the JUMBO LITE banner. Only the two on flat red plastic inpaint invisibly; the rest straddle a shelf bar or panel seam and smeared into an X, so the trim drops the left third and the bottom rail instead. The trim also removes a kava panel reading ENERGY + FOCUS, which is an absolute removal in its own right.  Reverted after verification: TELEA's fill was more conspicuous than the sticker it removed — a radial bowtie through printed artwork, or in one case a fill that propagated the sticker's own green outward into a blob twice its size. Only the fills confirmed invisible at 1:1 were kept. The one price that had to come back out is the a handwritten price on the JUMBO LITE header: it is mid-frame, so no trim reaches it. It gets the colour-matched soften rather than TELEA, which put a white starburst through the words LED TORCH.",
+      "soften": [
+        [
+          0.5406,
+          0.5606,
+          0.5598,
+          0.5862
+        ]
+      ]
+    },
+    "vape-hardware": {
+      "family": "shoot2",
+      "src": "IMG_6163",
+      "crop": [
+        0.03,
+        0.06,
+        0.97,
+        0.74
+      ],
+      "patch": [
+        [
+          0.0741,
+          0.5332,
+          0.1166,
+          0.5551
+        ],
+        [
+          0.1563,
+          0.5603,
+          0.1907,
+          0.595
+        ]
+      ],
+      "trim": [
+        0.055,
+        0,
+        0.85,
+        0.81
+      ],
+      "why": "Five green tags inpainted on Vaporesso box art, where the surface is flat enough to take it. The three on the front row sit across hard green/black diagonals and inpainted as grey smears, so the bottom 19% is trimmed instead.  Reverted after verification: TELEA's fill was more conspicuous than the sticker it removed — a radial bowtie through printed artwork, or in one case a fill that propagated the sticker's own green outward into a blob twice its size. Only the fills confirmed invisible at 1:1 were kept. Two came back out: a printed a printed price on the LUXE Q box, face-on and readable at 1:1, and a rotated a printed price beside it that is borderline. Both get the colour-matched soften rather than TELEA, which had been dissolving the boxes' own edges.",
+      "soften": [
+        [
+          0.599,
+          0.446,
+          0.64,
+          0.4775
+        ],
+        [
+          0.3105,
+          0.575,
+          0.347,
+          0.606
+        ]
+      ]
+    },
+    "grinder-case": {
+      "family": "shoot2",
+      "src": "IMG_6181",
+      "crop": [
+        0.05,
+        0.19,
+        0.64,
+        0.57
+      ],
+      "patch": [
+        [
+          0.4322,
+          0.7382,
+          0.4524,
+          0.7611
+        ]
+      ],
+      "trim": [
+        0.1,
+        0,
+        0.86,
+        0.89
+      ],
+      "why": "A legible a handwritten price on a wooden box and an orange dot on a foreground grinder both inpainted badly over wood grain and machined metal, so the bottom trim takes them. The one surviving patch is on a flat gold box face and leaves no trace. The frame is now the top shelf of grinders, which is the better picture."
+    },
+    "disposable-wall": {
+      "family": "shoot2",
+      "src": "IMG_6196",
+      "crop": [
+        0.02,
+        0.02,
+        0.98,
+        0.82
+      ],
+      "patch": [
+        [
+          0.8718,
+          0.1141,
+          0.883,
+          0.1244
+        ],
+        [
+          0.8931,
+          0.1083,
+          0.9038,
+          0.1199
+        ],
+        [
+          0.9203,
+          0.109,
+          0.9315,
+          0.1205
+        ],
+        [
+          0.9499,
+          0.1083,
+          0.9607,
+          0.1199
+        ],
+        [
+          0.6662,
+          0.1519,
+          0.6763,
+          0.1667
+        ]
+      ],
+      "why": "The audit missed the ones that mattered: four green a printed price stickers stuck onto the top-shelf WARNING labels, plainly readable, plus an orange a handwritten price on the shelf lip. All inpainted. The four dots down the left rail are unreadable at native resolution and sit on a shelf highlight that TELEA turns into a bowtie, so they stay."
+    },
+    "disposable-wall-wide": {
+      "family": "shoot2",
+      "src": "IMG_6201",
+      "crop": [
+        0.02,
+        0.02,
+        0.98,
+        0.84
+      ],
+      "patch": [
+        [
+          0.8742,
+          0.0963,
+          0.8842,
+          0.1069
+        ],
+        [
+          0.8938,
+          0.09,
+          0.9038,
+          0.1007
+        ],
+        [
+          0.9203,
+          0.0875,
+          0.9303,
+          0.0988
+        ],
+        [
+          0.9479,
+          0.0851,
+          0.9587,
+          0.0957
+        ],
+        [
+          0.6779,
+          0.1501,
+          0.6875,
+          0.1645
+        ]
+      ],
+      "why": "Same wall from a wider angle, same five readable prices, same treatment. All 103 saturated green and orange regions in this frame were contact-sheeted; these five were the only legible ones."
+    },
+    "main-wall": {
+      "family": "shoot2",
+      "src": "IMG_6191",
+      "action": "drop",
+      "why": "Not salvageable, and not referenced by the site anyway. Hand-written prices are on every shelf (a printed price, a printed price, a printed price, a printed price and thirty more spanning x 0.10-0.96 and y 0.10-0.98), and the ZOUR cartons carry an ONLY-something starburst printed into the artwork and an ONLY-something starburst printed into the artwork starbursts PRINTED into the artwork. No window inside the aspect band clears them and patching would take thirty-plus rectangles, which is the scrubbed look the policy exists to avoid. Reshoot this wall once the stickers are off."
+    },
+    "humidor-wall": {
+      "family": "shoot2",
+      "src": "IMG_6171",
+      "crop": [
+        0.02,
+        0.02,
+        0.98,
+        0.8
+      ],
+      "patch": [
+        [
+          0.286,
+          0.138,
+          0.301,
+          0.154
+        ],
+        [
+          0.629,
+          0.568,
+          0.641,
+          0.581
+        ],
+        [
+          0.98,
+          0.822,
+          0.996,
+          0.84
+        ]
+      ],
+      "why": "Three tags still readable at delivered size — a handwritten price on the ACID lid, a handwritten price on the Tatiana rail, a handwritten price on the paper at the right edge. The other sixteen are on cigar cellophane and read as blobs."
+    },
+    "humidor-boxes": {
+      "family": "shoot2",
+      "src": "IMG_6173",
+      "crop": [
+        0.02,
+        0.02,
+        0.98,
+        0.78
+      ],
+      "patch": [
+        [
+          0.752,
+          0.531,
+          0.842,
+          0.549
+        ],
+        [
+          0.077,
+          0.417,
+          0.092,
+          0.432
+        ]
+      ],
+      "why": "Removes the printed offer line BUY 5, GET 1 FREE from The EDGE box — brand name and tobacco line kept, the fill reads as a lighting gradient — plus two readable cutter-display tags. The 69% on the red box is a Boveda humidity pack, not a price.  Reverted after verification: TELEA's fill was more conspicuous than the sticker it removed — a radial bowtie through printed artwork, or in one case a fill that propagated the sticker's own green outward into a blob twice its size. Only the fills confirmed invisible at 1:1 were kept."
+    },
+    "humidor-singles": {
+      "family": "shoot2",
+      "src": "IMG_6174",
+      "crop": [
+        0.03,
+        0.03,
+        0.97,
+        0.76
+      ],
+      "patch": [
+        [
+          0.416,
+          0.353,
+          0.432,
+          0.369
+        ],
+        [
+          0.565,
+          0.783,
+          0.58,
+          0.798
+        ]
+      ],
+      "why": "Five tags that resolve at delivered size, all on flat packaging where the fill is clean. The twenty-five on cigars stay.  Reverted after verification: TELEA's fill was more conspicuous than the sticker it removed — a radial bowtie through printed artwork, or in one case a fill that propagated the sticker's own green outward into a blob twice its size. Only the fills confirmed invisible at 1:1 were kept."
+    },
+    "hand-pipes-case": {
+      "family": "shoot2",
+      "src": "IMG_6188",
+      "crop": [
+        0.02,
+        0.1,
+        0.98,
+        0.78
+      ],
+      "patch": [
+        [
+          0.369,
+          0.739,
+          0.387,
+          0.757
+        ]
+      ],
+      "trim": [
+        0.01,
+        0.0,
+        0.99,
+        1.0
+      ],
+      "why": "One readable a handwritten price on a blue pipe. The other thirty curve over glass and are unreadable, and TELEA would smear each one into the piece behind it. Trim is aspect only."
+    },
+    "water-pipes-case": {
+      "family": "shoot2",
+      "src": "IMG_6151",
+      "crop": [
+        0.02,
+        0.06,
+        0.98,
+        0.74
+      ],
+      "patch": [],
+      "trim": [
+        0.01,
+        0.0,
+        0.99,
+        1.0
+      ],
+      "why": "All three suspected labels verified blank at magnification. Nothing to remove; the trim is aspect only."
+    },
+    "water-pipes-tall": {
+      "family": "shoot2",
+      "src": "IMG_6155",
+      "crop": [
+        0.04,
+        0.02,
+        0.96,
+        0.7
+      ],
+      "patch": [],
+      "why": "Clean. The one pale label carries no printing."
+    },
+    "rigs-and-recyclers": {
+      "family": "shoot2",
+      "src": "IMG_6157",
+      "crop": [
+        0.03,
+        0.05,
+        0.97,
+        0.72
+      ],
+      "patch": [],
+      "trim": [
+        0.008,
+        0.0,
+        0.992,
+        1.0
+      ],
+      "why": "All four tags verified unreadable at delivered size, so none are patched. Trim is aspect only."
+    },
+    "hookah-stems": {
+      "family": "shoot2",
+      "src": "IMG_6144",
+      "crop": [
+        0.03,
+        0.02,
+        0.97,
+        0.56
+      ],
+      "patch": [
+        [
+          0.584,
+          0.692,
+          0.608,
+          0.713
+        ]
+      ],
+      "why": "Two green tags, one on the black case lid and one on the ploox Hookah Nest box, both readable and both on flat surfaces that take a fill cleanly. The RAW hang-tag beside them is a barcode card with no price on it and stays. Measured against the UPRIGHT master in fullres2 — the first attempt at this frame was made against the sideways copy, which is why its coordinates landed on bare wall.  Reverted after verification: TELEA's fill was more conspicuous than the sticker it removed — a radial bowtie through printed artwork, or in one case a fill that propagated the sticker's own green outward into a blob twice its size. Only the fills confirmed invisible at 1:1 were kept."
+    },
+    "shisha-wall": {
+      "family": "shoot2",
+      "src": "IMG_6159",
+      "crop": [
+        0.03,
+        0.02,
+        0.97,
+        0.5
+      ],
+      "patch": [],
+      "why": "Three neon tags on the Gambler bag faces, one of them clearly a printed price. Also measured against the upright master rather than the sideways copy.  Reverted after verification: TELEA's fill was more conspicuous than the sticker it removed — a radial bowtie through printed artwork, or in one case a fill that propagated the sticker's own green outward into a blob twice its size. Only the fills confirmed invisible at 1:1 were kept."
+    },
+    "botanical-shelf": {
+      "family": "shoot2",
+      "src": "IMG_6183",
+      "crop": [
+        0.5,
+        0.04,
+        0.97,
+        0.62
+      ],
+      "patch": [],
+      "trim": [
+        0.31,
+        0.075,
+        1.0,
+        0.9
+      ],
+      "why": "The find here was not a price. A blue counter card read BOOST / ...NSION / RELAXATION / NO 7-OH — an effect claim on a kratom shelf, legible without magnification, on the hero photograph of the 21+ Room page. A 7.5% top trim takes the claim, the reported rail sticker and the whole white price-rail band in one move, and needs no inpainting on the hero frame. Left cut to 0.31 as well: the two HELLO VIETNAM bottles carry a printed bullet list beginning 'For ELEVATION' and including 'PAINS from the cold, GOODBYE'. The top trim took the claim off the counter card and the claim was still standing on the product label two shelves down. No fill survives type that small; the bottles have to leave frame."
+    },
+    "IMG_6078": {
+      "family": "shoot1",
+      "src": "IMG_6078",
+      "crop": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "patch": [],
+      "trim": [
+        0.28,
+        0.0,
+        0.88,
+        1.0
+      ],
+      "why": "Glass tile. The left slat wall carried a legible green sticker and a cluster of smaller ones below x 0.08. Trimmed away and reframed onto the right display case at exactly 4:5, so the tile loses nothing to object-fit."
+    },
+    "IMG_6090": {
+      "family": "shoot1",
+      "src": "IMG_6090",
+      "crop": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "patch": [],
+      "trim": [
+        0.13,
+        0.0,
+        0.9,
+        1.0
+      ],
+      "why": "Cigars tile. The printed BUY 3, GET 1 FREE line on the Rocky Patel EDGE lid is inpainted; the lid is flat cream so the patch reads as a highlight. The green cigar tabs do not resolve at delivered size and stay.  Reverted after verification: TELEA's fill was more conspicuous than the sticker it removed — a radial bowtie through printed artwork, or in one case a fill that propagated the sticker's own green outward into a blob twice its size. Only the fills confirmed invisible at 1:1 were kept."
+    },
+    "IMG_6092": {
+      "family": "shoot1",
+      "src": "IMG_6092",
+      "crop": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "patch": [],
+      "trim": [
+        0.1,
+        0.02,
+        0.65,
+        1.0
+      ],
+      "why": "Vapes tile. The trim drops four legible a printed price stickers at top right, a a printed price at x 0.089 the audit missed, and an orange a printed price rail tag that inpainted into a bowtie because the rail is exactly as tall as the tag."
+    },
+    "IMG_6081": {
+      "family": "shoot1",
+      "src": "IMG_6081",
+      "crop": [
+        0.0,
+        0.0,
+        0.7,
+        1.0
+      ],
+      "patch": [],
+      "trim": [
+        0.0,
+        0.045,
+        0.472,
+        0.625
+      ],
+      "why": "Hookah tile, and the worst frame on the site. Beyond the three VIVAZEN prices I found by eye, the same bay carries MOOD LIFT + ENERGY + FOCUS three times, plus STRESS RELIEF, PLANT-BASED ENERGY and CLASSIC KAVA ROOT + KRATOM LEAF — about thirteen offenders across x 0.546-0.715. The whole botanical alcove is cropped out; what remains is the hookah alcove and the glass case, which is a better Hookah tile than the original was."
+    },
+    "IMG_6094": {
+      "family": "shoot1",
+      "src": "IMG_6094",
+      "why": "Dropped, not retouched. It was the 21+ Room tile; the only band of it clean of price stickers was the top two shelves, which are disposable vapes, so the tile would have shown vapes under the caption 'Kratom, kava & hemp'. IMG_6183 — the botanical shelf itself — took the slot. What made this frame unusable: roughly fifty-five green stickers reading a handwritten price, a handwritten price and a handwritten price crisply at delivered size, plus an ONLY-something starburst printed into the artwork starbursts printed into the ZOUR packaging. A ten-patch version was built and rejected — the fills were worse than the stickers.",
+      "action": "drop"
+    },
+    "IMG_6089": {
+      "family": "shoot1",
+      "src": "IMG_6089",
+      "crop": [
+        0.0,
+        0.28,
+        1.0,
+        1.0
+      ],
+      "patch": [],
+      "trim": [
+        0.16,
+        0.575,
+        0.84,
+        1.0
+      ],
+      "why": "Humidor mosaic tile. The a printed price sticker goes with the top shelf; the bigger find was the COHIBA tube row, whose tags are black ink on bright green over red and read a handwritten price unambiguously. Inpainting those produced eight glaring smears, so the frame starts below that shelf. Kept deliberately wide — a tighter crop doubles the delivered size of every remaining tab."
+    },
+    "IMG_6084": {
+      "family": "shoot1",
+      "src": "IMG_6084",
+      "crop": [
+        0.235,
+        0.1,
+        0.435,
+        0.262
+      ],
+      "patch": [],
+      "why": "Papers tile. Two problems at once. The old ultra-wide band was being cover-cropped to a 23% centre sliver in a 4:5 tile, and 62% of what showed was featureless black wall with an open RAW cone box sliced down its face. And the papers band's front row carries ten green stickers, a printed price and a printed price among them, straddling the RAW logo where no fill works. So the frame is now a window on the OCB and RAW cone displays, cut above the sticker row and below the wall, and still over 1600px wide so the -1600 rung the tile falls back to still gets written.",
+      "trim": [
+        0.0,
+        0.0,
+        1.0,
+        0.975
+      ]
+    },
+    "IMG_6093": {
+      "family": "shoot1",
+      "src": "IMG_6093",
+      "crop": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "patch": [],
+      "trim": [
+        0.165,
+        0.265,
+        1.0,
+        0.735
+      ],
+      "why": "Vape aisle. The audit found two stickers; there are fifteen, including an orange a printed price that no green detector would ever find. The rails are flat wood, so this is the one frame where inpainting genuinely works — at delivered size the eight patches read as scuffs. Cropped landscape because the mosaic slot is 3:2 and the master is portrait.  Reverted after verification: TELEA's fill was more conspicuous than the sticker it removed — a radial bowtie through printed artwork, or in one case a fill that propagated the sticker's own green outward into a blob twice its size. Only the fills confirmed invisible at 1:1 were kept."
+    },
+    "IMG_6074": {
+      "family": "shoot1",
+      "src": "IMG_6074",
+      "action": "drop",
+      "why": "About ninety green stickers plus six printed ONLY $x.99 starbursts across every shelf, several legible at delivered size. Two legible a printed price tags went undetected by colour matching until they were spotted by eye, which means no window of this frame can be certified. Every sticker-free 4:5 window is 70% black wall. It is also a near-duplicate of IMG_6094, so nothing unique is lost."
+    },
+    "IMG_6079": {
+      "family": "shoot1",
+      "src": "IMG_6079",
+      "crop": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "patch": [],
+      "trim": [
+        0.0,
+        0.275,
+        0.402,
+        0.6
+      ],
+      "why": "Saved rather than dropped. The nitrous is worse than the audit said — the nitrous brand on the exclusion list from x 0.413, and the whole spinner rack from x 0.63 to 0.73 — so no centre crop works. But the left third is a good store shot: the papers wall, the walk-in humidor with the SMOKE neon, the cigar mural. Clean of nitrous, of the a printed price and 25c OFF signs, of the head at x 0.594, and of any legible price."
+    },
+    "IMG_6080": {
+      "family": "shoot1",
+      "src": "IMG_6080",
+      "crop": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "patch": [],
+      "trim": [
+        0.1,
+        0.02,
+        0.72,
+        0.96
+      ],
+      "why": "Trimmed to x 0.10-0.72, which clears all the nitrous brand on the exclusion list — the leftmost instance is at x 0.753, and one of them is half-hidden behind a RAW display, so that gap was checked specifically. No readable prices remain."
+    },
+    "IMG_6087": {
+      "family": "shoot1",
+      "src": "IMG_6087",
+      "crop": [
+        0.0,
+        0.24,
+        1.0,
+        1.0
+      ],
+      "patch": [],
+      "why": "Audited clean, front to back. Promoted into the tour mosaic to take the slot IMG_6074 vacated, so the mosaic keeps its seven tiles."
+    },
+    "IMG_6181": {
+      "family": "shoot1",
+      "src": "IMG_6181",
+      "crop": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "patch": [],
+      "trim": [
+        0.32,
+        0.0,
+        0.945,
+        0.522
+      ],
+      "why": "Gear tile, never audited before and never actually built — main.ts asked for IMG_6181-960/-1600 and no such files existed, so the tile was broken as well as unvetted. The real problem was not the green stickers the repo note warned about but roughly thirty orange a printed price and a printed price tags lining the bottom shelf, all legible. The trim takes the whole bottom shelf; the one remaining sticker is inpainted on a flat dark face.  Reverted after verification: TELEA's fill was more conspicuous than the sticker it removed — a radial bowtie through printed artwork, or in one case a fill that propagated the sticker's own green outward into a blob twice its size. Only the fills confirmed invisible at 1:1 were kept. Bottom pulled up to 0.522 to take a rolling tray printed with a large, instantly recognisable portrait of a named recording artist out of frame. It sat inside the 4:5 centre crop, so it would have shipped on the home page."
+    },
+    "IMG_6183": {
+      "family": "shoot1",
+      "src": "IMG_6183",
+      "crop": [
+        0.5,
+        0.04,
+        0.97,
+        0.62
+      ],
+      "patch": [],
+      "trim": [
+        0.31,
+        0.075,
+        1.0,
+        0.9
+      ],
+      "why": "Same frame and same framing as botanical-shelf, exported into the shoot1 derivative shape so the home page's 21+ Room tile can use it. The tile was showing IMG_6094 — the top two shelves of a disposable-vape bay — under the caption 'Kratom, kava & hemp'. The trim carries over the two removals the hero needed: the counter card claiming BOOST / RELAXATION off the top, and the two HELLO VIETNAM bottles whose labels read 'For ELEVATION' off the left."
+    }
+  }
+}

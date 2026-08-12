@@ -135,7 +135,7 @@ export const SECTIONS = [
     slug: 'hookah', nav: 'Hookah', tile: 'Hookah & botanicals',
     title: 'Hookah, Shisha & Botanicals — Glen Smoke Shop, Glen Ellyn IL',
     desc: 'Hookahs, bowls, hoses, coals and heat management at 944 Roosevelt Rd, Glen Ellyn, alongside our botanical shelf.',
-    kicker: '06 — Hookah & botanicals',
+    kicker: '07 — Hookah & botanicals',
     lede: 'Bowls, hoses, coals and heat management.',
     img: 'IMG_6074', parts: ['hookah'],
   },
@@ -152,7 +152,7 @@ export const SECTIONS = [
     slug: 'visit', nav: 'Visit', tile: 'Visit the shop',
     title: 'Visit Glen Smoke Shop — 944 Roosevelt Rd, Glen Ellyn, IL',
     desc: 'Hours, directions, phone and text for Glen Smoke Shop at 944 Roosevelt Rd, Glen Ellyn, Illinois. Call or text (331) 551-0005.',
-    kicker: '08 — Visit',
+    kicker: '09 — Visit',
     lede: 'Where we are, when we are open, and how to reach us.',
     img: 'IMG_6070', parts: ['visit', 'tour', 'reviews'],
   },
@@ -166,6 +166,7 @@ const navHtml = (current) => `
       `<a href="${pathFor(s.slug)}"${s.slug === current ? ' aria-current="page"' : ''} data-prefetch>${s.nav}</a>`
     ).join('\n    ')}
     <a href="${pathFor('visit')}"${current === 'visit' ? ' aria-current="page"' : ''} data-prefetch>Visit</a>
+    <a href="/shop"${current === 'shop' ? ' aria-current="page"' : ''} data-prefetch>All brands</a>
   </div>`
 
 /** The strip of other doors that closes every section page. */
@@ -176,6 +177,7 @@ const moreDoors = (current) => `
     <div class="door-strip">
       ${SECTIONS.filter(s => s.slug !== current).map(s =>
         `<a class="door-chip" href="${pathFor(s.slug)}" data-prefetch>${s.tile}</a>`).join('\n      ')}
+      ${current === 'shop' ? '' : '<a class="door-chip door-chip-all" href="/shop" data-prefetch>Every brand we carry</a>'}
     </div>
   </div>
 </section>`
@@ -186,14 +188,14 @@ const sectionHead = (s) => `
   <div class="pagehead-media" aria-hidden="true">
     <picture>
       <source type="image/avif" sizes="100vw"
-        srcset="img/hero-wide-1600.avif 1600w, img/hero-wide-2200.avif 2200w">
+        srcset="img/hero-wide-1600.avif 1600w, img/hero-wide-2200.avif 2200w, img/hero-wide-3000.avif 3000w">
       <img src="img/hero-wide-1600.jpg" alt="" decoding="async" fetchpriority="high">
     </picture>
   </div>
   <div class="pagehead-sign" aria-hidden="true">
     <picture>
       <source type="image/avif" sizes="100vw"
-        srcset="img/hero-wide-1600.avif 1600w, img/hero-wide-2200.avif 2200w">
+        srcset="img/hero-wide-1600.avif 1600w, img/hero-wide-2200.avif 2200w, img/hero-wide-3000.avif 3000w">
       <img src="img/hero-wide-1600.jpg" alt="" decoding="async">
     </picture>
   </div>
@@ -230,9 +232,11 @@ const CATALOG = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/catalog.jso
 
 /** Rewrite the shared <head> for one page. */
 function headFor({ title, desc, url, extra = '' }) {
+  /* __RATING__ / __REVIEWS__ are substituted document-wide in compose(), not
+     here: the visible score in reviews.html is in the BODY, and while this
+     replace only touched the head it drifted to a stale 4.2 literal while the
+     schema said 4.3. One source, one substitution, every occurrence. */
   let h = part.head
-    .replace('__RATING__', String(REVIEWS.aggregate.rating))
-    .replace('__REVIEWS__', String(REVIEWS.aggregate.count))
   h = h.replace(/<title>[\s\S]*?<\/title>/, `<title>${title}</title>`)
   h = h.replace(/(<meta name="description" content=")[^"]*(">)/, `$1${desc}$2`)
   h = h.replace(/(<link rel="canonical" href=")[^"]*(">)/, `$1${url}$2`)
@@ -286,6 +290,8 @@ function itemListFor(s) {
 function compose({ slug, head, body, current }) {
   const premain = part.premain.replace(/<div class="nav-links">[\s\S]*?<\/div>/, navHtml(current).trim())
   let out = [head, premain, '<main id="main" class="shell">', body, part.postmain].join('\n')
+  out = out.split('__RATING__').join(String(REVIEWS.aggregate.rating))
+  out = out.split('__REVIEWS__').join(String(REVIEWS.aggregate.count))
   // Last thing before the file is written: no absolute URL may name an origin
   // this site does not live at. See the note on LEGACY_ORIGINS.
   for (const origin of LEGACY_ORIGINS) out = out.split(origin).join(SITE)
@@ -409,7 +415,7 @@ function shopBody() {
 
 bytes += compose({
   slug: 'shop',
-  current: '',
+  current: 'shop',
   head: headFor({
     title: 'Every Brand We Carry — Glen Smoke Shop, Glen Ellyn IL',
     desc: 'The full shelf at Glen Smoke Shop, 944 Roosevelt Rd, Glen Ellyn: every disposable, cigar, wrap, paper, hookah and gear brand we stock, searchable.',
@@ -440,7 +446,12 @@ bytes += compose({
 /* -------------------------------------------------------------- sitemap -- */
 
 const today = process.env.SOURCE_DATE || new Date().toISOString().slice(0, 10)
-const urls = ['', ...SECTIONS.map(s => s.slug)]
+/* 'shop' is listed explicitly because it is not a SECTION — it is composed
+   separately below the section loop. Deriving this list from SECTIONS alone
+   left the master index out of the sitemap AND out of every nav, on a page
+   whose own source comment says "the crawler is the entire point of this
+   page". 404 is excluded on purpose: it ships noindex. */
+const urls = ['', ...SECTIONS.map(s => s.slug), 'shop']
 fs.writeFileSync(path.join(ROOT, 'public/sitemap.xml'),
 `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

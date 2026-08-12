@@ -228,7 +228,9 @@ const CATEGORIES = [
   // catalog.accessories, a bucket holding Trojan, Vapetasia and Pod Juice, so
   // "31 brands" described nothing a grinder buyer wanted.
   { id: 'gear',    img: 'IMG_6181', name: 'Grinders & Torches', count: () => `${gear.groups.length} kinds of gear`, tint: 'rgba(255,138,30,.22)' },
-  { id: '21-room', img: 'IMG_6094', name: 'The 21+ Room',     count: () => 'Kratom, kava & hemp',                   tint: 'rgba(53,255,122,.26)' },
+  // IMG_6094 until the photo audit: the compliance crop left it showing the top
+  // two shelves of a disposable-vape bay under the caption "Kratom, kava & hemp".
+  { id: '21-room', img: 'IMG_6183', name: 'The 21+ Room',     count: () => 'Kratom, kava & hemp',                   tint: 'rgba(53,255,122,.26)' },
 ]
 
 /* ---------------------------------------------------------------- gear */
@@ -326,7 +328,10 @@ function initCategories() {
   const el = $('#cat-grid'); if (!el) return
   el.innerHTML = CATEGORIES.map(c0 => { const c = { ...c0, href: PAGE_OF[c0.id] || '/' }; return `
     <a class="cat reveal" href="${c.href}" aria-label="${c.name}" data-prefetch>
-      ${picture(c.img, c.name, '(max-width:560px) 100vw, (max-width:1080px) 50vw, 25vw')}
+      ${/* The 700px breakpoint in sections.css puts these two-up, not one-up —
+            a later media query overrides the 560px rule further down the file.
+            Claiming 100vw there downloaded a card at twice the width it paints. */
+        picture(c.img, c.name, '(max-width:700px) 46vw, (max-width:1080px) 50vw, 25vw')}
       <span class="cat-glow" style="background:radial-gradient(90% 70% at 50% 100%, ${c.tint}, transparent 70%)"></span>
       <span class="cat-body">
         <span class="cat-name">${c.name}</span>
@@ -772,7 +777,11 @@ function initPortal() {
 const TOUR = [
   { id: 'IMG_6079', cls: 'w4', alt: 'Wide view of the sales floor, shelves and cases on every wall' },
   { id: 'IMG_6080', cls: 'w2', alt: 'Product shelving and centre display at Glen Smoke Shop' },
-  { id: 'IMG_6074', cls: 'w2', alt: 'A stocked shelf bay of vapes, wraps and accessories' },
+  // Was IMG_6074, which is gone: about ninety hand-written price stickers plus
+  // six ONLY $x.99 starbursts printed into the packaging, on every shelf. Two
+  // legible ones survived a colour sweep and were only caught by eye, so no
+  // window of that frame could be certified. IMG_6087 audited clean end to end.
+  { id: 'IMG_6087', cls: 'w2', alt: 'Display case of dab rigs, nectar collectors and silicone pieces' },
   { id: 'IMG_6077', cls: 'w2', alt: 'Lit glass case filled with hand-blown water pipes' },
   { id: 'IMG_6089', cls: 'w2', alt: 'Cedar humidor shelves lined with cigars' },
   { id: 'IMG_6093', cls: 'w3', alt: 'Aisle of disposable vapes stretching to the back of the store' },
