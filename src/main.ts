@@ -52,6 +52,27 @@ function picture(id: string, alt: string, sizes = '100vw', eager = false): strin
   </picture>`
 }
 
+/**
+ * Shoot-2 assets (the 9 Aug shoot), which use a different derivative set from
+ * the originals: 640/1100/1700 rather than 960/1600, and WebP between AVIF and
+ * JPEG. Deliberately a SECOND function rather than branching inside picture()
+ * on whether the id starts with "IMG_" — a helper that silently guesses which
+ * files exist produces a broken <img> at runtime and nothing at build time.
+ * Two explicit functions cannot pick wrong.
+ *
+ * Slugs, crops and alt text are defined in pipeline/shoot2.json.
+ */
+function photo(slug: string, alt: string, sizes = '100vw', eager = false): string {
+  const w = [640, 1100, 1700]
+  const set = (ext: string) => w.map(n => `img/${slug}-${n}.${ext} ${n}w`).join(', ')
+  return `<picture>
+    <source type="image/avif" sizes="${sizes}" srcset="${set('avif')}">
+    <source type="image/webp" sizes="${sizes}" srcset="${set('webp')}">
+    <img src="img/${slug}-1100.jpg" alt="${alt}"
+         loading="${eager ? 'eager' : 'lazy'}" decoding="async">
+  </picture>`
+}
+
 /* ------------------------------------------------------------------ gate */
 
 /** True once the visitor has confirmed 21+, so the hemp shelf need not re-ask. */
@@ -242,10 +263,19 @@ function initCategories() {
 
 /* --------------------------------------------------------------- photos */
 function initSectionPhotos() {
+  const sizes = '(max-width:940px) 100vw, 52vw'
+  // Legacy frames, 960/1600 derivative set.
   $$('[data-img]').forEach(fig => {
     const id = fig.getAttribute('data-img')!
     const alt = fig.getAttribute('data-alt') || ''
-    fig.insertAdjacentHTML('afterbegin', picture(id, alt, '(max-width:940px) 100vw, 52vw'))
+    fig.insertAdjacentHTML('afterbegin', picture(id, alt, sizes))
+  })
+  // 9 Aug shoot, 640/1100/1700 set. Separate attribute so a slug can never be
+  // handed to the helper that would look for the wrong filenames.
+  $$('[data-photo]').forEach(fig => {
+    const slug = fig.getAttribute('data-photo')!
+    const alt = fig.getAttribute('data-alt') || ''
+    fig.insertAdjacentHTML('afterbegin', photo(slug, alt, sizes))
   })
 }
 

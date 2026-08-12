@@ -214,9 +214,23 @@ const breadcrumbs = (s) => `
  {"@type":"ListItem","position":2,"name":${JSON.stringify(s.tile)},"item":"${SITE}${pathFor(s.slug)}"}]}
 </script>`
 
+/* The star rating Google can actually read.
+
+   Before this, reviews.json carried an `aggregate` block that NOTHING read,
+   and no page emitted aggregateRating at all — so the listing was never
+   eligible for a star rating in search. Updating the number in reviews.json
+   felt like maintenance and did nothing.
+
+   Substituted at build time rather than written into _head.html as a literal,
+   because a literal is how it became dead data the first time. */
+const REVIEWS = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/reviews.json'), 'utf8'))
+const CATALOG = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/catalog.json'), 'utf8'))
+
 /** Rewrite the shared <head> for one page. */
 function headFor({ title, desc, url, extra = '' }) {
   let h = part.head
+    .replace('__RATING__', String(REVIEWS.aggregate.rating))
+    .replace('__REVIEWS__', String(REVIEWS.aggregate.count))
   h = h.replace(/<title>[\s\S]*?<\/title>/, `<title>${title}</title>`)
   h = h.replace(/(<meta name="description" content=")[^"]*(">)/, `$1${desc}$2`)
   h = h.replace(/(<link rel="canonical" href=")[^"]*(">)/, `$1${url}$2`)
@@ -224,6 +238,47 @@ function headFor({ title, desc, url, extra = '' }) {
   h = h.replace(/(<meta property="og:description" content=")[^"]*(">)/, `$1${desc}$2`)
   h = h.replace(/(<meta property="og:url" content=")[^"]*(">)/, `$1${url}$2`)
   return h.replace('</head>', `${extra}\n</head>`)
+}
+
+/* ItemList per section page.
+
+   Tells Google the page is an index of a category rather than an article about
+   one, which is what a category page competing for "vape shop glen ellyn"
+   actually is. Deliberately NO Product entries and NO Offer: nothing is sold
+   online, and an Offer without a price is either a lie or an invitation for
+   Google to invent one. The list names what the shop stocks; the shop sells it
+   in person.
+
+   Counts come from catalog.json so the numbers cannot drift from the page. */
+function itemListFor(s) {
+  const buckets = {
+    vapes: (c) => c.vapes.map(v => v.brand),
+    pouches: (c) => c.pouch_brands,
+    cigars: (c) => c.cigars.map(v => v.brand),
+    papers: (c) => c.papers.map(v => v.brand),
+    gear: () => ['Grinders', 'Torch lighters', 'Everyday lighters', 'Digital scales',
+                 'Storage & stash', 'Metal pipes & one-hitters', 'Trays & tools'],
+    // glass has no brand list — the pieces are one-off hand-blown, so the
+    // meaningful index is the STYLES the shop stocks, which is also what
+    // someone searching "recycler glen ellyn" is actually looking for.
+    glass: (c) => c.glass.styles,
+  }
+  const pick = buckets[s.slug]
+  if (!pick) return ''
+  let names = []
+  try { names = [...new Set(pick(CATALOG))].filter(Boolean) } catch { return '' }
+  if (!names.length) return ''
+  const ld = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: s.tile,
+    itemListOrder: 'https://schema.org/ItemListUnordered',
+    numberOfItems: names.length,
+    itemListElement: names.map((n, i) => ({
+      '@type': 'ListItem', position: i + 1, name: n,
+    })),
+  }
+  return `\n<script type="application/ld+json">${JSON.stringify(ld)}</script>`
 }
 
 function compose({ slug, head, body, current }) {
@@ -273,7 +328,7 @@ for (const s of SECTIONS) {
       title: s.title,
       desc: s.desc,
       url: `${SITE}${pathFor(s.slug)}`,
-      extra: breadcrumbs(s),
+      extra: breadcrumbs(s) + itemListFor(s),
     }),
     body,
   })
