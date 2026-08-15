@@ -1079,7 +1079,11 @@ button.cigar-name::after {
   height: auto !important;
   aspect-ratio: auto !important;
   object-fit: contain !important;
-  border-radius: 3px;
+  /* !important because the embed sets borderRadius inline from data-radius, and
+     a 12px curve on the photo inside a 12px frame reads as two rounded boxes
+     rather than a mounted print. The frame carries the radius; the photo gets a
+     hairline of one. */
+  border-radius: 3px !important;
   background: #05060A;
 }
 
@@ -1117,3 +1121,85 @@ button.cigar-name::after {
 }
 
 .gallery-empty[hidden] { display: none; }
+
+/* ==========================================================================
+   Gallery teaser — the home page's door into /gallery
+   ========================================================================== */
+
+.teaser-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: clamp(18px, 3vw, 40px);
+  flex-wrap: wrap;
+}
+
+.teaser-head .sec-lede { margin-top: 12px; }
+
+/* Sits on the baseline of the heading on a wide screen and drops under it on a
+   narrow one, where it goes full width so it is a proper tap target rather than
+   a link squeezed into a corner. */
+.teaser-cta {
+  flex: none;
+  gap: 9px;
+  white-space: nowrap;
+}
+
+.teaser-cta svg { width: 17px; height: 17px; }
+
+@media (max-width: 700px) {
+  .teaser-head { display: block; }
+  .teaser-cta { display: flex; justify-content: center; width: 100%; margin-top: 20px; }
+}
+
+/* Four across on a desktop, two on a phone. Not a scroller: a horizontal strip
+   on a phone hides half its contents behind a gesture nobody is told about, and
+   the whole point of this band is that the shop can SEE what it posted. */
+.teaser-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(10px, 1.4vw, 16px);
+  margin-top: clamp(22px, 3vh, 32px);
+}
+
+@media (max-width: 860px) { .teaser-strip { grid-template-columns: repeat(2, 1fr); } }
+
+.teaser-strip[hidden] { display: none; }
+
+/* Same mount as the gallery's frames, at a smaller scale. These ARE cropped to
+   a square, unlike the gallery itself — a teaser is a set of thumbnails and a
+   ragged row of mixed heights next to a heading reads as a mistake. The whole
+   photograph is one tap away, which is where it matters. */
+.teaser-shot {
+  display: block;
+  padding: clamp(6px, 0.7vw, 9px);
+  border: 1px solid var(--line-hot);
+  border-radius: var(--radius-sm);
+  background: linear-gradient(160deg, rgba(255,255,255,.055), rgba(255,255,255,.012));
+  box-shadow: 0 14px 34px -20px rgba(0,0,0,.9);
+  overflow: hidden;
+  transition: border-color var(--dur-fast), transform var(--dur) var(--ease-out);
+}
+
+.teaser-shot img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 3px;
+  background: #05060A;
+  transition: transform var(--dur) var(--ease-out);
+}
+
+@media (hover: hover) {
+  .teaser-shot:hover { transform: translateY(-3px); border-color: var(--orange); }
+  .teaser-shot:hover img { transform: scale(1.05); }
+}
+
+.teaser-shot:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .teaser-shot, .teaser-shot img { transition: none; }
+  .teaser-shot:hover { transform: none; }
+  .teaser-shot:hover img { transform: none; }
+}

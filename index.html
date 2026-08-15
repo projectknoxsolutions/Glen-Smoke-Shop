@@ -287,6 +287,41 @@
 
 <!-- ========================================================= VAPES ==== -->
 
+<!-- =================================================== GALLERY TEASER ====
+     The gallery's entry point on the home page.
+
+     A plain nav link was not enough: the point of the gallery is that the shop
+     posts to it, and the shop should be able to see that it worked without
+     hunting through a menu. So this band shows the newest photos themselves,
+     pulled live from the same feed the gallery page uses, and the button goes
+     to the rest.
+
+     Everything below the heading is progressive. With no JS, a blocked feed, or
+     an empty gallery, what remains is a heading, a line of copy and a link to
+     /gallery — which is exactly the "gallery link on the main page" this is
+     supposed to be. The photo strip is a bonus that appears when there is
+     something to show. See initGalleryTeaser() in main.ts.
+     ====================================================================== -->
+<section class="section section-tight" id="gallery-teaser">
+  <div class="wrap">
+    <div class="teaser-head reveal">
+      <div>
+        <p class="sec-kicker">Straight from the shop</p>
+        <h2 class="sec-title">The <span class="thin">gallery</span></h2>
+        <p class="sec-lede" id="teaser-lede">New arrivals and restocks, posted by the shop as they land.</p>
+      </div>
+      <a class="btn btn-call teaser-cta" href="/gallery" data-prefetch>
+        See the gallery
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <!-- Filled by initGalleryTeaser, and left empty otherwise. Never renders a
+         placeholder box: an empty frame reads as a broken image. -->
+    <div class="teaser-strip" id="teaser-strip" hidden></div>
+  </div>
+</section>
+
 <section class="section reviews" id="reviews">
   <div class="wrap">
     <h2 class="visually-hidden">Customer reviews</h2>
