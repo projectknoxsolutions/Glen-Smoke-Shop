@@ -46,7 +46,6 @@ const part = {
   tour: P('tour.html'),
   reviews: P('reviews.html'),
   gallery: P('gallery.html'),
-  galleryTeaser: P('gallery-teaser.html'),
   visit: P('visit.html'),
 }
 
@@ -319,10 +318,6 @@ const hubBody = [
   part.hero,
   part.ticker,
   part.shop,
-  // Between the category grid and the reviews: after the visitor knows what the
-  // shop sells, before the social proof. Also the one band on the home page
-  // whose contents change without a deploy.
-  part.galleryTeaser,
   part.reviews,
 ].join('\n')
 

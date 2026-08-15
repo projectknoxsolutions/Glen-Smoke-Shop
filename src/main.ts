@@ -857,63 +857,6 @@ function initPortal() {
   })
 }
 
-/* ------------------------------------------------------ gallery teaser */
-/* The home page's entry point to /gallery, showing the newest uploads rather
-   than a static picture — the shop should be able to see that a post worked
-   without going looking for it.
- *
- * Reads the same feed the embed reads. Deliberately NOT by loading the embed
- * script here: that script mounts itself wherever its own tag sits and renders
- * everything it has, which is the right behaviour on the gallery page and the
- * wrong one for a four-photo teaser. Fetching the JSON costs one small request
- * and leaves the layout under our control.
- *
- * Every failure path ends the same way — the strip stays hidden and the band is
- * a heading, a line of copy and a button to /gallery, which is the link this
- * section is for. Feed empty, request blocked, JSON malformed, no JS at all:
- * same result, nothing broken.
- *
- * URLs are checked against the image host before being put in a src. The feed
- * is first-party, but this value ends up in the DOM and the embed itself
- * validates the same way; a feed that starts returning something else should
- * not become an arbitrary-URL injector on the home page. */
-const KNOX_FEED = 'https://photos.getprojectknox.com/g/45.json'
-const KNOX_IMG_PREFIX = 'https://photos.getprojectknox.com/i/'
-const TEASER_MAX = 4
-
-function initGalleryTeaser() {
-  const strip = $('#teaser-strip')
-  if (!strip) return
-
-  fetch(KNOX_FEED, { credentials: 'omit' })
-    .then(r => (r.ok ? r.json() : null))
-    .then(data => {
-      const photos: any[] = Array.isArray(data?.photos) ? data.photos : []
-      const usable = photos
-        .filter(p => typeof p?.url === 'string' && p.url.startsWith(KNOX_IMG_PREFIX))
-        .slice(0, TEASER_MAX)
-      if (!usable.length) return
-
-      strip.innerHTML = usable.map(p => {
-        // textContent-equivalent escaping: the caption is uploader-supplied and
-        // is going into markup, so it is escaped rather than trusted.
-        const alt = String(p.alt || p.caption || 'A photo posted by Glen Smoke Shop')
-          .replace(/[<>"&]/g, c => ({ '<': '&lt;', '>': '&gt;', '"': '&quot;', '&': '&amp;' }[c] as string))
-        return `<a class="teaser-shot" href="/gallery" data-prefetch>
-          <img src="${p.url}" alt="${alt}" loading="lazy" decoding="async">
-        </a>`
-      }).join('')
-      strip.removeAttribute('hidden')
-
-      const lede = $('#teaser-lede')
-      if (lede && photos.length > TEASER_MAX) {
-        lede.textContent = `New arrivals and restocks, posted by the shop as they land. ${photos.length} photos so far.`
-      }
-      ScrollTrigger.refresh()
-    })
-    .catch(() => { /* the band still links to the gallery; that is the job */ })
-}
-
 /* -------------------------------------------------------- gallery feed */
 /* The Project Knox embed mounts itself and, when the feed is empty, deletes its
    own container. That is reasonable behaviour for an embed and useless for a
@@ -1158,7 +1101,6 @@ function boot() {
   initPortal()
   initGallery()
   initGalleryFeed()
-  initGalleryTeaser()
   initReviews()
   initMap()
   initMotion()
