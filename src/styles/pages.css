@@ -995,11 +995,27 @@ button.cigar-name::after {
 /* ==========================================================================
    Gallery — the shop's own live feed
 
-   The embed writes inline styles onto everything it creates, so this file can
-   only reach it through the container and through inherited properties. That is
-   why the rules below are attribute selectors on [data-knox-gallery-grid] and
-   its children rather than classes: the embed owns the markup, we own the box
-   it sits in.
+   The embed writes inline styles onto everything it creates and injects no
+   stylesheet, so this file can only reach it through the container and through
+   inheritance. That is why the rules below are attribute selectors on
+   [data-knox-gallery-grid] and its children rather than classes: the embed owns
+   the markup, we own the box it sits in. Anything that fights an inline style
+   needs !important — not a code smell here, the only lever available.
+
+   THE WHOLE PHOTO HAS TO BE VISIBLE. Left alone the embed renders every tile as
+   a square with `object-fit: cover`, which is a sensible default for a uniform
+   grid and wrong for this page: a phone photo is 3:4, a landscape shot is 4:3,
+   and a square crop throws away the top and bottom of one and the sides of the
+   other. Nobody uploading a picture of a new shelf wants it cropped by a
+   stylesheet. So the square is removed, the fit is `contain`, and the height is
+   released back to the image's own aspect ratio.
+
+   Once photos keep their real proportions they no longer line up in rows, and a
+   grid would leave a ragged gap under every short one. CSS multi-column does
+   the packing instead — the classic masonry fallback, no JS, no layout
+   thrash on load. The tradeoff is reading order: columns fill top-to-bottom, so
+   the newest photo is top-left rather than the first of a left-to-right row.
+   For a shelf gallery that is a fair trade for never cropping anything.
 
    Worth knowing, and NOT a CSS problem: this is the one page on the site whose
    contents nobody here reviews. Everything else was audited frame by frame for
@@ -1011,52 +1027,80 @@ button.cigar-name::after {
 
 .knox-gallery { margin-top: clamp(22px, 3vh, 34px); }
 
-/* The embed sets its own grid-template-columns from data-columns, a fixed
-   count. Overriding it with auto-fill lets the count follow the viewport
-   instead of staying at three on a phone, so data-columns becomes a hint
-   rather than a layout. 280px lands on four across a 1440 desktop and one on a
-   phone; 240px gave five, which made shelf photographs too small to read. */
+/* display:block cancels the embed's inline `display: grid`; the columns then
+   apply. One column on a phone so a photo gets the full width, three at
+   desktop. `data-columns` on the script tag is left as a hint for anyone
+   reading the markup — it is this that decides the layout. */
 .knox-gallery [data-knox-gallery-grid] {
-  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)) !important;
+  display: block !important;
+  columns: 3;
+  column-gap: clamp(12px, 1.6vw, 18px);
 }
 
+@media (max-width: 1080px) { .knox-gallery [data-knox-gallery-grid] { columns: 2; } }
+@media (max-width: 640px)  { .knox-gallery [data-knox-gallery-grid] { columns: 1; } }
+
+/* --- the frame ----------------------------------------------------------
+   A mount rather than a border: an outer edge, a mat of padding, and the photo
+   sitting inside it with its own hairline. break-inside keeps a frame from
+   being sawn in half across a column boundary, which is the one thing CSS
+   columns will happily do to you. */
 .knox-gallery [data-knox-gallery-grid] figure {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background: var(--panel-2);
-  transition: border-color var(--dur-fast), transform var(--dur) var(--ease-out);
-}
-
-.knox-gallery [data-knox-gallery-grid] figure:hover { border-color: var(--line-hot); }
-
-.knox-gallery [data-knox-gallery-grid] img {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
   display: block;
-  width: 100%;
-  transition: transform var(--dur) var(--ease-out);
+  margin: 0 0 clamp(12px, 1.6vw, 18px) !important;
+  padding: clamp(9px, 1vw, 13px);
+  border: 1px solid var(--line-hot);
+  border-radius: var(--radius-sm) !important;
+  background:
+    linear-gradient(160deg, rgba(255,255,255,.055), rgba(255,255,255,.012));
+  box-shadow: 0 18px 44px -22px rgba(0,0,0,.9);
+  overflow: visible !important;
+  transition: border-color var(--dur-fast), transform var(--dur) var(--ease-out),
+              box-shadow var(--dur) var(--ease-out);
 }
 
 @media (hover: hover) {
-  .knox-gallery [data-knox-gallery-grid] figure:hover img { transform: scale(1.04); }
+  .knox-gallery [data-knox-gallery-grid] figure:hover {
+    transform: translateY(-3px);
+    border-color: var(--orange);
+    box-shadow: 0 26px 60px -24px rgba(0,0,0,.95);
+  }
 }
 
-/* Captions come from the uploader and can be any length, so they get the same
-   gradient foot the pouch faces use rather than a fixed-height bar. */
+/* The three overrides that stop the crop. aspect-ratio and object-fit are set
+   inline by the embed; height:auto is what actually lets the image be as tall
+   as it wants once the square is gone. */
+.knox-gallery [data-knox-gallery-grid] img {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  border-radius: 3px;
+  background: #05060A;
+}
+
+/* --- the caption --------------------------------------------------------
+   Under the photo, not over it. Overlaying it would cover the bottom of every
+   picture, which is the thing this whole section exists to avoid. Reads as the
+   label under a framed print. */
 .knox-gallery [data-knox-gallery-grid] figcaption {
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  padding: 30px 12px 11px;
-  font-size: 12.5px;
-  line-height: 1.35;
-  color: #fff;
-  text-shadow: 0 1px 3px rgba(0,0,0,.9);
-  background: linear-gradient(180deg, transparent, rgba(4,5,9,.88) 62%);
+  position: static !important;
+  margin-top: 10px;
+  padding: 0 2px;
+  background: none !important;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--ink-2);
+  text-shadow: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .knox-gallery [data-knox-gallery-grid] img,
   .knox-gallery [data-knox-gallery-grid] figure { transition: none; }
-  .knox-gallery [data-knox-gallery-grid] figure:hover img { transform: none; }
+  .knox-gallery [data-knox-gallery-grid] figure:hover { transform: none; }
 }
 
 /* The embed deletes its own container when the feed is empty, so without this
