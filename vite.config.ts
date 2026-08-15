@@ -10,7 +10,7 @@ import { resolve } from 'node:path'
 // passes every content check, and is simply never emitted into dist — so the
 // dev preview falls back to index and the page looks like it "works" until you
 // notice it is the home page wearing the right <title>.
-const PAGES = ['index', 'vapes', 'pouches', 'glass', 'cigars', 'papers', 'gear', 'hookah', '21-room', 'visit', 'shop', '404']
+const PAGES = ['index', 'vapes', 'pouches', 'glass', 'cigars', 'papers', 'gear', 'hookah', '21-room', 'gallery', 'visit', 'shop', '404']
 
 export default defineConfig({
   // Relative base so one build works both at the GitHub Pages project sub-path

@@ -991,3 +991,85 @@ button.cigar-name::after {
   #vape-grid .puck .b, #cigar-grid .puck .b { font-size: 13px; padding-top: 9px; }
   #vape-grid .puck .s, #cigar-grid .puck .s { padding-bottom: 10px; }
 }
+
+/* ==========================================================================
+   Gallery — the shop's own live feed
+
+   The embed writes inline styles onto everything it creates, so this file can
+   only reach it through the container and through inherited properties. That is
+   why the rules below are attribute selectors on [data-knox-gallery-grid] and
+   its children rather than classes: the embed owns the markup, we own the box
+   it sits in.
+
+   Worth knowing, and NOT a CSS problem: this is the one page on the site whose
+   contents nobody here reviews. Everything else was audited frame by frame for
+   price tags, nitrous branding and effect claims before it shipped. A photo
+   uploaded through the shop's link goes live on the next page load. The rule
+   the rest of the site follows cannot be enforced here by code — only by
+   whoever is doing the uploading.
+   ========================================================================== */
+
+.knox-gallery { margin-top: clamp(22px, 3vh, 34px); }
+
+/* The embed sets its own grid-template-columns from data-columns, a fixed
+   count. Overriding it with auto-fill lets the count follow the viewport
+   instead of staying at three on a phone, so data-columns becomes a hint
+   rather than a layout. 280px lands on four across a 1440 desktop and one on a
+   phone; 240px gave five, which made shelf photographs too small to read. */
+.knox-gallery [data-knox-gallery-grid] {
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)) !important;
+}
+
+.knox-gallery [data-knox-gallery-grid] figure {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  transition: border-color var(--dur-fast), transform var(--dur) var(--ease-out);
+}
+
+.knox-gallery [data-knox-gallery-grid] figure:hover { border-color: var(--line-hot); }
+
+.knox-gallery [data-knox-gallery-grid] img {
+  display: block;
+  width: 100%;
+  transition: transform var(--dur) var(--ease-out);
+}
+
+@media (hover: hover) {
+  .knox-gallery [data-knox-gallery-grid] figure:hover img { transform: scale(1.04); }
+}
+
+/* Captions come from the uploader and can be any length, so they get the same
+   gradient foot the pouch faces use rather than a fixed-height bar. */
+.knox-gallery [data-knox-gallery-grid] figcaption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 30px 12px 11px;
+  font-size: 12.5px;
+  line-height: 1.35;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,.9);
+  background: linear-gradient(180deg, transparent, rgba(4,5,9,.88) 62%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .knox-gallery [data-knox-gallery-grid] img,
+  .knox-gallery [data-knox-gallery-grid] figure { transition: none; }
+  .knox-gallery [data-knox-gallery-grid] figure:hover img { transform: none; }
+}
+
+/* The embed deletes its own container when the feed is empty, so without this
+   the page would render a heading and then nothing at all. */
+.gallery-empty {
+  margin-top: clamp(22px, 3vh, 34px);
+  padding: clamp(28px, 5vh, 48px) clamp(20px, 4vw, 36px);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.015);
+  color: var(--ink-2);
+  font-size: clamp(15px, 1.6vw, 17px);
+  max-width: var(--readw);
+}
+
+.gallery-empty[hidden] { display: none; }

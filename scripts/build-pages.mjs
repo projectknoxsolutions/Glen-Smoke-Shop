@@ -45,6 +45,7 @@ const part = {
   hookah: P('hookah.html'),
   tour: P('tour.html'),
   reviews: P('reviews.html'),
+  gallery: P('gallery.html'),
   visit: P('visit.html'),
 }
 
@@ -149,10 +150,22 @@ export const SECTIONS = [
     img: 'IMG_6081', parts: ['room21'],
   },
   {
+    // The only page whose contents the shop controls directly — a live feed
+    // from their upload link, rendered client-side. Deliberately LAST before
+    // Visit: it is the freshest thing on the site but it is also the only
+    // thing here nobody vetted, so it does not lead.
+    slug: 'gallery', nav: 'Gallery', tile: 'Fresh off the shelf',
+    title: 'Photo Gallery — New Arrivals at Glen Smoke Shop, Glen Ellyn IL',
+    desc: 'Photographs posted by Glen Smoke Shop at 944 Roosevelt Rd, Glen Ellyn: new arrivals, restocks and what is on the shelf right now.',
+    kicker: '09 — The gallery',
+    lede: 'Posted by the shop, as it lands.',
+    img: 'IMG_6070', parts: ['gallery'],
+  },
+  {
     slug: 'visit', nav: 'Visit', tile: 'Visit the shop',
     title: 'Visit Glen Smoke Shop — 944 Roosevelt Rd, Glen Ellyn, IL',
     desc: 'Hours, directions, phone and text for Glen Smoke Shop at 944 Roosevelt Rd, Glen Ellyn, Illinois. Call or text (331) 551-0005.',
-    kicker: '09 — Visit',
+    kicker: '10 — Visit',
     lede: 'Where we are, when we are open, and how to reach us.',
     img: 'IMG_6070', parts: ['visit', 'tour', 'reviews'],
   },

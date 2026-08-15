@@ -857,6 +857,38 @@ function initPortal() {
   })
 }
 
+/* -------------------------------------------------------- gallery feed */
+/* The Project Knox embed mounts itself and, when the feed is empty, deletes its
+   own container. That is reasonable behaviour for an embed and useless for a
+   page whose entire job is to show it — an empty feed would leave a heading
+   followed by nothing.
+ *
+ * So the empty state is real markup that starts visible, and this hides it once
+ * a tile actually lands. A MutationObserver rather than a timeout: the embed is
+ * async and fetches over the network, so there is no interval that is both
+ * short enough not to flash and long enough to be reliable on a slow
+ * connection. The observer also handles the feed going back to empty, which
+ * happens when the shop deletes its last photo. */
+function initGalleryFeed() {
+  const host = $('#knox-gallery'), empty = $('#gallery-empty')
+  if (!host || !empty) return
+
+  const settle = () => {
+    const grid = host.querySelector('[data-knox-gallery-grid]')
+    empty.toggleAttribute('hidden', !!grid && grid.children.length > 0)
+  }
+
+  settle()
+  const mo = new MutationObserver(settle)
+  mo.observe(host, { childList: true, subtree: true })
+
+  // The embed can also fail outright — blocked, offline, or a bad response. It
+  // exits silently by design, so nothing would ever arrive and the observer
+  // would wait forever. After a generous window, stop watching and leave the
+  // empty state up, which is the honest thing to show either way.
+  setTimeout(() => mo.disconnect(), 15000)
+}
+
 /* -------------------------------------------------------------- gallery */
 const TOUR = [
   { id: 'IMG_6079', cls: 'w4', alt: 'Wide view of the sales floor, shelves and cases on every wall' },
@@ -1068,6 +1100,7 @@ function boot() {
   initLists()
   initPortal()
   initGallery()
+  initGalleryFeed()
   initReviews()
   initMap()
   initMotion()

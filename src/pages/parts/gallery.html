@@ -1,0 +1,47 @@
+<!-- =========================================================== GALLERY ====
+     The one page on this site whose contents the shop controls directly.
+
+     Everything else here was shot, cropped and audited before it shipped. This
+     is a live feed: the shop uploads through a Project Knox link and the photos
+     appear here on the next page load, with no build and no review in between.
+     That is the point of it, and it is also the thing to keep in mind — see the
+     note in gallery.css about what that means for the price-tag rule.
+
+     The embed mounts ITSELF. It finds its own <script> tag (document.currentScript,
+     falling back to [data-knox-gallery]) and inserts a <div data-knox-gallery-grid>
+     as the next sibling. So the script tag's position in this markup IS the
+     mount point — moving it moves the gallery. It styles inline and reads
+     data-columns / data-gap / data-radius off its own tag, which is where the
+     values below come from; they match --radius-sm and the site's grid gap so
+     the tiles sit in the same rhythm as the rest of the pages.
+
+     It also removes its container when the feed is empty, which is why the
+     empty state below is real markup rather than something the embed provides.
+     ======================================================================= -->
+<section class="section" id="gallery-feed">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="sec-kicker">Straight from the shop</p>
+      <h2 class="sec-title">What's on the <span class="thin">shelf today</span></h2>
+      <p class="sec-lede">New arrivals, restocks and whatever the counter feels like showing off. Posted by the shop, not by us &mdash; so this is the freshest thing on the site.</p>
+    </div>
+
+    <div class="knox-gallery reveal" id="knox-gallery">
+      <script src="https://photos.getprojectknox.com/g/45.js"
+              data-knox-gallery
+              data-columns="3"
+              data-gap="12"
+              data-radius="12"
+              async></script>
+    </div>
+
+    <!-- Shown until the feed returns something. initGallery Feed() in main.ts
+         hides it the moment a tile lands, and puts it back if the feed empties. -->
+    <p class="gallery-empty" id="gallery-empty">
+      Nothing posted yet. The shop adds photos as stock lands &mdash; check back, or
+      <a href="tel:+13315510005">call on (331) 551-0005</a> and someone will tell you what came in.
+    </p>
+
+    <p class="sec-note reveal">Photographs are posted by Glen Smoke Shop. Stock moves fast; call before you drive over if you are after something specific.</p>
+  </div>
+</section>
