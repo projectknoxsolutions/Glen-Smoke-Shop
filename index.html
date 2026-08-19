@@ -59,6 +59,7 @@
   "url": "https://glensmokeshop.com/",
   "image": "https://glensmokeshop.com/img/hero-wide-1600.jpg",
   "telephone": "+1-331-551-0005",
+  "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "944 Roosevelt Rd",
@@ -192,8 +193,8 @@
   <div class="hero-media" aria-hidden="true">
     <picture>
       <source type="image/avif" sizes="100vw"
-        srcset="img/IMG_6077-960.avif 960w, img/IMG_6077-1600.avif 1600w">
-      <img src="img/IMG_6077-1600.jpg" srcset="img/IMG_6077-960.jpg 960w, img/IMG_6077-1600.jpg 1600w" sizes="100vw" alt="" decoding="async">
+        srcset="img/hand-blown-water-pipe-case-960.avif 960w, img/hand-blown-water-pipe-case-1600.avif 1600w">
+      <img src="img/hand-blown-water-pipe-case-1600.jpg" srcset="img/hand-blown-water-pipe-case-960.jpg 960w, img/hand-blown-water-pipe-case-1600.jpg 1600w" sizes="100vw" alt="" decoding="async">
     </picture>
   </div>
 
@@ -241,8 +242,15 @@
       <span>944 Roosevelt Rd · Glen Ellyn, IL</span>
       <span class="pill" id="open-state" aria-live="polite"><i class="dot"></i><span>Checking hours…</span></span>
     </p>
+    <!-- The H1 reads as ONE sentence: "Glen Smoke Shop, Glen Ellyn — DuPage
+         County's deepest shelf". It used to be two glued together, because the
+         hidden half listed every product category and the visible half was the
+         tagline; concatenated, Google saw a 110-character run-on. The product
+         terms now live where they belong, in the <h3> category headings below
+         and in the <title>, and this states one thing: who, where, and the
+         claim. The visible line is unchanged, so the hero looks identical. -->
     <h1 class="hero-title">
-      <span class="visually-hidden">Glen Smoke Shop — vapes, nicotine pouches, glass and cigars in Glen Ellyn, Illinois.</span>
+      <span class="visually-hidden">Glen Smoke Shop, Glen Ellyn — </span>
       <span aria-hidden="true">DuPage County's <span class="thin">deepest</span> shelf</span>
     </h1>
     <p class="hero-sub"><strong>Disposables, pouches, hand-blown glass, a real cedar humidor</strong> — and someone behind the counter who actually knows the difference.</p>
@@ -259,7 +267,24 @@
       <a class="btn" href="#directions" data-directions>Directions</a>
     </div>
 
-    <div class="hero-stats" id="hero-stats"></div>
+    <div class="hero-stats" id="hero-stats">
+    <div class="hero-stat">
+      <div class="n" data-count="13" data-suffix="+">13+</div>
+      <div class="l">Vape brands</div>
+    </div>
+    <div class="hero-stat">
+      <div class="n" data-count="31" data-suffix="">31</div>
+      <div class="l">Pouch flavors</div>
+    </div>
+    <div class="hero-stat">
+      <div class="n" data-count="68" data-suffix="">68</div>
+      <div class="l">Glass pieces</div>
+    </div>
+    <div class="hero-stat">
+      <div class="n" data-count="30" data-suffix="">30</div>
+      <div class="l">Cigar houses</div>
+    </div>
+  </div>
   </div>
 </header>
 
@@ -275,7 +300,103 @@
       <h2 class="sec-title">Everything, <span class="thin">actually</span> in stock</h2>
       <p class="sec-lede">Eight sections, one room. Tap any door to see exactly what we carry — every brand on the shelf, described.</p>
     </div>
-    <div class="cat-grid" id="cat-grid"></div>
+    <div class="cat-grid" id="cat-grid">
+    <a class="cat reveal" href="/vapes" aria-label="Disposable Vapes" data-prefetch>
+      <picture>
+    <source type="image/avif" sizes="(max-width:700px) 46vw, (max-width:1080px) 50vw, 25vw" srcset="img/disposable-vape-shelves-960.avif 960w, img/disposable-vape-shelves-1600.avif 1600w">
+    <img src="img/disposable-vape-shelves-1600.jpg" srcset="img/disposable-vape-shelves-960.jpg 960w, img/disposable-vape-shelves-1600.jpg 1600w" sizes="(max-width:700px) 46vw, (max-width:1080px) 50vw, 25vw" alt="Disposable Vapes"
+         loading="lazy" decoding="async">
+  </picture>
+      <span class="cat-glow" style="background:radial-gradient(90% 70% at 50% 100%, rgba(255,138,30,.28), transparent 70%)"></span>
+      <span class="cat-body">
+        <h3 class="cat-name">Disposable Vapes</h3>
+        <span class="cat-count">13 brands</span>
+      </span>
+    </a>
+    <a class="cat reveal" href="/pouches" aria-label="Nicotine Pouches" data-prefetch>
+      <picture>
+    <source type="image/avif" sizes="(max-width:700px) 46vw, (max-width:1080px) 50vw, 25vw" srcset="img/nicotine-pouch-rack-960.avif 960w, img/nicotine-pouch-rack-1600.avif 1600w">
+    <img src="img/nicotine-pouch-rack-1600.jpg" srcset="img/nicotine-pouch-rack-960.jpg 960w, img/nicotine-pouch-rack-1600.jpg 1600w" sizes="(max-width:700px) 46vw, (max-width:1080px) 50vw, 25vw" alt="Nicotine Pouches"
+         loading="lazy" decoding="async">
+  </picture>
+      <span class="cat-glow" style="background:radial-gradient(90% 70% at 50% 100%, rgba(46,107,255,.3), transparent 70%)"></span>
+      <span class="cat-body">
+        <h3 class="cat-name">Nicotine Pouches</h3>
+        <span class="cat-count">31 flavors</span>
+      </span>
+    </a>
+    <a class="cat reveal" href="/glass" aria-label="Glass & Water Pipes" data-prefetch>
+      <picture>
+    <source type="image/avif" sizes="(max-width:700px) 46vw, (max-width:1080px) 50vw, 25vw" srcset="img/glass-water-pipe-cases-960.avif 960w, img/glass-water-pipe-cases-1600.avif 1600w">
+    <img src="img/glass-water-pipe-cases-1600.jpg" srcset="img/glass-water-pipe-cases-960.jpg 960w, img/glass-water-pipe-cases-1600.jpg 1600w" sizes="(max-width:700px) 46vw, (max-width:1080px) 50vw, 25vw" alt="Glass & Water Pipes"
+         loading="lazy" decoding="async">
+  </picture>
+      <span class="cat-glow" style="background:radial-gradient(90% 70% at 50% 100%, rgba(53,255,122,.24), transparent 70%)"></span>
+      <span class="cat-body">
+        <h3 class="cat-name">Glass & Water Pipes</h3>
+        <span class="cat-count">68 pieces</span>
+      </span>
+    </a>
+    <a class="cat reveal" href="/cigars" aria-label="Cigars & Humidor" data-prefetch>
+      <picture>
+    <source type="image/avif" sizes="(max-width:700px) 46vw, (max-width:1080px) 50vw, 25vw" srcset="img/humidor-cigar-display-960.avif 960w, img/humidor-cigar-display-1600.avif 1600w">
+    <img src="img/humidor-cigar-display-1600.jpg" srcset="img/humidor-cigar-display-960.jpg 960w, img/humidor-cigar-display-1600.jpg 1600w" sizes="(max-width:700px) 46vw, (max-width:1080px) 50vw, 25vw" alt="Cigars & Humidor"
+         loading="lazy" decoding="async">
+  </picture>
+      <span class="cat-glow" style="background:radial-gradient(90% 70% at 50% 100%, rgba(255,194,77,.28), transparent 70%)"></span>
+      <span class="cat-body">
+        <h3 class="cat-name">Cigars & Humidor</h3>
+        <span class="cat-count">30 houses</span>
+      </span>
+    </a>
+    <a class="cat reveal" href="/papers" aria-label="Papers & Wraps" data-prefetch>
+      <picture>
+    <source type="image/avif" sizes="(max-width:700px) 46vw, (max-width:1080px) 50vw, 25vw" srcset="img/rolling-papers-display-960.avif 960w, img/rolling-papers-display-1600.avif 1600w">
+    <img src="img/rolling-papers-display-1600.jpg" srcset="img/rolling-papers-display-960.jpg 960w, img/rolling-papers-display-1600.jpg 1600w" sizes="(max-width:700px) 46vw, (max-width:1080px) 50vw, 25vw" alt="Papers & Wraps"
+         loading="lazy" decoding="async">
+  </picture>
+      <span class="cat-glow" style="background:radial-gradient(90% 70% at 50% 100%, rgba(255,45,155,.24), transparent 70%)"></span>
+      <span class="cat-body">
+        <h3 class="cat-name">Papers & Wraps</h3>
+        <span class="cat-count">28 brands</span>
+      </span>
+    </a>
+    <a class="cat reveal" href="/hookah" aria-label="Hookah" data-prefetch>
+      <picture>
+    <source type="image/avif" sizes="(max-width:700px) 46vw, (max-width:1080px) 50vw, 25vw" srcset="img/hookah-shisha-shelf-960.avif 960w, img/hookah-shisha-shelf-1600.avif 1600w">
+    <img src="img/hookah-shisha-shelf-1600.jpg" srcset="img/hookah-shisha-shelf-960.jpg 960w, img/hookah-shisha-shelf-1600.jpg 1600w" sizes="(max-width:700px) 46vw, (max-width:1080px) 50vw, 25vw" alt="Hookah"
+         loading="lazy" decoding="async">
+  </picture>
+      <span class="cat-glow" style="background:radial-gradient(90% 70% at 50% 100%, rgba(46,107,255,.24), transparent 70%)"></span>
+      <span class="cat-body">
+        <h3 class="cat-name">Hookah</h3>
+        <span class="cat-count">27 on the shelf</span>
+      </span>
+    </a>
+    <a class="cat reveal" href="/gear" aria-label="Grinders & Torches" data-prefetch>
+      <picture>
+    <source type="image/avif" sizes="(max-width:700px) 46vw, (max-width:1080px) 50vw, 25vw" srcset="img/grinders-torches-case-960.avif 960w, img/grinders-torches-case-1600.avif 1600w">
+    <img src="img/grinders-torches-case-1600.jpg" srcset="img/grinders-torches-case-960.jpg 960w, img/grinders-torches-case-1600.jpg 1600w" sizes="(max-width:700px) 46vw, (max-width:1080px) 50vw, 25vw" alt="Grinders & Torches"
+         loading="lazy" decoding="async">
+  </picture>
+      <span class="cat-glow" style="background:radial-gradient(90% 70% at 50% 100%, rgba(255,138,30,.22), transparent 70%)"></span>
+      <span class="cat-body">
+        <h3 class="cat-name">Grinders & Torches</h3>
+        <span class="cat-count">7 kinds of gear</span>
+      </span>
+    </a>
+    <a class="cat reveal" href="/21-room" aria-label="The 21+ Room" data-prefetch>
+      <picture>
+    <source type="image/avif" sizes="(max-width:700px) 46vw, (max-width:1080px) 50vw, 25vw" srcset="img/kratom-kava-hemp-shelf-960.avif 960w, img/kratom-kava-hemp-shelf-1600.avif 1600w">
+    <img src="img/kratom-kava-hemp-shelf-1600.jpg" srcset="img/kratom-kava-hemp-shelf-960.jpg 960w, img/kratom-kava-hemp-shelf-1600.jpg 1600w" sizes="(max-width:700px) 46vw, (max-width:1080px) 50vw, 25vw" alt="The 21+ Room"
+         loading="lazy" decoding="async">
+  </picture>
+      <span class="cat-glow" style="background:radial-gradient(90% 70% at 50% 100%, rgba(53,255,122,.26), transparent 70%)"></span>
+      <span class="cat-body">
+        <h3 class="cat-name">The 21+ Room</h3>
+        <span class="cat-count">Kratom, kava & hemp</span>
+      </span>
+    </a></div>
     <!-- The one inbound link the master index needs from the home page. It was
          built, deployed and reachable by URL, and nothing on the site pointed
          at it — including the sitemap. -->
@@ -286,41 +407,6 @@
 </section>
 
 <!-- ========================================================= VAPES ==== -->
-
-<!-- =================================================== GALLERY TEASER ====
-     The gallery's entry point on the home page.
-
-     A plain nav link was not enough: the point of the gallery is that the shop
-     posts to it, and the shop should be able to see that it worked without
-     hunting through a menu. So this band shows the newest photos themselves,
-     pulled live from the same feed the gallery page uses, and the button goes
-     to the rest.
-
-     Everything below the heading is progressive. With no JS, a blocked feed, or
-     an empty gallery, what remains is a heading, a line of copy and a link to
-     /gallery — which is exactly the "gallery link on the main page" this is
-     supposed to be. The photo strip is a bonus that appears when there is
-     something to show. See initGalleryTeaser() in main.ts.
-     ====================================================================== -->
-<section class="section section-tight" id="gallery-teaser">
-  <div class="wrap">
-    <div class="teaser-head reveal">
-      <div>
-        <p class="sec-kicker">Straight from the shop</p>
-        <h2 class="sec-title">The <span class="thin">gallery</span></h2>
-        <p class="sec-lede" id="teaser-lede">New arrivals and restocks, posted by the shop as they land.</p>
-      </div>
-      <a class="btn btn-call teaser-cta" href="/gallery" data-prefetch>
-        See the gallery
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-    </div>
-
-    <!-- Filled by initGalleryTeaser, and left empty otherwise. Never renders a
-         placeholder box: an empty frame reads as a broken image. -->
-    <div class="teaser-strip" id="teaser-strip" hidden></div>
-  </div>
-</section>
 
 <section class="section reviews" id="reviews">
   <div class="wrap">
@@ -368,6 +454,15 @@
            rel="noopener" aria-label="Glen Smoke Shop on Snapchat, at GlenSmoke">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2.2c2.6 0 4.6 2 4.7 4.6 0 .7 0 1.5-.1 2.2.4.2.9.2 1.3 0 .2-.1.5-.1.7 0 .4.1.6.5.5.9-.1.5-.7.8-1.2 1-.5.2-1.1.4-1.2.8-.1.4.2.9.6 1.5.7 1 1.7 1.9 2.9 2.3.3.1.5.4.4.7-.1.5-.9.8-1.9 1-.4.1-.5.2-.6.6-.1.3-.2.6-.6.6-.5 0-1.1-.2-1.9-.1-.8.1-1.4.5-2 1-.6.4-1.2.9-2.1.9s-1.5-.5-2.1-.9c-.6-.5-1.2-.9-2-1-.8-.1-1.4.1-1.9.1-.4 0-.5-.3-.6-.6-.1-.4-.2-.5-.6-.6-1-.2-1.8-.5-1.9-1-.1-.3.1-.6.4-.7 1.2-.4 2.2-1.3 2.9-2.3.4-.6.7-1.1.6-1.5-.1-.4-.7-.6-1.2-.8-.5-.2-1.1-.5-1.2-1-.1-.4.1-.8.5-.9.2-.1.5-.1.7 0 .4.2.9.2 1.3 0-.1-.7-.1-1.5-.1-2.2C7.4 4.2 9.4 2.2 12 2.2Z"/></svg>
           Snapchat
+        </a>
+        <!-- The gallery's entry point. It lives here, in the row of things you
+             DO with the shop, rather than as a band of photographs on the home
+             page: the feed is the shop's to fill and it was pushing the rest of
+             the page down before anyone had asked to see it. A button costs one
+             line and the photographs are one tap away. -->
+        <a class="btn" href="/gallery" data-prefetch aria-label="Photo gallery from Glen Smoke Shop">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2.5"/><circle cx="8.8" cy="9" r="1.6"/><path d="m3.6 17.2 4.6-4.3a1.7 1.7 0 0 1 2.3 0l3.3 3.1M13.4 14.6l2-1.8a1.7 1.7 0 0 1 2.3 0l2.7 2.5"/></svg>
+          Gallery
         </a>
     </div>
 

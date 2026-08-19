@@ -59,6 +59,7 @@
   "url": "https://glensmokeshop.com/",
   "image": "https://glensmokeshop.com/img/hero-wide-1600.jpg",
   "telephone": "+1-331-551-0005",
+  "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "944 Roosevelt Rd",
@@ -210,7 +211,7 @@
     </a>
     <p class="sec-kicker">02 — Nicotine pouches</p>
     <h1 class="pagehead-title">Nicotine pouches</h1>
-    <p class="pagehead-lede">Three full cabinets, every flavour photographed off our own shelf.</p>
+    <p class="pagehead-lede">Three full cabinets, every flavour photographed off our own shelf. If you are hunting a particular ZYN flavour in Glen Ellyn, it is probably in one of them.</p>
   </div>
 </header>
 <section class="section" id="pouches">
@@ -234,8 +235,18 @@
 <section class="section section-tight" id="pouches-strip">
   <div class="wrap">
     <div class="photo-strip reveal">
-      <figure class="strip-shot" data-photo="pouch-wall" data-alt="A LOON NYXX and ZYN nicotine pouch rack filled with tins"></figure>
-      <figure class="strip-shot" data-photo="pouch-brands" data-alt="ZYN, CLEW, Lucy and Zimo nicotine pouch tins on a countertop rack"></figure>
+      <figure class="strip-shot" data-photo="pouch-wall" data-alt="A LOON NYXX and ZYN nicotine pouch rack filled with tins"><picture>
+    <source type="image/avif" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 31vw" srcset="img/pouch-wall-640.avif 640w, img/pouch-wall-1100.avif 1100w, img/pouch-wall-1700.avif 1700w">
+    <source type="image/webp" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 31vw" srcset="img/pouch-wall-640.webp 640w, img/pouch-wall-1100.webp 1100w, img/pouch-wall-1700.webp 1700w">
+    <img src="img/pouch-wall-1100.jpg" alt="A LOON NYXX and ZYN nicotine pouch rack filled with tins"
+         loading="lazy" decoding="async">
+  </picture></figure>
+      <figure class="strip-shot" data-photo="pouch-brands" data-alt="ZYN, CLEW, Lucy and Zimo nicotine pouch tins on a countertop rack"><picture>
+    <source type="image/avif" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 31vw" srcset="img/pouch-brands-640.avif 640w, img/pouch-brands-1100.avif 1100w, img/pouch-brands-1700.avif 1700w">
+    <source type="image/webp" sizes="(max-width:700px) 92vw, (max-width:1100px) 46vw, 31vw" srcset="img/pouch-brands-640.webp 640w, img/pouch-brands-1100.webp 1100w, img/pouch-brands-1700.webp 1700w">
+    <img src="img/pouch-brands-1100.jpg" alt="ZYN, CLEW, Lucy and Zimo nicotine pouch tins on a countertop rack"
+         loading="lazy" decoding="async">
+  </picture></figure>
     </div>
   </div>
 </section>
@@ -285,6 +296,15 @@
            rel="noopener" aria-label="Glen Smoke Shop on Snapchat, at GlenSmoke">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2.2c2.6 0 4.6 2 4.7 4.6 0 .7 0 1.5-.1 2.2.4.2.9.2 1.3 0 .2-.1.5-.1.7 0 .4.1.6.5.5.9-.1.5-.7.8-1.2 1-.5.2-1.1.4-1.2.8-.1.4.2.9.6 1.5.7 1 1.7 1.9 2.9 2.3.3.1.5.4.4.7-.1.5-.9.8-1.9 1-.4.1-.5.2-.6.6-.1.3-.2.6-.6.6-.5 0-1.1-.2-1.9-.1-.8.1-1.4.5-2 1-.6.4-1.2.9-2.1.9s-1.5-.5-2.1-.9c-.6-.5-1.2-.9-2-1-.8-.1-1.4.1-1.9.1-.4 0-.5-.3-.6-.6-.1-.4-.2-.5-.6-.6-1-.2-1.8-.5-1.9-1-.1-.3.1-.6.4-.7 1.2-.4 2.2-1.3 2.9-2.3.4-.6.7-1.1.6-1.5-.1-.4-.7-.6-1.2-.8-.5-.2-1.1-.5-1.2-1-.1-.4.1-.8.5-.9.2-.1.5-.1.7 0 .4.2.9.2 1.3 0-.1-.7-.1-1.5-.1-2.2C7.4 4.2 9.4 2.2 12 2.2Z"/></svg>
           Snapchat
+        </a>
+        <!-- The gallery's entry point. It lives here, in the row of things you
+             DO with the shop, rather than as a band of photographs on the home
+             page: the feed is the shop's to fill and it was pushing the rest of
+             the page down before anyone had asked to see it. A button costs one
+             line and the photographs are one tap away. -->
+        <a class="btn" href="/gallery" data-prefetch aria-label="Photo gallery from Glen Smoke Shop">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2.5"/><circle cx="8.8" cy="9" r="1.6"/><path d="m3.6 17.2 4.6-4.3a1.7 1.7 0 0 1 2.3 0l3.3 3.1M13.4 14.6l2-1.8a1.7 1.7 0 0 1 2.3 0l2.7 2.5"/></svg>
+          Gallery
         </a>
     </div>
 

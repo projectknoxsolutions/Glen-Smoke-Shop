@@ -18,8 +18,6 @@ import Lenis from 'lenis'
 import catalog from './data/catalog.json'
 import store from './data/store.json'
 import reviewData from './data/reviews.json'
-import gear from './data/gear.json'
-import room21 from './data/room21.json'
 import pouchImages from './data/pouch-images.json'
 import vapeItems from './data/vape-items.json'
 import cigarItems from './data/cigar-items.json'
@@ -36,45 +34,10 @@ const $$ = <T extends Element = HTMLElement>(s: string, r: ParentNode = document
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches
 
 /* ---------------------------------------------------------------- images */
-/** Responsive <picture> against the AVIF/WebP/JPEG sets the pipeline emits. */
-function picture(id: string, alt: string, sizes = '100vw', eager = false): string {
-  // No section image renders wider than ~52vw, which is ~750 CSS px on a 1440
-  // viewport - 1600 already covers that at 2x DPR. Larger derivatives were pure
-  // repo and transfer weight, so the set stops here. The hero uses its own
-  // art-directed plates and does go bigger.
-  const w = [960, 1600]
-  const set = (ext: string) => w.map(n => `img/${id}-${n}.${ext} ${n}w`).join(', ')
-  // AVIF with a progressive-JPEG fallback. WebP sat between them buying almost
-  // nothing: every browser that lacks AVIF support here is old enough that the
-  // JPEG is the honest fallback, and carrying a third encoding of 16 frames cost
-  // more repo weight than it saved any real visitor.
-  return `<picture>
-    <source type="image/avif" sizes="${sizes}" srcset="${set('avif')}">
-    <img src="img/${id}-1600.jpg" srcset="${set('jpg')}" sizes="${sizes}" alt="${alt}"
-         loading="${eager ? 'eager' : 'lazy'}" decoding="async">
-  </picture>`
-}
-
-/**
- * Shoot-2 assets (the 9 Aug shoot), which use a different derivative set from
- * the originals: 640/1100/1700 rather than 960/1600, and WebP between AVIF and
- * JPEG. Deliberately a SECOND function rather than branching inside picture()
- * on whether the id starts with "IMG_" — a helper that silently guesses which
- * files exist produces a broken <img> at runtime and nothing at build time.
- * Two explicit functions cannot pick wrong.
- *
- * Slugs, crops and alt text are defined in pipeline/shoot2.json.
- */
-function photo(slug: string, alt: string, sizes = '100vw', eager = false): string {
-  const w = [640, 1100, 1700]
-  const set = (ext: string) => w.map(n => `img/${slug}-${n}.${ext} ${n}w`).join(', ')
-  return `<picture>
-    <source type="image/avif" sizes="${sizes}" srcset="${set('avif')}">
-    <source type="image/webp" sizes="${sizes}" srcset="${set('webp')}">
-    <img src="img/${slug}-1100.jpg" alt="${alt}"
-         loading="${eager ? 'eager' : 'lazy'}" decoding="async">
-  </picture>`
-}
+/* picture() and photo() used to live here, building <picture> markup in the
+   browser for the category grid, the section figures and the tour mosaic.
+   All three are rendered at build time now, so both helpers moved to
+   scripts/blocks.mjs and nothing on this side emits an <img> any more. */
 
 /* ---------------------------------------------------------------- 21+ room */
 
@@ -190,6 +153,11 @@ function initTicker() {
 /* ----------------------------------------------------------- hero stats */
 function initHeroStats() {
   const el = $('#hero-stats'); if (!el) return
+  // Build-time markup wins. scripts/build-pages.mjs renders these four figures
+  // into the HTML from the same catalog.json this function reads, so a crawler
+  // and a no-JS visitor both get real numbers. Re-rendering here would only
+  // reintroduce the window where they do not exist.
+  if (el.children.length) return
   const stats = [
     { n: `${catalog.vapes.length}+`,   l: 'Vape brands' },
     { n: `${catalog.pouches.length}`,  l: 'Pouch flavors' },
@@ -209,68 +177,15 @@ function initHeroStats() {
   }).join('')
 }
 
-/* ----------------------------------------------------------- categories */
-// Extensionless, matching what the site advertises everywhere else. These were
-// still '.html' after the move to Cloudflare Pages, which 308-redirects that
-// form — so every category tile on the home page cost the visitor a redirect.
-const PAGE_OF: Record<string, string> = {
-  vapes: '/vapes', pouches: '/pouches', glass: '/glass', cigars: '/cigars',
-  papers: '/papers', gear: '/gear', hookah: '/hookah', '21-room': '/21-room',
-}
-
-const CATEGORIES = [
-  { id: 'vapes',   img: 'IMG_6092', name: 'Disposable Vapes', count: () => `${catalog.vapes.length} brands`,        tint: 'rgba(255,138,30,.28)' },
-  { id: 'pouches', img: 'IMG_6083', name: 'Nicotine Pouches', count: () => `${catalog.pouches.length} flavors`,     tint: 'rgba(46,107,255,.3)' },
-  { id: 'glass',   img: 'IMG_6078', name: 'Glass & Water Pipes', count: () => `${catalog.glass.count} pieces`,      tint: 'rgba(53,255,122,.24)' },
-  { id: 'cigars',  img: 'IMG_6090', name: 'Cigars & Humidor', count: () => `${catalog.cigars.length} houses`,       tint: 'rgba(255,194,77,.28)' },
-  { id: 'papers',  img: 'IMG_6084', name: 'Papers & Wraps',   count: () => `${catalog.papers.length} brands`,       tint: 'rgba(255,45,155,.24)' },
-  { id: 'hookah',  img: 'IMG_6081', name: 'Hookah',           count: () => `${catalog.hookah.count} on the shelf`,  tint: 'rgba(46,107,255,.24)' },
-  // Was id:'papers' — the same destination as the tile directly above it, so
-  // this one silently took you to the papers page. And the count came from
-  // catalog.accessories, a bucket holding Trojan, Vapetasia and Pod Juice, so
-  // "31 brands" described nothing a grinder buyer wanted.
-  { id: 'gear',    img: 'IMG_6181', name: 'Grinders & Torches', count: () => `${gear.groups.length} kinds of gear`, tint: 'rgba(255,138,30,.22)' },
-  // IMG_6094 until the photo audit: the compliance crop left it showing the top
-  // two shelves of a disposable-vape bay under the caption "Kratom, kava & hemp".
-  { id: '21-room', img: 'IMG_6183', name: 'The 21+ Room',     count: () => 'Kratom, kava & hemp',                   tint: 'rgba(53,255,122,.26)' },
-]
-
-/* ---------------------------------------------------------------- gear */
-/* Rendered from src/data/gear.json, which is read off the photographs rather
-   than from catalog.accessories — see that file's _README for why. */
-function initGear() {
-  const el = $('#gear-grid'); if (!el) return
-  el.innerHTML = (gear.groups as Array<{
-    id: string; name: string; lede: string; detail: string
-    brands?: string[]; specs?: string[]
-  }>).map(g => `
-    <article class="gear-card reveal" id="${g.id}">
-      <h3 class="gear-name">${g.name}</h3>
-      <p class="gear-lede">${g.lede}</p>
-      <p class="gear-detail">${g.detail}</p>
-      ${g.brands?.length ? `<div class="gear-brands">${g.brands.map(b => `<span class="chip">${b}</span>`).join('')}</div>` : ''}
-      ${g.specs?.length ? `<ul class="gear-specs">${g.specs.map(sp => `<li>${sp}</li>`).join('')}</ul>` : ''}
-    </article>`).join('')
-}
-
-/* ------------------------------------------------------------- 21+ room */
-/* Brands, forms, vein colours and origins. Nothing about effects — see
-   src/data/room21.json for the rule and what was dropped to keep it. */
-function initRoom21() {
-  const el = $('#room21-grid'); if (!el) return
-  type G = { id: string; name: string; lede: string; forms?: string[]; veins?: string[]
-             origins?: string[]; note?: string; brands?: Array<{ name: string; source: string }> }
-  el.innerHTML = (room21.groups as G[]).map(g => `
-    <article class="gear-card reveal" id="r21-${g.id}">
-      <h3 class="gear-name">${g.name}</h3>
-      <p class="gear-lede">${g.lede}</p>
-      ${g.brands?.length ? `<div class="gear-brands">${g.brands.map(b => `<span class="chip">${b.name}</span>`).join('')}</div>` : ''}
-      ${g.forms?.length ? `<ul class="gear-specs">${g.forms.map(f => `<li>${f}</li>`).join('')}</ul>` : ''}
-      ${g.veins?.length ? `<p class="r21-meta"><span>Vein</span> ${g.veins.join(' · ')}</p>` : ''}
-      ${g.origins?.length ? `<p class="r21-meta"><span>Origin</span> ${g.origins.join(' · ')}</p>` : ''}
-      ${g.note ? `<p class="gear-detail">${g.note}</p>` : ''}
-    </article>`).join('')
-}
+/* ------------------------------------------------- server-rendered blocks */
+/* The category doors, the gear cards and the 21+ room cards used to be built
+   here, into empty <div>s that shipped in the HTML. That put the eight category
+   names, every gear brand and every botanical brand behind a script tag, which
+   is the one place a smoke shop's words are worth nothing.
+   They are rendered at BUILD time now — see scripts/blocks.mjs, which owns the
+   markup, the data and the <picture> set. Nothing renders them here any more;
+   the code was deleted rather than guarded, because two copies of the same
+   markup drift and a guard hides the drift. */
 
 /* ---------------------------------------------------------------- shop */
 /* Filters the master index. Progressive enhancement ONLY — every card and
@@ -326,43 +241,13 @@ function initShopIndex() {
   }
 }
 
-function initCategories() {
-  const el = $('#cat-grid'); if (!el) return
-  el.innerHTML = CATEGORIES.map(c0 => { const c = { ...c0, href: PAGE_OF[c0.id] || '/' }; return `
-    <a class="cat reveal" href="${c.href}" aria-label="${c.name}" data-prefetch>
-      ${/* The 700px breakpoint in sections.css puts these two-up, not one-up —
-            a later media query overrides the 560px rule further down the file.
-            Claiming 100vw there downloaded a card at twice the width it paints. */
-        picture(c.img, c.name, '(max-width:700px) 46vw, (max-width:1080px) 50vw, 25vw')}
-      <span class="cat-glow" style="background:radial-gradient(90% 70% at 50% 100%, ${c.tint}, transparent 70%)"></span>
-      <span class="cat-body">
-        <span class="cat-name">${c.name}</span>
-        <span class="cat-count">${c.count()}</span>
-      </span>
-    </a>` }).join('')
-}
-
 /* --------------------------------------------------------------- photos */
-function initSectionPhotos() {
-  const sizes = '(max-width:940px) 100vw, 52vw'
-  // Legacy frames, 960/1600 derivative set.
-  $$('[data-img]').forEach(fig => {
-    const id = fig.getAttribute('data-img')!
-    const alt = fig.getAttribute('data-alt') || ''
-    fig.insertAdjacentHTML('afterbegin', picture(id, alt, sizes))
-  })
-  // 9 Aug shoot, 640/1100/1700 set. Separate attribute so a slug can never be
-  // handed to the helper that would look for the wrong filenames.
-  $$('[data-photo]').forEach(fig => {
-    const slug = fig.getAttribute('data-photo')!
-    const alt = fig.getAttribute('data-alt') || ''
-    // Strip shots sit three-up, so they never need a full-viewport candidate.
-    const s = fig.classList.contains('strip-shot')
-      ? '(max-width:700px) 92vw, (max-width:1100px) 46vw, 31vw'
-      : sizes
-    fig.insertAdjacentHTML('afterbegin', photo(slug, alt, s))
-  })
-}
+/* The section photographs used to be injected here, into <figure> elements
+   that shipped empty. Twenty-nine shelf shots with careful alt text, none of
+   them in the document a crawler downloads and none of them visible to the
+   browser's preload scanner. They are built into the HTML now — the figures
+   still carry data-photo and data-alt, which is where the slug and the alt
+   text are authored; scripts/blocks.mjs reads them at build time. */
 
 /* --------------------------------------------------------------- shelf */
 
@@ -398,19 +283,15 @@ function shelfMarkup(b: ShelfBrand): string {
 }
 
 /* ---------------------------------------------------------- vape brands */
+/* The 43 brand chips and the hardware chips are in the HTML from the build
+   (scripts/blocks.mjs). This wires the panel they open — which is behaviour,
+   and stays in the browser. The panel body is still built here on demand:
+   it is one brand at a time, it is behind a click, and rendering all 43 of
+   them into the page to satisfy a crawler that already has every brand NAME
+   would trade a real page-weight cost for nothing. */
 function initVapes() {
   const list = $('#vape-brands'), detail = $('#vape-detail')
   if (!list || !detail) return
-
-  list.innerHTML = catalog.vapes.map(v => `
-    <button class="brand-chip ${v.hero ? 'is-hero' : ''}" data-brand="${v.id}"
-            aria-expanded="false" aria-controls="vape-detail">
-      ${v.hero ? '<span class="star">★</span>' : ''}${v.brand}
-    </button>`).join('')
-
-  const hw = $('#hardware-brands')
-  if (hw) hw.innerHTML = catalog.hardware.map(h =>
-    `<button class="brand-chip" type="button" data-detail="${h.id}">${h.brand}</button>`).join('')
 
   const show = (id: string) => {
     const v = catalog.vapes.find(x => x.id === id)!
@@ -510,48 +391,6 @@ function init3D() {
         mv.setAttribute('src', `models/${btn.getAttribute('data-model')}.glb`)
       })
     })
-  }
-}
-
-/* ------------------------------------------------------- spec grids */
-
-/* Glass shapes, percolator types and hookah components. These are the parts of
-   the shop where the staff knowledge IS the product — a customer buying a rig
-   blind does not know what a recycler does differently, and the perc is the
-   single thing most people buy without understanding. We already wrote the
-   copy; it just had nowhere to live, because glass has no brands to hang chips
-   off and hookah's only chips were the botanical brands. */
-const GLASS_PERC = /perc|condenser|ice-pinch/i
-
-function specTile(id: string): string {
-  const d = describe(id)
-  if (!d) return ''
-  return `<button class="spec" type="button" data-detail="${id}">
-    <span class="spec-n">${d.name}</span>
-    ${d.blurb ? `<span class="spec-b">${d.blurb}</span>` : ''}
-  </button>`
-}
-
-function initSpecGrids() {
-  const slug = (s: string) => s.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
-
-  const shapes = $('#glass-shapes'), percs = $('#glass-percs')
-  if (shapes && percs) {
-    const styles = catalog.glass.styles as string[]
-    shapes.innerHTML = styles.filter(s => !GLASS_PERC.test(s)).map(s => specTile(slug(s))).join('')
-    percs.innerHTML = styles.filter(s => GLASS_PERC.test(s)).map(s => specTile(slug(s))).join('')
-  }
-
-  const hk = $('#hookah-parts')
-  if (hk) {
-    // These ids were written by the copy pass and have no catalog array behind
-    // them, so they are listed here rather than derived.
-    hk.innerHTML = [
-      'hookah-pipes', 'hookah-bowl-phunnel', 'hookah-bowl-egyptian', 'hookah-bowl-vortex',
-      'hookah-bowl-silicone', 'hookah-hose-washable', 'hookah-hose-traditional',
-      'hookah-coals-coconut', 'hookah-coals-quick-light', 'hookah-heat-management',
-      'hookah-tongs-foil-punch', 'hookah-grommets-mouth-tips',
-    ].map(specTile).join('')
   }
 }
 
@@ -727,97 +566,31 @@ function initPouches() {
   })
 }
 
-/* ---------------------------------------------------------------- glass */
-const COLOR_HEX: Record<string, string> = {
-  clear: '#DDE6F0', cobalt: '#1E4FD8', 'royal blue': '#2E6BFF', jade: '#2FA980',
-  'kelly green': '#3CB44B', amber: '#D98A2B', gold: '#C9A227', 'gold fume': '#C9A227',
-  iridescent: '#8E7BE0', 'oil slick': '#6A5ACD', maroon: '#7B1F3A', coral: '#F4796B',
-  'blush pink': '#F2A0BE', lavender: '#B79CE8', rasta: '#3CB44B', white: '#EDEDED',
-  black: '#222833', purple: '#7C4DFF', teal: '#1FA8A0', pink: '#FF6FAE',
-}
-function initGlass() {
-  const stats = $('#glass-stats')
-  if (stats) {
-    stats.innerHTML = [
-      { n: catalog.glass.count, l: 'Pieces on display' },
-      { n: '150+', l: 'Hand pipes & chillums' },
-      { n: catalog.hookah.count, l: 'Hookahs' },
-    ].map(s => `<div class="gstat"><div class="n">${s.n}</div><div class="l">${s.l}</div></div>`).join('')
-  }
+/* --------------------------------------------------- disclosure lists */
+/* Cigar houses, paper brands, accessory brands and the botanical brands are
+   all rendered at build time now (scripts/blocks.mjs) — including the ones
+   behind "+N more", which ship inside a `hidden` <span> rather than being
+   absent from the document. They are in the HTML, in the DOM, and findable by
+   the browser's own find-in-page even with this script disabled.
 
-  const cols = $('#glass-colors')
-  if (cols) {
-    const seen = new Set<string>()
-    const swatches = (catalog.glass.colors as string[]).flatMap(raw => {
-      const key = Object.keys(COLOR_HEX).find(k => raw.toLowerCase().includes(k))
-      if (!key || seen.has(key)) return []
-      seen.add(key)
-      return [`<span class="swatch"><i style="background:${COLOR_HEX[key]}"></i>${key.replace(/\b\w/g, m => m.toUpperCase())}</span>`]
-    })
-    cols.innerHTML = swatches.join('')
-  }
-}
-
-/* ----------------------------------------------------- cigars & brands */
+   What is left is the disclosure, which is behaviour. It reads the count off
+   data-more rather than re-deriving it, so this never has to know which of the
+   five lists it is looking at. */
 function initLists() {
-  // Cigars had their own render path and stayed fully expanded: 30 names inline.
-  const cigarChip = (c: { brand: string; id?: string; line?: string }) =>
-    c.id && describe(c.id)
-      ? `<button class="cigar-name" type="button" data-detail="${c.id}" data-meta="${c.line || ''}">${c.brand}</button>`
-      : `<span class="cigar-name">${c.brand}</span>`
-
-  const cigarList = (sel: string, arr: { brand: string; id?: string; line?: string }[], shown: number) => {
-    const el = $(sel); if (!el) return
-    const head = arr.slice(0, shown), rest = arr.slice(shown)
-    el.innerHTML =
-      head.map(cigarChip).join('') +
-      (rest.length
-        ? `<span class="brand-more" hidden>${rest.map(cigarChip).join('')}</span>
-           <button class="cigar-name is-more" aria-expanded="false">+${rest.length} more</button>`
-        : '')
-    const btn = $('button.is-more', el)
-    btn?.addEventListener('click', () => {
-      const more = $('.brand-more', el)!
+  $$<HTMLElement>('.brand-more').forEach(more => {
+    const btn = more.nextElementSibling as HTMLElement | null
+    if (!btn || !btn.classList.contains('is-more')) return
+    const n = btn.dataset.more || ''
+    btn.addEventListener('click', () => {
       const open = btn.getAttribute('aria-expanded') === 'true'
       more.hidden = open
       btn.setAttribute('aria-expanded', String(!open))
-      btn.textContent = open ? `+${rest.length} more` : 'Show fewer'
+      btn.textContent = open ? `+${n} more` : 'Show fewer'
+      // The page just got taller or shorter by a few hundred pixels; every
+      // trigger below this point is now measured against the wrong offset.
       ScrollTrigger.refresh()
     })
-  }
-  cigarList('#cigars-premium', catalog.cigars.filter(c => c.premium), 8)
-  cigarList('#cigars-value', catalog.cigars.filter(c => !c.premium), 6)
-
-  // Six visible, the rest behind a disclosure. Rendering all 194 brand names
-  // inline made the phone page roughly 6,000px of text nobody reads standing in
-  // a parking lot - but the names still need to be in the DOM for search.
-  const chip = (a: { brand: string; id?: string }) =>
-    a.id && describe(a.id)
-      ? `<button class="brand-chip" type="button" data-detail="${a.id}">${a.brand}</button>`
-      : `<span class="brand-chip">${a.brand}</span>`
-
-  const chips = (sel: string, arr: { brand: string; id?: string }[], shown = 6) => {
-    const el = $(sel); if (!el) return
-    const head = arr.slice(0, shown), rest = arr.slice(shown)
-    el.innerHTML =
-      head.map(chip).join('') +
-      (rest.length
-        ? `<span class="brand-more" hidden>${rest.map(chip).join('')}</span>
-           <button class="brand-chip is-more" aria-expanded="false">+${rest.length} more</button>`
-        : '')
-    const btn = $('button.is-more', el)
-    btn?.addEventListener('click', () => {
-      const more = $('.brand-more', el)!
-      const open = btn.getAttribute('aria-expanded') === 'true'
-      more.hidden = open
-      btn.setAttribute('aria-expanded', String(!open))
-      btn.textContent = open ? `+${rest.length} more` : 'Show fewer'
-      ScrollTrigger.refresh()
-    })
-  }
-  chips('#paper-brands', catalog.papers)
-  chips('#accessory-brands', catalog.accessories)
-  chips('#kratom-brands', catalog.kratom)
+  })
 }
 
 /* ----------------------------------------------------------- hemp gate */
@@ -857,63 +630,6 @@ function initPortal() {
   })
 }
 
-/* ------------------------------------------------------ gallery teaser */
-/* The home page's entry point to /gallery, showing the newest uploads rather
-   than a static picture — the shop should be able to see that a post worked
-   without going looking for it.
- *
- * Reads the same feed the embed reads. Deliberately NOT by loading the embed
- * script here: that script mounts itself wherever its own tag sits and renders
- * everything it has, which is the right behaviour on the gallery page and the
- * wrong one for a four-photo teaser. Fetching the JSON costs one small request
- * and leaves the layout under our control.
- *
- * Every failure path ends the same way — the strip stays hidden and the band is
- * a heading, a line of copy and a button to /gallery, which is the link this
- * section is for. Feed empty, request blocked, JSON malformed, no JS at all:
- * same result, nothing broken.
- *
- * URLs are checked against the image host before being put in a src. The feed
- * is first-party, but this value ends up in the DOM and the embed itself
- * validates the same way; a feed that starts returning something else should
- * not become an arbitrary-URL injector on the home page. */
-const KNOX_FEED = 'https://photos.getprojectknox.com/g/45.json'
-const KNOX_IMG_PREFIX = 'https://photos.getprojectknox.com/i/'
-const TEASER_MAX = 4
-
-function initGalleryTeaser() {
-  const strip = $('#teaser-strip')
-  if (!strip) return
-
-  fetch(KNOX_FEED, { credentials: 'omit' })
-    .then(r => (r.ok ? r.json() : null))
-    .then(data => {
-      const photos: any[] = Array.isArray(data?.photos) ? data.photos : []
-      const usable = photos
-        .filter(p => typeof p?.url === 'string' && p.url.startsWith(KNOX_IMG_PREFIX))
-        .slice(0, TEASER_MAX)
-      if (!usable.length) return
-
-      strip.innerHTML = usable.map(p => {
-        // textContent-equivalent escaping: the caption is uploader-supplied and
-        // is going into markup, so it is escaped rather than trusted.
-        const alt = String(p.alt || p.caption || 'A photo posted by Glen Smoke Shop')
-          .replace(/[<>"&]/g, c => ({ '<': '&lt;', '>': '&gt;', '"': '&quot;', '&': '&amp;' }[c] as string))
-        return `<a class="teaser-shot" href="/gallery" data-prefetch>
-          <img src="${p.url}" alt="${alt}" loading="lazy" decoding="async">
-        </a>`
-      }).join('')
-      strip.removeAttribute('hidden')
-
-      const lede = $('#teaser-lede')
-      if (lede && photos.length > TEASER_MAX) {
-        lede.textContent = `New arrivals and restocks, posted by the shop as they land. ${photos.length} photos so far.`
-      }
-      ScrollTrigger.refresh()
-    })
-    .catch(() => { /* the band still links to the gallery; that is the job */ })
-}
-
 /* -------------------------------------------------------- gallery feed */
 /* The Project Knox embed mounts itself and, when the feed is empty, deletes its
    own container. That is reasonable behaviour for an embed and useless for a
@@ -947,25 +663,6 @@ function initGalleryFeed() {
 }
 
 /* -------------------------------------------------------------- gallery */
-const TOUR = [
-  { id: 'IMG_6079', cls: 'w4', alt: 'Wide view of the sales floor, shelves and cases on every wall' },
-  { id: 'IMG_6080', cls: 'w2', alt: 'Product shelving and centre display at Glen Smoke Shop' },
-  { id: 'IMG_6087', cls: 'w2', alt: 'Display case of dab rigs, nectar collectors and silicone pieces' },
-  { id: 'IMG_6077', cls: 'w2', alt: 'Lit glass case filled with hand-blown water pipes' },
-  { id: 'IMG_6089', cls: 'w2', alt: 'Cedar humidor shelves lined with cigars' },
-  { id: 'IMG_6093', cls: 'w3', alt: 'Aisle of disposable vapes stretching to the back of the store' },
-  // Both of these were dropped when price tags were being cropped out rather
-  // than defocused, and both are back now that the rule is about legibility.
-  { id: 'IMG_6074', cls: 'w3', alt: 'A stocked shelf bay of vapes, wraps and hemp-derived products' },
-  { id: 'IMG_6070', cls: 'w3', alt: 'Glen Smoke Shop storefront lit up at night' },
-  { id: 'IMG_6094', cls: 'w3', alt: 'The full shelf bay from the counter, floor to arch' },
-]
-function initGallery() {
-  const el = $('#gallery'); if (!el) return
-  el.innerHTML = TOUR.map(t =>
-    `<figure class="${t.cls}">${picture(t.id, t.alt, '(max-width:860px) 100vw, 50vw')}</figure>`).join('')
-}
-
 /* -------------------------------------------------------------- reviews */
 type Review = { name: string; initial?: string; stars: number; text: string; date?: string }
 const AV = ['#FF8A1E', '#2E6BFF', '#FF2D9B', '#35FF7A', '#FFC24D']
@@ -1070,13 +767,22 @@ function initMotion() {
     $$('[data-count]').forEach(el => {
       const target = Number(el.getAttribute('data-count')) || 0
       const suffix = el.getAttribute('data-suffix') || ''
-      el.textContent = '0' + suffix
+      // Zero it INSIDE onEnter, not here. Zeroing at init and only restoring
+      // the real figure when the element scrolls into view meant the counters
+      // read "0+ VAPE BRANDS" for as long as they stayed below the fold —
+      // which on a phone is until you scroll, and forever if the trigger never
+      // fires. The markup now ships with the real numbers in it; the animation
+      // borrows them for a second and a half and gives them back.
       ScrollTrigger.create({
         trigger: el, start: 'top 92%', once: true,
-        onEnter: () => gsap.to({ v: 0 }, {
-          v: target, duration: 1.5, ease: 'power2.out',
-          onUpdate() { el.textContent = Math.round((this.targets()[0] as any).v) + suffix },
-        }),
+        onEnter: () => {
+          el.textContent = '0' + suffix
+          gsap.to({ v: 0 }, {
+            v: target, duration: 1.5, ease: 'power2.out',
+            onUpdate() { el.textContent = Math.round((this.targets()[0] as any).v) + suffix },
+            onComplete() { el.textContent = target + suffix },
+          })
+        },
       })
     })
 
@@ -1142,23 +848,15 @@ function boot() {
   initHours()
   initTicker()
   initHeroStats()
-  initCategories()
-  initGear()
-  initRoom21()
   initShopIndex()
-  initSectionPhotos()
   initVapes()
   init3D()
   initPouches()
   initShelf('vape', vapeItems as ProductTile[], 'disposables')
   initShelf('cigar', cigarItems as ProductTile[], 'cigars')
-  initGlass()
-  initSpecGrids()
   initLists()
   initPortal()
-  initGallery()
   initGalleryFeed()
-  initGalleryTeaser()
   initReviews()
   initMap()
   initMotion()

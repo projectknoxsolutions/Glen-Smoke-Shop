@@ -1,36 +1,42 @@
 #!/usr/bin/env bash
-# Copy only the frames the site actually references into public/img.
-# Keeping the repo lean matters: the full derivative set is ~170MB, the site needs ~35MB.
+# Copy the two frames the site uses STRAIGHT off the shoot, and give them the
+# filenames the pages actually reference.
+#
+# Everything else in public/img is written by pipeline/retouch.py, which crops,
+# retouches and exports each frame under its own output name — the key in
+# retouch.json. This script used to list those frames too, which meant a run of
+# it would quietly overwrite fifteen retouched exports with their raw originals,
+# price tags and all. It now covers only what retouch.json does not own.
+#
+# The rename on the way in is the point: the camera called them IMG_6070 and
+# IMG_6077, which tells a person nothing and tells Google Images less.
 set -euo pipefail
 
 SRC="${1:-/home/claude/gss/assets}"
 DEST="$(cd "$(dirname "$0")/.." && pwd)/public/img"
 mkdir -p "$DEST"
 
-# Every frame referenced from index.html or main.ts.
+# frame:published-name
 FRAMES=(
-  IMG_6070 IMG_6071            # storefront
-  IMG_6074 IMG_6077 IMG_6078   # shelves, glass
-  IMG_6079 IMG_6080            # interior wides
-  IMG_6083 IMG_6084            # pouches, papers
-  IMG_6081 IMG_6087 IMG_6089 IMG_6090  # hookah, accessories, humidor
-  IMG_6092 IMG_6093 IMG_6094   # vape walls
+  IMG_6070:glen-smoke-shop-storefront   # the storefront at night — the visit and gallery share card
+  IMG_6077:hand-blown-water-pipe-case   # the lit glass case — the home hero backdrop and the glass share card
 )
 
-# AVIF and WebP at 960 and 1600; JPEG only at 1600 as the last-resort fallback.
-# Nothing larger ships: no section image renders wider than ~52vw, so 1600 already
-# covers a 2x display. The hero has its own art-directed plates in public/img.
+# AVIF and JPEG at 960 and 1600. Nothing larger ships: no section image renders
+# wider than ~52vw, so 1600 already covers a 2x display. The hero sign has its
+# own art-directed plates, built by pipeline/sign_hero.py.
 copied=0 missing=()
-for f in "${FRAMES[@]}"; do
+for pair in "${FRAMES[@]}"; do
+  frame="${pair%%:*}" name="${pair##*:}"
   found=0
   for ext in avif jpg; do
     for w in 960 1600; do
-      src="$SRC/$ext/$f-$w.$ext"
+      src="$SRC/$ext/$frame-$w.$ext"
       [ -f "$src" ] || continue
-      cp "$src" "$DEST/"; copied=$((copied+1)); found=1
+      cp "$src" "$DEST/$name-$w.$ext"; copied=$((copied+1)); found=1
     done
   done
-  [ "$found" -eq 1 ] || missing+=("$f")
+  [ "$found" -eq 1 ] || missing+=("$frame")
 done
 
 echo "copied $copied files for ${#FRAMES[@]} frames -> $DEST"

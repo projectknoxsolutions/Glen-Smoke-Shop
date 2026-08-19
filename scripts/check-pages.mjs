@@ -66,6 +66,36 @@ if (fs.existsSync(dist)) {
   }
 }
 
+// 5. every server-rendered content block must have actually landed in dist.
+//
+//    These are the blocks that carry the shop's words — category names, brand
+//    lists, glass shapes, botanical brands. They used to be written by main.ts
+//    into empty containers, which meant a crawler downloaded eleven empty divs
+//    and a script tag. They are built into the HTML now (scripts/blocks.mjs),
+//    and the failure mode of that arrangement is silent: a renamed container id
+//    or an edited part file leaves the div empty, the page still builds, still
+//    looks right in a browser (nothing renders it client-side any more only
+//    because we deleted that code — so no, it does not look right, but it does
+//    still BUILD), and the page quietly de-indexes. So assert it.
+if (fs.existsSync(dist)) {
+  const { BLOCKS } = await import('./blocks.mjs')
+  const ids = Object.keys(BLOCKS)
+  const seen = new Set()
+  for (const p of vitePages) {
+    const f = path.join(dist, `${p}.html`)
+    if (!fs.existsSync(f)) continue
+    const html = fs.readFileSync(f, 'utf8')
+    for (const id of ids) {
+      const empty = new RegExp(`<div[^>]*\\bid="${id}"[^>]*></div>`)
+      if (empty.test(html)) problems.push(`dist/${p}.html still has an EMPTY #${id} — the build-time block did not land, so that content is invisible to crawlers`)
+      if (new RegExp(`\\bid="${id}"`).test(html)) seen.add(id)
+    }
+  }
+  for (const id of ids) {
+    if (!seen.has(id)) problems.push(`scripts/blocks.mjs renders #${id}, but no page in dist has a container with that id — dead block, or a renamed container`)
+  }
+}
+
 if (problems.length) {
   console.error('\nPage wiring is inconsistent:\n')
   for (const p of problems) console.error('  FAIL  ' + p)

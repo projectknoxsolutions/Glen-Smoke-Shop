@@ -23,8 +23,16 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
+import { fillBlocks, fillFigures } from './blocks.mjs'
+
 const ROOT = path.resolve(import.meta.dirname, '..')
-const P = (f) => fs.readFileSync(path.join(ROOT, 'src/pages/parts', f), 'utf8')
+
+/* Every part is passed through fillBlocks() on the way in, which drops the
+   category grid, the brand lists, the glass shapes and the rest into the empty
+   containers the part files declare. Those blocks used to be written by main.ts
+   at runtime, which meant the words this shop wants to rank for were absent
+   from the HTML a crawler downloads. See scripts/blocks.mjs. */
+const P = (f) => fillFigures(fillBlocks(fs.readFileSync(path.join(ROOT, 'src/pages/parts', f), 'utf8')))
 
 const part = {
   head: P('_head.html'),
@@ -46,7 +54,6 @@ const part = {
   tour: P('tour.html'),
   reviews: P('reviews.html'),
   gallery: P('gallery.html'),
-  galleryTeaser: P('gallery-teaser.html'),
   visit: P('visit.html'),
 }
 
@@ -88,40 +95,40 @@ export const SECTIONS = [
     title: 'Vape Shop in Glen Ellyn, IL — Disposables, Geek Bar & North',
     desc: 'A floor-to-ceiling disposable wall at Glen Smoke Shop, 944 Roosevelt Rd. Geek Bar, North, Lost Mary, Breeze, RAZ and more, plus hardware and mods.',
     kicker: '01 — Disposables',
-    lede: 'Floor to ceiling, restocked constantly.',
-    img: 'IMG_6092', parts: ['vapes'],
+    lede: 'Floor to ceiling, restocked constantly — the disposable wall most people in Glen Ellyn, Wheaton and Lombard drive to.',
+    img: 'disposable-vape-shelves', parts: ['vapes'],
   },
   {
     slug: 'pouches', nav: 'Pouches', tile: 'Nicotine pouches',
     title: 'ZYN & Nicotine Pouches in Glen Ellyn, IL — Glen Smoke Shop',
     desc: 'Three full cabinets of nicotine pouches at 944 Roosevelt Rd, Glen Ellyn: ZYN, ZYN Ultra, VELO, sesh+, ZIMO and more. Filter by brand and strength.',
     kicker: '02 — Nicotine pouches',
-    lede: 'Three full cabinets, every flavour photographed off our own shelf.',
-    img: 'IMG_6083', parts: ['pouches'],
+    lede: 'Three full cabinets, every flavour photographed off our own shelf. If you are hunting a particular ZYN flavour in Glen Ellyn, it is probably in one of them.',
+    img: 'nicotine-pouch-rack', parts: ['pouches'],
   },
   {
     slug: 'glass', nav: 'Glass', tile: 'Glass & water pipes',
     title: 'Hand-Blown Glass & Water Pipes — Glen Ellyn, IL',
     desc: 'Lit cases of hand-blown glass at Glen Smoke Shop, Glen Ellyn: water pipes, rigs, hand pipes, bubblers and accessories from working glassblowers.',
     kicker: '03 — Glass',
-    lede: 'Lit cases, front to back.',
-    img: 'IMG_6077', parts: ['glass'],
+    lede: 'Lit cases, front to back — hand-blown glass and water pipes, and the deepest cases in this stretch of DuPage County.',
+    img: 'hand-blown-water-pipe-case', parts: ['glass'],
   },
   {
     slug: 'cigars', nav: 'Cigars', tile: 'The walk-in humidor',
     title: 'Cigar Humidor in Glen Ellyn, IL — 30 Houses at Glen Smoke Shop',
     desc: 'A real walk-in cedar humidor at 944 Roosevelt Rd, Glen Ellyn, holding thirty cigar houses from everyday sticks to premium boxes.',
     kicker: '04 — The humidor',
-    lede: 'A real cedar room, not a case by the register.',
-    img: 'IMG_6089', parts: ['cigars'],
+    lede: 'A real cedar room, not a case by the register — a walk-in cigar humidor in DuPage County, thirty houses deep.',
+    img: 'walk-in-humidor-shelves', parts: ['cigars'],
   },
   {
     slug: 'papers', nav: 'Papers', tile: 'Papers, wraps & gear',
     title: 'Rolling Papers, Wraps & Smoking Accessories — Glen Ellyn, IL',
     desc: 'RAW, Elements, Zig-Zag, Juicy Jay and more at Glen Smoke Shop, Glen Ellyn — papers, wraps, cones, grinders, trays and everyday gear.',
     kicker: '05 — Papers, wraps & gear',
-    lede: 'Every size, every material, and the gear that goes with it.',
-    img: 'IMG_6084', parts: ['papers'],
+    lede: 'Every size, every material, and the gear that goes with it, five minutes off Roosevelt Road.',
+    img: 'rolling-papers-display', parts: ['papers'],
   },
   {
     // Its own page at last. See src/pages/parts/gear.html for why it never
@@ -130,16 +137,16 @@ export const SECTIONS = [
     title: 'Grinders, Torches, Lighters & Scales — Glen Ellyn, IL',
     desc: 'Grinders, torch lighters, BIC and Clipper, digital scales, glass and silicone storage, trays and tools at Glen Smoke Shop, 944 Roosevelt Rd, Glen Ellyn.',
     kicker: '06 — Grinders, torches & gear',
-    lede: 'Two shelves of grinders, and a case built around jet flame.',
-    img: 'IMG_6181', parts: ['gear'],
+    lede: 'Two shelves of grinders, and a case built around jet flame — the torch and grinder counter for Glen Ellyn and Wheaton.',
+    img: 'grinders-torches-case', parts: ['gear'],
   },
   {
     slug: 'hookah', nav: 'Hookah', tile: 'Hookah & botanicals',
     title: 'Hookah, Shisha & Botanicals — Glen Smoke Shop, Glen Ellyn IL',
     desc: 'Hookahs, bowls, hoses, coals and heat management at 944 Roosevelt Rd, Glen Ellyn, alongside our botanical shelf.',
     kicker: '07 — Hookah & botanicals',
-    lede: 'Bowls, hoses, coals and heat management.',
-    img: 'IMG_6074', parts: ['hookah'],
+    lede: 'Bowls, hoses, coals and heat management, kept in stock for the hookah crowd across DuPage County.',
+    img: 'vape-wrap-hemp-shelf-bay', parts: ['hookah'],
   },
   {
     // Was 'hemp'. The old slug 301s here — see public/_redirects.
@@ -148,7 +155,7 @@ export const SECTIONS = [
     desc: 'Kratom, kava, botanicals and the hemp-derived shelf at Glen Smoke Shop, 944 Roosevelt Rd, Glen Ellyn. Brands and forms only. You must be 21 or older; we card everyone, every time.',
     kicker: '08 — Behind the counter',
     lede: 'Kept behind the counter, and we card for it.',
-    img: 'IMG_6081', parts: ['room21'],
+    img: 'hookah-shisha-shelf', parts: ['room21'],
   },
   {
     // The only page whose contents the shop controls directly — a live feed
@@ -160,7 +167,7 @@ export const SECTIONS = [
     desc: 'Photographs posted by Glen Smoke Shop at 944 Roosevelt Rd, Glen Ellyn: new arrivals, restocks and what is on the shelf right now.',
     kicker: '09 — The gallery',
     lede: 'Posted by the shop, as it lands.',
-    img: 'IMG_6070', parts: ['gallery'],
+    img: 'glen-smoke-shop-storefront', parts: ['gallery'],
   },
   {
     slug: 'visit', nav: 'Visit', tile: 'Visit the shop',
@@ -168,7 +175,7 @@ export const SECTIONS = [
     desc: 'Hours, directions, phone and text for Glen Smoke Shop at 944 Roosevelt Rd, Glen Ellyn, Illinois. Call or text (331) 551-0005.',
     kicker: '10 — Visit',
     lede: 'Where we are, when we are open, and how to reach us.',
-    img: 'IMG_6070', parts: ['visit', 'tour', 'reviews'],
+    img: 'glen-smoke-shop-storefront', parts: ['visit', 'tour', 'reviews'],
   },
 ]
 
@@ -243,6 +250,35 @@ const breadcrumbs = (s) => `
    because a literal is how it became dead data the first time. */
 const REVIEWS = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/reviews.json'), 'utf8'))
 const CATALOG = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/catalog.json'), 'utf8'))
+const STORE = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/store.json'), 'utf8'))
+
+/** openingHoursSpecification for the LocalBusiness schema — but ONLY once the
+    hours are confirmed.
+
+    Publishing hours in structured data is not a neutral act: Google will show
+    them in the knowledge panel and in Maps, and a customer who drives to
+    Roosevelt Rd on the strength of them and finds the door locked is worse off
+    than one who saw nothing and phoned first. store.json has carried
+    hoursConfirmed:false since the site was built, and the guard has been
+    warning about it on every run, so the honest thing is to emit nothing.
+
+    The wiring is here and finished, so the day someone rings the shop and sets
+    hoursConfirmed:true, the schema starts publishing on the next build with no
+    further work. */
+const hoursLd = () => {
+  if (!STORE.hoursConfirmed) return ''
+  const DAY = {
+    Monday: 'Monday', Tuesday: 'Tuesday', Wednesday: 'Wednesday',
+    Thursday: 'Thursday', Friday: 'Friday', Saturday: 'Saturday', Sunday: 'Sunday',
+  }
+  const spec = STORE.hours.map(h => ({
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: `https://schema.org/${DAY[h.day]}`,
+    opens: h.open,
+    closes: h.close,
+  }))
+  return `  "openingHoursSpecification": ${JSON.stringify(spec)},`
+}
 
 /** Rewrite the shared <head> for one page. */
 function headFor({ title, desc, url, extra = '' }) {
@@ -304,6 +340,7 @@ function itemListFor(s) {
 function compose({ slug, head, body, current }) {
   const premain = part.premain.replace(/<div class="nav-links">[\s\S]*?<\/div>/, navHtml(current).trim())
   let out = [head, premain, '<main id="main" class="shell">', body, part.postmain].join('\n')
+  out = out.split('__HOURS_LD__\n').join(hoursLd() ? hoursLd() + '\n' : '')
   out = out.split('__RATING__').join(String(REVIEWS.aggregate.rating))
   out = out.split('__REVIEWS__').join(String(REVIEWS.aggregate.count))
   // Last thing before the file is written: no absolute URL may name an origin
@@ -313,16 +350,34 @@ function compose({ slug, head, body, current }) {
   return out.length
 }
 
+/** The four shelf counters, rendered into the HTML at BUILD time.
+
+    They used to be an empty <div> filled in by JavaScript, which meant a
+    crawler saw no numbers at all and a visitor saw "0+ VAPE BRANDS" until the
+    count-up animation reached them. Both of those read as a broken page. The
+    figures come from catalog.json, which is the same source the client-side
+    renderer used, so nothing can drift between them — and the animation now
+    enhances real numbers rather than supplying them. */
+const heroStats = () => {
+  const stats = [
+    { n: CATALOG.vapes.length, suffix: '+', l: 'Vape brands' },
+    { n: CATALOG.pouches.length, suffix: '', l: 'Pouch flavors' },
+    { n: CATALOG.glass.count, suffix: '', l: 'Glass pieces' },
+    { n: CATALOG.cigars.length, suffix: '', l: 'Cigar houses' },
+  ]
+  return stats.map(s => `<div class="hero-stat">
+      <div class="n" data-count="${s.n}" data-suffix="${s.suffix}">${s.n}${s.suffix}</div>
+      <div class="l">${s.l}</div>
+    </div>`).join('\n    ')
+}
+
 /* ------------------------------------------------------------------ hub -- */
 
 const hubBody = [
-  part.hero,
+  part.hero.replace('<div class="hero-stats" id="hero-stats"></div>',
+                    `<div class="hero-stats" id="hero-stats">\n    ${heroStats()}\n  </div>`),
   part.ticker,
   part.shop,
-  // Between the category grid and the reviews: after the visitor knows what the
-  // shop sells, before the social proof. Also the one band on the home page
-  // whose contents change without a deploy.
-  part.galleryTeaser,
   part.reviews,
 ].join('\n')
 

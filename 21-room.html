@@ -59,6 +59,7 @@
   "url": "https://glensmokeshop.com/",
   "image": "https://glensmokeshop.com/img/hero-wide-1600.jpg",
   "telephone": "+1-331-551-0005",
+  "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "944 Roosevelt Rd",
@@ -243,11 +244,43 @@
 
       <div class="portal-content">
         <figure class="brand-photo reveal" data-photo="botanical-shelf"
-                data-alt="Earth Kratom and Njoy's kratom powders and capsules on a shelf behind the counter">
+                data-alt="Earth Kratom and Njoy's kratom powders and capsules on a shelf behind the counter"><picture>
+    <source type="image/avif" sizes="(max-width:940px) 100vw, 52vw" srcset="img/botanical-shelf-640.avif 640w, img/botanical-shelf-1100.avif 1100w, img/botanical-shelf-1700.avif 1700w">
+    <source type="image/webp" sizes="(max-width:940px) 100vw, 52vw" srcset="img/botanical-shelf-640.webp 640w, img/botanical-shelf-1100.webp 1100w, img/botanical-shelf-1700.webp 1700w">
+    <img src="img/botanical-shelf-1100.jpg" alt="Earth Kratom and Njoy's kratom powders and capsules on a shelf behind the counter"
+         loading="eager" decoding="async">
+  </picture>
           <figcaption>The botanical shelf</figcaption>
         </figure>
 
-        <div class="room21-grid" id="room21-grid"></div>
+        <div class="room21-grid" id="room21-grid">
+    <article class="gear-card reveal" id="r21-kratom">
+      <h3 class="gear-name">Kratom</h3>
+      <p class="gear-lede">Powders, capsules and tablets, kept behind the counter.</p>
+      <div class="gear-brands"><span class="chip">Earth Kratom</span><span class="chip">Njoy's</span><span class="chip">Hello Vietnam</span><span class="chip">Mood Rite</span><span class="chip">Bumble Bee</span><span class="chip">MIT 45</span><span class="chip">O.P.M.S.</span><span class="chip">Happy Hippo</span><span class="chip">Expert Botanicals</span><span class="chip">7Stax</span><span class="chip">Lemmons</span><span class="chip">Dozo Perks</span><span class="chip">Zourz</span></div>
+      <ul class="gear-specs"><li>Loose powder</li><li>Capsules</li><li>Tablets</li><li>Extract shots</li></ul>
+      <p class="r21-meta"><span>Vein</span> Green · White · Red · Gold</p>
+      <p class="r21-meta"><span>Origin</span> Malay · Borneo · Vietnam · Bali · Maeng Da · Trainwreck</p>
+      
+    </article>
+    <article class="gear-card reveal" id="r21-botanicals">
+      <h3 class="gear-name">Kava & botanicals</h3>
+      <p class="gear-lede">The counter display by the register.</p>
+      
+      <ul class="gear-specs"><li>Bottled shots</li><li>Capsules</li></ul>
+      
+      
+      <p class="gear-detail">Brands are on the shelf and change often — ask at the counter for what is in that day.</p>
+    </article>
+    <article class="gear-card reveal" id="r21-hemp">
+      <h3 class="gear-name">Hemp-derived</h3>
+      <p class="gear-lede">Categories only, kept behind the counter.</p>
+      
+      <ul class="gear-specs"><li>Vapes and cartridges</li><li>Gummies and edibles</li><li>Prerolls</li><li>Flower and concentrates</li><li>Seltzers and drinks</li></ul>
+      
+      
+      <p class="gear-detail">No potency figures and no brand list here on purpose: what is legal to stock in Illinois keeps moving, and a page that goes stale is worse than a page that tells you to ask. Staff will walk you through what is actually on the shelf that day.</p>
+    </article></div>
 
         <p class="sec-note reveal">Stock changes weekly. Call the shop on <a href="tel:+13315510005">(331) 551-0005</a> and someone will tell you what's in today.</p>
       </div>
@@ -300,6 +333,15 @@
            rel="noopener" aria-label="Glen Smoke Shop on Snapchat, at GlenSmoke">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2.2c2.6 0 4.6 2 4.7 4.6 0 .7 0 1.5-.1 2.2.4.2.9.2 1.3 0 .2-.1.5-.1.7 0 .4.1.6.5.5.9-.1.5-.7.8-1.2 1-.5.2-1.1.4-1.2.8-.1.4.2.9.6 1.5.7 1 1.7 1.9 2.9 2.3.3.1.5.4.4.7-.1.5-.9.8-1.9 1-.4.1-.5.2-.6.6-.1.3-.2.6-.6.6-.5 0-1.1-.2-1.9-.1-.8.1-1.4.5-2 1-.6.4-1.2.9-2.1.9s-1.5-.5-2.1-.9c-.6-.5-1.2-.9-2-1-.8-.1-1.4.1-1.9.1-.4 0-.5-.3-.6-.6-.1-.4-.2-.5-.6-.6-1-.2-1.8-.5-1.9-1-.1-.3.1-.6.4-.7 1.2-.4 2.2-1.3 2.9-2.3.4-.6.7-1.1.6-1.5-.1-.4-.7-.6-1.2-.8-.5-.2-1.1-.5-1.2-1-.1-.4.1-.8.5-.9.2-.1.5-.1.7 0 .4.2.9.2 1.3 0-.1-.7-.1-1.5-.1-2.2C7.4 4.2 9.4 2.2 12 2.2Z"/></svg>
           Snapchat
+        </a>
+        <!-- The gallery's entry point. It lives here, in the row of things you
+             DO with the shop, rather than as a band of photographs on the home
+             page: the feed is the shop's to fill and it was pushing the rest of
+             the page down before anyone had asked to see it. A button costs one
+             line and the photographs are one tap away. -->
+        <a class="btn" href="/gallery" data-prefetch aria-label="Photo gallery from Glen Smoke Shop">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2.5"/><circle cx="8.8" cy="9" r="1.6"/><path d="m3.6 17.2 4.6-4.3a1.7 1.7 0 0 1 2.3 0l3.3 3.1M13.4 14.6l2-1.8a1.7 1.7 0 0 1 2.3 0l2.7 2.5"/></svg>
+          Gallery
         </a>
     </div>
 
