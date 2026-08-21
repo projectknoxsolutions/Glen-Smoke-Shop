@@ -17,20 +17,20 @@
   "smsCapable": true,
   "_smsNote": "Confirmed by Jeff 2026-08-08: the main line takes texts. If that turns out to be wrong, set this back to false and the text buttons silently fall back to calling rather than dead-ending.",
 
-  "rating": 4.2,
+  "rating": 4.3,
   "ratingSource": "Google",
   "googleUrl": "https://www.google.com/maps/place/Glen+Smoke+Shop/@41.8599993,-88.0480804,17z",
 
-  "hoursConfirmed": false,
-  "_hoursNote": "PLACEHOLDER. Google confirmed 'closes 11 PM' on Sat 2026-08-08 and two directories list an 8 AM open, so 8am-11pm daily is the best available estimate. MUST be confirmed with the owner before this is shown to him.",
+  "hoursConfirmed": true,
+  "_hoursNote": "CONFIRMED 2026-08-20, read straight off the owner-managed Google Business Profile while claiming the directory listings. Weekdays open at 8, weekends at 9 - the old placeholder had 8am seven days a week, which was an hour early on Sat and Sun. These are now the single source of truth: the same seven rows go on Google, Yelp, Bing and Apple, and openingHoursSpecification in the JSON-LD is generated from them. If the shop changes its hours, change them HERE and re-deploy, then push the same change to each listing.",
   "hours": [
-    { "day": "Sunday",    "open": "08:00", "close": "23:00" },
+    { "day": "Sunday",    "open": "09:00", "close": "23:00" },
     { "day": "Monday",    "open": "08:00", "close": "23:00" },
     { "day": "Tuesday",   "open": "08:00", "close": "23:00" },
     { "day": "Wednesday", "open": "08:00", "close": "23:00" },
     { "day": "Thursday",  "open": "08:00", "close": "23:00" },
     { "day": "Friday",    "open": "08:00", "close": "23:00" },
-    { "day": "Saturday",  "open": "08:00", "close": "23:00" }
+    { "day": "Saturday",  "open": "09:00", "close": "23:00" }
   ],
   "timezone": "America/Chicago"
 }

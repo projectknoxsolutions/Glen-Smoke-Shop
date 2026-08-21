@@ -1,8 +1,8 @@
 {
-  "_README": "Real Google reviews only. Never invent a testimonial, never complete a partial one, never 'clean up' the wording - fabricated or edited testimonials are an FTC violation and would be trivially disproved against the live Google profile. The three below are verbatim, spelling and punctuation included. Google does not expose review text to anything crawlable; these surfaced through an aggregator that mirrors the profile. The shop has 50 reviews at 4.3 stars (read off the connected Google Business Profile in GoHighLevel on 12 Aug 2026, not estimated), so there are more good ones - the owner can copy them off the listing on his phone and they can be added here as { name, initial, stars, text, date }. The marquee renders whatever is in this array and removes itself entirely when it is empty.",
+  "_README": "Real Google reviews only. Never invent a testimonial, never complete a partial one, never 'clean up' the wording - fabricated or edited testimonials are an FTC violation and would be trivially disproved against the live Google profile. The three below are verbatim, spelling and punctuation included. Google does not expose review text to anything crawlable; these surfaced through an aggregator that mirrors the profile. The shop has 54 reviews at 4.3 stars (read off the Google Business Profile itself on 20 Aug 2026, not estimated), so there are more good ones - the owner can copy them off the listing on his phone and they can be added here as { name, initial, stars, text, date }. The marquee renders whatever is in this array and removes itself entirely when it is empty.",
   "source": "Google",
   "profileUrl": "https://www.google.com/maps/place/Glen+Smoke+Shop/@41.8599993,-88.0480804,17z",
-  "aggregate": { "rating": 4.3, "count": 50 },
+  "aggregate": { "rating": 4.3, "count": 54 },
   "reviews": [
     {
       "name": "Tori Bean",
