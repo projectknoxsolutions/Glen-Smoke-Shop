@@ -679,19 +679,14 @@ function initGalleryFeed() {
    is the shop's own Google Business Profile, read with the owner's
    authorisation; the cards link back to each review on Google. */
 
-const FEED = `https://api.featurable.com/v2/widgets/${(reviewData as { featurableId?: string | null }).featurableId}`
+const FEED = '/api/reviews'
 const FEED_TIMEOUT = 6000
 /* Below this many five-star reviews the live set is thinner than what we
    already server-rendered, so swapping would be a downgrade. Leave it alone. */
 const MIN_LIVE = 3
 
-type FeedReview = {
-  author?: { name?: string | null; avatarUrl?: string | null } | null
-  text?: string | null
-  rating?: { value?: number | null } | null
-  url?: string | null
-  publishedAt?: string | null
-}
+type FeedReview = { name?: string | null; stars?: number | null; text?: string | null; date?: string | null }
+type FeedPayload = { reviews?: FeedReview[]; rating?: number | null; count?: number | null }
 
 function initReviews() {
   const host = $('#review-marquee')
@@ -705,10 +700,7 @@ function initReviews() {
 }
 
 async function hydrateFromGoogle(host: HTMLElement) {
-  const id = (reviewData as { featurableId?: string | null }).featurableId
-  if (!id) return
-
-  let payload: unknown
+  let payload: FeedPayload | null = null
   try {
     const ctrl = new AbortController()
     const timer = setTimeout(() => ctrl.abort(), FEED_TIMEOUT)
@@ -720,17 +712,21 @@ async function hydrateFromGoogle(host: HTMLElement) {
     return // offline, blocked, timed out — the built-in reviews stay up
   }
 
-  const widget = (payload as { widget?: Record<string, unknown> } | null)?.widget
-  const raw = widget?.reviews
+  const raw = payload?.reviews
   if (!Array.isArray(raw)) return
 
-  const live = (raw as FeedReview[])
-    .filter(r => Number(r?.rating?.value) === 5)
+  /* The endpoint already filters to five stars with real text, but it is a
+     network boundary and this is going into innerHTML, so nothing is taken on
+     trust. Google's terms want a reader to be able to reach the reviews on
+     Google, and the feed carries no per-review permalink, so every card links
+     to the shop's profile. */
+  const live = raw
+    .filter(r => Number(r?.stars) === 5)
     .map(r => ({
-      name: (r.author?.name || '').trim(),
+      name: String(r.name || '').trim(),
       stars: 5,
-      text: (r.text || '').trim(),
-      url: r.url || null,
+      text: String(r.text || '').trim(),
+      url: reviewData.profileUrl,
     }))
     .filter(r => r.name.length > 0 && r.text.length >= 12)
 
@@ -738,16 +734,14 @@ async function hydrateFromGoogle(host: HTMLElement) {
 
   host.innerHTML = marqueeHtml(live)
 
-  // The visible score sits above the marquee and was baked in at build time.
-  // If the feed reports a current figure, it is fresher than the build.
-  const summary = widget?.gbpLocationSummary as { rating?: number; reviewsCount?: number } | undefined
+  // The visible score was baked in at build time; the feed's figure is fresher.
   const score = $('.rev-score .n')
-  if (score && typeof summary?.rating === 'number' && summary.rating > 0) {
-    score.textContent = summary.rating.toFixed(1)
+  if (score && typeof payload?.rating === 'number' && payload.rating > 0) {
+    score.textContent = payload.rating.toFixed(1)
   }
 
-  // The rows are absolutely sized by their content and the reveal animations
-  // measured the old markup, so the new heights have to be re-read.
+  // The rows are sized by their content and the reveal animations measured the
+  // old markup, so the new heights have to be re-read.
   ScrollTrigger.refresh()
 }
 

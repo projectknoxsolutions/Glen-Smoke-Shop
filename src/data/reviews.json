@@ -1,11 +1,10 @@
 {
-  "_README": "Verbatim customer reviews only. Never invent, paraphrase, embellish or compose a review — fabricated testimonials are an FTC violation and this file is the one place someone would be tempted. Every entry here was read off the shop's Google Business Profile and copied exactly, typos included. These are the BUILD-TIME fallback: they are server-rendered into the page so the section is never empty, and main.ts replaces them at runtime with the current five-star reviews from the live Google feed. If the feed is down, unreachable or returns too few reviews, these stay up. featurableId is the widget id from featurable.com, which reads the shop's own Google Business Profile with the owner's authorisation. Null disables the live feed cleanly and leaves these three showing.",
+  "_README": "Verbatim customer reviews only. Never invent, paraphrase, embellish or compose a review - fabricated testimonials are an FTC violation and this file is the one place someone would be tempted. Every entry here was read off the shop's Google Business Profile and copied exactly, typos included. These three are the BUILD-TIME fallback: scripts/blocks.mjs server-renders them into the page so the section is never empty, and main.ts replaces them at runtime with the shop's current five-star reviews from /api/reviews. If that endpoint is slow, down, or returns fewer than three usable reviews, these stay up. The live feed comes from the GoHighLevel reputation widget, which reads the shop's own Google Business Profile - see functions/api/reviews.js. aggregate is the fallback figure shown before the feed answers; the feed overwrites it with the current one.",
   "source": "Google",
   "profileUrl": "https://www.google.com/maps/place/Glen+Smoke+Shop/@41.8599993,-88.0480804,17z",
-  "featurableId": null,
   "aggregate": {
     "rating": 4.4,
-    "count": 62,
+    "count": 63,
     "_checked": "2026-08-21"
   },
   "reviews": [

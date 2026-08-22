@@ -410,10 +410,16 @@
 .rev-row.a { animation: slide 68s linear infinite; }
 .rev-row.b { animation: slide 82s linear infinite reverse; margin-top: 14px; }
 .reviews:hover .rev-row { animation-play-state: paused; }
+/* Row height is set by the longest review in it, so a two-word card left a
+   pool of dead space under its attribution. Column flex with the byline
+   pushed to the bottom spreads that space instead of pooling it, and the
+   avatars line up across the row. */
 .rev-card {
   width: 340px; flex: none; padding: 24px; border-radius: var(--radius-sm);
   border: 1px solid var(--line); background: var(--panel);
+  display: flex; flex-direction: column;
 }
+.rev-card .m { margin-top: auto; }
 /* Live reviews come in at whatever length the customer typed, and one
    400-word review would set the height of the entire row. Clamped visually
    only — the full text stays in the DOM, and the author's name links out to
@@ -423,7 +429,7 @@
   display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 7;
   line-clamp: 7; overflow: hidden;
 }
-.rev-card .m { display: flex; align-items: center; gap: 10px; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); }
+.rev-card .m { display: flex; align-items: center; gap: 10px; padding-top: 14px; margin-top: auto; border-top: 1px solid var(--line); }
 .rev-card .av { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-family: var(--display); font-size: 14px; color: var(--void); flex: none; }
 .rev-card .nm { font-size: 13px; font-weight: 500; }
 a.nm { color: inherit; text-decoration: none; }
