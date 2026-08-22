@@ -18,6 +18,7 @@ import Lenis from 'lenis'
 import catalog from './data/catalog.json'
 import store from './data/store.json'
 import reviewData from './data/reviews.json'
+import { marqueeHtml } from './lib/review-card.mjs'
 import pouchImages from './data/pouch-images.json'
 import vapeItems from './data/vape-items.json'
 import cigarItems from './data/cigar-items.json'
@@ -664,48 +665,90 @@ function initGalleryFeed() {
 
 /* -------------------------------------------------------------- gallery */
 /* -------------------------------------------------------------- reviews */
-type Review = { name: string; initial?: string; stars: number; text: string; date?: string }
-const AV = ['#FF8A1E', '#2E6BFF', '#FF2D9B', '#35FF7A', '#FFC24D']
+/* The marquee arrives in the HTML already populated — scripts/blocks.mjs
+   server-renders the verbatim reviews from reviews.json at build time, so the
+   section paints instantly, survives a JS failure, and never flashes empty.
+
+   What happens HERE is the upgrade: fetch the shop's current Google reviews,
+   keep only the five-star ones, and swap them in. The build-time three stay up
+   if anything goes wrong — a slow network, a dead widget id, a feed that has
+   drifted to fewer than a handful of five-star reviews. There is no spinner
+   and no empty state, because there is always something real on screen.
+
+   Reviews are never invented, and nothing here rewrites review text. The feed
+   is the shop's own Google Business Profile, read with the owner's
+   authorisation; the cards link back to each review on Google. */
+
+const FEED = `https://api.featurable.com/v2/widgets/${(reviewData as { featurableId?: string | null }).featurableId}`
+const FEED_TIMEOUT = 6000
+/* Below this many five-star reviews the live set is thinner than what we
+   already server-rendered, so swapping would be a downgrade. Leave it alone. */
+const MIN_LIVE = 3
+
+type FeedReview = {
+  author?: { name?: string | null; avatarUrl?: string | null } | null
+  text?: string | null
+  rating?: { value?: number | null } | null
+  url?: string | null
+  publishedAt?: string | null
+}
 
 function initReviews() {
-  const host = $('#review-marquee'); if (!host) return
-  const list = (reviewData.reviews || []) as Review[]
+  const host = $('#review-marquee')
+  if (!host) return
 
-  // No fabricated testimonials, ever. Until real reviews are supplied the
-  // section degrades to an honest link-out rather than inventing quotes.
-  // With no reviews supplied, the marquee is removed entirely rather than
-  // rendering a placeholder that tells visitors the site is unfinished. The
-  // rating and the Google link above it still carry the section.
-  if (!list.length) {
-    host.remove()
-    return
+  // No reviews at build time means an empty container. Rendering a section
+  // that says nothing is worse than not rendering it, so it goes.
+  if (!host.children.length) { host.remove(); return }
+
+  void hydrateFromGoogle(host)
+}
+
+async function hydrateFromGoogle(host: HTMLElement) {
+  const id = (reviewData as { featurableId?: string | null }).featurableId
+  if (!id) return
+
+  let payload: unknown
+  try {
+    const ctrl = new AbortController()
+    const timer = setTimeout(() => ctrl.abort(), FEED_TIMEOUT)
+    const res = await fetch(FEED, { signal: ctrl.signal, credentials: 'omit' })
+    clearTimeout(timer)
+    if (!res.ok) return
+    payload = await res.json()
+  } catch {
+    return // offline, blocked, timed out — the built-in reviews stay up
   }
 
-  const card = (r: Review, i: number) => {
-    const init = r.initial || r.name.trim()[0]?.toUpperCase() || '?'
-    const full = Math.round(r.stars)
-    return `<article class="rev-card">
-      <p class="t">"${r.text}"</p>
-      <div class="m">
-        <span class="av" style="background:${AV[i % AV.length]}">${init}</span>
-        <span><span class="nm">${r.name}</span>
-          <span class="st" style="display:block">${'★'.repeat(full)}${'☆'.repeat(5 - full)}</span></span>
-      </div></article>`
+  const widget = (payload as { widget?: Record<string, unknown> } | null)?.widget
+  const raw = widget?.reviews
+  if (!Array.isArray(raw)) return
+
+  const live = (raw as FeedReview[])
+    .filter(r => Number(r?.rating?.value) === 5)
+    .map(r => ({
+      name: (r.author?.name || '').trim(),
+      stars: 5,
+      text: (r.text || '').trim(),
+      url: r.url || null,
+    }))
+    .filter(r => r.name.length > 0 && r.text.length >= 12)
+
+  if (live.length < MIN_LIVE) return
+
+  host.innerHTML = marqueeHtml(live)
+
+  // The visible score sits above the marquee and was baked in at build time.
+  // If the feed reports a current figure, it is fresher than the build.
+  const summary = widget?.gbpLocationSummary as { rating?: number; reviewsCount?: number } | undefined
+  const score = $('.rev-score .n')
+  if (score && typeof summary?.rating === 'number' && summary.rating > 0) {
+    score.textContent = summary.rating.toFixed(1)
   }
 
-  // Two counter-scrolling rows only make sense with enough cards to fill both.
-  // With three real reviews, splitting them 2/1 left the second row visibly
-  // thin and drew attention to how few there are. Under six, run a single row
-  // and repeat it enough times to cover the widest viewport instead.
-  const row = (rs: Review[], cls: string, reps: number) =>
-    `<div class="rev-row ${cls}">${Array.from({ length: reps }, () => rs.map(card).join('')).join('')}</div>`
-
-  if (list.length < 6) {
-    host.innerHTML = row(list, 'a', Math.max(3, Math.ceil(9 / list.length)))
-  } else {
-    const half = Math.ceil(list.length / 2)
-    host.innerHTML = row(list.slice(0, half), 'a', 2) + row(list.slice(half), 'b', 2)
-  }
+  // The rows are absolutely sized by their content and the reveal animations
+  // measured the old markup, so the new heights have to be re-read.
+  ScrollTrigger.refresh()
 }
 
 /* ------------------------------------------------------------------ map */

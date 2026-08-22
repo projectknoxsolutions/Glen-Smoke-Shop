@@ -19,11 +19,13 @@
 
 import fs from 'node:fs'
 import path from 'node:path'
+import { marqueeHtml } from '../src/lib/review-card.mjs'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
 const J = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data', f), 'utf8'))
 
 const catalog = J('catalog.json')
+const reviewsData = J('reviews.json')
 const gear = J('gear.json')
 const room21 = J('room21.json')
 const descriptions = J('descriptions.json')
@@ -265,6 +267,7 @@ export const BLOCKS = {
   'glass-percs':      catalog.glass.styles.filter(s => GLASS_PERC.test(s)).map(s => specTile(slug(s))).join(''),
   'hookah-parts':     HOOKAH_PARTS.map(specTile).join(''),
   'gallery':          tourMosaic(),
+  'review-marquee':   marqueeHtml(reviewsData.reviews || []),
 }
 
 /**

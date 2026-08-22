@@ -414,10 +414,20 @@
   width: 340px; flex: none; padding: 24px; border-radius: var(--radius-sm);
   border: 1px solid var(--line); background: var(--panel);
 }
-.rev-card .t { color: var(--ink-2); font-weight: 300; font-size: 14.5px; line-height: 1.6; }
+/* Live reviews come in at whatever length the customer typed, and one
+   400-word review would set the height of the entire row. Clamped visually
+   only — the full text stays in the DOM, and the author's name links out to
+   the review on Google, so nothing is hidden or rewritten. */
+.rev-card .t {
+  color: var(--ink-2); font-weight: 300; font-size: 14.5px; line-height: 1.6;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 7;
+  line-clamp: 7; overflow: hidden;
+}
 .rev-card .m { display: flex; align-items: center; gap: 10px; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); }
 .rev-card .av { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-family: var(--display); font-size: 14px; color: var(--void); flex: none; }
 .rev-card .nm { font-size: 13px; font-weight: 500; }
+a.nm { color: inherit; text-decoration: none; }
+a.nm:hover, a.nm:focus-visible { color: var(--gold); text-decoration: underline; }
 .rev-card .st { color: var(--gold); font-size: 11px; letter-spacing: 2px; }
 .rev-empty {
   padding: 44px 32px; text-align: center; border: 1px dashed var(--line);

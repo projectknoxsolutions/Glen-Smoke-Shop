@@ -1,8 +1,13 @@
 {
-  "_README": "Real Google reviews only. Never invent a testimonial, never complete a partial one, never 'clean up' the wording - fabricated or edited testimonials are an FTC violation and would be trivially disproved against the live Google profile. The three below are verbatim, spelling and punctuation included. Google does not expose review text to anything crawlable; these surfaced through an aggregator that mirrors the profile. The shop has 54 reviews at 4.3 stars (read off the Google Business Profile itself on 20 Aug 2026, not estimated), so there are more good ones - the owner can copy them off the listing on his phone and they can be added here as { name, initial, stars, text, date }. The marquee renders whatever is in this array and removes itself entirely when it is empty.",
+  "_README": "Verbatim customer reviews only. Never invent, paraphrase, embellish or compose a review — fabricated testimonials are an FTC violation and this file is the one place someone would be tempted. Every entry here was read off the shop's Google Business Profile and copied exactly, typos included. These are the BUILD-TIME fallback: they are server-rendered into the page so the section is never empty, and main.ts replaces them at runtime with the current five-star reviews from the live Google feed. If the feed is down, unreachable or returns too few reviews, these stay up. featurableId is the widget id from featurable.com, which reads the shop's own Google Business Profile with the owner's authorisation. Null disables the live feed cleanly and leaves these three showing.",
   "source": "Google",
   "profileUrl": "https://www.google.com/maps/place/Glen+Smoke+Shop/@41.8599993,-88.0480804,17z",
-  "aggregate": { "rating": 4.3, "count": 54 },
+  "featurableId": null,
+  "aggregate": {
+    "rating": 4.4,
+    "count": 62,
+    "_checked": "2026-08-21"
+  },
   "reviews": [
     {
       "name": "Tori Bean",

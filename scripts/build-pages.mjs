@@ -239,15 +239,29 @@ const breadcrumbs = (s) => `
  {"@type":"ListItem","position":2,"name":${JSON.stringify(s.tile)},"item":"${SITE}${pathFor(s.slug)}"}]}
 </script>`
 
-/* The star rating Google can actually read.
+/* The star rating — visible only, no longer in the structured data.
 
-   Before this, reviews.json carried an `aggregate` block that NOTHING read,
-   and no page emitted aggregateRating at all — so the listing was never
-   eligible for a star rating in search. Updating the number in reviews.json
-   felt like maintenance and did nothing.
+   An earlier pass added aggregateRating to the LocalBusiness schema on every
+   page, on the reasonable-sounding theory that a listing with no rating markup
+   could never earn a star in search. It cannot earn one WITH the markup
+   either, and that is the point.
 
-   Substituted at build time rather than written into _head.html as a literal,
-   because a literal is how it became dead data the first time. */
+   Google's review-snippet guidance is explicit that when the entity being
+   reviewed controls the reviews about itself, its LocalBusiness/Organization
+   pages are ineligible for the star feature — and it names this exact case,
+   a business republishing its own Google reviews on its own site, as the
+   example. Ratings must be sourced from users, not compiled by the subject.
+   So the markup was not earning a star; it was being ignored. Google already
+   shows the real stars in the local pack and knowledge panel, sourced from the
+   Business Profile itself, which is where that data belongs.
+
+   Ignored is not the same as penalised — there is no manual action here and
+   nothing was on fire. It was simply dead weight making a claim about itself,
+   so it is gone. What stays in the schema is the part Google does consume:
+   name, address, phone, geo, hours, areaServed, sameAs.
+
+   The NUMBER still matters on the page, where a human reads it. __RATING__ is
+   substituted document-wide in compose(). */
 const REVIEWS = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/reviews.json'), 'utf8'))
 const CATALOG = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/catalog.json'), 'utf8'))
 const STORE = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/store.json'), 'utf8'))
